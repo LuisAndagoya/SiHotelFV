@@ -209,6 +209,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Formularios\Auditoria\Index.aspx" />
+    <Content Include="Formularios\Empleado\Container.aspx" />
     <Content Include="Formularios\Empleado\Index.aspx" />
     <Content Include="inicio.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
@@ -366,6 +368,20 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Formularios\Auditoria\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Auditoria\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Empleado\Container.aspx.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Empleado\Container.aspx.designer.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Empleado\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

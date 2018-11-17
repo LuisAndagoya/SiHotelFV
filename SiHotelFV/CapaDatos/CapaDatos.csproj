@@ -40,6 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Auditoria.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Auditoria.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Empleado.cs">
+      <DependentUpon>Empleado.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Empleado.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -54,6 +62,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Clases\Auditoria.xsc">
+      <DependentUpon>Auditoria.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\Auditoria.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Auditoria.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Clases\Auditoria.xss">
+      <DependentUpon>Auditoria.xsd</DependentUpon>
+    </None>
     <None Include="Clases\Empleado.xsc">
       <DependentUpon>Empleado.xsd</DependentUpon>
     </None>

@@ -56,6 +56,10 @@ namespace CapaWeb.Formularios.Empleado
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            Grid.DataSource = CapaProceso.Clases.Empleado.Buscar(TxtBuscar.Text); 
+
+            Grid.DataBind();
+            Grid.Height = 100;
 
         }
     }

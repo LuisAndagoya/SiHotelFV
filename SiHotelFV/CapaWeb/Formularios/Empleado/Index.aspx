@@ -63,7 +63,7 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                            <asp:TemplateColumn HeaderText="Empresa" Visible="False">
+                                            <asp:TemplateColumn HeaderText="id" Visible="False">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="lblId" runat="server" Text='<%#Eval("idEmpleado") %>'></asp:Label>
@@ -74,7 +74,7 @@
                                             <asp:TemplateColumn HeaderText="DNI">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="lblnombre1" runat="server" Text='<%#Eval("dniEmpleado") %>'></asp:Label>
+                                                        <asp:Label ID="dniEmpleado" runat="server" Text='<%#Eval("dniEmpleado") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
@@ -82,7 +82,7 @@
                                             <asp:TemplateColumn HeaderText="Nombre">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="lblnombre2" runat="server" Text='<%#Eval("nombreEmpleado") %>'></asp:Label>
+                                                        <asp:Label ID="nombreEmpleado" runat="server" Text='<%#Eval("nombreEmpleado") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
@@ -90,7 +90,7 @@
                                             <asp:TemplateColumn HeaderText="Apellido">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="lblRazon3" runat="server" Text='<%#Eval("apellidoEmpleado") %>'></asp:Label>
+                                                        <asp:Label ID="apellidoEmpleado" runat="server" Text='<%#Eval("apellidoEmpleado") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
