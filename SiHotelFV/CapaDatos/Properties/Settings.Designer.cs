@@ -26,21 +26,10 @@ namespace CapaDatos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=XXX-PC;Initial Catalog=BDHotelFuenteVida;Persist Security Info=True;U" +
-            "ser ID=sa;Password=root")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MARGARITA;Initial Catalog=BDHotelFuenteVida;User ID=sa;Password=root")]
         public string BDHotelFuenteVidaConnectionString {
             get {
                 return ((string)(this["BDHotelFuenteVidaConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MARGARITA;Initial Catalog=BDHotelFuenteVida;User ID=sa;Password=root")]
-        public string BDHotelFuenteVidaConnectionString1 {
-            get {
-                return ((string)(this["BDHotelFuenteVidaConnectionString1"]));
             }
         }
     }
