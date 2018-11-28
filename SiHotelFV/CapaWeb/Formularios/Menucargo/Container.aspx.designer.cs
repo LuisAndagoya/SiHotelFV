@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaWeb.Formularios.Menu_Cargo
+namespace CapaWeb.Formularios.Menucargo
 {
 
 

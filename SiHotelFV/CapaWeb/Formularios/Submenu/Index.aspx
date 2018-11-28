@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWeb.Formularios.Menu_Cargo.Index" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWeb.Formularios.Submenu.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-       <div class="row">
+     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
@@ -10,7 +10,7 @@
                             <tr>
                                 <td>
                                     <!-- Cabezera-->
-                                                                         <div align="right">
+                                    <div align="right">
 
                                      
                                                     <div class="form-group">
@@ -64,20 +64,19 @@
                                             <asp:TemplateColumn HeaderText="id" Visible="False">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="lblId" runat="server" Text='<%#Eval("idMenu_Cargo") %>'></asp:Label>
+                                                        <asp:Label ID="lblId" runat="server" Text='<%#Eval("idSubMenu") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
-
-                                            <asp:TemplateColumn HeaderText="Cargo">
+                                             <asp:TemplateColumn HeaderText="Nivel"  Visible="False">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="nombreCargo" runat="server" Text='<%#Eval("nombreCargo") %>'></asp:Label>
+                                                        <asp:Label ID="idMenu" runat="server" Text='<%#Eval("idMenu") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                              <asp:TemplateColumn HeaderText="Menu">
+                                            <asp:TemplateColumn HeaderText="Menú">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="nombreMenu" runat="server" Text='<%#Eval("nombreMenu") %>'></asp:Label>
@@ -85,9 +84,38 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
+
+                                              <asp:TemplateColumn HeaderText="Submenu">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="nombreSubMenu" runat="server" Text='<%#Eval("nombreSubMenu") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
+                                                  <asp:TemplateColumn HeaderText="Programa">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="iconoMenu" runat="server" Text='<%#Eval("urlSubMenu") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
                                             
 
 
+                                               <asp:TemplateColumn HeaderText="Padre"  Visible="False">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="iconoSubMenu" runat="server" Text='<%#Eval("iconoSubMenu") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+                                            
+
+
+              
+
+     
 
                                         </Columns>
 
@@ -109,13 +137,5 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
 
 </asp:Content>

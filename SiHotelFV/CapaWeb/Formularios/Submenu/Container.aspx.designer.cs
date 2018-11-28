@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaWeb.Formularios.Cliente
+namespace CapaWeb.Formularios.Submenu
 {
 
 
-    public partial class Contairner
+    public partial class Container
     {
     }
 }

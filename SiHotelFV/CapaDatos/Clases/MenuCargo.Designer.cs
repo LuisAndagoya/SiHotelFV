@@ -20,9 +20,9 @@ namespace CapaDatos.Clases {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("MenuCargo")]
+    [global::System.Xml.Serialization.XmlRootAttribute("Menucargo")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class MenuCargo : global::System.Data.DataSet {
+    public partial class Menucargo : global::System.Data.DataSet {
         
         private menu_cargoDataTable tablemenu_cargo;
         
@@ -30,7 +30,7 @@ namespace CapaDatos.Clases {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public MenuCargo() {
+        public Menucargo() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CapaDatos.Clases {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected MenuCargo(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Menucargo(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            MenuCargo cln = ((MenuCargo)(base.Clone()));
+            Menucargo cln = ((Menucargo)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "MenuCargo";
+            this.DataSetName = "Menucargo";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/MenuCargo.xsd";
+            this.Namespace = "http://tempuri.org/Menucargo.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablemenu_cargo = new menu_cargoDataTable();
@@ -225,7 +225,7 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            MenuCargo ds = new MenuCargo();
+            Menucargo ds = new Menucargo();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -283,7 +283,7 @@ namespace CapaDatos.Clases {
             
             private global::System.Data.DataColumn columnidCargo;
             
-            private global::System.Data.DataColumn columnidMenu;
+            private global::System.Data.DataColumn columnidSubMenu;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -336,9 +336,9 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn idMenuColumn {
+            public global::System.Data.DataColumn idSubMenuColumn {
                 get {
-                    return this.columnidMenu;
+                    return this.columnidSubMenu;
                 }
             }
             
@@ -379,12 +379,12 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public menu_cargoRow Addmenu_cargoRow(int idCargo, int idMenu) {
+            public menu_cargoRow Addmenu_cargoRow(int idCargo, int idSubMenu) {
                 menu_cargoRow rowmenu_cargoRow = ((menu_cargoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         idCargo,
-                        idMenu};
+                        idSubMenu};
                 rowmenu_cargoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmenu_cargoRow);
                 return rowmenu_cargoRow;
@@ -416,7 +416,7 @@ namespace CapaDatos.Clases {
             internal void InitVars() {
                 this.columnidMenu_Cargo = base.Columns["idMenu_Cargo"];
                 this.columnidCargo = base.Columns["idCargo"];
-                this.columnidMenu = base.Columns["idMenu"];
+                this.columnidSubMenu = base.Columns["idSubMenu"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -426,8 +426,8 @@ namespace CapaDatos.Clases {
                 base.Columns.Add(this.columnidMenu_Cargo);
                 this.columnidCargo = new global::System.Data.DataColumn("idCargo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidCargo);
-                this.columnidMenu = new global::System.Data.DataColumn("idMenu", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidMenu);
+                this.columnidSubMenu = new global::System.Data.DataColumn("idSubMenu", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidSubMenu);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidMenu_Cargo}, true));
                 this.columnidMenu_Cargo.AutoIncrement = true;
@@ -437,7 +437,7 @@ namespace CapaDatos.Clases {
                 this.columnidMenu_Cargo.ReadOnly = true;
                 this.columnidMenu_Cargo.Unique = true;
                 this.columnidCargo.AllowDBNull = false;
-                this.columnidMenu.AllowDBNull = false;
+                this.columnidSubMenu.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -505,7 +505,7 @@ namespace CapaDatos.Clases {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                MenuCargo ds = new MenuCargo();
+                Menucargo ds = new Menucargo();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -602,12 +602,12 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int idMenu {
+            public int idSubMenu {
                 get {
-                    return ((int)(this[this.tablemenu_cargo.idMenuColumn]));
+                    return ((int)(this[this.tablemenu_cargo.idSubMenuColumn]));
                 }
                 set {
-                    this[this.tablemenu_cargo.idMenuColumn] = value;
+                    this[this.tablemenu_cargo.idSubMenuColumn] = value;
                 }
             }
         }
@@ -647,7 +647,7 @@ namespace CapaDatos.Clases {
         }
     }
 }
-namespace CapaDatos.Clases.MenuCargoTableAdapters {
+namespace CapaDatos.Clases.MenucargoTableAdapters {
     
     
     /// <summary>
@@ -773,34 +773,34 @@ namespace CapaDatos.Clases.MenuCargoTableAdapters {
             tableMapping.DataSetTable = "menu_cargo";
             tableMapping.ColumnMappings.Add("idMenu_Cargo", "idMenu_Cargo");
             tableMapping.ColumnMappings.Add("idCargo", "idCargo");
-            tableMapping.ColumnMappings.Add("idMenu", "idMenu");
+            tableMapping.ColumnMappings.Add("idSubMenu", "idSubMenu");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[menu_cargo] WHERE (([idMenu_Cargo] = @Original_idMenu_Cargo) A" +
-                "ND ([idCargo] = @Original_idCargo) AND ([idMenu] = @Original_idMenu))";
+                "ND ([idCargo] = @Original_idCargo) AND ([idSubMenu] = @Original_idSubMenu))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idMenu_Cargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu_Cargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idSubMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idSubMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[menu_cargo] ([idCargo], [idMenu]) VALUES (@idCargo, @idMenu);\r" +
-                "\nSELECT idMenu_Cargo, idCargo, idMenu FROM menu_cargo WHERE (idMenu_Cargo = SCOP" +
-                "E_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[menu_cargo] ([idCargo], [idSubMenu]) VALUES (@idCargo, @idSubM" +
+                "enu);\r\nSELECT idMenu_Cargo, idCargo, idSubMenu FROM menu_cargo WHERE (idMenu_Car" +
+                "go = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSubMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idSubMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[menu_cargo] SET [idCargo] = @idCargo, [idMenu] = @idMenu WHERE (([idMenu_Cargo] = @Original_idMenu_Cargo) AND ([idCargo] = @Original_idCargo) AND ([idMenu] = @Original_idMenu));
-SELECT idMenu_Cargo, idCargo, idMenu FROM menu_cargo WHERE (idMenu_Cargo = @idMenu_Cargo)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[menu_cargo] SET [idCargo] = @idCargo, [idSubMenu] = @idSubMenu WHERE (([idMenu_Cargo] = @Original_idMenu_Cargo) AND ([idCargo] = @Original_idCargo) AND ([idSubMenu] = @Original_idSubMenu));
+SELECT idMenu_Cargo, idCargo, idSubMenu FROM menu_cargo WHERE (idMenu_Cargo = @idMenu_Cargo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSubMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idSubMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idMenu_Cargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu_Cargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCargo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idSubMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idSubMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu_Cargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu_Cargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -817,23 +817,23 @@ SELECT idMenu_Cargo, idCargo, idMenu FROM menu_cargo WHERE (idMenu_Cargo = @idMe
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idMenu_Cargo, idCargo, idMenu FROM dbo.menu_cargo";
+            this._commandCollection[0].CommandText = "SELECT idMenu_Cargo, idCargo, idSubMenu FROM dbo.menu_cargo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        menu_cargo.idMenu_Cargo, cargo.nombreCargo, menu.nombreMenu
+            this._commandCollection[1].CommandText = @"SELECT        menu_cargo.idMenu_Cargo, menu_cargo.idCargo, cargo.nombreCargo, menu_cargo.idSubMenu, submenu.nombreSubMenu
 FROM            menu_cargo INNER JOIN
                          cargo ON cargo.idCargo = menu_cargo.idCargo INNER JOIN
-                         menu ON menu.idMenu = menu_cargo.idMenu
-WHERE        (menu.nombreMenu LIKE @nombreMenu)";
+                         submenu ON submenu.idSubMenu = menu_cargo.idSubMenu
+WHERE        (submenu.nombreSubMenu LIKE @nombreSubMenu)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreMenu", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreSubMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "nombreSubMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        menu_cargo.idMenu_Cargo, cargo.nombreCargo, menu.nombreMenu
+            this._commandCollection[2].CommandText = @"SELECT        menu_cargo.idMenu_Cargo, menu_cargo.idCargo, cargo.nombreCargo, menu_cargo.idSubMenu, submenu.nombreSubMenu
 FROM            menu_cargo INNER JOIN
                          cargo ON cargo.idCargo = menu_cargo.idCargo INNER JOIN
-                         menu ON menu.idMenu = menu_cargo.idMenu";
+                         submenu ON submenu.idSubMenu = menu_cargo.idSubMenu";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -841,7 +841,7 @@ FROM            menu_cargo INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(MenuCargo.menu_cargoDataTable dataTable) {
+        public virtual int Fill(Menucargo.menu_cargoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -854,9 +854,9 @@ FROM            menu_cargo INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual MenuCargo.menu_cargoDataTable GetData() {
+        public virtual Menucargo.menu_cargoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            MenuCargo.menu_cargoDataTable dataTable = new MenuCargo.menu_cargoDataTable();
+            Menucargo.menu_cargoDataTable dataTable = new Menucargo.menu_cargoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -865,15 +865,15 @@ FROM            menu_cargo INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual MenuCargo.menu_cargoDataTable GetBuscar(string nombreMenu) {
+        public virtual Menucargo.menu_cargoDataTable GetBuscar(string nombreSubMenu) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((nombreMenu == null)) {
-                throw new global::System.ArgumentNullException("nombreMenu");
+            if ((nombreSubMenu == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nombreMenu));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nombreSubMenu));
             }
-            MenuCargo.menu_cargoDataTable dataTable = new MenuCargo.menu_cargoDataTable();
+            Menucargo.menu_cargoDataTable dataTable = new Menucargo.menu_cargoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -882,9 +882,9 @@ FROM            menu_cargo INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual MenuCargo.menu_cargoDataTable GetLista() {
+        public virtual Menucargo.menu_cargoDataTable GetLista() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            MenuCargo.menu_cargoDataTable dataTable = new MenuCargo.menu_cargoDataTable();
+            Menucargo.menu_cargoDataTable dataTable = new Menucargo.menu_cargoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -892,14 +892,14 @@ FROM            menu_cargo INNER JOIN
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(MenuCargo.menu_cargoDataTable dataTable) {
+        public virtual int Update(Menucargo.menu_cargoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(MenuCargo dataSet) {
+        public virtual int Update(Menucargo dataSet) {
             return this.Adapter.Update(dataSet, "menu_cargo");
         }
         
@@ -922,10 +922,10 @@ FROM            menu_cargo INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idMenu_Cargo, int Original_idCargo, int Original_idMenu) {
+        public virtual int Delete(int Original_idMenu_Cargo, int Original_idCargo, int Original_idSubMenu) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idMenu_Cargo));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_idCargo));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_idMenu));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_idSubMenu));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -946,9 +946,9 @@ FROM            menu_cargo INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int idCargo, int idMenu) {
+        public virtual int Insert(int idCargo, int idSubMenu) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idCargo));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idMenu));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idSubMenu));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -969,12 +969,12 @@ FROM            menu_cargo INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idCargo, int idMenu, int Original_idMenu_Cargo, int Original_idCargo, int Original_idMenu, int idMenu_Cargo) {
+        public virtual int Update(int idCargo, int idSubMenu, int Original_idMenu_Cargo, int Original_idCargo, int Original_idSubMenu, int idMenu_Cargo) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idCargo));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idMenu));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idSubMenu));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_idMenu_Cargo));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_idCargo));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_idMenu));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_idSubMenu));
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(idMenu_Cargo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -996,8 +996,8 @@ FROM            menu_cargo INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idCargo, int idMenu, int Original_idMenu_Cargo, int Original_idCargo, int Original_idMenu) {
-            return this.Update(idCargo, idMenu, Original_idMenu_Cargo, Original_idCargo, Original_idMenu, Original_idMenu_Cargo);
+        public virtual int Update(int idCargo, int idSubMenu, int Original_idMenu_Cargo, int Original_idCargo, int Original_idSubMenu) {
+            return this.Update(idCargo, idSubMenu, Original_idMenu_Cargo, Original_idCargo, Original_idSubMenu, Original_idMenu_Cargo);
         }
     }
     
@@ -1092,7 +1092,7 @@ FROM            menu_cargo INNER JOIN
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(MenuCargo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Menucargo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._menu_cargoTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.menu_cargo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1111,7 +1111,7 @@ FROM            menu_cargo INNER JOIN
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(MenuCargo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Menucargo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._menu_cargoTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.menu_cargo.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1129,7 +1129,7 @@ FROM            menu_cargo INNER JOIN
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(MenuCargo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Menucargo dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._menu_cargoTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.menu_cargo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1171,7 +1171,7 @@ FROM            menu_cargo INNER JOIN
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(MenuCargo dataSet) {
+        public virtual int UpdateAll(Menucargo dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

@@ -543,7 +543,6 @@ namespace CapaDatos.Clases {
                 this.columnNumeroCamasHab.AllowDBNull = false;
                 this.columnHotel_codHotel.AllowDBNull = false;
                 this.columnHotel_codHotel.MaxLength = 10;
-                this.columnHabitacion_Estado_idHabitacion_Estado.AllowDBNull = false;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_Habitacion");
                 this.ExtendedProperties.Add("Generator_UserTableName", "Habitacion");
             }
@@ -799,7 +798,13 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Habitacion_Estado_idHabitacion_Estado {
                 get {
-                    return ((int)(this[this.tableHabitacion.Habitacion_Estado_idHabitacion_EstadoColumn]));
+                    try {
+                        return ((int)(this[this.tableHabitacion.Habitacion_Estado_idHabitacion_EstadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Habitacion_Estado_idHabitacion_Estado\' de la tabla \'Habit" +
+                                "acion\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableHabitacion.Habitacion_Estado_idHabitacion_EstadoColumn] = value;
@@ -828,6 +833,18 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetImagenHabitacionNull() {
                 this[this.tableHabitacion.ImagenHabitacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHabitacion_Estado_idHabitacion_EstadoNull() {
+                return this.IsNull(this.tableHabitacion.Habitacion_Estado_idHabitacion_EstadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHabitacion_Estado_idHabitacion_EstadoNull() {
+                this[this.tableHabitacion.Habitacion_Estado_idHabitacion_EstadoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1003,7 +1020,7 @@ namespace CapaDatos.Clases.HabitacionTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Habitacion] WHERE (([idHabitacion] = @Original_idHabitacion) AND ([NumeroHab] = @Original_NumeroHab) AND ([PisoHabitacion] = @Original_PisoHabitacion) AND ([TipoHab] = @Original_TipoHab) AND ([CostoDiarioHab] = @Original_CostoDiarioHab) AND ((@IsNull_DescripcionHab = 1 AND [DescripcionHab] IS NULL) OR ([DescripcionHab] = @Original_DescripcionHab)) AND ([NumeroCamasHab] = @Original_NumeroCamasHab) AND ([Hotel_codHotel] = @Original_Hotel_codHotel) AND ([Habitacion_Estado_idHabitacion_Estado] = @Original_Habitacion_Estado_idHabitacion_Estado))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Habitacion] WHERE (([idHabitacion] = @Original_idHabitacion) AND ([NumeroHab] = @Original_NumeroHab) AND ([PisoHabitacion] = @Original_PisoHabitacion) AND ([TipoHab] = @Original_TipoHab) AND ([CostoDiarioHab] = @Original_CostoDiarioHab) AND ((@IsNull_DescripcionHab = 1 AND [DescripcionHab] IS NULL) OR ([DescripcionHab] = @Original_DescripcionHab)) AND ([NumeroCamasHab] = @Original_NumeroCamasHab) AND ([Hotel_codHotel] = @Original_Hotel_codHotel) AND ((@IsNull_Habitacion_Estado_idHabitacion_Estado = 1 AND [Habitacion_Estado_idHabitacion_Estado] IS NULL) OR ([Habitacion_Estado_idHabitacion_Estado] = @Original_Habitacion_Estado_idHabitacion_Estado)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idHabitacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idHabitacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroHab", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroHab", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1014,6 +1031,7 @@ namespace CapaDatos.Clases.HabitacionTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DescripcionHab", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionHab", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroCamasHab", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroCamasHab", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hotel_codHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_codHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Habitacion_Estado_idHabitacion_Estado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Habitacion_Estado_idHabitacion_Estado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Habitacion_Estado_idHabitacion_Estado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Habitacion_Estado_idHabitacion_Estado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -1031,7 +1049,7 @@ SELECT idHabitacion, NumeroHab, PisoHabitacion, TipoHab, CostoDiarioHab, Descrip
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Habitacion_Estado_idHabitacion_Estado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Habitacion_Estado_idHabitacion_Estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Habitacion] SET [NumeroHab] = @NumeroHab, [PisoHabitacion] = @PisoHabitacion, [TipoHab] = @TipoHab, [CostoDiarioHab] = @CostoDiarioHab, [DescripcionHab] = @DescripcionHab, [NumeroCamasHab] = @NumeroCamasHab, [ImagenHabitacion] = @ImagenHabitacion, [Hotel_codHotel] = @Hotel_codHotel, [Habitacion_Estado_idHabitacion_Estado] = @Habitacion_Estado_idHabitacion_Estado WHERE (([idHabitacion] = @Original_idHabitacion) AND ([NumeroHab] = @Original_NumeroHab) AND ([PisoHabitacion] = @Original_PisoHabitacion) AND ([TipoHab] = @Original_TipoHab) AND ([CostoDiarioHab] = @Original_CostoDiarioHab) AND ((@IsNull_DescripcionHab = 1 AND [DescripcionHab] IS NULL) OR ([DescripcionHab] = @Original_DescripcionHab)) AND ([NumeroCamasHab] = @Original_NumeroCamasHab) AND ([Hotel_codHotel] = @Original_Hotel_codHotel) AND ([Habitacion_Estado_idHabitacion_Estado] = @Original_Habitacion_Estado_idHabitacion_Estado));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Habitacion] SET [NumeroHab] = @NumeroHab, [PisoHabitacion] = @PisoHabitacion, [TipoHab] = @TipoHab, [CostoDiarioHab] = @CostoDiarioHab, [DescripcionHab] = @DescripcionHab, [NumeroCamasHab] = @NumeroCamasHab, [ImagenHabitacion] = @ImagenHabitacion, [Hotel_codHotel] = @Hotel_codHotel, [Habitacion_Estado_idHabitacion_Estado] = @Habitacion_Estado_idHabitacion_Estado WHERE (([idHabitacion] = @Original_idHabitacion) AND ([NumeroHab] = @Original_NumeroHab) AND ([PisoHabitacion] = @Original_PisoHabitacion) AND ([TipoHab] = @Original_TipoHab) AND ([CostoDiarioHab] = @Original_CostoDiarioHab) AND ((@IsNull_DescripcionHab = 1 AND [DescripcionHab] IS NULL) OR ([DescripcionHab] = @Original_DescripcionHab)) AND ([NumeroCamasHab] = @Original_NumeroCamasHab) AND ([Hotel_codHotel] = @Original_Hotel_codHotel) AND ((@IsNull_Habitacion_Estado_idHabitacion_Estado = 1 AND [Habitacion_Estado_idHabitacion_Estado] IS NULL) OR ([Habitacion_Estado_idHabitacion_Estado] = @Original_Habitacion_Estado_idHabitacion_Estado)));
 SELECT idHabitacion, NumeroHab, PisoHabitacion, TipoHab, CostoDiarioHab, DescripcionHab, NumeroCamasHab, ImagenHabitacion, Hotel_codHotel, Habitacion_Estado_idHabitacion_Estado FROM Habitacion WHERE (idHabitacion = @idHabitacion)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroHab", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroHab", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1052,6 +1070,7 @@ SELECT idHabitacion, NumeroHab, PisoHabitacion, TipoHab, CostoDiarioHab, Descrip
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DescripcionHab", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionHab", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroCamasHab", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroCamasHab", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hotel_codHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_codHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Habitacion_Estado_idHabitacion_Estado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Habitacion_Estado_idHabitacion_Estado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Habitacion_Estado_idHabitacion_Estado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Habitacion_Estado_idHabitacion_Estado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idHabitacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -1066,7 +1085,7 @@ SELECT idHabitacion, NumeroHab, PisoHabitacion, TipoHab, CostoDiarioHab, Descrip
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idHabitacion, NumeroHab, PisoHabitacion, TipoHab, CostoDiarioHab, Descripc" +
@@ -1075,24 +1094,23 @@ SELECT idHabitacion, NumeroHab, PisoHabitacion, TipoHab, CostoDiarioHab, Descrip
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        Habitacion.idHabitacion, Habitacion.NumeroHab, Habitacion.PisoHabitacion, Habitacion.TipoHab, Habitacion.CostoDiarioHab, Habitacion.DescripcionHab, Habitacion.NumeroCamasHab, Hotel.NombreHotel, 
-                         Habitacion_Estado.NombreEstado
-FROM            Habitacion INNER JOIN
-                         Hotel ON Hotel.codHotel = Habitacion.Hotel_codHotel INNER JOIN
-                         Habitacion_Estado ON Habitacion_Estado.idHabitacion_Estado = Habitacion.Habitacion_Estado_idHabitacion_Estado
-WHERE        (Habitacion.DescripcionHab LIKE @DescripcionHab) OR
-                         (Habitacion.TipoHab LIKE @TipoHab)";
+            this._commandCollection[1].CommandText = "SELECT COUNT(DescripcionHab)  AS Expr1 FROM Habitacion\r\nWHERE        (Descripcion" +
+                "Hab = @DescripcionHab)\r\n";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionHab", global::System.Data.SqlDbType.VarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionHab", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoHab", global::System.Data.SqlDbType.VarChar, 45, global::System.Data.ParameterDirection.Input, 0, 0, "TipoHab", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        Habitacion.idHabitacion, Habitacion.NumeroHab, Habitacion.PisoHabitacion, Habitacion.TipoHab, Habitacion.CostoDiarioHab, Habitacion.DescripcionHab, Habitacion.NumeroCamasHab, Hotel.NombreHotel, 
-                         Habitacion_Estado.NombreEstado
-FROM            Habitacion INNER JOIN
-                         Hotel ON Hotel.codHotel = Habitacion.Hotel_codHotel INNER JOIN
-                         Habitacion_Estado ON Habitacion_Estado.idHabitacion_Estado = Habitacion.Habitacion_Estado_idHabitacion_Estado";
+            this._commandCollection[2].CommandText = "SELECT idHabitacion, NumeroHab, PisoHabitacion, TipoHab, CostoDiarioHab, Descripc" +
+                "ionHab, NumeroCamasHab, Hotel_codHotel, Habitacion_Estado_idHabitacion_Estado FR" +
+                "OM dbo.Habitacion";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        idHabitacion, NumeroHab, PisoHabitacion, TipoHab, CostoDiarioHab, D" +
+                "escripcionHab, NumeroCamasHab, Hotel_codHotel, Habitacion_Estado_idHabitacion_Es" +
+                "tado\r\nFROM            Habitacion\r\nWHERE        (idHabitacion = @idHabitacion)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idHabitacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1123,19 +1141,13 @@ FROM            Habitacion INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Habitacion.HabitacionDataTable GetBuscar(string DescripcionHab, string TipoHab) {
+        public virtual Habitacion.HabitacionDataTable GetBuscar(string DescripcionHab) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((DescripcionHab == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(DescripcionHab));
-            }
-            if ((TipoHab == null)) {
-                throw new global::System.ArgumentNullException("TipoHab");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(TipoHab));
             }
             Habitacion.HabitacionDataTable dataTable = new Habitacion.HabitacionDataTable();
             this.Adapter.Fill(dataTable);
@@ -1148,6 +1160,18 @@ FROM            Habitacion INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Habitacion.HabitacionDataTable GetLista() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            Habitacion.HabitacionDataTable dataTable = new Habitacion.HabitacionDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Habitacion.HabitacionDataTable GetListaActualizar(int idHabitacion) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idHabitacion));
             Habitacion.HabitacionDataTable dataTable = new Habitacion.HabitacionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1186,7 +1210,7 @@ FROM            Habitacion INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idHabitacion, int Original_NumeroHab, int Original_PisoHabitacion, string Original_TipoHab, double Original_CostoDiarioHab, string Original_DescripcionHab, int Original_NumeroCamasHab, string Original_Hotel_codHotel, int Original_Habitacion_Estado_idHabitacion_Estado) {
+        public virtual int Delete(int Original_idHabitacion, int Original_NumeroHab, int Original_PisoHabitacion, string Original_TipoHab, double Original_CostoDiarioHab, string Original_DescripcionHab, int Original_NumeroCamasHab, string Original_Hotel_codHotel, global::System.Nullable<int> Original_Habitacion_Estado_idHabitacion_Estado) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idHabitacion));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_NumeroHab));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_PisoHabitacion));
@@ -1212,7 +1236,14 @@ FROM            Habitacion INNER JOIN
             else {
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Hotel_codHotel));
             }
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_Habitacion_Estado_idHabitacion_Estado));
+            if ((Original_Habitacion_Estado_idHabitacion_Estado.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_Habitacion_Estado_idHabitacion_Estado.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1233,7 +1264,7 @@ FROM            Habitacion INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int NumeroHab, int PisoHabitacion, string TipoHab, double CostoDiarioHab, string DescripcionHab, int NumeroCamasHab, byte[] ImagenHabitacion, string Hotel_codHotel, int Habitacion_Estado_idHabitacion_Estado) {
+        public virtual int Insert(int NumeroHab, int PisoHabitacion, string TipoHab, double CostoDiarioHab, string DescripcionHab, int NumeroCamasHab, byte[] ImagenHabitacion, string Hotel_codHotel, global::System.Nullable<int> Habitacion_Estado_idHabitacion_Estado) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(NumeroHab));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(PisoHabitacion));
             if ((TipoHab == null)) {
@@ -1262,7 +1293,12 @@ FROM            Habitacion INNER JOIN
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Hotel_codHotel));
             }
-            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(Habitacion_Estado_idHabitacion_Estado));
+            if ((Habitacion_Estado_idHabitacion_Estado.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(Habitacion_Estado_idHabitacion_Estado.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1292,7 +1328,7 @@ FROM            Habitacion INNER JOIN
                     int NumeroCamasHab, 
                     byte[] ImagenHabitacion, 
                     string Hotel_codHotel, 
-                    int Habitacion_Estado_idHabitacion_Estado, 
+                    global::System.Nullable<int> Habitacion_Estado_idHabitacion_Estado, 
                     int Original_idHabitacion, 
                     int Original_NumeroHab, 
                     int Original_PisoHabitacion, 
@@ -1301,7 +1337,7 @@ FROM            Habitacion INNER JOIN
                     string Original_DescripcionHab, 
                     int Original_NumeroCamasHab, 
                     string Original_Hotel_codHotel, 
-                    int Original_Habitacion_Estado_idHabitacion_Estado, 
+                    global::System.Nullable<int> Original_Habitacion_Estado_idHabitacion_Estado, 
                     int idHabitacion) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(NumeroHab));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(PisoHabitacion));
@@ -1331,7 +1367,12 @@ FROM            Habitacion INNER JOIN
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Hotel_codHotel));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Habitacion_Estado_idHabitacion_Estado));
+            if ((Habitacion_Estado_idHabitacion_Estado.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Habitacion_Estado_idHabitacion_Estado.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_idHabitacion));
             this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_NumeroHab));
             this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_PisoHabitacion));
@@ -1357,8 +1398,15 @@ FROM            Habitacion INNER JOIN
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Hotel_codHotel));
             }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_Habitacion_Estado_idHabitacion_Estado));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(idHabitacion));
+            if ((Original_Habitacion_Estado_idHabitacion_Estado.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_Habitacion_Estado_idHabitacion_Estado.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(idHabitacion));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1388,7 +1436,7 @@ FROM            Habitacion INNER JOIN
                     int NumeroCamasHab, 
                     byte[] ImagenHabitacion, 
                     string Hotel_codHotel, 
-                    int Habitacion_Estado_idHabitacion_Estado, 
+                    global::System.Nullable<int> Habitacion_Estado_idHabitacion_Estado, 
                     int Original_idHabitacion, 
                     int Original_NumeroHab, 
                     int Original_PisoHabitacion, 
@@ -1397,7 +1445,7 @@ FROM            Habitacion INNER JOIN
                     string Original_DescripcionHab, 
                     int Original_NumeroCamasHab, 
                     string Original_Hotel_codHotel, 
-                    int Original_Habitacion_Estado_idHabitacion_Estado) {
+                    global::System.Nullable<int> Original_Habitacion_Estado_idHabitacion_Estado) {
             return this.Update(NumeroHab, PisoHabitacion, TipoHab, CostoDiarioHab, DescripcionHab, NumeroCamasHab, ImagenHabitacion, Hotel_codHotel, Habitacion_Estado_idHabitacion_Estado, Original_idHabitacion, Original_NumeroHab, Original_PisoHabitacion, Original_TipoHab, Original_CostoDiarioHab, Original_DescripcionHab, Original_NumeroCamasHab, Original_Hotel_codHotel, Original_Habitacion_Estado_idHabitacion_Estado, Original_idHabitacion);
         }
     }

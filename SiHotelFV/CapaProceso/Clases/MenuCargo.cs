@@ -1,33 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CapaDatos.Clases.MenuCargoTableAdapters;
+﻿using CapaDatos.Clases.MenucargoTableAdapters;
+using System;
 
 namespace CapaProceso.Clases
 {
-    public class MenuCargo
+    public class Menucargo
     {
 
+        private static menu_cargoTableAdapter CMenucargo = new menu_cargoTableAdapter();
 
-        private static menu_cargoTableAdapter CMenuCargo = new menu_cargoTableAdapter();
-
-        public static CapaDatos.Clases.MenuCargo.menu_cargoDataTable Lista()
+        public static CapaDatos.Clases.Menucargo.menu_cargoDataTable Lista()
         {
-            return CMenuCargo.GetLista();
+            return CMenucargo.GetLista();
         }
 
-        //public static CapaDatos.Clases.MenuCargo.menu_cargoDataTable ListaActualizar(short idMenu_Cargo)
-        //{
-          //return CMenuCargo.GetListaActualizar(idMenu_Cargo);
+        //  public static CapaDatos.Clases.Cliente.ClienteDataTable ListaActualizar(short idCliente)
+        // {
+        //   return CCliente.GetListaActualizar(idCliente);
         //}
 
 
-       public static CapaDatos.Clases.MenuCargo.menu_cargoDataTable Buscar(string buscar)
+        public static CapaDatos.Clases.Menucargo.menu_cargoDataTable Buscar(string buscar)
         {
-          String buscarAux = "%" + buscar.Trim() + "%";
-            return CMenuCargo.GetBuscar(buscarAux);
+            String buscarAux = "%" + buscar.Trim() + "%";
+            return CMenucargo.GetBuscar(buscarAux);
         }
+
     }
 }

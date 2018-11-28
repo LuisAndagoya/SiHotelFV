@@ -208,24 +208,28 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Formularios\Auditoria\Index.aspx" />
+    <Content Include="Formularios\Habitacion\Container.aspx" />
+    <Content Include="Formularios\Habitacion\Index.aspx" />
+    <Content Include="Formularios\Menucargo\Container.aspx" />
+    <Content Include="Formularios\Menucargo\Index.aspx" />
+    <Content Include="Formularios\Submenu\Container.aspx" />
+    <Content Include="Formularios\Submenu\Index.aspx" />
+    <Content Include="Index.aspx" />
+    <Content Include="Login.Master" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Formularios\Cargo\Container.aspx" />
     <Content Include="Formularios\Cargo\Index.aspx" />
-    <Content Include="Formularios\Cliente\Contairner.aspx" />
+    <Content Include="Formularios\Cliente\Container.aspx" />
     <Content Include="Formularios\Cliente\Index.aspx" />
     <Content Include="Formularios\Empleado\Container.aspx" />
     <Content Include="Formularios\Empleado\Index.aspx" />
-    <Content Include="Formularios\Habitacion\Container.aspx" />
-    <Content Include="Formularios\Habitacion\Index.aspx" />
     <Content Include="Formularios\HabitaconEstado\Container.aspx" />
     <Content Include="Formularios\HabitaconEstado\Index.aspx" />
     <Content Include="Formularios\Hotel\Container.aspx" />
     <Content Include="Formularios\Hotel\Index.aspx" />
     <Content Include="Formularios\Menu\Container.aspx" />
     <Content Include="Formularios\Menu\Index.aspx" />
-    <Content Include="Formularios\Menu_Cargo\Container.aspx" />
-    <Content Include="Formularios\Menu_Cargo\Index.aspx" />
     <Content Include="Formularios\Resrvacion\Container.aspx" />
     <Content Include="Formularios\Resrvacion\Index.aspx" />
     <Content Include="Formularios\Usuario\Container.aspx" />
@@ -407,12 +411,12 @@
     <Compile Include="Formularios\Cargo\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Cliente\Contairner.aspx.cs">
-      <DependentUpon>Contairner.aspx</DependentUpon>
+    <Compile Include="Formularios\Cliente\Container.aspx.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Formularios\Cliente\Contairner.aspx.designer.cs">
-      <DependentUpon>Contairner.aspx</DependentUpon>
+    <Compile Include="Formularios\Cliente\Container.aspx.designer.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Cliente\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -477,6 +481,20 @@
     <Compile Include="Formularios\Hotel\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Menucargo\Container.aspx.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Menucargo\Container.aspx.designer.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Menucargo\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Menucargo\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Menu\Container.aspx.cs">
       <DependentUpon>Container.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -489,20 +507,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Formularios\Menu\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Menu_Cargo\Container.aspx.cs">
-      <DependentUpon>Container.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formularios\Menu_Cargo\Container.aspx.designer.cs">
-      <DependentUpon>Container.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Menu_Cargo\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formularios\Menu_Cargo\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Resrvacion\Container.aspx.cs">
@@ -519,6 +523,20 @@
     <Compile Include="Formularios\Resrvacion\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Submenu\Container.aspx.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Submenu\Container.aspx.designer.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Submenu\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Submenu\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Usuario\Container.aspx.cs">
       <DependentUpon>Container.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -533,12 +551,26 @@
     <Compile Include="Formularios\Usuario\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="inicio.aspx.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.Master.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.Master.designer.cs">
+      <DependentUpon>Login.Master</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

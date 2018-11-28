@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CapaWeb.Formularios.Menu_Cargo {
+namespace CapaWeb.Formularios.Submenu {
     
     
     public partial class Index {

@@ -16,6 +16,7 @@ namespace CapaWeb.Formularios.Habitacion
 
                 CargarGrilla();
             }
+
         }
 
         private void CargarGrilla()
@@ -63,7 +64,6 @@ namespace CapaWeb.Formularios.Habitacion
             Grid.Height = 100;
 
         }
-
 
 
 

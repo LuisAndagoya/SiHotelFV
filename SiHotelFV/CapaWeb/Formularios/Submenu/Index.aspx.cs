@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CapaWeb.Formularios.Menu_Cargo
+namespace CapaWeb.Formularios.Submenu
 {
     public partial class Index : System.Web.UI.Page
     {
@@ -19,12 +19,9 @@ namespace CapaWeb.Formularios.Menu_Cargo
         }
 
 
-
-
-
         private void CargarGrilla()
         {
-            Grid.DataSource = CapaProceso.Clases.MenuCargo.Lista();
+            Grid.DataSource = CapaProceso.Clases.Submenu.Lista();
 
 
 
@@ -33,7 +30,6 @@ namespace CapaWeb.Formularios.Menu_Cargo
 
 
         }
-
 
         protected void Grid_ItemCommand(object source, DataGridCommandEventArgs e)
         {
@@ -52,8 +48,6 @@ namespace CapaWeb.Formularios.Menu_Cargo
             }
         }
 
-
-
         protected void Grid_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
         {
             // paginar la grilla asegurarse que la obcion que la propiedad AllowPaging sea True.
@@ -62,9 +56,9 @@ namespace CapaWeb.Formularios.Menu_Cargo
             CargarGrilla();
         }
 
-       protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
-           Grid.DataSource = CapaProceso.Clases.MenuCargo.Buscar(TxtBuscar.Text);
+            Grid.DataSource = CapaProceso.Clases.Submenu.Buscar(TxtBuscar.Text);
 
             Grid.DataBind();
             Grid.Height = 100;

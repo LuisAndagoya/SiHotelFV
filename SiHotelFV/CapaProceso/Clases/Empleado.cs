@@ -37,7 +37,7 @@ namespace CapaProceso.Clases
 
             if (Lista == "0")
             {
-                int resultado = CEmpleado.InsertQuery(dniEmpleado.Trim(), nombreEmpleado.Trim().ToUpper(), apellidoEmpleado.Trim().ToUpper(), fnacimientoEmpleado.ToString(), sexoEmpleado.Trim(), estadocivilEmpleado.Trim(), domicilioEmpleado.Trim(), telefmovilEmpleado.Trim(), emailEmpleado.Trim(), fecharegistroEmpleado.ToString());
+                int resultado = CEmpleado.InsertQuery(dniEmpleado.Trim(), nombreEmpleado.Trim().ToUpper(), apellidoEmpleado.Trim().ToUpper(), fnacimientoEmpleado.ToString(), sexoEmpleado.Trim(), estadocivilEmpleado.Trim(), domicilioEmpleado.Trim().ToUpper(), telefmovilEmpleado.Trim(), emailEmpleado.Trim(), fecharegistroEmpleado.ToString());
                 if (resultado == 0)
                 {
                     return mensaje = "Error al insertar los registros";

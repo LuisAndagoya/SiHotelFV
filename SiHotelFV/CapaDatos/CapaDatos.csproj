@@ -83,15 +83,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Menu.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Clases\MenuCargo.Designer.cs">
+    <Compile Include="Clases\Menucargo.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MenuCargo.xsd</DependentUpon>
+      <DependentUpon>Menucargo.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clases\Reservacion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reservacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Submenu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Submenu.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clases\Usuario.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -113,7 +118,6 @@
     <None Include="Clases\Auditoria.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Auditoria.Designer.cs</LastGenOutput>
     </None>
     <None Include="Clases\Auditoria.xss">
       <DependentUpon>Auditoria.xsd</DependentUpon>
@@ -195,16 +199,16 @@
     <None Include="Clases\Menu.xss">
       <DependentUpon>Menu.xsd</DependentUpon>
     </None>
-    <None Include="Clases\MenuCargo.xsc">
-      <DependentUpon>MenuCargo.xsd</DependentUpon>
+    <None Include="Clases\Menucargo.xsc">
+      <DependentUpon>Menucargo.xsd</DependentUpon>
     </None>
-    <None Include="Clases\MenuCargo.xsd">
+    <None Include="Clases\Menucargo.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MenuCargo.Designer.cs</LastGenOutput>
+      <LastGenOutput>Menucargo.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Clases\MenuCargo.xss">
-      <DependentUpon>MenuCargo.xsd</DependentUpon>
+    <None Include="Clases\Menucargo.xss">
+      <DependentUpon>Menucargo.xsd</DependentUpon>
     </None>
     <None Include="Clases\Reservacion.xsc">
       <DependentUpon>Reservacion.xsd</DependentUpon>
@@ -216,6 +220,17 @@
     </None>
     <None Include="Clases\Reservacion.xss">
       <DependentUpon>Reservacion.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\Submenu.xsc">
+      <DependentUpon>Submenu.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\Submenu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Submenu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Clases\Submenu.xss">
+      <DependentUpon>Submenu.xsd</DependentUpon>
     </None>
     <None Include="Clases\Usuario.xsc">
       <DependentUpon>Usuario.xsd</DependentUpon>
