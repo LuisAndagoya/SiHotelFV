@@ -5,8 +5,10 @@
     
     <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title></title>
+    <title>Ingreso</title>
 
     <script type="text/javascript">
         {
@@ -15,57 +17,61 @@
         }
 </script>
 
-        <link rel="shortcut icon" href="Tema/favicon.ico" type="image/x-icon"/>
-        <link rel="stylesheet" href="../../Tema/vendors/iconfonts/mdi/css/materialdesignicons.min.css"/>
-        <link rel="stylesheet" href="../../Tema/vendors/css/vendor.bundle.base.css"/>
-         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-         <link rel="shortcut icon" href="../../Tema/images/favicon.png" />
-      
-        <link rel="stylesheet" href="../../../Tema/css/style.css"/>
-		<script src="Tema/js/cufon-yui.js" type="text/javascript"></script>
-		<script src="Tema/js/ChunkFive_400.font.js" type="text/javascript"></script>
+        <!-- Required meta tags -->
+  
+ 
+ 
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../Tema/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../Tema/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../../Tema/css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="../../Tema/images/favicon.png" />
 </head>
 <body>
-<div id="sidebar" align="center" class="sidebar-grdient-dark" >
-			
-    <br />
-			<h2>BIENVENIDO@S</h2>
-    <br />
-    <br />
-			<div  align="center">
-				<div  class="sidebar sidebar-offcanvas"  align="center">
-			
-    <form id="form1"  class="form-group" align="center" runat="server" color="red">
-     
-  <h3>Login</h3>
-						<div>
-							<label>Usuario</label>
-							
-                            <asp:TextBox ID="TxtUsu" required="required" runat="server"   ></asp:TextBox>
-						</div>
-						<div>
-							<label>Contrase&ntilde;a</label>
-                            <asp:TextBox ID="TxtCont" required="required" TextMode="Password" runat="server" ></asp:TextBox>
-							
-						</div>
-						<div class="bottom">
-							<br />
-                            <br />
-                            <asp:Button ID="Button1"  class = "btn btn-primary" runat="server" Text="Ingresar" 
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth">
+        <div class="row w-100">
+          <div class="col-lg-4 mx-auto">
+            <div class="auth-form-light text-left p-5">
+              <div class="brand-logo">
+                <img src="../../Tema/images/HFV.png">
+              </div>
+              <h4>¡Hola! empecemos</h4>
+              <h6 class="font-weight-light">Inicia sesión para continuar.</h6>
+              <form runat="server" class="pt-3">
+                <div class="form-group">
+                    <asp:TextBox ID="TxtUsu" class="form-control form-control-lg" required="required" runat="server" placeholder="Usuario"  ></asp:TextBox>
+                  
+                </div>
+                <div class="form-group">
+                    <asp:TextBox ID="TxtCont" class="form-control form-control-lg" required="required" TextMode="Password" runat="server" placeholder="Contraseña"></asp:TextBox>
+                 
+                </div>
+                <div class="mt-3">
+                  
+				   <asp:Button ID="Button1"  class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" runat="server" Text="Ingresar" 
                                 onclick="Button1_Click" />
-							
-							<div class="clear"></div>
-						</div>
-		
-    </form>
-
-    	
-				</div>
-				<div class="clear"></div>
-			</div>
-		
-		</div>
-  
+                </div>
+                <div class="my-2 d-flex justify-content-between align-items-center">
+                  
+                  <a href="#" class="auth-link text-black">¿Se te olvidó tu contraseña?</a>
+                </div>
+                
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content-wrapper ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
 
      <!-- plugins:js -->
     <script src="../../Tema/vendors/js/vendor.bundle.base.js"></script>
