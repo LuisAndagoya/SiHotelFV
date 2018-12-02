@@ -5,6 +5,7 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
+                     <h4 class="card-title">Submenú</h4>
                     <form id="Form1" runat="server">
                         <table class="table">
                             <tr>
@@ -103,7 +104,7 @@
                                             
 
 
-                                               <asp:TemplateColumn HeaderText="Padre"  Visible="False">
+                                               <asp:TemplateColumn HeaderText="Icono"  >
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="iconoSubMenu" runat="server" Text='<%#Eval("iconoSubMenu") %>'></asp:Label>

@@ -94,13 +94,13 @@ namespace CapaWeb.Formularios.Empleado {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Control fnacimientoEmpleado.
+        /// Control fnacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar fnacimientoEmpleado;
+        protected global::System.Web.UI.WebControls.TextBox fnacimiento;
         
         /// <summary>
         /// Control Label5.

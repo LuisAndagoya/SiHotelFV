@@ -102,7 +102,7 @@
                       &nbsp;
                       <asp:Button class = "btn btn-primary" ID="Button1" runat="server" 
                           Text="Guardar" onclick="Button1_Click" />
-                      <a href="Index.aspx" class="btn btn-default">Cancelar</a>
+                      <a href="Index.aspx"  "btn btn-primary">Cancelar</a>
                   </td>
                   <td>
                       &nbsp;

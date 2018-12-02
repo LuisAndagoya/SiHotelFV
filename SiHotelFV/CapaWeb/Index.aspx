@@ -1,7 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Login.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWeb.Index" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+﻿
+    <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWeb.Index" %>
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
     
@@ -24,9 +22,9 @@
 </head>
 <body>
 <div class="wrapper">
-			<h1>Control Ganadero</h1>
-			<h2>Ingreso al sistema de control ganadero</h2>
-			<div class="content">
+			<h1>Sistema</h1>
+			<h2>BIENVENIDO@S</h2>
+			<div class="content"
 				<div id="form_wrapper" class="form_wrapper">
 			
     <form id="form1"  class="login active" runat="server">
@@ -39,7 +37,7 @@
 						</div>
 						<div>
 							<label>Contrase&ntilde;a:</label>
-                            <asp:TextBox ID="TxtCont" required TextMode="Password" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="TxtCont" required="required" TextMode="Password" runat="server"></asp:TextBox>
 							
 						</div>
 						<div class="bottom">
@@ -61,7 +59,3 @@
 </body>
 </html>
 
-
-
-
-</asp:Content>

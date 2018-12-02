@@ -18,6 +18,7 @@ namespace CapaWeb.Formularios.Usuario
             }
         }
 
+
         private void CargarGrilla()
         {
             Grid.DataSource = CapaProceso.Clases.Usuario.Lista();
@@ -29,6 +30,7 @@ namespace CapaWeb.Formularios.Usuario
 
 
         }
+
 
         protected void Grid_ItemCommand(object source, DataGridCommandEventArgs e)
         {
@@ -47,6 +49,8 @@ namespace CapaWeb.Formularios.Usuario
             }
         }
 
+
+
         protected void Grid_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
         {
             // paginar la grilla asegurarse que la obcion que la propiedad AllowPaging sea True.
@@ -63,8 +67,6 @@ namespace CapaWeb.Formularios.Usuario
             Grid.Height = 100;
 
         }
-
-
 
 
     }

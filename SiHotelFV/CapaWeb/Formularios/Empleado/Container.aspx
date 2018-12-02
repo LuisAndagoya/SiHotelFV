@@ -63,7 +63,8 @@
                       <asp:Label ID="Label4" runat="server" Text="Label">Fecha Nacimiento:</asp:Label>
                   </td>
                   <td>
-                      <asp:Calendar ID="fnacimientoEmpleado"    required ="required"  runat="server"></asp:Calendar>
+                      <asp:TextBox type="date" ID="fnacimiento" required ="required"  runat="server"></asp:TextBox>
+                  
                       &nbsp;
                   </td>
               </tr>  
@@ -138,18 +139,11 @@
                       &nbsp;
                   </td>
               </tr>  
-
-
-                 <tr>
-                  <td>
-                      &nbsp;
-                      <asp:Label ID="Label9" runat="server" Text="Label">Fecha registro:</asp:Label>
-                  </td>
-                  <td>
-                      <asp:TextBox ID="fecharegistroEmpleado"    required ="required"  runat="server"></asp:TextBox>
-                      &nbsp;
-                  </td>
-              </tr>  
+  
+                      <asp:Label ID="Label9" visible="false" runat="server" Text="Label">Fecha registro:</asp:Label>
+                  
+                      <asp:TextBox Type="date" ID="fecharegistroEmpleado"   visible="true" required ="required"  runat="server"></asp:TextBox>
+                
 
 
 
@@ -172,7 +166,7 @@
                       &nbsp;
                       <asp:Button class = "btn btn-primary" ID="Button1" runat="server" 
                           Text="Guardar" onclick="Button1_Click" />
-                      <a href="Index.aspx" class="btn btn-default">Cancelar</a>
+                      <a href="Index.aspx" class="btn btn-primary">Cancelar</a>
                   </td>
                   <td>
                       &nbsp;

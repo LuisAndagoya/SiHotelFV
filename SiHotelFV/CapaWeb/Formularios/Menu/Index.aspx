@@ -1,11 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWeb.Formularios.Menu.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-     <div class="row">
+
+
+      <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Menú</h4>
+                   <h4 class="card-title">Menú</h4>
                     <form id="Form1" runat="server">
                         <table class="table">
                             <tr>
@@ -70,7 +72,7 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                            <asp:TemplateColumn HeaderText="Menú">
+                                            <asp:TemplateColumn HeaderText="Menu">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="nombreMenu" runat="server" Text='<%#Eval("nombreMenu") %>'></asp:Label>
@@ -78,16 +80,15 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-
-                                              <asp:TemplateColumn HeaderText="Programa">
+                                             <asp:TemplateColumn HeaderText="Url">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="urlMenu" runat="server" Text='<%#Eval("urlMenu") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
-
-                                                  <asp:TemplateColumn HeaderText="Icono" Visible="False">
+                                            
+                                              <asp:TemplateColumn HeaderText="Icono">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="iconoMenu" runat="server" Text='<%#Eval("iconoMenu") %>'></asp:Label>
@@ -97,25 +98,6 @@
                                             
 
 
-                                               <asp:TemplateColumn HeaderText="Padre">
-                                                <ItemTemplate>
-                                                    <span style="float: left;">
-                                                        <asp:Label ID="idPadre" runat="server" Text='<%#Eval("idPadre") %>'></asp:Label>
-                                                    </span>
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
-                                            
-
-
-                                            <asp:TemplateColumn HeaderText="Nivel">
-                                                <ItemTemplate>
-                                                    <span style="float: left;">
-                                                        <asp:Label ID="nivelMenu" runat="server" Text='<%#Eval("nivelMenu") %>'></asp:Label>
-                                                    </span>
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
-
-     
 
                                         </Columns>
 

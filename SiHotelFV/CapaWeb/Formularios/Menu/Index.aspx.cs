@@ -19,6 +19,7 @@ namespace CapaWeb.Formularios.Menu
         }
 
 
+
         private void CargarGrilla()
         {
             Grid.DataSource = CapaProceso.Clases.Menu.Lista();
@@ -30,6 +31,7 @@ namespace CapaWeb.Formularios.Menu
 
 
         }
+
 
         protected void Grid_ItemCommand(object source, DataGridCommandEventArgs e)
         {
@@ -48,6 +50,8 @@ namespace CapaWeb.Formularios.Menu
             }
         }
 
+
+
         protected void Grid_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
         {
             // paginar la grilla asegurarse que la obcion que la propiedad AllowPaging sea True.
@@ -64,8 +68,6 @@ namespace CapaWeb.Formularios.Menu
             Grid.Height = 100;
 
         }
-
-
 
 
     }

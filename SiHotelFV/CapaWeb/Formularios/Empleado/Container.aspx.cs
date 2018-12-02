@@ -48,7 +48,7 @@ namespace CapaWeb.Formularios.Empleado
                     dniEmpleado.Text = row["dniEmpleado"].ToString();
                     nombreEmpleado.Text = row["nombreEmpleado"].ToString();
                     apellidoEmpleado.Text = row["apellidoEmpleado"].ToString();
-                    fnacimientoEmpleado.Caption = row["fnacimientoEmpleado"].ToString();
+                    fnacimiento.Text = row["fnacimientoEmpleado"].ToString();
                     sexoEmpleado.Text = row["sexoEmpleado"].ToString();
                     estadocivilEmpleado.Text = row["estadocivilEmpleado"].ToString();
                     domicilioEmpleado.Text = row["domicilioEmpleado"].ToString();
@@ -66,7 +66,7 @@ namespace CapaWeb.Formularios.Empleado
             dniEmpleado.Enabled = false;
             nombreEmpleado.Enabled = false;
             apellidoEmpleado.Enabled = false;
-            fnacimientoEmpleado.Enabled = false;
+            fnacimiento.Enabled = false;
             sexoEmpleado.Enabled = false;
             estadocivilEmpleado.Enabled = false;
             domicilioEmpleado.Enabled = false;
@@ -82,12 +82,13 @@ namespace CapaWeb.Formularios.Empleado
         protected void Button1_Click(object sender, EventArgs e)
         {
             string error = "";
-            //  short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
+            short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
+            //DateTime fechaNacimiento = DateTime.Parse(fnacimiento.Text);
             switch (Request.QueryString["TRN"])
             {
 
                 case "INS":
-                    error = CapaProceso.Clases.Empleado.Insertar(dniEmpleado.Text, nombreEmpleado.Text, apellidoEmpleado.Text,fnacimientoEmpleado.SelectedDate, sexoEmpleado.Text, estadocivilEmpleado.Text, domicilioEmpleado.Text,telefmovilEmpleado.Text, emailEmpleado.Text );
+                    error = CapaProceso.Clases.Empleado.Insertar(dniEmpleado.Text, nombreEmpleado.Text, apellidoEmpleado.Text, fnacimiento.Text, sexoEmpleado.Text, estadocivilEmpleado.Text, domicilioEmpleado.Text,telefmovilEmpleado.Text, emailEmpleado.Text, fecharegistroEmpleado.Text);
 
                     if (string.IsNullOrEmpty(error))
                     {
@@ -103,7 +104,7 @@ namespace CapaWeb.Formularios.Empleado
                     break;
                 case "UDP":
 
-                    error = CapaProceso.Clases.Empleado.Actualizar(dniEmpleado.Text, nombreEmpleado.Text, apellidoEmpleado.Text, fnacimientoEmpleado.SelectedDate, sexoEmpleado.Text, estadocivilEmpleado.Text, domicilioEmpleado.Text, telefmovilEmpleado.Text, emailEmpleado.Text, short.Parse(lblId.Text));
+                    error = CapaProceso.Clases.Empleado.Actualizar(dniEmpleado.Text, nombreEmpleado.Text, apellidoEmpleado.Text, fnacimiento.Text, sexoEmpleado.Text, estadocivilEmpleado.Text, domicilioEmpleado.Text, telefmovilEmpleado.Text, emailEmpleado.Text, short.Parse(lblId.Text), fecharegistroEmpleado.Text);
                     if (string.IsNullOrEmpty(error))
                     {
                         // CapaProceso.Clases.Auditoria.Insertar("Cargo", "Actualizar", UsuarioId);

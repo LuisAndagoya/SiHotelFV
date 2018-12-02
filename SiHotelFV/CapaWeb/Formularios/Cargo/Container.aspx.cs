@@ -63,7 +63,7 @@ namespace CapaWeb.Formularios.Cargo
         protected void Button1_Click(object sender, EventArgs e)
         {
             string error = "";
-          //  short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
+            short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
             switch (Request.QueryString["TRN"])
             {
 
@@ -73,7 +73,7 @@ namespace CapaWeb.Formularios.Cargo
                     if (string.IsNullOrEmpty(error))
                     {
 
-                       // CapaProceso.Clases.Auditoria.Insertar("Cargo", "Insertar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Cargo", "Insertar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -87,7 +87,7 @@ namespace CapaWeb.Formularios.Cargo
                     error = CapaProceso.Clases.Cargo.Actualizar(nombreCargo.Text, short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                       // CapaProceso.Clases.Auditoria.Insertar("Cargo", "Actualizar", UsuarioId);
+                       CapaProceso.Clases.Auditoria.Insertar("Cargo", "Actualizar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -101,7 +101,7 @@ namespace CapaWeb.Formularios.Cargo
                     error = CapaProceso.Clases.Cargo.Eliminar(short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                       // CapaProceso.Clases.Auditoria.Insertar("Auditoria", "Eliminar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Auditoria", "Eliminar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else

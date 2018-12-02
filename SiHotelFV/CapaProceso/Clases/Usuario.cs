@@ -22,34 +22,34 @@ namespace CapaProceso.Clases
         }
 
 
-       /* public static int Login(string usernameUsuario, string passwordUsuario)
+        public static int Login(string usernameUsuario, string passwordUsuario)
         {
             int Respuesta;
 
             return Respuesta = int.Parse(CUsuario.Login(usernameUsuario.Trim(), passwordUsuario.Trim()).ToString());
         }
-        */
+        
 
-        /*public static CapaDatos.Clases.Usuario.usuarioDataTable VaribleSecion(string Login)
+        public static CapaDatos.Clases.Usuario.usuarioDataTable DatosUsuario(string Login)
         {
-            return CUsuario.VariablesSecion(Login.Trim());
-        }*/
+            return CUsuario.GetListaUsuario(Login.Trim());
+        }
 
-        public static CapaDatos.Clases.Usuario.usuarioDataTable ListaActualizarUsuario(short Id)
+        public static CapaDatos.Clases.Usuario.usuarioDataTable ListaActualizar(short idUsuario)
         {
-            return CUsuario.GetListaActualizar(Id);
+            return CUsuario.GetListaActualizar(idUsuario);
         }
 
       
 
-        public static string Eliminar(short Id)
+        public static string Eliminar(short idUsuario)
         {
             string mensaje = "";
 
             try
             {
 
-                int resultado = CUsuario.DeleteQuery(Id);
+                int resultado = CUsuario.DeleteQuery(idUsuario);
 
                 return mensaje;
 
@@ -63,10 +63,10 @@ namespace CapaProceso.Clases
         }
 
 
-        public static string Actualizar(string usernameUsuario, string passwordUsuario, string estadoUsuario, short idCargo, short idEmplado)
+        public static string Actualizar( string usernameUsuario, string passwordUsuario, string estadoUsuario, short idEmpleado, short idCargo, short idUsuario)
         {
             string mensaje = "";
-            int resultado = CUsuario.UpdateQuery(usernameUsuario.Trim(), passwordUsuario.Trim(), estadoUsuario.Trim(), idCargo, idEmplado);
+            int resultado = CUsuario.UpdateQuery( usernameUsuario.Trim(), passwordUsuario.Trim(), estadoUsuario.Trim(),idEmpleado, idCargo, idUsuario);
             if (resultado == 0)
             {
                 return mensaje = "Error al insertar los registros";
@@ -77,15 +77,15 @@ namespace CapaProceso.Clases
             }
         }
 
-        public static string Insertar(string usernameUsuario, string passwordUsuario, string estadoUsuario, short idCargo)
+        public static string Insertar( string usernameUsuario, string passwordUsuario, string estadoUsuario, short idEmpleado, short idCargo)
         {
-            string Lista = CUsuario.unico(usernameUsuario.Trim()).ToString();
+            string Lista = CUsuario.unico(usernameUsuario.Trim(),idEmpleado).ToString();
 
             string mensaje = "";
 
             if (Lista == "0")
             {
-                int resultado = 0;//CUsuario.InsertQuery(usernameUsuario.Trim(), passwordUsuario.Trim(), estadoUsuario.Trim(), idCargo,);
+                int resultado = CUsuario.InsertQuery( usernameUsuario.Trim(), passwordUsuario.Trim(), estadoUsuario.Trim(), idEmpleado, idCargo );
                 if (resultado == 0)
                 {
                     return mensaje = "Error al insertar los registros";
@@ -98,7 +98,7 @@ namespace CapaProceso.Clases
             }
             else
             {
-                return mensaje = "El registro ya existe";
+                return mensaje = "El usuario ya se encuentra registrado";
             }
 
 

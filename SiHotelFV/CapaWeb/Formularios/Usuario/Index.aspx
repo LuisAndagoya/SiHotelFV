@@ -1,10 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWeb.Formularios.Usuario.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-       <div class="row">
+
+
+
+    
+      <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
+                   <h4 class="card-title">Usuario</h4>
                     <form id="Form1" runat="server">
                         <table class="table">
                             <tr>
@@ -64,7 +69,7 @@
                                             <asp:TemplateColumn HeaderText="id" Visible="False">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="lblId" runat="server" Text='<%#Eval("idEmplado") %>'></asp:Label>
+                                                        <asp:Label ID="lblId" runat="server" Text='<%#Eval("idUsuario") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
@@ -77,32 +82,40 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-
-                                              <asp:TemplateColumn HeaderText="Upas">
+                                             <asp:TemplateColumn HeaderText="Url" Visible="false">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="passwordUsuario" runat="server" Text='<%#Eval("passwordUsuario") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
-
-                                              <asp:TemplateColumn HeaderText="Estado">
+                                            
+                                              <asp:TemplateColumn HeaderText="Estado" Visible="false">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="estadoUsuario" runat="server" Text='<%#Eval("estadoUsuario") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
-                                            
-                                                <asp:TemplateColumn HeaderText="Cargo">
+
+                                            <asp:TemplateColumn HeaderText="Empleado">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="nombreEmpleado" runat="server" Text='<%#Eval("nombreEmpleado") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
+                                            <asp:TemplateColumn HeaderText="Cargo">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="nombreCargo" runat="server" Text='<%#Eval("nombreCargo") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
-
                                             
+
+
 
                                         </Columns>
 

@@ -13,10 +13,10 @@ namespace CapaProceso.Clases
             return CMenucargo.GetLista();
         }
 
-        //  public static CapaDatos.Clases.Cliente.ClienteDataTable ListaActualizar(short idCliente)
-        // {
-        //   return CCliente.GetListaActualizar(idCliente);
-        //}
+         public static CapaDatos.Clases.Menucargo.menu_cargoDataTable ListaActualizar(short idMenu_Cargo)
+         {
+          return CMenucargo.GetListaActualizar(idMenu_Cargo);
+        }
 
 
         public static CapaDatos.Clases.Menucargo.menu_cargoDataTable Buscar(string buscar)
@@ -24,6 +24,93 @@ namespace CapaProceso.Clases
             String buscarAux = "%" + buscar.Trim() + "%";
             return CMenucargo.GetBuscar(buscarAux);
         }
+
+        public static CapaDatos.Clases.Menucargo.menu_cargoDataTable ListaCargo()
+        {
+            return CMenucargo.GetListaCargo();
+        }
+
+
+        public static CapaDatos.Clases.Menucargo.menu_cargoDataTable ListaSubmenu()
+        {
+            return CMenucargo.GetListaSubmenu();
+        }
+
+
+
+
+        public static string Insertar(short idCargo, short idSubMenu)
+        {
+
+          // string Lista = CMenucargo.unico(idCargo, idSubMenu);
+
+
+            string mensaje = "";
+
+           // if (Lista == "0")
+           // {
+                int resultado = CMenucargo.InsertQuery(idCargo, idSubMenu);
+                if (resultado == 0)
+                {
+                    return mensaje = "Error al insertar los registros";
+                }
+                else
+                {
+                    return mensaje = "";
+                }
+
+           /* }
+            else
+            {
+                return mensaje = "La CI ya existe";
+            }*/
+        }
+
+
+
+
+        public static string Actualizar(short idCargo, short idSubMenu, short idMenu_Cargo)
+        {
+
+            string mensaje = "";
+            int resultado = CMenucargo.UpdateQuery(idCargo, idSubMenu, idMenu_Cargo);
+            if (resultado == 0)
+            {
+                return mensaje = "Error al actualizar los registros";
+            }
+            else
+            {
+                return mensaje = "";
+            }
+        }
+
+        public static string Eliminar(short idMenu_Cargo)
+        {
+            string mensaje = "";
+
+            try
+            {
+
+                int resultado = CMenucargo.DeleteQuery(idMenu_Cargo);
+                if (resultado == 0)
+                {
+                    return mensaje = "No se puede eliminar una asignación inactiva";
+                }
+                else
+                {
+                    return mensaje = "";
+                }
+
+
+            }
+            catch
+            {
+                return mensaje = "No se puede eliminar existen resistros asociados";
+            }
+
+
+        }
+
 
     }
 }

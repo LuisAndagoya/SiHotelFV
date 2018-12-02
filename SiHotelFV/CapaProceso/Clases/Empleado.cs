@@ -25,19 +25,17 @@ namespace CapaProceso.Clases
         }
 
 
-        public static string Insertar(string dniEmpleado, string nombreEmpleado, string apellidoEmpleado, DateTime fnacimientoEmpleado, string sexoEmpleado, string estadocivilEmpleado, string domicilioEmpleado, string telefmovilEmpleado, string emailEmpleado)
+        public static string Insertar(string dniEmpleado, string nombreEmpleado, string apellidoEmpleado, String fnacimientoEmpleado, string sexoEmpleado, string estadocivilEmpleado, string domicilioEmpleado, string telefmovilEmpleado, string emailEmpleado, String fecharegistroEmpleado)
         {
 
-            DateTime fecharegistroEmpleado = DateTime.Now;
-
-            string Lista = CEmpleado.unico(dniEmpleado).ToString();
+           string Lista = CEmpleado.unico(dniEmpleado).ToString();
 
 
             string mensaje = "";
 
             if (Lista == "0")
             {
-                int resultado = CEmpleado.InsertQuery(dniEmpleado.Trim(), nombreEmpleado.Trim().ToUpper(), apellidoEmpleado.Trim().ToUpper(), fnacimientoEmpleado.ToString(), sexoEmpleado.Trim(), estadocivilEmpleado.Trim(), domicilioEmpleado.Trim().ToUpper(), telefmovilEmpleado.Trim(), emailEmpleado.Trim(), fecharegistroEmpleado.ToString());
+                int resultado = CEmpleado.InsertQuery(dniEmpleado.Trim(), nombreEmpleado.Trim().ToUpper(), apellidoEmpleado.Trim().ToUpper(), fnacimientoEmpleado, sexoEmpleado.Trim(), estadocivilEmpleado.Trim(), domicilioEmpleado.Trim().ToUpper(), telefmovilEmpleado.Trim(), fecharegistroEmpleado.Trim(), emailEmpleado.Trim());
                 if (resultado == 0)
                 {
                     return mensaje = "Error al insertar los registros";
@@ -57,11 +55,11 @@ namespace CapaProceso.Clases
 
       
 
-    public static string Actualizar(string dniEmpleado, string nombreEmpleado, string apellidoEmpleado, DateTime fnacimientoEmpleado, string sexoEmpleado, string estadocivilEmpleado, string domicilioEmpleado, string telefmovilEmpleado, string emailEmpleado, short idEmpleado)
+    public static string Actualizar(string dniEmpleado, string nombreEmpleado, string apellidoEmpleado, String fnacimientoEmpleado, string sexoEmpleado, string estadocivilEmpleado, string domicilioEmpleado, string telefmovilEmpleado, string emailEmpleado, short idEmpleado, String fecharegistroEmpleado)
     {
-        DateTime fecharegistroEmpleado = DateTime.Now;
+       
         string mensaje = "";
-        int resultado = CEmpleado.UpdateQuery(dniEmpleado.Trim(), nombreEmpleado.Trim().ToUpper(), apellidoEmpleado.Trim().ToUpper(), fnacimientoEmpleado.ToString(), sexoEmpleado.Trim(), estadocivilEmpleado.Trim(), domicilioEmpleado.Trim(), telefmovilEmpleado.Trim(), emailEmpleado.Trim(), fecharegistroEmpleado.ToString(), idEmpleado);
+        int resultado = CEmpleado.UpdateQuery(dniEmpleado.Trim(), nombreEmpleado.Trim().ToUpper(), apellidoEmpleado.Trim().ToUpper(), fnacimientoEmpleado, sexoEmpleado.Trim(), estadocivilEmpleado.Trim(), domicilioEmpleado.Trim(), telefmovilEmpleado.Trim(), fecharegistroEmpleado, emailEmpleado.Trim(), idEmpleado);
         if (resultado == 0)
         {
             return mensaje = "Error al actualizar los registros";

@@ -18,7 +18,16 @@ namespace CapaProceso.Clases
             return CAuditoria.GetLista();
         }
 
-    
+        public static void Insertar(string AuditoriaTabla, string AuditoriaAccion, short UsuarioId)
+        {
+
+            DateTime AuditoriaFecha = System.DateTime.Now;
+            string name = System.Net.Dns.GetHostName();
+            string ip = System.Net.Dns.GetHostAddresses(name)[0].ToString();
+           
+            int resultado = CAuditoria.SetInsertar(ip, AuditoriaTabla, AuditoriaAccion, UsuarioId, AuditoriaFecha);
+
+        }
 
 
         public static CapaDatos.Clases.Auditoria.auditoriaDataTable Buscar(string buscar)

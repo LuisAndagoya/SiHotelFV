@@ -21,9 +21,7 @@
           <table  class="table table-hover" style="width: 100%;">
               <tr>
                   <td>
-                      &nbsp;
-                      &nbsp;
-                      &nbsp;
+                   
                       <asp:Label ID="Label1" runat="server" Text="Label">Cargo:</asp:Label>
                   </td>
                   <td>
@@ -38,7 +36,7 @@
                       &nbsp;
                       <asp:Button class = "btn btn-primary" ID="Button1" runat="server" 
                           Text="Guardar" onclick="Button1_Click" />
-                      <a href="Index.aspx" class="btn btn-default">Cancelar</a>
+                      <a href="Index.aspx" class= "btn btn-primary">Cancelar</a>
                   </td>
                   <td>
                       &nbsp;

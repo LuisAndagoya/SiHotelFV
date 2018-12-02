@@ -213,10 +213,13 @@
     <Content Include="Formularios\Habitacion\Index.aspx" />
     <Content Include="Formularios\Menucargo\Container.aspx" />
     <Content Include="Formularios\Menucargo\Index.aspx" />
+    <Content Include="Formularios\Menu\Container.aspx" />
+    <Content Include="Formularios\Menu\Index.aspx" />
     <Content Include="Formularios\Submenu\Container.aspx" />
     <Content Include="Formularios\Submenu\Index.aspx" />
+    <Content Include="Formularios\Usuario\Container.aspx" />
+    <Content Include="Formularios\Usuario\Index.aspx" />
     <Content Include="Index.aspx" />
-    <Content Include="Login.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Formularios\Cargo\Container.aspx" />
     <Content Include="Formularios\Cargo\Index.aspx" />
@@ -228,13 +231,10 @@
     <Content Include="Formularios\HabitaconEstado\Index.aspx" />
     <Content Include="Formularios\Hotel\Container.aspx" />
     <Content Include="Formularios\Hotel\Index.aspx" />
-    <Content Include="Formularios\Menu\Container.aspx" />
-    <Content Include="Formularios\Menu\Index.aspx" />
     <Content Include="Formularios\Resrvacion\Container.aspx" />
     <Content Include="Formularios\Resrvacion\Index.aspx" />
-    <Content Include="Formularios\Usuario\Container.aspx" />
-    <Content Include="Formularios\Usuario\Index.aspx" />
     <Content Include="inicio.aspx" />
+    <Content Include="Salir.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -565,15 +565,15 @@
     <Compile Include="inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.Master.cs">
-      <DependentUpon>Login.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.Master.designer.cs">
-      <DependentUpon>Login.Master</DependentUpon>
-    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Salir.aspx.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Salir.aspx.designer.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

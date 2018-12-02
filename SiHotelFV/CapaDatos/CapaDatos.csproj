@@ -118,6 +118,7 @@
     <None Include="Clases\Auditoria.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Auditoria.Designer.cs</LastGenOutput>
     </None>
     <None Include="Clases\Auditoria.xss">
       <DependentUpon>Auditoria.xsd</DependentUpon>

@@ -287,10 +287,6 @@ namespace CapaDatos.Clases {
             
             private global::System.Data.DataColumn columniconoMenu;
             
-            private global::System.Data.DataColumn columnidPadre;
-            
-            private global::System.Data.DataColumn columnnivelMenu;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public menuDataTable() {
@@ -358,22 +354,6 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn idPadreColumn {
-                get {
-                    return this.columnidPadre;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nivelMenuColumn {
-                get {
-                    return this.columnnivelMenu;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,15 +389,13 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public menuRow AddmenuRow(int idMenu, string nombreMenu, string urlMenu, byte[] iconoMenu, int idPadre, int nivelMenu) {
+            public menuRow AddmenuRow(string nombreMenu, string urlMenu, string iconoMenu) {
                 menuRow rowmenuRow = ((menuRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        idMenu,
+                        null,
                         nombreMenu,
                         urlMenu,
-                        iconoMenu,
-                        idPadre,
-                        nivelMenu};
+                        iconoMenu};
                 rowmenuRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmenuRow);
                 return rowmenuRow;
@@ -451,8 +429,6 @@ namespace CapaDatos.Clases {
                 this.columnnombreMenu = base.Columns["nombreMenu"];
                 this.columnurlMenu = base.Columns["urlMenu"];
                 this.columniconoMenu = base.Columns["iconoMenu"];
-                this.columnidPadre = base.Columns["idPadre"];
-                this.columnnivelMenu = base.Columns["nivelMenu"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -464,22 +440,19 @@ namespace CapaDatos.Clases {
                 base.Columns.Add(this.columnnombreMenu);
                 this.columnurlMenu = new global::System.Data.DataColumn("urlMenu", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnurlMenu);
-                this.columniconoMenu = new global::System.Data.DataColumn("iconoMenu", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columniconoMenu = new global::System.Data.DataColumn("iconoMenu", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columniconoMenu);
-                this.columnidPadre = new global::System.Data.DataColumn("idPadre", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidPadre);
-                this.columnnivelMenu = new global::System.Data.DataColumn("nivelMenu", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnivelMenu);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidMenu}, true));
+                this.columnidMenu.AutoIncrement = true;
+                this.columnidMenu.AutoIncrementSeed = -1;
+                this.columnidMenu.AutoIncrementStep = -1;
                 this.columnidMenu.AllowDBNull = false;
+                this.columnidMenu.ReadOnly = true;
                 this.columnidMenu.Unique = true;
-                this.columnnombreMenu.AllowDBNull = false;
-                this.columnnombreMenu.MaxLength = 50;
-                this.columnurlMenu.AllowDBNull = false;
-                this.columnurlMenu.MaxLength = 50;
-                this.columnidPadre.AllowDBNull = false;
-                this.columnnivelMenu.AllowDBNull = false;
+                this.columnnombreMenu.MaxLength = 100;
+                this.columnurlMenu.MaxLength = 100;
+                this.columniconoMenu.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -635,7 +608,12 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string nombreMenu {
                 get {
-                    return ((string)(this[this.tablemenu.nombreMenuColumn]));
+                    try {
+                        return ((string)(this[this.tablemenu.nombreMenuColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombreMenu\' de la tabla \'menu\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablemenu.nombreMenuColumn] = value;
@@ -646,7 +624,12 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string urlMenu {
                 get {
-                    return ((string)(this[this.tablemenu.urlMenuColumn]));
+                    try {
+                        return ((string)(this[this.tablemenu.urlMenuColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'urlMenu\' de la tabla \'menu\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablemenu.urlMenuColumn] = value;
@@ -655,10 +638,10 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] iconoMenu {
+            public string iconoMenu {
                 get {
                     try {
-                        return ((byte[])(this[this.tablemenu.iconoMenuColumn]));
+                        return ((string)(this[this.tablemenu.iconoMenuColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'iconoMenu\' de la tabla \'menu\' es DBNull.", e);
@@ -671,24 +654,26 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int idPadre {
-                get {
-                    return ((int)(this[this.tablemenu.idPadreColumn]));
-                }
-                set {
-                    this[this.tablemenu.idPadreColumn] = value;
-                }
+            public bool IsnombreMenuNull() {
+                return this.IsNull(this.tablemenu.nombreMenuColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int nivelMenu {
-                get {
-                    return ((int)(this[this.tablemenu.nivelMenuColumn]));
-                }
-                set {
-                    this[this.tablemenu.nivelMenuColumn] = value;
-                }
+            public void SetnombreMenuNull() {
+                this[this.tablemenu.nombreMenuColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsurlMenuNull() {
+                return this.IsNull(this.tablemenu.urlMenuColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SeturlMenuNull() {
+                this[this.tablemenu.urlMenuColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -867,47 +852,43 @@ namespace CapaDatos.Clases.MenuTableAdapters {
             tableMapping.ColumnMappings.Add("nombreMenu", "nombreMenu");
             tableMapping.ColumnMappings.Add("urlMenu", "urlMenu");
             tableMapping.ColumnMappings.Add("iconoMenu", "iconoMenu");
-            tableMapping.ColumnMappings.Add("idPadre", "idPadre");
-            tableMapping.ColumnMappings.Add("nivelMenu", "nivelMenu");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[menu] WHERE (([idMenu] = @Original_idMenu) AND ([nombreMenu] =" +
-                " @Original_nombreMenu) AND ([urlMenu] = @Original_urlMenu) AND ([idPadre] = @Ori" +
-                "ginal_idPadre) AND ([nivelMenu] = @Original_nivelMenu))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[menu] WHERE (([idMenu] = @Original_idMenu) AND ((@IsNull_nombreMenu = 1 AND [nombreMenu] IS NULL) OR ([nombreMenu] = @Original_nombreMenu)) AND ((@IsNull_urlMenu = 1 AND [urlMenu] IS NULL) OR ([urlMenu] = @Original_urlMenu)) AND ((@IsNull_iconoMenu = 1 AND [iconoMenu] IS NULL) OR ([iconoMenu] = @Original_iconoMenu)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nombreMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombreMenu", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_urlMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "urlMenu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_urlMenu", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "urlMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idPadre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idPadre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nivelMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nivelMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_iconoMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iconoMenu", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[menu] ([idMenu], [nombreMenu], [urlMenu], [iconoMenu], [idPadre], [nivelMenu]) VALUES (@idMenu, @nombreMenu, @urlMenu, @iconoMenu, @idPadre, @nivelMenu);
-SELECT idMenu, nombreMenu, urlMenu, iconoMenu, idPadre, nivelMenu FROM menu WHERE (idMenu = @idMenu)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[menu] ([nombreMenu], [urlMenu], [iconoMenu]) VALUES (@nombreMe" +
+                "nu, @urlMenu, @iconoMenu);\r\nSELECT idMenu, nombreMenu, urlMenu, iconoMenu FROM m" +
+                "enu WHERE (idMenu = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreMenu", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@urlMenu", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "urlMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iconoMenu", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPadre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idPadre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nivelMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nivelMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iconoMenu", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[menu] SET [idMenu] = @idMenu, [nombreMenu] = @nombreMenu, [urlMenu] = @urlMenu, [iconoMenu] = @iconoMenu, [idPadre] = @idPadre, [nivelMenu] = @nivelMenu WHERE (([idMenu] = @Original_idMenu) AND ([nombreMenu] = @Original_nombreMenu) AND ([urlMenu] = @Original_urlMenu) AND ([idPadre] = @Original_idPadre) AND ([nivelMenu] = @Original_nivelMenu));
-SELECT idMenu, nombreMenu, urlMenu, iconoMenu, idPadre, nivelMenu FROM menu WHERE (idMenu = @idMenu)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[menu] SET [nombreMenu] = @nombreMenu, [urlMenu] = @urlMenu, [iconoMenu] = @iconoMenu WHERE (([idMenu] = @Original_idMenu) AND ((@IsNull_nombreMenu = 1 AND [nombreMenu] IS NULL) OR ([nombreMenu] = @Original_nombreMenu)) AND ((@IsNull_urlMenu = 1 AND [urlMenu] IS NULL) OR ([urlMenu] = @Original_urlMenu)) AND ((@IsNull_iconoMenu = 1 AND [iconoMenu] IS NULL) OR ([iconoMenu] = @Original_iconoMenu)));
+SELECT idMenu, nombreMenu, urlMenu, iconoMenu FROM menu WHERE (idMenu = @idMenu)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreMenu", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@urlMenu", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "urlMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iconoMenu", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPadre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idPadre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nivelMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nivelMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iconoMenu", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nombreMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombreMenu", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_urlMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "urlMenu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_urlMenu", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "urlMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idPadre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idPadre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nivelMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nivelMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_iconoMenu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iconoMenu", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -920,22 +901,57 @@ SELECT idMenu, nombreMenu, urlMenu, iconoMenu, idPadre, nivelMenu FROM menu WHER
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idMenu, nombreMenu, urlMenu, iconoMenu, idPadre, nivelMenu FROM dbo.menu";
+            this._commandCollection[0].CommandText = "SELECT idMenu, nombreMenu, urlMenu, iconoMenu FROM dbo.menu";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        idMenu, nombreMenu, urlMenu, iconoMenu, idPadre, nivelMenu\r\nFROM   " +
-                "         menu\r\nWHERE        (nombreMenu LIKE @nombreMenu)";
+            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[menu] WHERE (([idMenu] = @idMenu))";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreMenu", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        idMenu, nombreMenu, urlMenu, iconoMenu, idPadre, nivelMenu\r\nFROM   " +
-                "         menu";
+            this._commandCollection[2].CommandText = "SELECT idMenu, nombreMenu, urlMenu, iconoMenu FROM dbo.menu\r\nWHERE (nombreMenu LI" +
+                "KE @nombreMenu)\r\n\r\n";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        idMenu, nombreMenu, urlMenu, iconoMenu\r\nFROM            menu";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT        idMenu, nombreMenu, urlMenu, iconoMenu\r\nFROM            menu\r\nWHERE" +
+                "        (idMenu = @idMenu)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "INSERT INTO [dbo].[menu] ([nombreMenu], [urlMenu],[iconoMenu]) VALUES (@nombreMen" +
+                "u, @urlMenu, @iconoMenu);\r\nSELECT idMenu, nombreMenu, urlMenu , iconoMenu FROM m" +
+                "enu WHERE (idMenu = SCOPE_IDENTITY())";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@urlMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "urlMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iconoMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT        COUNT(idMenu) AS Expr1\r\nFROM            menu\r\nWHERE        (nombreM" +
+                "enu = @nombreMenu)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "UPDATE [dbo].[menu] SET [nombreMenu] = @nombreMenu, [urlMenu] = @urlMenu , [icono" +
+                "Menu]=@iconoMenu WHERE (([idMenu] = @idMenu));\r\nSELECT idMenu, nombreMenu, urlMe" +
+                "nu , iconoMenu FROM menu WHERE (idMenu = @idMenu)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@urlMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "urlMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iconoMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -967,9 +983,9 @@ SELECT idMenu, nombreMenu, urlMenu, iconoMenu, idPadre, nivelMenu FROM menu WHER
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Menu.menuDataTable GetBuscar(string nombreMenu) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((nombreMenu == null)) {
-                throw new global::System.ArgumentNullException("nombreMenu");
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nombreMenu));
@@ -984,7 +1000,19 @@ SELECT idMenu, nombreMenu, urlMenu, iconoMenu, idPadre, nivelMenu FROM menu WHER
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Menu.menuDataTable GetLista() {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            Menu.menuDataTable dataTable = new Menu.menuDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Menu.menuDataTable GetListaActualizar(int idMenu) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idMenu));
             Menu.menuDataTable dataTable = new Menu.menuDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1023,22 +1051,32 @@ SELECT idMenu, nombreMenu, urlMenu, iconoMenu, idPadre, nivelMenu FROM menu WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idMenu, string Original_nombreMenu, string Original_urlMenu, int Original_idPadre, int Original_nivelMenu) {
+        public virtual int Delete(int Original_idMenu, string Original_nombreMenu, string Original_urlMenu, string Original_iconoMenu) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idMenu));
             if ((Original_nombreMenu == null)) {
-                throw new global::System.ArgumentNullException("Original_nombreMenu");
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_nombreMenu));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_nombreMenu));
             }
             if ((Original_urlMenu == null)) {
-                throw new global::System.ArgumentNullException("Original_urlMenu");
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_urlMenu));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_urlMenu));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_idPadre));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_nivelMenu));
+            if ((Original_iconoMenu == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_iconoMenu));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1059,28 +1097,25 @@ SELECT idMenu, nombreMenu, urlMenu, iconoMenu, idPadre, nivelMenu FROM menu WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int idMenu, string nombreMenu, string urlMenu, byte[] iconoMenu, int idPadre, int nivelMenu) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idMenu));
+        public virtual int Insert(string nombreMenu, string urlMenu, string iconoMenu) {
             if ((nombreMenu == null)) {
-                throw new global::System.ArgumentNullException("nombreMenu");
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(nombreMenu));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(nombreMenu));
             }
             if ((urlMenu == null)) {
-                throw new global::System.ArgumentNullException("urlMenu");
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(urlMenu));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(urlMenu));
             }
             if ((iconoMenu == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((byte[])(iconoMenu));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(iconoMenu));
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(idPadre));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(nivelMenu));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1101,43 +1136,51 @@ SELECT idMenu, nombreMenu, urlMenu, iconoMenu, idPadre, nivelMenu FROM menu WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idMenu, string nombreMenu, string urlMenu, byte[] iconoMenu, int idPadre, int nivelMenu, int Original_idMenu, string Original_nombreMenu, string Original_urlMenu, int Original_idPadre, int Original_nivelMenu) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idMenu));
+        public virtual int Update(string nombreMenu, string urlMenu, string iconoMenu, int Original_idMenu, string Original_nombreMenu, string Original_urlMenu, string Original_iconoMenu, int idMenu) {
             if ((nombreMenu == null)) {
-                throw new global::System.ArgumentNullException("nombreMenu");
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(nombreMenu));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nombreMenu));
             }
             if ((urlMenu == null)) {
-                throw new global::System.ArgumentNullException("urlMenu");
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(urlMenu));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(urlMenu));
             }
             if ((iconoMenu == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((byte[])(iconoMenu));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(iconoMenu));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(idPadre));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(nivelMenu));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_idMenu));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_idMenu));
             if ((Original_nombreMenu == null)) {
-                throw new global::System.ArgumentNullException("Original_nombreMenu");
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_nombreMenu));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_nombreMenu));
             }
             if ((Original_urlMenu == null)) {
-                throw new global::System.ArgumentNullException("Original_urlMenu");
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_urlMenu));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_urlMenu));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_idPadre));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_nivelMenu));
+            if ((Original_iconoMenu == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_iconoMenu));
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(idMenu));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1158,8 +1201,149 @@ SELECT idMenu, nombreMenu, urlMenu, iconoMenu, idPadre, nivelMenu FROM menu WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nombreMenu, string urlMenu, byte[] iconoMenu, int idPadre, int nivelMenu, int Original_idMenu, string Original_nombreMenu, string Original_urlMenu, int Original_idPadre, int Original_nivelMenu) {
-            return this.Update(Original_idMenu, nombreMenu, urlMenu, iconoMenu, idPadre, nivelMenu, Original_idMenu, Original_nombreMenu, Original_urlMenu, Original_idPadre, Original_nivelMenu);
+        public virtual int Update(string nombreMenu, string urlMenu, string iconoMenu, int Original_idMenu, string Original_nombreMenu, string Original_urlMenu, string Original_iconoMenu) {
+            return this.Update(nombreMenu, urlMenu, iconoMenu, Original_idMenu, Original_nombreMenu, Original_urlMenu, Original_iconoMenu, Original_idMenu);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(int idMenu) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(idMenu));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(string nombreMenu, string urlMenu, string iconoMenu) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            if ((nombreMenu == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(nombreMenu));
+            }
+            if ((urlMenu == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(urlMenu));
+            }
+            if ((iconoMenu == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(iconoMenu));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> unico(string nombreMenu) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            if ((nombreMenu == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(nombreMenu));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(string nombreMenu, string urlMenu, string iconoMenu, int idMenu) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            if ((nombreMenu == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(nombreMenu));
+            }
+            if ((urlMenu == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(urlMenu));
+            }
+            if ((iconoMenu == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(iconoMenu));
+            }
+            command.Parameters[3].Value = ((int)(idMenu));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

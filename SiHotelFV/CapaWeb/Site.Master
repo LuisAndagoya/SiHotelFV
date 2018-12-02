@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CapaWeb.SiteMaster" %>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <!-- Required meta tags -->
@@ -13,6 +15,12 @@
     <link rel="stylesheet" href="../../Tema/css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="../../Tema/images/favicon.png" />
+     <script type="text/javascript">
+        {
+            if (history.forward(1))
+                location.replace(history.forward(1))
+        }
+</script>
 </head>
 <body>
     <div class="container-scroller">
@@ -25,10 +33,10 @@
                     <li class="nav-item nav-profile dropdown"><a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                         <div class="nav-profile-img"><i class="mdi mdi-account-circle" aria-hidden="true"></i><span class="availability-status online"></span></div>
                         <div class="nav-profile-text">
-                            <p class="mb-1 text-black">David Greymaax</p>
+                            <p class="mb-1 text-black"><asp:Label ID="LblNombre" runat="server" Text="Label"></asp:Label></p>
                         </div>
                     </a>
-                        <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown"><a class="dropdown-item" href="#"><i class="mdi mdi-logout mr-2 text-primary"></i>Salir</a> </div>
+                        <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown"><a class="dropdown-item" onClick="if(confirm('Esta seguro que desea salir?') == false){return false;}"  href="../../Salir.aspx"><i class="mdi mdi-logout mr-2 text-primary"></i>Salir</a> </div>
                     </li>
                     <li class="nav-item nav-settings d-none d-lg-block">
                         <a class="nav-link" href="#">
@@ -45,14 +53,19 @@
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages"><span class="menu-title">Sample Pages</span> <i class="menu-arrow"></i><i class="mdi mdi-medical-bag menu-icon"></i></a>
+                    <li class="nav-item"><a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages"><span class="menu-title">Administración</span> <i class="menu-arrow"></i><i class="mdi mdi-medical-bag menu-icon"></i></a>
                         <div class="collapse" id="general-pages">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"><a class="nav-link" href="pages/samples/blank-page.html">Blank Page </a></li>
-                                <li class="nav-item"><a class="nav-link" href="pages/samples/login.html">Login </a></li>
-                                <li class="nav-item"><a class="nav-link" href="pages/samples/register.html">Register </a></li>
-                                <li class="nav-item"><a class="nav-link" href="pages/samples/error-404.html">404 </a></li>
-                                <li class="nav-item"><a class="nav-link" href="pages/samples/error-500.html">500 </a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../Formularios/Usuario/Index.aspx">Usuario </a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../Formularios/Menu/Index.aspx">Menú </a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../Formularios/Empleado/Index.aspx">Empleado </a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../Formularios/Menucargo/Index.aspx">Menu cargo </a></li>
+                                 <li class="nav-item"><a class="nav-link" href="../../Formularios/Cargo/Index.aspx">Cargo </a></li>
+                                <li class="nav-item"><a class="nav-link"  href="../../Formularios/Auditoria/Index.aspx">Auditoria </a></li>
+                                <li class="nav-item"><a class="nav-link"  href="../../Formularios/Submenu/Index.aspx">Submenu </a></li>
+
+
+                                
                             </ul>
                         </div>
                     </li>
