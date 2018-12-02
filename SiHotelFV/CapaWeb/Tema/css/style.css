@@ -17544,7 +17544,7 @@ input:focus {
 @media screen and (max-width: 991px) {
   .sidebar-offcanvas {
     position: fixed;
-    max-height: calc(100vh - 70px);
+    max-height: calc(70vh - 50px);
     top: 70px;
     bottom: 0;
     overflow: auto;
@@ -20563,6 +20563,7 @@ select.form-control.border-dark:focus {
   line-height: 1;
   vertical-align: top;
   margin-bottom: .5rem;
+  
 }
 
 .form-group.has-danger .form-control {

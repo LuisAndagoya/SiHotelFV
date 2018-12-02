@@ -16,33 +16,42 @@
 </script>
 
         <link rel="shortcut icon" href="Tema/favicon.ico" type="image/x-icon"/>
-        <link rel="stylesheet" type="text/css" href="Tema/css/style.css" />
+        <link rel="stylesheet" href="../../Tema/vendors/iconfonts/mdi/css/materialdesignicons.min.css"/>
+        <link rel="stylesheet" href="../../Tema/vendors/css/vendor.bundle.base.css"/>
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+         <link rel="shortcut icon" href="../../Tema/images/favicon.png" />
+      
+        <link rel="stylesheet" href="../../../Tema/css/style.css"/>
 		<script src="Tema/js/cufon-yui.js" type="text/javascript"></script>
 		<script src="Tema/js/ChunkFive_400.font.js" type="text/javascript"></script>
 </head>
 <body>
-<div class="wrapper">
-			<h1>Sistema</h1>
-			<h2>BIENVENIDO@S</h2>
-			<div class="content"
-				<div id="form_wrapper" class="form_wrapper">
+<div id="sidebar" align="center" class="sidebar-grdient-dark" >
 			
-    <form id="form1"  class="login active" runat="server">
-    
+    <br />
+			<h2>BIENVENIDO@S</h2>
+    <br />
+    <br />
+			<div  align="center">
+				<div  class="sidebar sidebar-offcanvas"  align="center">
+			
+    <form id="form1"  class="form-group" align="center" runat="server" color="red">
+     
   <h3>Login</h3>
 						<div>
-							<label>Usuario:</label>
+							<label>Usuario</label>
 							
-                            <asp:TextBox ID="TxtUsu" required runat="server"></asp:TextBox>
+                            <asp:TextBox ID="TxtUsu" required="required" runat="server"   ></asp:TextBox>
 						</div>
 						<div>
-							<label>Contrase&ntilde;a:</label>
-                            <asp:TextBox ID="TxtCont" required="required" TextMode="Password" runat="server"></asp:TextBox>
+							<label>Contrase&ntilde;a</label>
+                            <asp:TextBox ID="TxtCont" required="required" TextMode="Password" runat="server" ></asp:TextBox>
 							
 						</div>
 						<div class="bottom">
-							
-                            <asp:Button ID="Button1" runat="server" Text="Ingresar" 
+							<br />
+                            <br />
+                            <asp:Button ID="Button1"  class = "btn btn-primary" runat="server" Text="Ingresar" 
                                 onclick="Button1_Click" />
 							
 							<div class="clear"></div>
@@ -56,6 +65,23 @@
 			</div>
 		
 		</div>
+  
+
+     <!-- plugins:js -->
+    <script src="../../Tema/vendors/js/vendor.bundle.base.js"></script>
+    <script src="../../Tema/vendors/js/vendor.bundle.addons.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="../../Tema/js/off-canvas.js"></script>
+    <script src="../../Tema/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="../../Tema/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+
+
 </body>
 </html>
 
