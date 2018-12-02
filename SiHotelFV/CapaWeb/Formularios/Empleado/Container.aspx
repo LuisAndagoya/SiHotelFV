@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Container.aspx.cs" Inherits="CapaWeb.Formularios.Empleado.Container" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+         <div class="card-body">
 
 
     
@@ -19,6 +21,9 @@
 <!--Detalle-->
       <div class="panel panel-default">
         <div class="panel-heading">EMPLEADO</div>
+          <br />
+          <br />
+
          
           <table  class="table table-hover" style="width: 100%;">
               <tr>
@@ -139,10 +144,23 @@
                       &nbsp;
                   </td>
               </tr>  
+
+
+                <tr>
+                  <td>
+                      &nbsp;
+                     <asp:Label ID="Label9"  runat="server" Text="Label">Fecha registro:</asp:Label>
+                  </td>
+                  <td>
+                       <asp:TextBox Type="date" ID="fecharegistroEmpleado"   visible="true" required ="required"  runat="server"></asp:TextBox>
+                      &nbsp;
+                  </td>
+              </tr>
+
   
-                      <asp:Label ID="Label9" visible="false" runat="server" Text="Label">Fecha registro:</asp:Label>
+                      
                   
-                      <asp:TextBox Type="date" ID="fecharegistroEmpleado"   visible="true" required ="required"  runat="server"></asp:TextBox>
+                     
                 
 
 
@@ -153,7 +171,7 @@
                       <asp:Label ID="Label10" runat="server" Text="Label">Email:</asp:Label>
                   </td>
                   <td>
-                      <asp:TextBox ID="emailEmpleado"    required ="required"  runat="server"></asp:TextBox>
+                      <asp:TextBox ID="emailEmpleado"  type="email"  required ="required"  runat="server"></asp:TextBox>
                       &nbsp;
                   </td>
               </tr> 
@@ -185,6 +203,8 @@
             </div>
         </form>
 
-
+ </div>
+    </div>
+         </div>
 
 </asp:Content>
