@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="col-lg-12 grid-margin stretch-card">
       <div class="card">
          <div class="card-body">
 
@@ -32,7 +32,7 @@
                   </td>
                   <td>
 
-                      <asp:DropDownList ID="ListaMenu" runat="server">
+                      <asp:DropDownList ID="ListaMenu"  class="form-control" runat="server">
                       </asp:DropDownList>
                       
                       &nbsp;
@@ -45,7 +45,7 @@
                       <asp:Label ID="Label2" runat="server" Text="Label">Submenu:</asp:Label>
                   </td>
                   <td> 
-                  <asp:TextBox ID="nombreSubMenu"    required ="required"  runat="server"></asp:TextBox>
+                  <asp:TextBox ID="nombreSubMenu"   class="form-control" required ="required"  runat="server"></asp:TextBox>
                     
                       &nbsp;
                   </td>
@@ -59,7 +59,7 @@
                       <asp:Label ID="Label3" runat="server" Text="Label">Url:</asp:Label>
                   </td>
                   <td> 
-                  <asp:TextBox ID="urlSubMenu"    required ="required"  runat="server"></asp:TextBox>
+                  <asp:TextBox ID="urlSubMenu"  class="form-control"  required ="required"  runat="server"></asp:TextBox>
                     
                       &nbsp;
                   </td>
@@ -73,7 +73,7 @@
                       <asp:Label ID="Label4" runat="server" Text="Label">Icono:</asp:Label>
                   </td>
                   <td> 
-                  <asp:TextBox ID="iconoSubMenu"    required ="required"  runat="server"></asp:TextBox>
+                  <asp:TextBox ID="iconoSubMenu"  class="form-control"  required ="required"  runat="server"></asp:TextBox>
                     
                       &nbsp;
                   </td>
@@ -87,7 +87,7 @@
                       &nbsp;
                       <asp:Button class = "btn btn-primary" ID="Button1" runat="server" 
                           Text="Guardar" onclick="Button1_Click" />
-                      <a href="Index.aspx" class=" btn btn-primary">Cancelar</a>
+                      <a href="Index.aspx" class="btn btn-light">Cancelar</a>
                   </td>
                   <td>
                       &nbsp;

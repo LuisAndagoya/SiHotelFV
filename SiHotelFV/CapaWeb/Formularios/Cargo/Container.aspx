@@ -26,10 +26,10 @@
               <tr>
                   <td>
                    
-                      <asp:Label ID="Label1" runat="server" Text="Label">Cargo:</asp:Label>
+                      <asp:Label ID="Label1" runat="server"  Text="Label">Cargo:</asp:Label>
                   </td>
                   <td>
-                      <asp:TextBox ID="nombreCargo"    required ="required"  runat="server"></asp:TextBox>
+                      <asp:TextBox ID="nombreCargo"   class="form-control" required ="required"  runat="server"></asp:TextBox>
                       &nbsp;
                   </td>
               </tr>            
@@ -40,7 +40,7 @@
                       &nbsp;
                       <asp:Button class = "btn btn-primary" ID="Button1" runat="server" 
                           Text="Guardar" onclick="Button1_Click" />
-                      <a href="Index.aspx" class= "btn btn-primary">Cancelar</a>
+                      <a href="Index.aspx"  class="btn btn-light">Cancelar</a>
                   </td>
                   <td>
                       &nbsp;

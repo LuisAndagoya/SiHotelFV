@@ -20,7 +20,7 @@
                                                         <div class="input-group">
                                                             <asp:TextBox class="form-control" ID="TxtBuscar" placeholder="Buscar..." runat="server" />
                                                             <div class="input-group-append">
-                                                                <asp:Button ID="Button1" class="btn btn-sm btn-gradient-primary" runat="server" Text="Buscar"
+                                                                <asp:Button ID="Button1" class="btn btn-sm btn-gradient-primary" required ="required" runat="server" Text="Buscar"
                                                                     OnClick="Button1_Click" />
                                                             </div>
                                                               <div class="input-group-append">

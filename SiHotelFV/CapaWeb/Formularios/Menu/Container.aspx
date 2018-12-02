@@ -31,7 +31,7 @@
                       <asp:Label ID="Label1" runat="server" Text="Label">Menú:</asp:Label>
                   </td>
                   <td>
-                      <asp:TextBox ID="nombreMenu"    required ="required"  runat="server"></asp:TextBox>
+                      <asp:TextBox ID="nombreMenu"  class="form-control"  required ="required"  runat="server"></asp:TextBox>
                       &nbsp;
                   </td>
               </tr>            
@@ -43,7 +43,7 @@
                       <asp:Label ID="Label2" runat="server" Text="Label">Url:</asp:Label>
                   </td>
                   <td>
-                      <asp:TextBox ID="urlMenu"    required ="required"  runat="server"></asp:TextBox>
+                      <asp:TextBox ID="urlMenu"   class="form-control" required ="required"  runat="server"></asp:TextBox>
                       &nbsp;
                   </td>
               </tr>   
@@ -55,7 +55,7 @@
                       <asp:Label ID="Label3" runat="server" Text="Label">Icono:</asp:Label>
                   </td>
                   <td>
-                      <asp:TextBox ID="iconoMenu"    required ="required"  runat="server"></asp:TextBox>
+                      <asp:TextBox ID="iconoMenu"  class="form-control"  required ="required"  runat="server"></asp:TextBox>
                       &nbsp;
                   </td>
               </tr>
@@ -65,7 +65,7 @@
                       &nbsp;
                       <asp:Button class = "btn btn-primary" ID="Button1" runat="server" 
                           Text="Guardar" onclick="Button1_Click" />
-                      <a href="Index.aspx" class = "btn btn-primary">Cancelar</a>
+                      <a href="Index.aspx" class="btn btn-light">Cancelar</a>
                   </td>
                   <td>
                       &nbsp;

@@ -29,10 +29,10 @@
               <tr>
                   <td>
                       &nbsp;
-                      <asp:Label ID="Label1" runat="server" Text="Label">Cédula:</asp:Label>
+                      <asp:Label ID="Label1"  runat="server" Text="Label">Cédula:</asp:Label>
                   </td>
                   <td>
-                      <asp:TextBox ID="dniEmpleado"    pattern="^[0-9]{10}$"   required ="required"  runat="server"></asp:TextBox>
+                      <asp:TextBox ID="dniEmpleado"   class="form-control" pattern="^[0-9]{10}$"   required ="required"  runat="server"></asp:TextBox>
                       &nbsp;
                   </td>
               </tr>            
@@ -44,7 +44,7 @@
                       <asp:Label ID="Label2" runat="server" Text="Label">Nombre:</asp:Label>
                   </td>
                   <td>
-                      <asp:TextBox ID="nombreEmpleado"    pattern="^[\ s A-z ]*$" required ="required"  runat="server"></asp:TextBox>
+                      <asp:TextBox ID="nombreEmpleado"  class="form-control"  pattern="^[\ s A-z ]*$" required ="required"  runat="server"></asp:TextBox>
                       &nbsp;
                   </td>
               </tr>  
@@ -56,7 +56,7 @@
                       <asp:Label ID="Label3" runat="server" Text="Label">Apellido:</asp:Label>
                   </td>
                   <td>
-                      <asp:TextBox ID="apellidoEmpleado"   pattern="^[\ s A-z ]*$"  required ="required"  runat="server"></asp:TextBox>
+                      <asp:TextBox ID="apellidoEmpleado" class="form-control"  pattern="^[\ s A-z ]*$"  required ="required"  runat="server"></asp:TextBox>
                       &nbsp;
                   </td>
               </tr>  
@@ -68,7 +68,7 @@
                       <asp:Label ID="Label4" runat="server" Text="Label">Fecha Nacimiento:</asp:Label>
                   </td>
                   <td>
-                      <asp:TextBox type="date" ID="fnacimiento" required ="required"  runat="server"></asp:TextBox>
+                      <asp:TextBox type="date" ID="fnacimiento" class="form-control" required ="required"  runat="server"></asp:TextBox>
                   
                       &nbsp;
                   </td>
@@ -84,7 +84,7 @@
                      
                       &nbsp;
 
-                       <asp:DropDownList ID="sexoEmpleado" runat="server">
+                       <asp:DropDownList ID="sexoEmpleado"  class="form-control" runat="server">
                           <asp:ListItem Selected="True" Value="M">MASCULINO</asp:ListItem>
                           <asp:ListItem Value="F">FEMENINO</asp:ListItem>
                       </asp:DropDownList>
@@ -107,7 +107,7 @@
                        
                       &nbsp;
 
-                       <asp:DropDownList ID="estadocivilEmpleado" runat="server">
+                       <asp:DropDownList ID="estadocivilEmpleado" class="form-control" runat="server">
                           <asp:ListItem Selected="True" Value="CASADO">CASADO</asp:ListItem>
                           <asp:ListItem Value="DIVORCIADO">DIVORCIADO</asp:ListItem>
                            <asp:ListItem Value="SOLTERO">SOLTERO</asp:ListItem>
@@ -127,7 +127,7 @@
                       <asp:Label ID="Label7" runat="server" Text="Label">Domicilio:</asp:Label>
                   </td>
                   <td>
-                      <asp:TextBox ID="domicilioEmpleado"    required ="required"  runat="server"></asp:TextBox>
+                      <asp:TextBox ID="domicilioEmpleado"  class="form-control"  required ="required"  runat="server"></asp:TextBox>
                       &nbsp;
                   </td>
               </tr>  
@@ -140,7 +140,7 @@
                       <asp:Label ID="Label8" runat="server" Text="Label">Celular:</asp:Label>
                   </td>
                   <td>
-                      <asp:TextBox ID="telefmovilEmpleado"   pattern="^[0-9]{10}$" placeholder="Ejm: 0992333333" required ="required"  runat="server"></asp:TextBox>
+                      <asp:TextBox ID="telefmovilEmpleado" class="form-control"  pattern="^[0-9]{10}$" placeholder="Ejm: 0992333333" required ="required"  runat="server"></asp:TextBox>
                       &nbsp;
                   </td>
               </tr>  
@@ -152,7 +152,7 @@
                      <asp:Label ID="Label9"  runat="server" Text="Label">Fecha registro:</asp:Label>
                   </td>
                   <td>
-                       <asp:TextBox Type="date" ID="fecharegistroEmpleado"   visible="true" required ="required"  runat="server"></asp:TextBox>
+                       <asp:TextBox Type="date" ID="fecharegistroEmpleado"   class="form-control" required ="required"  runat="server"></asp:TextBox>
                       &nbsp;
                   </td>
               </tr>
@@ -171,7 +171,7 @@
                       <asp:Label ID="Label10" runat="server" Text="Label">Email:</asp:Label>
                   </td>
                   <td>
-                      <asp:TextBox ID="emailEmpleado"  type="email"  required ="required"  runat="server"></asp:TextBox>
+                      <asp:TextBox ID="emailEmpleado"  type="email" class="form-control" required ="required"  runat="server"></asp:TextBox>
                       &nbsp;
                   </td>
               </tr> 
@@ -184,7 +184,7 @@
                       &nbsp;
                       <asp:Button class = "btn btn-primary" ID="Button1" runat="server" 
                           Text="Guardar" onclick="Button1_Click" />
-                      <a href="Index.aspx" class="btn btn-primary">Cancelar</a>
+                      <a href="Index.aspx" class="btn btn-light">Cancelar</a>
                   </td>
                   <td>
                       &nbsp;

@@ -32,7 +32,7 @@
                   </td>
                   <td>
 
-                      <asp:DropDownList ID="ListaCargo" runat="server">
+                      <asp:DropDownList ID="ListaCargo" class="form-control" runat="server">
                       </asp:DropDownList>
                       
                       &nbsp;
@@ -48,7 +48,7 @@
 
                       
                     
-                      <asp:DropDownList ID="ListaSubmenu" runat="server">
+                      <asp:DropDownList ID="ListaSubmenu" class="form-control" runat="server">
                       </asp:DropDownList>
                     
                       &nbsp;
@@ -61,7 +61,7 @@
                       &nbsp;
                       <asp:Button class = "btn btn-primary" ID="Button1" runat="server" 
                           Text="Guardar" onclick="Button1_Click" />
-                      <a href="Index.aspx" class= "btn btn-primary">Cancelar</a>
+                      <a href="Index.aspx" class="btn btn-light">Cancelar</a>
                   </td>
                   <td>
                       &nbsp;
