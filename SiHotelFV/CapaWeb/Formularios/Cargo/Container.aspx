@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Container.aspx.cs" Inherits="CapaWeb.Formularios.Cargo.Container" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+         <div class="card-body">
 
     <form id="form1" runat="server">
         <div>
@@ -17,6 +19,8 @@
 <!--Detalle-->
       <div class="panel panel-default">
         <div class="panel-heading">CARGO</div>
+            <br />
+          <br />
          
           <table  class="table table-hover" style="width: 100%;">
               <tr>
@@ -54,4 +58,7 @@
 </table>
             </div>
         </form>
+        </div>
+    </div>
+        </div>
 </asp:Content>

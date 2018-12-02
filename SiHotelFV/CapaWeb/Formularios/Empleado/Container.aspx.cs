@@ -35,6 +35,59 @@ namespace CapaWeb.Formularios.Empleado
         }
 
 
+        protected void validarce()
+        {
+            string cedula = dniEmpleado.Text;
+            char[] vector = cedula.ToArray();
+            int sumatotal = 0, sumi = 0;
+            if (vector.Length == 10)
+            {
+                for (int i = 0; i < vector.Length - 1; i++)
+                {
+                    int numero = Convert.ToInt32(vector[i].ToString());
+                   // txtnom.Text = "Verificar" + numero.ToString();
+                    if ((i % 2) == 1)
+                    {
+                        sumatotal = sumatotal + numero;
+                       // txtfot.Text = "Suma de pares" + sumatotal;
+                    }
+                    else
+                    {
+                        numero = numero * 2;
+                        if (numero > 9)
+                        {
+                            numero = numero - 9;
+                            sumi = sumi + numero;
+                        }
+                        else
+                        {
+                            sumi = sumi + numero;
+                        }
+                       // txtcod.Text = "Suma de impares" + sumi;
+
+
+                    }
+                }
+
+                sumatotal = sumatotal + sumi;
+               // txtgen.Text = Convert.ToString(sumatotal);
+                sumatotal = 10 - (sumatotal % 10);
+                if (sumatotal == Convert.ToInt32(vector[9].ToString()))
+                {
+                   // txtnom.Text = Convert.ToString(sumatotal);
+                }
+                else
+                {
+                   // txtape.Text = Convert.ToString(sumatotal);
+                }
+            }
+            else
+            {
+               // txtfot.Text = "Numeros ingresados menos o mas de 10";
+            }
+
+        }
+
         protected void LlenarFormulario()
         {
             if (!IsPostBack)

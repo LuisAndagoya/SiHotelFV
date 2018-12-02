@@ -32,7 +32,8 @@
 			<h2>BIENVENIDO@S</h2>
     <br />
     <br />
-			<div  align="center">
+			<div class="card">
+         <div class="card-body">
 				<div  class="sidebar sidebar-offcanvas"  align="center">
 			
     <form id="form1"  class="form-group" align="center" runat="server" color="red">
@@ -41,11 +42,11 @@
 						<div>
 							<label>Usuario</label>
 							
-                            <asp:TextBox ID="TxtUsu" required="required" runat="server"   ></asp:TextBox>
+                            <asp:TextBox ID="TxtUsu" required="required" runat="server"   placeholder="Usuario" ></asp:TextBox>
 						</div>
 						<div>
 							<label>Contrase&ntilde;a</label>
-                            <asp:TextBox ID="TxtCont" required="required" TextMode="Password" runat="server" ></asp:TextBox>
+                            <asp:TextBox ID="TxtCont" required="required" TextMode="Password" placeholder="Contraseña" runat="server" ></asp:TextBox>
 							
 						</div>
 						<div class="bottom">
@@ -65,6 +66,7 @@
 			</div>
 		
 		</div>
+    </div>
   
 
      <!-- plugins:js -->
