@@ -2026,7 +2026,7 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, empleado.nombreEmpleado, cargo.nombreCargo
+            this._commandCollection[2].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado, empleado.nombreEmpleado, cargo.idCargo, cargo.nombreCargo
 FROM            usuario INNER JOIN
                          empleado ON empleado.idEmpleado = usuario.idEmpleado INNER JOIN
                          cargo ON cargo.idCargo = usuario.idCargo
