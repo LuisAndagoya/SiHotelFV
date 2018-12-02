@@ -34,7 +34,7 @@
                       <asp:Label ID="Label2" runat="server" Text="Label">Usuario:</asp:Label>
                   </td>
                   <td> 
-                  <asp:TextBox ID="usernameUsuario"    required ="required"  runat="server"></asp:TextBox>
+                  <asp:TextBox ID="usernameUsuario"   class="form-control" required ="required"  runat="server"></asp:TextBox>
                     
                       &nbsp;
                   </td>
@@ -50,7 +50,7 @@
                   <td> 
                   
                  
-                      <asp:TextBox ID="passwordUsuario" type = "password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Ejm: Carlos@12" required ="required"  runat="server"></asp:TextBox>
+                      <asp:TextBox ID="passwordUsuario" class="form-control" type = "password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Ejm: Carlos@12" required ="required"  runat="server"></asp:TextBox>
                     
                       &nbsp;
                   </td>
@@ -67,7 +67,7 @@
                   </td>
                   <td>
 
-                      <asp:DropDownList ID="ListaEmpleado" runat="server">
+                      <asp:DropDownList class="form-control"  ID="ListaEmpleado" runat="server">
                       </asp:DropDownList>
                       
                       &nbsp;
@@ -82,7 +82,7 @@
                   </td>
                   <td>
 
-                      <asp:DropDownList ID="ListaCargo" runat="server">
+                      <asp:DropDownList class="form-control" ID="ListaCargo" runat="server">
                       </asp:DropDownList>
                       
                       &nbsp;
@@ -98,7 +98,7 @@
                   </td>
                   <td>
                       &nbsp;
-                      <asp:DropDownList ID="DropDownList1" runat="server">
+                      <asp:DropDownList class="form-control"  ID="DropDownList1" runat="server">
                           <asp:ListItem Selected="True" Value="A">ACTIVO</asp:ListItem>
                           <asp:ListItem Value="I">INACTIVO</asp:ListItem>
                       </asp:DropDownList>
@@ -110,9 +110,9 @@
               <tr>
                   <td>
                       &nbsp;
-                      <asp:Button class = "btn btn-primary" ID="Button1" runat="server" 
+                      <asp:Button class="btn btn-gradient-primary mr-2" ID="Button1" runat="server" 
                           Text="Guardar" onclick="Button1_Click" />
-                      <a href="Index.aspx" class=" btn btn-primary">Cancelar</a>
+                      <a href="Index.aspx" class="btn btn-light">Cancelar</a>
                   </td>
                   <td>
                       &nbsp;
