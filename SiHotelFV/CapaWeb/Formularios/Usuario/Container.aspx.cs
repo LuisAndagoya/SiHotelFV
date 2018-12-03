@@ -101,7 +101,7 @@ namespace CapaWeb.Formularios.Usuario
         protected void Button1_Click(object sender, EventArgs e)
         {
             string error = "";
-            // short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
+             short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
             switch (Request.QueryString["TRN"]) //ultilizo la variable para la opcion
             {
 
@@ -110,7 +110,7 @@ namespace CapaWeb.Formularios.Usuario
 
                     if (string.IsNullOrEmpty(error))
                     {
-                        //CapaProceso.Clases.Auditoria.Insertar("Usuario", "Insertar", UsuarioId);
+                       CapaProceso.Clases.Auditoria.Insertar("Usuario", "Insertar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -124,7 +124,7 @@ namespace CapaWeb.Formularios.Usuario
                     error = CapaProceso.Clases.Usuario.Actualizar(usernameUsuario.Text, passwordUsuario.Text, DropDownList1.SelectedValue.ToString(), Convert.ToInt16(ListaEmpleado.SelectedValue.ToString()), Convert.ToInt16(ListaCargo.SelectedValue.ToString()), short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                        //CapaProceso.Clases.Auditoria.Insertar("Usuario", "Actualizar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Usuario", "Actualizar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -138,7 +138,7 @@ namespace CapaWeb.Formularios.Usuario
                     error = CapaProceso.Clases.Usuario.Eliminar(short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                        //CapaProceso.Clases.Auditoria.Insertar("Usuario", "Eliminar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Usuario", "Eliminar", UsuarioId);
 
                         Response.Redirect("Index.aspx");
                     }

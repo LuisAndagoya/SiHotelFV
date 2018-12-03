@@ -92,7 +92,7 @@ namespace CapaWeb.Formularios.Submenu
         protected void Button1_Click(object sender, EventArgs e)
         {
             string error = "";
-            // short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
+             short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
             switch (Request.QueryString["TRN"]) //ultilizo la variable para la opcion
             {
 
@@ -101,7 +101,7 @@ namespace CapaWeb.Formularios.Submenu
 
                     if (string.IsNullOrEmpty(error))
                     {
-                        //CapaProceso.Clases.Auditoria.Insertar("Usuario", "Insertar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Submenu", "Insertar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -115,7 +115,7 @@ namespace CapaWeb.Formularios.Submenu
                     error = CapaProceso.Clases.Submenu.Actualizar(Convert.ToInt16(ListaMenu.SelectedValue.ToString()), nombreSubMenu.Text, urlSubMenu.Text, iconoSubMenu.Text,   short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                        //CapaProceso.Clases.Auditoria.Insertar("Usuario", "Actualizar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Submenu", "Actualizar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -129,7 +129,7 @@ namespace CapaWeb.Formularios.Submenu
                     error = CapaProceso.Clases.Submenu.Eliminar(short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                        //CapaProceso.Clases.Auditoria.Insertar("Usuario", "Eliminar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Submenu", "Eliminar", UsuarioId);
 
                         Response.Redirect("Index.aspx");
                     }

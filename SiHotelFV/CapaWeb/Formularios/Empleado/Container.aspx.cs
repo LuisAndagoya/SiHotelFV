@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using CapaWeb.Formularios.Empleado;
 
 namespace CapaWeb.Formularios.Empleado
 {
@@ -16,7 +17,7 @@ namespace CapaWeb.Formularios.Empleado
             {
 
                 case "INS":
-
+                   
 
                     break;
 
@@ -35,58 +36,7 @@ namespace CapaWeb.Formularios.Empleado
         }
 
 
-        protected void validarce()
-        {
-            string cedula = dniEmpleado.Text;
-            char[] vector = cedula.ToArray();
-            int sumatotal = 0, sumi = 0;
-            if (vector.Length == 10)
-            {
-                for (int i = 0; i < vector.Length - 1; i++)
-                {
-                    int numero = Convert.ToInt32(vector[i].ToString());
-                   // txtnom.Text = "Verificar" + numero.ToString();
-                    if ((i % 2) == 1)
-                    {
-                        sumatotal = sumatotal + numero;
-                       // txtfot.Text = "Suma de pares" + sumatotal;
-                    }
-                    else
-                    {
-                        numero = numero * 2;
-                        if (numero > 9)
-                        {
-                            numero = numero - 9;
-                            sumi = sumi + numero;
-                        }
-                        else
-                        {
-                            sumi = sumi + numero;
-                        }
-                       // txtcod.Text = "Suma de impares" + sumi;
-
-
-                    }
-                }
-
-                sumatotal = sumatotal + sumi;
-               // txtgen.Text = Convert.ToString(sumatotal);
-                sumatotal = 10 - (sumatotal % 10);
-                if (sumatotal == Convert.ToInt32(vector[9].ToString()))
-                {
-                   // txtnom.Text = Convert.ToString(sumatotal);
-                }
-                else
-                {
-                   // txtape.Text = Convert.ToString(sumatotal);
-                }
-            }
-            else
-            {
-               // txtfot.Text = "Numeros ingresados menos o mas de 10";
-            }
-
-        }
+       
 
         protected void LlenarFormulario()
         {
@@ -146,7 +96,7 @@ namespace CapaWeb.Formularios.Empleado
                     if (string.IsNullOrEmpty(error))
                     {
 
-                        // CapaProceso.Clases.Auditoria.Insertar("Cargo", "Insertar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Empleado", "Insertar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -160,7 +110,7 @@ namespace CapaWeb.Formularios.Empleado
                     error = CapaProceso.Clases.Empleado.Actualizar(dniEmpleado.Text, nombreEmpleado.Text, apellidoEmpleado.Text, fnacimiento.Text, sexoEmpleado.Text, estadocivilEmpleado.Text, domicilioEmpleado.Text, telefmovilEmpleado.Text, emailEmpleado.Text, short.Parse(lblId.Text), fecharegistroEmpleado.Text);
                     if (string.IsNullOrEmpty(error))
                     {
-                        // CapaProceso.Clases.Auditoria.Insertar("Cargo", "Actualizar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Empleado", "Actualizar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -174,7 +124,7 @@ namespace CapaWeb.Formularios.Empleado
                     error = CapaProceso.Clases.Empleado.Eliminar(short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                        // CapaProceso.Clases.Auditoria.Insertar("Auditoria", "Eliminar", UsuarioId);
+                         CapaProceso.Clases.Auditoria.Insertar("Empleado", "Eliminar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else

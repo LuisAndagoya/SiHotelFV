@@ -209,6 +209,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Formularios\Auditoria\Index.aspx" />
+    <Content Include="Formularios\Empleado\ValidarCedula.js" />
     <Content Include="Formularios\Habitacion\Container.aspx" />
     <Content Include="Formularios\Habitacion\Index.aspx" />
     <Content Include="Formularios\Menucargo\Container.aspx" />

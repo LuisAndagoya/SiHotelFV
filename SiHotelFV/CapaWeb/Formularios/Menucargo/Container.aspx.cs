@@ -92,7 +92,7 @@ namespace CapaWeb.Formularios.Menucargo
         protected void Button1_Click(object sender, EventArgs e)
         {
             string error = "";
-           // short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
+            short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
             switch (Request.QueryString["TRN"]) //ultilizo la variable para la opcion
             {
 
@@ -101,7 +101,7 @@ namespace CapaWeb.Formularios.Menucargo
                    
                     if (string.IsNullOrEmpty(error))
                     {
-                        //CapaProceso.Clases.Auditoria.Insertar("Usuario", "Insertar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Menucargo", "Insertar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -115,7 +115,7 @@ namespace CapaWeb.Formularios.Menucargo
                     error = CapaProceso.Clases.Menucargo.Actualizar(Convert.ToInt16(ListaCargo.SelectedValue.ToString()), Convert.ToInt16(ListaSubmenu.SelectedValue.ToString()), short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                        //CapaProceso.Clases.Auditoria.Insertar("Usuario", "Actualizar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Menucargo", "Actualizar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -129,7 +129,7 @@ namespace CapaWeb.Formularios.Menucargo
                     error = CapaProceso.Clases.Menucargo.Eliminar(short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                        //CapaProceso.Clases.Auditoria.Insertar("Usuario", "Eliminar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Menucargo", "Eliminar", UsuarioId);
                         
                         Response.Redirect("Index.aspx");
                     }
