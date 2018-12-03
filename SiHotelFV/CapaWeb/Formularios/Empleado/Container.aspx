@@ -1,210 +1,90 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Container.aspx.cs" Inherits="CapaWeb.Formularios.Empleado.Container" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="col-lg-12 grid-margin stretch-card">
-      <div class="card">
-         <div class="card-body">
+  <div class="col-md-8 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">EMPLEADO</h4>
+
+                <form id="form1" class="forms-sample" runat="server">
+                    <div class="form-group">
+                        <asp:Label ID="LblErro" runat="server" Text="" ForeColor="Red"></asp:Label>
+                    </div>
 
 
-    
-    <form id="form1" runat="server">
-        <div>
-    <table  align="left">
-  <tr>
-    <td><!-- Cabezera-->
-      <br />
-     <asp:Label ID="LblErro" runat="server" Text="" ForeColor="Red"></asp:Label>
-      <!-- Cabezera--></td>
-  </tr>
-  <tr>
-    <td ><br />
-   
-<!--Detalle-->
-      <div class="panel panel-default">
-        <div class="panel-heading">EMPLEADO</div>
-          <br />
-          <br />
-
+                     <div class="form-group">
+                        <label for="dniEmpleado">Cédula</label>
+                       <asp:TextBox ID="dniEmpleado"   class="form-control" pattern="^[0-9]{10}$"   required ="required"  runat="server"></asp:TextBox>
+                    </div>
          
-          <table  class="table table-hover" style="width: 100%;">
-              <tr>
-                  <td>
-                      &nbsp;
-                      <asp:Label ID="Label1"  runat="server" Text="Label">Cédula:</asp:Label>
-                  </td>
-                  <td>
-                      <asp:TextBox ID="dniEmpleado"   class="form-control" pattern="^[0-9]{10}$"   required ="required"  runat="server"></asp:TextBox>
-                      &nbsp;
-                  </td>
-              </tr>            
-              
+    
+                       <div class="form-group">
+                        <label for="nombreEmpleado">Nombre</label>
+                       <asp:TextBox ID="nombreEmpleado"  class="form-control"  pattern="^[\ s A-z ]*$" required ="required"  runat="server"></asp:TextBox>
+                    </div>
+                
 
-              <tr>
-                  <td>
-                      &nbsp;
-                      <asp:Label ID="Label2" runat="server" Text="Label">Nombre:</asp:Label>
-                  </td>
-                  <td>
-                      <asp:TextBox ID="nombreEmpleado"  class="form-control"  pattern="^[\ s A-z ]*$" required ="required"  runat="server"></asp:TextBox>
-                      &nbsp;
-                  </td>
-              </tr>  
-
-
-               <tr>
-                  <td>
-                      &nbsp;
-                      <asp:Label ID="Label3" runat="server" Text="Label">Apellido:</asp:Label>
-                  </td>
-                  <td>
-                      <asp:TextBox ID="apellidoEmpleado" class="form-control"  pattern="^[\ s A-z ]*$"  required ="required"  runat="server"></asp:TextBox>
-                      &nbsp;
-                  </td>
-              </tr>  
-
-
-               <tr>
-                  <td>
-                      &nbsp;
-                      <asp:Label ID="Label4" runat="server" Text="Label">Fecha Nacimiento:</asp:Label>
-                  </td>
-                  <td>
-                      <asp:TextBox type="date" ID="fnacimiento" class="form-control" required ="required"  runat="server"></asp:TextBox>
+                    
+                       <div class="form-group">
+                        <label for="apellidoEmpleado">Apellido</label>
+                       <asp:TextBox ID="apellidoEmpleado" class="form-control"  pattern="^[\ s A-z ]*$"  required ="required"  runat="server"></asp:TextBox>
+                    </div>
+             
+                      
+                      <div class="form-group">
+                        <label for="fnacimiento">Fecha Nacimiento</label>
+                        <asp:TextBox type="date" ID="fnacimiento" class="form-control" required ="required"  runat="server"></asp:TextBox>
+                    </div>
+                
                   
-                      &nbsp;
-                  </td>
-              </tr>  
-        
-
-                  <tr>
-                  <td>
-                      &nbsp;
-                      <asp:Label ID="Label5" runat="server" Text="Label">Sexo:</asp:Label>
-                  </td>
-                  <td>
-                     
-                      &nbsp;
-
-                       <asp:DropDownList ID="sexoEmpleado"  class="form-control" runat="server">
+                      <div class="form-group">
+                        <label for="sexoEmpleadoo">Sexo</label>
+                          <asp:DropDownList ID="sexoEmpleado"  class="form-control" runat="server">
                           <asp:ListItem Selected="True" Value="M">MASCULINO</asp:ListItem>
                           <asp:ListItem Value="F">FEMENINO</asp:ListItem>
                       </asp:DropDownList>
+                    </div>
 
 
-
-                  </td>
-              </tr>  
-
-
-
-                    <tr>
-                  <td>
-                      &nbsp;
-                      <asp:Label ID="Label6" runat="server" Text="Label">Estado civil:</asp:Label>
-                  </td>
-                  <td>
-                      
-                      
-                       
-                      &nbsp;
-
-                       <asp:DropDownList ID="estadocivilEmpleado" class="form-control" runat="server">
+                      <div class="form-group">
+                        <label for="estadocivilEmpleado">Estado civil</label>
+                              <asp:DropDownList ID="estadocivilEmpleado" class="form-control" runat="server">
                           <asp:ListItem Selected="True" Value="CASADO">CASADO</asp:ListItem>
                           <asp:ListItem Value="DIVORCIADO">DIVORCIADO</asp:ListItem>
                            <asp:ListItem Value="SOLTERO">SOLTERO</asp:ListItem>
                            <asp:ListItem Value="UNION LIBRE">UNION LIBRE</asp:ListItem>
                       </asp:DropDownList>
+                    </div>
 
-
-
-                  </td>
-              </tr>  
-
-
-
-                    <tr>
-                  <td>
-                      &nbsp;
-                      <asp:Label ID="Label7" runat="server" Text="Label">Domicilio:</asp:Label>
-                  </td>
-                  <td>
-                      <asp:TextBox ID="domicilioEmpleado"  class="form-control"  required ="required"  runat="server"></asp:TextBox>
-                      &nbsp;
-                  </td>
-              </tr>  
-
-
-
-                    <tr>
-                  <td>
-                      &nbsp;
-                      <asp:Label ID="Label8" runat="server" Text="Label">Celular:</asp:Label>
-                  </td>
-                  <td>
-                      <asp:TextBox ID="telefmovilEmpleado" class="form-control"  pattern="^[0-9]{10}$" placeholder="Ejm: 0992333333" required ="required"  runat="server"></asp:TextBox>
-                      &nbsp;
-                  </td>
-              </tr>  
-
-
-                <tr>
-                  <td>
-                      &nbsp;
-                     <asp:Label ID="Label9"  runat="server" Text="Label">Fecha registro:</asp:Label>
-                  </td>
-                  <td>
-                       <asp:TextBox Type="date" ID="fecharegistroEmpleado"   class="form-control" required ="required"  runat="server"></asp:TextBox>
-                      &nbsp;
-                  </td>
-              </tr>
-
-  
-                      
+             
+                    <div class="form-group">
+                        <label for="domicilioEmpleado">Domicilio</label>
+                           <asp:TextBox ID="domicilioEmpleado"  class="form-control"  required ="required"  runat="server"></asp:TextBox>   
+                    </div>
                   
-                     
-                
+                      <div class="form-group">
+                        <label for="telefmovilEmpleado">Celular</label>
+                        <asp:TextBox ID="telefmovilEmpleado" class="form-control"  pattern="^[0-9]{10}$" placeholder="Ejm: 0992333333" required ="required"  runat="server"></asp:TextBox>   
+                    </div>
 
 
+                      <div class="form-group">
+                        <label for="fecharegistroEmpleado">Fecha registro</label>
+                        <asp:TextBox Type="date" ID="fecharegistroEmpleado"   class="form-control" required ="required"  runat="server"></asp:TextBox>
+                    </div>
 
-                  <tr>
-                  <td>
-                      &nbsp;
-                      <asp:Label ID="Label10" runat="server" Text="Label">Email:</asp:Label>
-                  </td>
-                  <td>
-                      <asp:TextBox ID="emailEmpleado"  type="email" class="form-control" required ="required"  runat="server"></asp:TextBox>
-                      &nbsp;
-                  </td>
-              </tr> 
+                       <div class="form-group">
+                        <label for="emailEmpleado">Email</label>
+                         <asp:TextBox ID="emailEmpleado"  type="email" class="form-control" required ="required"  runat="server"></asp:TextBox>
+                    </div>
 
-
-
-
-              <tr>
-                  <td>
-                      &nbsp;
-                      <asp:Button class = "btn btn-primary" ID="Button1" runat="server" 
+                      <asp:Button class="btn btn-gradient-primary mr-2" ID="Button1" runat="server" 
                           Text="Guardar" onclick="Button1_Click" />
                       <a href="Index.aspx" class="btn btn-light">Cancelar</a>
-                  </td>
-                  <td>
-                      &nbsp;
-                  </td>
-              </tr>
-          </table>
-      </div>
-      <!--Detalle--></td>
-  </tr>
-  <tr>
-    <td><!-- Pie -->
+                
         <asp:Label Visible ="false" ID="lblId" runat="server" Text=""></asp:Label>
-      </td>
-  </tr>
-</table>
+               </form>
             </div>
-        </form>
-
- </div>
+        </div>
     </div>
-         </div>
 
 </asp:Content>
