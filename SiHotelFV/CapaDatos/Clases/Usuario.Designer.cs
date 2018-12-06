@@ -2083,8 +2083,9 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = "SELECT COUNT(idUsuario) FROM usuario\r\nWHERE (usernameUsuario=@usernameUsuario)\r\nA" +
-                "ND (passwordUsuario=@passwordUsuario)";
+            this._commandCollection[9].CommandText = "SELECT        COUNT(idUsuario) AS Expr1\r\nFROM            usuario\r\nWHERE        (u" +
+                "sernameUsuario = @usernameUsuario) AND (passwordUsuario = @passwordUsuario) AND " +
+                "(estadoUsuario = \'A\')";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usernameUsuario", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "usernameUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passwordUsuario", global::System.Data.SqlDbType.VarChar, 125, global::System.Data.ParameterDirection.Input, 0, 0, "passwordUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2464,7 +2465,7 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> Login(string usernameUsuario, string passwordUsuario) {
+        public virtual object Login(string usernameUsuario, string passwordUsuario) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
             if ((usernameUsuario == null)) {
                 throw new global::System.ArgumentNullException("usernameUsuario");
@@ -2494,10 +2495,10 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+                return null;
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         

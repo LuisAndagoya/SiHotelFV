@@ -1,6 +1,7 @@
 ﻿using CapaDatos.Clases.UsuarioTableAdapters;
 using System;
 
+
 namespace CapaProceso.Clases
 {
     public class Usuario

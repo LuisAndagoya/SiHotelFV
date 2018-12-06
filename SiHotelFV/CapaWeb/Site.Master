@@ -67,11 +67,11 @@
                                 <li class="nav-item"><a class="nav-link" href="../../Formularios/Cargo/Index.aspx">Cargo </a></li>
                                 <li class="nav-item"><a class="nav-link" href="../../Formularios/Auditoria/Index.aspx">Auditoria </a></li>
                                 <li class="nav-item"><a class="nav-link" href="../../Formularios/Submenu/Index.aspx">Submenu </a></li>
-
-
-
-                            </ul>
-                        </div>
+                                <li class="nav-item"><a class="nav-link" href="../../Formularios/Estadohabitacion/Index.aspx">Estado Habitación</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../Formularios/Preciohabitacion/Index.aspx">Precio Habitación</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../Formularios/Distribucion/Index.aspx">Distribuión</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../Formularios/Tipohabitacion/Index.aspx">Tipo Habitación</a></li>
+                                <li class="nav-item"><a class="nav-link" href="../../Formularios/Hotel/Index.aspx">Hotel</a></li>
                     </li>
                 </ul>
             </nav>

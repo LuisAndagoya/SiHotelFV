@@ -42,15 +42,15 @@
   <ItemGroup>
     <Compile Include="Clases\Auditoria.cs" />
     <Compile Include="Clases\Cargo.cs" />
-    <Compile Include="Clases\Cliente.cs" />
+    <Compile Include="Clases\DistribucionHabitacion.cs" />
     <Compile Include="Clases\Empleado.cs" />
-    <Compile Include="Clases\Habitacion.cs" />
-    <Compile Include="Clases\HabitacionEstado.cs" />
+    <Compile Include="Clases\EstadoHabitacion.cs" />
     <Compile Include="Clases\Hotel.cs" />
     <Compile Include="Clases\Menu.cs" />
     <Compile Include="Clases\Menucargo.cs" />
-    <Compile Include="Clases\Reservacion.cs" />
+    <Compile Include="Clases\PrecioHabitacion.cs" />
     <Compile Include="Clases\Submenu.cs" />
+    <Compile Include="Clases\TipoHabitacion.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

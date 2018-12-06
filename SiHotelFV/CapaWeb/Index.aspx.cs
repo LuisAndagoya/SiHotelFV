@@ -37,6 +37,7 @@ namespace CapaWeb
                     Session["UsuarioId"] = row["idUsuario"];
                     Session["UsuarioNomApe"] = row["nombreEmpleado"].ToString() + " " + row["apellidoEmpleado"].ToString();
                     Session["idCargo"] = row["idCargo"];
+                    Session["estadoUsuario"] = row["estadoUsuario"];
                 }
                 short idUsuario = short.Parse(Session["UsuarioId"].ToString());
                 CapaProceso.Clases.Auditoria.Insertar("Usuario", "Ingreso al sistema", idUsuario);

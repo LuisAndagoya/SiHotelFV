@@ -24,7 +24,7 @@ namespace CapaDatos.Clases {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class Hotel : global::System.Data.DataSet {
         
-        private HotelDataTable tableHotel;
+        private hotelDataTable tablehotel;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace CapaDatos.Clases {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Hotel"] != null)) {
-                    base.Tables.Add(new HotelDataTable(ds.Tables["Hotel"]));
+                if ((ds.Tables["hotel"] != null)) {
+                    base.Tables.Add(new hotelDataTable(ds.Tables["hotel"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace CapaDatos.Clases {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public HotelDataTable _Hotel {
+        public hotelDataTable hotel {
             get {
-                return this.tableHotel;
+                return this.tablehotel;
             }
         }
         
@@ -152,8 +152,8 @@ namespace CapaDatos.Clases {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Hotel"] != null)) {
-                    base.Tables.Add(new HotelDataTable(ds.Tables["Hotel"]));
+                if ((ds.Tables["hotel"] != null)) {
+                    base.Tables.Add(new hotelDataTable(ds.Tables["hotel"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableHotel = ((HotelDataTable)(base.Tables["Hotel"]));
+            this.tablehotel = ((hotelDataTable)(base.Tables["hotel"]));
             if ((initTable == true)) {
-                if ((this.tableHotel != null)) {
-                    this.tableHotel.InitVars();
+                if ((this.tablehotel != null)) {
+                    this.tablehotel.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace CapaDatos.Clases {
             this.Namespace = "http://tempuri.org/Hotel.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableHotel = new HotelDataTable();
-            base.Tables.Add(this.tableHotel);
+            this.tablehotel = new hotelDataTable();
+            base.Tables.Add(this.tablehotel);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerialize_Hotel() {
+        private bool ShouldSerializehotel() {
             return false;
         }
         
@@ -270,37 +270,37 @@ namespace CapaDatos.Clases {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void HotelRowChangeEventHandler(object sender, HotelRowChangeEvent e);
+        public delegate void hotelRowChangeEventHandler(object sender, hotelRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class HotelDataTable : global::System.Data.TypedTableBase<HotelRow> {
+        public partial class hotelDataTable : global::System.Data.TypedTableBase<hotelRow> {
             
             private global::System.Data.DataColumn columncodHotel;
             
-            private global::System.Data.DataColumn columnNombreHotel;
+            private global::System.Data.DataColumn columnnombreHotel;
             
-            private global::System.Data.DataColumn columnNumeroHabitaciones;
+            private global::System.Data.DataColumn columnnumeroHabitaciones;
             
-            private global::System.Data.DataColumn columnCategoriaHotel;
+            private global::System.Data.DataColumn columncategoriaHotel;
             
-            private global::System.Data.DataColumn columnCiudadHotel;
+            private global::System.Data.DataColumn columnciudadHotel;
             
-            private global::System.Data.DataColumn columnDireccionHotel;
+            private global::System.Data.DataColumn columndireccionHotel;
             
-            private global::System.Data.DataColumn columnTelefonoHotel;
+            private global::System.Data.DataColumn columntelefonoHotel;
             
-            private global::System.Data.DataColumn columnCorreoHotel;
+            private global::System.Data.DataColumn columncorreoHotel;
             
-            private global::System.Data.DataColumn columnDescripcionHotel;
+            private global::System.Data.DataColumn columndescripcionHotel;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HotelDataTable() {
-                this.TableName = "Hotel";
+            public hotelDataTable() {
+                this.TableName = "hotel";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -308,7 +308,7 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal HotelDataTable(global::System.Data.DataTable table) {
+            internal hotelDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -325,7 +325,7 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected HotelDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected hotelDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -340,65 +340,65 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NombreHotelColumn {
+            public global::System.Data.DataColumn nombreHotelColumn {
                 get {
-                    return this.columnNombreHotel;
+                    return this.columnnombreHotel;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn NumeroHabitacionesColumn {
+            public global::System.Data.DataColumn numeroHabitacionesColumn {
                 get {
-                    return this.columnNumeroHabitaciones;
+                    return this.columnnumeroHabitaciones;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CategoriaHotelColumn {
+            public global::System.Data.DataColumn categoriaHotelColumn {
                 get {
-                    return this.columnCategoriaHotel;
+                    return this.columncategoriaHotel;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CiudadHotelColumn {
+            public global::System.Data.DataColumn ciudadHotelColumn {
                 get {
-                    return this.columnCiudadHotel;
+                    return this.columnciudadHotel;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DireccionHotelColumn {
+            public global::System.Data.DataColumn direccionHotelColumn {
                 get {
-                    return this.columnDireccionHotel;
+                    return this.columndireccionHotel;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TelefonoHotelColumn {
+            public global::System.Data.DataColumn telefonoHotelColumn {
                 get {
-                    return this.columnTelefonoHotel;
+                    return this.columntelefonoHotel;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CorreoHotelColumn {
+            public global::System.Data.DataColumn correoHotelColumn {
                 get {
-                    return this.columnCorreoHotel;
+                    return this.columncorreoHotel;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DescripcionHotelColumn {
+            public global::System.Data.DataColumn descripcionHotelColumn {
                 get {
-                    return this.columnDescripcionHotel;
+                    return this.columndescripcionHotel;
                 }
             }
             
@@ -413,60 +413,60 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HotelRow this[int index] {
+            public hotelRow this[int index] {
                 get {
-                    return ((HotelRow)(this.Rows[index]));
+                    return ((hotelRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HotelRowChangeEventHandler HotelRowChanging;
+            public event hotelRowChangeEventHandler hotelRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HotelRowChangeEventHandler HotelRowChanged;
+            public event hotelRowChangeEventHandler hotelRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HotelRowChangeEventHandler HotelRowDeleting;
+            public event hotelRowChangeEventHandler hotelRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event HotelRowChangeEventHandler HotelRowDeleted;
+            public event hotelRowChangeEventHandler hotelRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddHotelRow(HotelRow row) {
+            public void AddhotelRow(hotelRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HotelRow AddHotelRow(string codHotel, string NombreHotel, int NumeroHabitaciones, string CategoriaHotel, string CiudadHotel, string DireccionHotel, string TelefonoHotel, string CorreoHotel, string DescripcionHotel) {
-                HotelRow rowHotelRow = ((HotelRow)(this.NewRow()));
+            public hotelRow AddhotelRow(string codHotel, string nombreHotel, int numeroHabitaciones, string categoriaHotel, string ciudadHotel, string direccionHotel, string telefonoHotel, string correoHotel, string descripcionHotel) {
+                hotelRow rowhotelRow = ((hotelRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         codHotel,
-                        NombreHotel,
-                        NumeroHabitaciones,
-                        CategoriaHotel,
-                        CiudadHotel,
-                        DireccionHotel,
-                        TelefonoHotel,
-                        CorreoHotel,
-                        DescripcionHotel};
-                rowHotelRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowHotelRow);
-                return rowHotelRow;
+                        nombreHotel,
+                        numeroHabitaciones,
+                        categoriaHotel,
+                        ciudadHotel,
+                        direccionHotel,
+                        telefonoHotel,
+                        correoHotel,
+                        descripcionHotel};
+                rowhotelRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowhotelRow);
+                return rowhotelRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HotelRow FindBycodHotel(string codHotel) {
-                return ((HotelRow)(this.Rows.Find(new object[] {
+            public hotelRow FindBycodHotel(string codHotel) {
+                return ((hotelRow)(this.Rows.Find(new object[] {
                             codHotel})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                HotelDataTable cln = ((HotelDataTable)(base.Clone()));
+                hotelDataTable cln = ((hotelDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -474,21 +474,21 @@ namespace CapaDatos.Clases {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new HotelDataTable();
+                return new hotelDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columncodHotel = base.Columns["codHotel"];
-                this.columnNombreHotel = base.Columns["NombreHotel"];
-                this.columnNumeroHabitaciones = base.Columns["NumeroHabitaciones"];
-                this.columnCategoriaHotel = base.Columns["CategoriaHotel"];
-                this.columnCiudadHotel = base.Columns["CiudadHotel"];
-                this.columnDireccionHotel = base.Columns["DireccionHotel"];
-                this.columnTelefonoHotel = base.Columns["TelefonoHotel"];
-                this.columnCorreoHotel = base.Columns["CorreoHotel"];
-                this.columnDescripcionHotel = base.Columns["DescripcionHotel"];
+                this.columnnombreHotel = base.Columns["nombreHotel"];
+                this.columnnumeroHabitaciones = base.Columns["numeroHabitaciones"];
+                this.columncategoriaHotel = base.Columns["categoriaHotel"];
+                this.columnciudadHotel = base.Columns["ciudadHotel"];
+                this.columndireccionHotel = base.Columns["direccionHotel"];
+                this.columntelefonoHotel = base.Columns["telefonoHotel"];
+                this.columncorreoHotel = base.Columns["correoHotel"];
+                this.columndescripcionHotel = base.Columns["descripcionHotel"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -496,68 +496,66 @@ namespace CapaDatos.Clases {
             private void InitClass() {
                 this.columncodHotel = new global::System.Data.DataColumn("codHotel", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodHotel);
-                this.columnNombreHotel = new global::System.Data.DataColumn("NombreHotel", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombreHotel);
-                this.columnNumeroHabitaciones = new global::System.Data.DataColumn("NumeroHabitaciones", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumeroHabitaciones);
-                this.columnCategoriaHotel = new global::System.Data.DataColumn("CategoriaHotel", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCategoriaHotel);
-                this.columnCiudadHotel = new global::System.Data.DataColumn("CiudadHotel", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCiudadHotel);
-                this.columnDireccionHotel = new global::System.Data.DataColumn("DireccionHotel", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDireccionHotel);
-                this.columnTelefonoHotel = new global::System.Data.DataColumn("TelefonoHotel", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTelefonoHotel);
-                this.columnCorreoHotel = new global::System.Data.DataColumn("CorreoHotel", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCorreoHotel);
-                this.columnDescripcionHotel = new global::System.Data.DataColumn("DescripcionHotel", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescripcionHotel);
+                this.columnnombreHotel = new global::System.Data.DataColumn("nombreHotel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombreHotel);
+                this.columnnumeroHabitaciones = new global::System.Data.DataColumn("numeroHabitaciones", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumeroHabitaciones);
+                this.columncategoriaHotel = new global::System.Data.DataColumn("categoriaHotel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncategoriaHotel);
+                this.columnciudadHotel = new global::System.Data.DataColumn("ciudadHotel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnciudadHotel);
+                this.columndireccionHotel = new global::System.Data.DataColumn("direccionHotel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndireccionHotel);
+                this.columntelefonoHotel = new global::System.Data.DataColumn("telefonoHotel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntelefonoHotel);
+                this.columncorreoHotel = new global::System.Data.DataColumn("correoHotel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncorreoHotel);
+                this.columndescripcionHotel = new global::System.Data.DataColumn("descripcionHotel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcionHotel);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncodHotel}, true));
                 this.columncodHotel.AllowDBNull = false;
                 this.columncodHotel.Unique = true;
                 this.columncodHotel.MaxLength = 10;
-                this.columnNombreHotel.AllowDBNull = false;
-                this.columnNombreHotel.MaxLength = 50;
-                this.columnNumeroHabitaciones.AllowDBNull = false;
-                this.columnCategoriaHotel.AllowDBNull = false;
-                this.columnCategoriaHotel.MaxLength = 45;
-                this.columnCiudadHotel.AllowDBNull = false;
-                this.columnCiudadHotel.MaxLength = 45;
-                this.columnDireccionHotel.AllowDBNull = false;
-                this.columnDireccionHotel.MaxLength = 50;
-                this.columnTelefonoHotel.AllowDBNull = false;
-                this.columnTelefonoHotel.MaxLength = 15;
-                this.columnCorreoHotel.MaxLength = 50;
-                this.columnDescripcionHotel.MaxLength = 150;
-                this.ExtendedProperties.Add("Generator_TablePropName", "_Hotel");
-                this.ExtendedProperties.Add("Generator_UserTableName", "Hotel");
+                this.columnnombreHotel.AllowDBNull = false;
+                this.columnnombreHotel.MaxLength = 50;
+                this.columnnumeroHabitaciones.AllowDBNull = false;
+                this.columncategoriaHotel.AllowDBNull = false;
+                this.columncategoriaHotel.MaxLength = 45;
+                this.columnciudadHotel.AllowDBNull = false;
+                this.columnciudadHotel.MaxLength = 45;
+                this.columndireccionHotel.AllowDBNull = false;
+                this.columndireccionHotel.MaxLength = 50;
+                this.columntelefonoHotel.AllowDBNull = false;
+                this.columntelefonoHotel.MaxLength = 15;
+                this.columncorreoHotel.MaxLength = 50;
+                this.columndescripcionHotel.MaxLength = 150;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HotelRow NewHotelRow() {
-                return ((HotelRow)(this.NewRow()));
+            public hotelRow NewhotelRow() {
+                return ((hotelRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new HotelRow(builder);
+                return new hotelRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(HotelRow);
+                return typeof(hotelRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.HotelRowChanged != null)) {
-                    this.HotelRowChanged(this, new HotelRowChangeEvent(((HotelRow)(e.Row)), e.Action));
+                if ((this.hotelRowChanged != null)) {
+                    this.hotelRowChanged(this, new hotelRowChangeEvent(((hotelRow)(e.Row)), e.Action));
                 }
             }
             
@@ -565,8 +563,8 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.HotelRowChanging != null)) {
-                    this.HotelRowChanging(this, new HotelRowChangeEvent(((HotelRow)(e.Row)), e.Action));
+                if ((this.hotelRowChanging != null)) {
+                    this.hotelRowChanging(this, new hotelRowChangeEvent(((hotelRow)(e.Row)), e.Action));
                 }
             }
             
@@ -574,8 +572,8 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.HotelRowDeleted != null)) {
-                    this.HotelRowDeleted(this, new HotelRowChangeEvent(((HotelRow)(e.Row)), e.Action));
+                if ((this.hotelRowDeleted != null)) {
+                    this.hotelRowDeleted(this, new hotelRowChangeEvent(((hotelRow)(e.Row)), e.Action));
                 }
             }
             
@@ -583,14 +581,14 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.HotelRowDeleting != null)) {
-                    this.HotelRowDeleting(this, new HotelRowChangeEvent(((HotelRow)(e.Row)), e.Action));
+                if ((this.hotelRowDeleting != null)) {
+                    this.hotelRowDeleting(this, new hotelRowChangeEvent(((hotelRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveHotelRow(HotelRow row) {
+            public void RemovehotelRow(hotelRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -617,7 +615,7 @@ namespace CapaDatos.Clases {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "HotelDataTable";
+                attribute2.FixedValue = "hotelDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -661,148 +659,148 @@ namespace CapaDatos.Clases {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class HotelRow : global::System.Data.DataRow {
+        public partial class hotelRow : global::System.Data.DataRow {
             
-            private HotelDataTable tableHotel;
+            private hotelDataTable tablehotel;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal HotelRow(global::System.Data.DataRowBuilder rb) : 
+            internal hotelRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableHotel = ((HotelDataTable)(this.Table));
+                this.tablehotel = ((hotelDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string codHotel {
                 get {
-                    return ((string)(this[this.tableHotel.codHotelColumn]));
+                    return ((string)(this[this.tablehotel.codHotelColumn]));
                 }
                 set {
-                    this[this.tableHotel.codHotelColumn] = value;
+                    this[this.tablehotel.codHotelColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string NombreHotel {
+            public string nombreHotel {
                 get {
-                    return ((string)(this[this.tableHotel.NombreHotelColumn]));
+                    return ((string)(this[this.tablehotel.nombreHotelColumn]));
                 }
                 set {
-                    this[this.tableHotel.NombreHotelColumn] = value;
+                    this[this.tablehotel.nombreHotelColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int NumeroHabitaciones {
+            public int numeroHabitaciones {
                 get {
-                    return ((int)(this[this.tableHotel.NumeroHabitacionesColumn]));
+                    return ((int)(this[this.tablehotel.numeroHabitacionesColumn]));
                 }
                 set {
-                    this[this.tableHotel.NumeroHabitacionesColumn] = value;
+                    this[this.tablehotel.numeroHabitacionesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CategoriaHotel {
+            public string categoriaHotel {
                 get {
-                    return ((string)(this[this.tableHotel.CategoriaHotelColumn]));
+                    return ((string)(this[this.tablehotel.categoriaHotelColumn]));
                 }
                 set {
-                    this[this.tableHotel.CategoriaHotelColumn] = value;
+                    this[this.tablehotel.categoriaHotelColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CiudadHotel {
+            public string ciudadHotel {
                 get {
-                    return ((string)(this[this.tableHotel.CiudadHotelColumn]));
+                    return ((string)(this[this.tablehotel.ciudadHotelColumn]));
                 }
                 set {
-                    this[this.tableHotel.CiudadHotelColumn] = value;
+                    this[this.tablehotel.ciudadHotelColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DireccionHotel {
+            public string direccionHotel {
                 get {
-                    return ((string)(this[this.tableHotel.DireccionHotelColumn]));
+                    return ((string)(this[this.tablehotel.direccionHotelColumn]));
                 }
                 set {
-                    this[this.tableHotel.DireccionHotelColumn] = value;
+                    this[this.tablehotel.direccionHotelColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string TelefonoHotel {
+            public string telefonoHotel {
                 get {
-                    return ((string)(this[this.tableHotel.TelefonoHotelColumn]));
+                    return ((string)(this[this.tablehotel.telefonoHotelColumn]));
                 }
                 set {
-                    this[this.tableHotel.TelefonoHotelColumn] = value;
+                    this[this.tablehotel.telefonoHotelColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CorreoHotel {
-                get {
-                    try {
-                        return ((string)(this[this.tableHotel.CorreoHotelColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CorreoHotel\' de la tabla \'Hotel\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableHotel.CorreoHotelColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DescripcionHotel {
+            public string correoHotel {
                 get {
                     try {
-                        return ((string)(this[this.tableHotel.DescripcionHotelColumn]));
+                        return ((string)(this[this.tablehotel.correoHotelColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DescripcionHotel\' de la tabla \'Hotel\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'correoHotel\' de la tabla \'hotel\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableHotel.DescripcionHotelColumn] = value;
+                    this[this.tablehotel.correoHotelColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCorreoHotelNull() {
-                return this.IsNull(this.tableHotel.CorreoHotelColumn);
+            public string descripcionHotel {
+                get {
+                    try {
+                        return ((string)(this[this.tablehotel.descripcionHotelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcionHotel\' de la tabla \'hotel\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablehotel.descripcionHotelColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCorreoHotelNull() {
-                this[this.tableHotel.CorreoHotelColumn] = global::System.Convert.DBNull;
+            public bool IscorreoHotelNull() {
+                return this.IsNull(this.tablehotel.correoHotelColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDescripcionHotelNull() {
-                return this.IsNull(this.tableHotel.DescripcionHotelColumn);
+            public void SetcorreoHotelNull() {
+                this[this.tablehotel.correoHotelColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDescripcionHotelNull() {
-                this[this.tableHotel.DescripcionHotelColumn] = global::System.Convert.DBNull;
+            public bool IsdescripcionHotelNull() {
+                return this.IsNull(this.tablehotel.descripcionHotelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdescripcionHotelNull() {
+                this[this.tablehotel.descripcionHotelColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -810,22 +808,22 @@ namespace CapaDatos.Clases {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class HotelRowChangeEvent : global::System.EventArgs {
+        public class hotelRowChangeEvent : global::System.EventArgs {
             
-            private HotelRow eventRow;
+            private hotelRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HotelRowChangeEvent(HotelRow row, global::System.Data.DataRowAction action) {
+            public hotelRowChangeEvent(hotelRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HotelRow Row {
+            public hotelRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -853,7 +851,7 @@ namespace CapaDatos.Clases.HotelTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class HotelTableAdapter : global::System.ComponentModel.Component {
+    public partial class hotelTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -867,7 +865,7 @@ namespace CapaDatos.Clases.HotelTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public HotelTableAdapter() {
+        public hotelTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -964,71 +962,71 @@ namespace CapaDatos.Clases.HotelTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Hotel";
+            tableMapping.DataSetTable = "hotel";
             tableMapping.ColumnMappings.Add("codHotel", "codHotel");
-            tableMapping.ColumnMappings.Add("NombreHotel", "NombreHotel");
-            tableMapping.ColumnMappings.Add("NumeroHabitaciones", "NumeroHabitaciones");
-            tableMapping.ColumnMappings.Add("CategoriaHotel", "CategoriaHotel");
-            tableMapping.ColumnMappings.Add("CiudadHotel", "CiudadHotel");
-            tableMapping.ColumnMappings.Add("DireccionHotel", "DireccionHotel");
-            tableMapping.ColumnMappings.Add("TelefonoHotel", "TelefonoHotel");
-            tableMapping.ColumnMappings.Add("CorreoHotel", "CorreoHotel");
-            tableMapping.ColumnMappings.Add("DescripcionHotel", "DescripcionHotel");
+            tableMapping.ColumnMappings.Add("nombreHotel", "nombreHotel");
+            tableMapping.ColumnMappings.Add("numeroHabitaciones", "numeroHabitaciones");
+            tableMapping.ColumnMappings.Add("categoriaHotel", "categoriaHotel");
+            tableMapping.ColumnMappings.Add("ciudadHotel", "ciudadHotel");
+            tableMapping.ColumnMappings.Add("direccionHotel", "direccionHotel");
+            tableMapping.ColumnMappings.Add("telefonoHotel", "telefonoHotel");
+            tableMapping.ColumnMappings.Add("correoHotel", "correoHotel");
+            tableMapping.ColumnMappings.Add("descripcionHotel", "descripcionHotel");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Hotel] WHERE (([codHotel] = @Original_codHotel) AND ([NombreHotel] = @Original_NombreHotel) AND ([NumeroHabitaciones] = @Original_NumeroHabitaciones) AND ([CategoriaHotel] = @Original_CategoriaHotel) AND ([CiudadHotel] = @Original_CiudadHotel) AND ([DireccionHotel] = @Original_DireccionHotel) AND ([TelefonoHotel] = @Original_TelefonoHotel) AND ((@IsNull_CorreoHotel = 1 AND [CorreoHotel] IS NULL) OR ([CorreoHotel] = @Original_CorreoHotel)) AND ((@IsNull_DescripcionHotel = 1 AND [DescripcionHotel] IS NULL) OR ([DescripcionHotel] = @Original_DescripcionHotel)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[hotel] WHERE (([codHotel] = @Original_codHotel) AND ([nombreHotel] = @Original_nombreHotel) AND ([numeroHabitaciones] = @Original_numeroHabitaciones) AND ([categoriaHotel] = @Original_categoriaHotel) AND ([ciudadHotel] = @Original_ciudadHotel) AND ([direccionHotel] = @Original_direccionHotel) AND ([telefonoHotel] = @Original_telefonoHotel) AND ((@IsNull_correoHotel = 1 AND [correoHotel] IS NULL) OR ([correoHotel] = @Original_correoHotel)) AND ((@IsNull_descripcionHotel = 1 AND [descripcionHotel] IS NULL) OR ([descripcionHotel] = @Original_descripcionHotel)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroHabitaciones", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroHabitaciones", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CategoriaHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CategoriaHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CiudadHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CiudadHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DireccionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DireccionHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TelefonoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TelefonoHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CorreoHotel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CorreoHotel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CorreoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CorreoHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DescripcionHotel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionHotel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DescripcionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombreHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numeroHabitaciones", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitaciones", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_categoriaHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "categoriaHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ciudadHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ciudadHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_direccionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "direccionHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_telefonoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telefonoHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_correoHotel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correoHotel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_correoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correoHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_descripcionHotel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcionHotel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_descripcionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcionHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Hotel] ([codHotel], [NombreHotel], [NumeroHabitaciones], [CategoriaHotel], [CiudadHotel], [DireccionHotel], [TelefonoHotel], [CorreoHotel], [DescripcionHotel]) VALUES (@codHotel, @NombreHotel, @NumeroHabitaciones, @CategoriaHotel, @CiudadHotel, @DireccionHotel, @TelefonoHotel, @CorreoHotel, @DescripcionHotel);
-SELECT codHotel, NombreHotel, NumeroHabitaciones, CategoriaHotel, CiudadHotel, DireccionHotel, TelefonoHotel, CorreoHotel, DescripcionHotel FROM Hotel WHERE (codHotel = @codHotel)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[hotel] ([codHotel], [nombreHotel], [numeroHabitaciones], [categoriaHotel], [ciudadHotel], [direccionHotel], [telefonoHotel], [correoHotel], [descripcionHotel]) VALUES (@codHotel, @nombreHotel, @numeroHabitaciones, @categoriaHotel, @ciudadHotel, @direccionHotel, @telefonoHotel, @correoHotel, @descripcionHotel);
+SELECT codHotel, nombreHotel, numeroHabitaciones, categoriaHotel, ciudadHotel, direccionHotel, telefonoHotel, correoHotel, descripcionHotel FROM hotel WHERE (codHotel = @codHotel)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroHabitaciones", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroHabitaciones", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CategoriaHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CategoriaHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CiudadHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CiudadHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DireccionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DireccionHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TelefonoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TelefonoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CorreoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CorreoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroHabitaciones", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitaciones", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@categoriaHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "categoriaHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ciudadHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ciudadHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@direccionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "direccionHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefonoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telefonoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@correoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcionHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Hotel] SET [codHotel] = @codHotel, [NombreHotel] = @NombreHotel, [NumeroHabitaciones] = @NumeroHabitaciones, [CategoriaHotel] = @CategoriaHotel, [CiudadHotel] = @CiudadHotel, [DireccionHotel] = @DireccionHotel, [TelefonoHotel] = @TelefonoHotel, [CorreoHotel] = @CorreoHotel, [DescripcionHotel] = @DescripcionHotel WHERE (([codHotel] = @Original_codHotel) AND ([NombreHotel] = @Original_NombreHotel) AND ([NumeroHabitaciones] = @Original_NumeroHabitaciones) AND ([CategoriaHotel] = @Original_CategoriaHotel) AND ([CiudadHotel] = @Original_CiudadHotel) AND ([DireccionHotel] = @Original_DireccionHotel) AND ([TelefonoHotel] = @Original_TelefonoHotel) AND ((@IsNull_CorreoHotel = 1 AND [CorreoHotel] IS NULL) OR ([CorreoHotel] = @Original_CorreoHotel)) AND ((@IsNull_DescripcionHotel = 1 AND [DescripcionHotel] IS NULL) OR ([DescripcionHotel] = @Original_DescripcionHotel)));
-SELECT codHotel, NombreHotel, NumeroHabitaciones, CategoriaHotel, CiudadHotel, DireccionHotel, TelefonoHotel, CorreoHotel, DescripcionHotel FROM Hotel WHERE (codHotel = @codHotel)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[hotel] SET [codHotel] = @codHotel, [nombreHotel] = @nombreHotel, [numeroHabitaciones] = @numeroHabitaciones, [categoriaHotel] = @categoriaHotel, [ciudadHotel] = @ciudadHotel, [direccionHotel] = @direccionHotel, [telefonoHotel] = @telefonoHotel, [correoHotel] = @correoHotel, [descripcionHotel] = @descripcionHotel WHERE (([codHotel] = @Original_codHotel) AND ([nombreHotel] = @Original_nombreHotel) AND ([numeroHabitaciones] = @Original_numeroHabitaciones) AND ([categoriaHotel] = @Original_categoriaHotel) AND ([ciudadHotel] = @Original_ciudadHotel) AND ([direccionHotel] = @Original_direccionHotel) AND ([telefonoHotel] = @Original_telefonoHotel) AND ((@IsNull_correoHotel = 1 AND [correoHotel] IS NULL) OR ([correoHotel] = @Original_correoHotel)) AND ((@IsNull_descripcionHotel = 1 AND [descripcionHotel] IS NULL) OR ([descripcionHotel] = @Original_descripcionHotel)));
+SELECT codHotel, nombreHotel, numeroHabitaciones, categoriaHotel, ciudadHotel, direccionHotel, telefonoHotel, correoHotel, descripcionHotel FROM hotel WHERE (codHotel = @codHotel)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroHabitaciones", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroHabitaciones", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CategoriaHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CategoriaHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CiudadHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CiudadHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DireccionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DireccionHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TelefonoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TelefonoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CorreoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CorreoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroHabitaciones", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitaciones", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@categoriaHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "categoriaHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ciudadHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ciudadHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@direccionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "direccionHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefonoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telefonoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@correoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcionHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NombreHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NombreHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroHabitaciones", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroHabitaciones", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CategoriaHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CategoriaHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CiudadHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CiudadHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DireccionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DireccionHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TelefonoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TelefonoHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CorreoHotel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CorreoHotel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CorreoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CorreoHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DescripcionHotel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionHotel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DescripcionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombreHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numeroHabitaciones", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitaciones", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_categoriaHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "categoriaHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ciudadHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ciudadHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_direccionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "direccionHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_telefonoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "telefonoHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_correoHotel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correoHotel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_correoHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "correoHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_descripcionHotel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcionHotel", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_descripcionHotel", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcionHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1041,36 +1039,82 @@ SELECT codHotel, NombreHotel, NumeroHabitaciones, CategoriaHotel, CiudadHotel, D
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT codHotel, NombreHotel, NumeroHabitaciones, CategoriaHotel, CiudadHotel, Di" +
-                "reccionHotel, TelefonoHotel, CorreoHotel, DescripcionHotel FROM dbo.Hotel";
+            this._commandCollection[0].CommandText = "SELECT codHotel, nombreHotel, numeroHabitaciones, categoriaHotel, ciudadHotel, di" +
+                "reccionHotel, telefonoHotel, correoHotel, descripcionHotel FROM dbo.hotel";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        codHotel, NombreHotel, NumeroHabitaciones, CategoriaHotel, CiudadHotel, DireccionHotel, TelefonoHotel, CorreoHotel, DescripcionHotel
-FROM            Hotel
-WHERE        (NombreHotel LIKE @NombreHotel) OR
-                         (DireccionHotel LIKE @DireccionHotel) OR
-                         (TelefonoHotel LIKE @TelefonoHotel)";
+            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[hotel] WHERE (([codHotel] = @codHotel))";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreHotel", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "NombreHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DireccionHotel", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "DireccionHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TelefonoHotel", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "TelefonoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codHotel", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "codHotel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        codHotel, NombreHotel, NumeroHabitaciones, CategoriaHotel, CiudadHo" +
-                "tel, DireccionHotel, TelefonoHotel, CorreoHotel, DescripcionHotel\r\nFROM         " +
-                "   Hotel";
+            this._commandCollection[2].CommandText = "SELECT        codHotel, nombreHotel, numeroHabitaciones, categoriaHotel, ciudadHo" +
+                "tel, direccionHotel, telefonoHotel, correoHotel, descripcionHotel\r\nFROM         " +
+                "   hotel\r\nWHERE        (nombreHotel LIKE @nombreHotel)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreHotel", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT        codHotel, nombreHotel, numeroHabitaciones, categoriaHotel, ciudadHo" +
+                "tel, direccionHotel, telefonoHotel, correoHotel, descripcionHotel\r\nFROM         " +
+                "   hotel";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT        codHotel, nombreHotel, numeroHabitaciones, categoriaHotel, ciudadHo" +
+                "tel, direccionHotel, telefonoHotel, correoHotel, descripcionHotel\r\nFROM         " +
+                "   hotel\r\nWHERE        (codHotel = @codHotel)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codHotel", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "codHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"INSERT INTO [dbo].[hotel] ([codHotel], [nombreHotel], [numeroHabitaciones], [categoriaHotel], [ciudadHotel], [direccionHotel], [telefonoHotel], [correoHotel], [descripcionHotel]) VALUES (@codHotel, @nombreHotel, @numeroHabitaciones, @categoriaHotel, @ciudadHotel, @direccionHotel, @telefonoHotel, @correoHotel, @descripcionHotel);
+SELECT codHotel, nombreHotel, numeroHabitaciones, categoriaHotel, ciudadHotel, direccionHotel, telefonoHotel, correoHotel, descripcionHotel FROM hotel WHERE (codHotel = @codHotel)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codHotel", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "codHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreHotel", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroHabitaciones", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitaciones", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@categoriaHotel", global::System.Data.SqlDbType.VarChar, 45, global::System.Data.ParameterDirection.Input, 0, 0, "categoriaHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ciudadHotel", global::System.Data.SqlDbType.VarChar, 45, global::System.Data.ParameterDirection.Input, 0, 0, "ciudadHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@direccionHotel", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "direccionHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefonoHotel", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "telefonoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@correoHotel", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "correoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcionHotel", global::System.Data.SqlDbType.VarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "descripcionHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT        COUNT(codHotel) AS Expr1\r\nFROM            hotel\r\nWHERE        (nomb" +
+                "reHotel = @nombreHotel)\r\nAND (codHotel=@codHotel)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreHotel", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codHotel", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "codHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = @"UPDATE       hotel
+SET                codHotel = @codHotel, nombreHotel = @nombreHotel, numeroHabitaciones = @numeroHabitaciones, categoriaHotel = @categoriaHotel, ciudadHotel = @ciudadHotel, direccionHotel = @direccionHotel, 
+                         telefonoHotel = @telefonoHotel, correoHotel = @correoHotel, descripcionHotel = @descripcionHotel
+WHERE        (codHotel = @codHotel); 
+SELECT codHotel, nombreHotel, numeroHabitaciones, categoriaHotel, ciudadHotel, direccionHotel, telefonoHotel, correoHotel, descripcionHotel FROM hotel WHERE (codHotel = @codHotel)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codHotel", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "codHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreHotel", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroHabitaciones", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitaciones", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@categoriaHotel", global::System.Data.SqlDbType.VarChar, 45, global::System.Data.ParameterDirection.Input, 0, 0, "categoriaHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ciudadHotel", global::System.Data.SqlDbType.VarChar, 45, global::System.Data.ParameterDirection.Input, 0, 0, "ciudadHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@direccionHotel", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "direccionHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefonoHotel", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "telefonoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@correoHotel", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "correoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcionHotel", global::System.Data.SqlDbType.VarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "descripcionHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Hotel.HotelDataTable dataTable) {
+        public virtual int Fill(Hotel.hotelDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1083,9 +1127,9 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Hotel.HotelDataTable GetData() {
+        public virtual Hotel.hotelDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Hotel.HotelDataTable dataTable = new Hotel.HotelDataTable();
+            Hotel.hotelDataTable dataTable = new Hotel.hotelDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1094,38 +1138,15 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Hotel.HotelDataTable GetBuscar(string NombreHotel, string DireccionHotel, string TelefonoHotel) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((NombreHotel == null)) {
-                throw new global::System.ArgumentNullException("NombreHotel");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(NombreHotel));
-            }
-            if ((DireccionHotel == null)) {
-                throw new global::System.ArgumentNullException("DireccionHotel");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(DireccionHotel));
-            }
-            if ((TelefonoHotel == null)) {
-                throw new global::System.ArgumentNullException("TelefonoHotel");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(TelefonoHotel));
-            }
-            Hotel.HotelDataTable dataTable = new Hotel.HotelDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Hotel.HotelDataTable GetLista() {
+        public virtual Hotel.hotelDataTable GetBuscar(string nombreHotel) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            Hotel.HotelDataTable dataTable = new Hotel.HotelDataTable();
+            if ((nombreHotel == null)) {
+                throw new global::System.ArgumentNullException("nombreHotel");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nombreHotel));
+            }
+            Hotel.hotelDataTable dataTable = new Hotel.hotelDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1133,7 +1154,35 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Hotel.HotelDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Hotel.hotelDataTable GetLista() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            Hotel.hotelDataTable dataTable = new Hotel.hotelDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Hotel.hotelDataTable GetListaActualizar(string codHotel) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((codHotel == null)) {
+                throw new global::System.ArgumentNullException("codHotel");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(codHotel));
+            }
+            Hotel.hotelDataTable dataTable = new Hotel.hotelDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Hotel.hotelDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -1141,7 +1190,7 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(Hotel dataSet) {
-            return this.Adapter.Update(dataSet, "Hotel");
+            return this.Adapter.Update(dataSet, "hotel");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1163,59 +1212,59 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_codHotel, string Original_NombreHotel, int Original_NumeroHabitaciones, string Original_CategoriaHotel, string Original_CiudadHotel, string Original_DireccionHotel, string Original_TelefonoHotel, string Original_CorreoHotel, string Original_DescripcionHotel) {
+        public virtual int Delete(string Original_codHotel, string Original_nombreHotel, int Original_numeroHabitaciones, string Original_categoriaHotel, string Original_ciudadHotel, string Original_direccionHotel, string Original_telefonoHotel, string Original_correoHotel, string Original_descripcionHotel) {
             if ((Original_codHotel == null)) {
                 throw new global::System.ArgumentNullException("Original_codHotel");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_codHotel));
             }
-            if ((Original_NombreHotel == null)) {
-                throw new global::System.ArgumentNullException("Original_NombreHotel");
+            if ((Original_nombreHotel == null)) {
+                throw new global::System.ArgumentNullException("Original_nombreHotel");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_NombreHotel));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_nombreHotel));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_NumeroHabitaciones));
-            if ((Original_CategoriaHotel == null)) {
-                throw new global::System.ArgumentNullException("Original_CategoriaHotel");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_CategoriaHotel));
-            }
-            if ((Original_CiudadHotel == null)) {
-                throw new global::System.ArgumentNullException("Original_CiudadHotel");
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_numeroHabitaciones));
+            if ((Original_categoriaHotel == null)) {
+                throw new global::System.ArgumentNullException("Original_categoriaHotel");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_CiudadHotel));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_categoriaHotel));
             }
-            if ((Original_DireccionHotel == null)) {
-                throw new global::System.ArgumentNullException("Original_DireccionHotel");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_DireccionHotel));
-            }
-            if ((Original_TelefonoHotel == null)) {
-                throw new global::System.ArgumentNullException("Original_TelefonoHotel");
+            if ((Original_ciudadHotel == null)) {
+                throw new global::System.ArgumentNullException("Original_ciudadHotel");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_TelefonoHotel));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_ciudadHotel));
             }
-            if ((Original_CorreoHotel == null)) {
+            if ((Original_direccionHotel == null)) {
+                throw new global::System.ArgumentNullException("Original_direccionHotel");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_direccionHotel));
+            }
+            if ((Original_telefonoHotel == null)) {
+                throw new global::System.ArgumentNullException("Original_telefonoHotel");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_telefonoHotel));
+            }
+            if ((Original_correoHotel == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_CorreoHotel));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_correoHotel));
             }
-            if ((Original_DescripcionHotel == null)) {
+            if ((Original_descripcionHotel == null)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_DescripcionHotel));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_descripcionHotel));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1237,55 +1286,55 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string codHotel, string NombreHotel, int NumeroHabitaciones, string CategoriaHotel, string CiudadHotel, string DireccionHotel, string TelefonoHotel, string CorreoHotel, string DescripcionHotel) {
+        public virtual int Insert(string codHotel, string nombreHotel, int numeroHabitaciones, string categoriaHotel, string ciudadHotel, string direccionHotel, string telefonoHotel, string correoHotel, string descripcionHotel) {
             if ((codHotel == null)) {
                 throw new global::System.ArgumentNullException("codHotel");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(codHotel));
             }
-            if ((NombreHotel == null)) {
-                throw new global::System.ArgumentNullException("NombreHotel");
+            if ((nombreHotel == null)) {
+                throw new global::System.ArgumentNullException("nombreHotel");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(NombreHotel));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(nombreHotel));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(NumeroHabitaciones));
-            if ((CategoriaHotel == null)) {
-                throw new global::System.ArgumentNullException("CategoriaHotel");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(CategoriaHotel));
-            }
-            if ((CiudadHotel == null)) {
-                throw new global::System.ArgumentNullException("CiudadHotel");
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(numeroHabitaciones));
+            if ((categoriaHotel == null)) {
+                throw new global::System.ArgumentNullException("categoriaHotel");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(CiudadHotel));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(categoriaHotel));
             }
-            if ((DireccionHotel == null)) {
-                throw new global::System.ArgumentNullException("DireccionHotel");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(DireccionHotel));
-            }
-            if ((TelefonoHotel == null)) {
-                throw new global::System.ArgumentNullException("TelefonoHotel");
+            if ((ciudadHotel == null)) {
+                throw new global::System.ArgumentNullException("ciudadHotel");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(TelefonoHotel));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ciudadHotel));
             }
-            if ((CorreoHotel == null)) {
+            if ((direccionHotel == null)) {
+                throw new global::System.ArgumentNullException("direccionHotel");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(direccionHotel));
+            }
+            if ((telefonoHotel == null)) {
+                throw new global::System.ArgumentNullException("telefonoHotel");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(telefonoHotel));
+            }
+            if ((correoHotel == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(CorreoHotel));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(correoHotel));
             }
-            if ((DescripcionHotel == null)) {
+            if ((descripcionHotel == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(DescripcionHotel));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(descripcionHotel));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1309,71 +1358,71 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     string codHotel, 
-                    string NombreHotel, 
-                    int NumeroHabitaciones, 
-                    string CategoriaHotel, 
-                    string CiudadHotel, 
-                    string DireccionHotel, 
-                    string TelefonoHotel, 
-                    string CorreoHotel, 
-                    string DescripcionHotel, 
+                    string nombreHotel, 
+                    int numeroHabitaciones, 
+                    string categoriaHotel, 
+                    string ciudadHotel, 
+                    string direccionHotel, 
+                    string telefonoHotel, 
+                    string correoHotel, 
+                    string descripcionHotel, 
                     string Original_codHotel, 
-                    string Original_NombreHotel, 
-                    int Original_NumeroHabitaciones, 
-                    string Original_CategoriaHotel, 
-                    string Original_CiudadHotel, 
-                    string Original_DireccionHotel, 
-                    string Original_TelefonoHotel, 
-                    string Original_CorreoHotel, 
-                    string Original_DescripcionHotel) {
+                    string Original_nombreHotel, 
+                    int Original_numeroHabitaciones, 
+                    string Original_categoriaHotel, 
+                    string Original_ciudadHotel, 
+                    string Original_direccionHotel, 
+                    string Original_telefonoHotel, 
+                    string Original_correoHotel, 
+                    string Original_descripcionHotel) {
             if ((codHotel == null)) {
                 throw new global::System.ArgumentNullException("codHotel");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(codHotel));
             }
-            if ((NombreHotel == null)) {
-                throw new global::System.ArgumentNullException("NombreHotel");
+            if ((nombreHotel == null)) {
+                throw new global::System.ArgumentNullException("nombreHotel");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(NombreHotel));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(nombreHotel));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(NumeroHabitaciones));
-            if ((CategoriaHotel == null)) {
-                throw new global::System.ArgumentNullException("CategoriaHotel");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(CategoriaHotel));
-            }
-            if ((CiudadHotel == null)) {
-                throw new global::System.ArgumentNullException("CiudadHotel");
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(numeroHabitaciones));
+            if ((categoriaHotel == null)) {
+                throw new global::System.ArgumentNullException("categoriaHotel");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(CiudadHotel));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(categoriaHotel));
             }
-            if ((DireccionHotel == null)) {
-                throw new global::System.ArgumentNullException("DireccionHotel");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(DireccionHotel));
-            }
-            if ((TelefonoHotel == null)) {
-                throw new global::System.ArgumentNullException("TelefonoHotel");
+            if ((ciudadHotel == null)) {
+                throw new global::System.ArgumentNullException("ciudadHotel");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(TelefonoHotel));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(ciudadHotel));
             }
-            if ((CorreoHotel == null)) {
+            if ((direccionHotel == null)) {
+                throw new global::System.ArgumentNullException("direccionHotel");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(direccionHotel));
+            }
+            if ((telefonoHotel == null)) {
+                throw new global::System.ArgumentNullException("telefonoHotel");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(telefonoHotel));
+            }
+            if ((correoHotel == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(CorreoHotel));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(correoHotel));
             }
-            if ((DescripcionHotel == null)) {
+            if ((descripcionHotel == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(DescripcionHotel));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(descripcionHotel));
             }
             if ((Original_codHotel == null)) {
                 throw new global::System.ArgumentNullException("Original_codHotel");
@@ -1381,52 +1430,52 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_codHotel));
             }
-            if ((Original_NombreHotel == null)) {
-                throw new global::System.ArgumentNullException("Original_NombreHotel");
+            if ((Original_nombreHotel == null)) {
+                throw new global::System.ArgumentNullException("Original_nombreHotel");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_NombreHotel));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_nombreHotel));
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_NumeroHabitaciones));
-            if ((Original_CategoriaHotel == null)) {
-                throw new global::System.ArgumentNullException("Original_CategoriaHotel");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_CategoriaHotel));
-            }
-            if ((Original_CiudadHotel == null)) {
-                throw new global::System.ArgumentNullException("Original_CiudadHotel");
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_numeroHabitaciones));
+            if ((Original_categoriaHotel == null)) {
+                throw new global::System.ArgumentNullException("Original_categoriaHotel");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_CiudadHotel));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_categoriaHotel));
             }
-            if ((Original_DireccionHotel == null)) {
-                throw new global::System.ArgumentNullException("Original_DireccionHotel");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_DireccionHotel));
-            }
-            if ((Original_TelefonoHotel == null)) {
-                throw new global::System.ArgumentNullException("Original_TelefonoHotel");
+            if ((Original_ciudadHotel == null)) {
+                throw new global::System.ArgumentNullException("Original_ciudadHotel");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_TelefonoHotel));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_ciudadHotel));
             }
-            if ((Original_CorreoHotel == null)) {
+            if ((Original_direccionHotel == null)) {
+                throw new global::System.ArgumentNullException("Original_direccionHotel");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_direccionHotel));
+            }
+            if ((Original_telefonoHotel == null)) {
+                throw new global::System.ArgumentNullException("Original_telefonoHotel");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_telefonoHotel));
+            }
+            if ((Original_correoHotel == null)) {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_CorreoHotel));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_correoHotel));
             }
-            if ((Original_DescripcionHotel == null)) {
+            if ((Original_descripcionHotel == null)) {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_DescripcionHotel));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_descripcionHotel));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1449,24 +1498,237 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string NombreHotel, 
-                    int NumeroHabitaciones, 
-                    string CategoriaHotel, 
-                    string CiudadHotel, 
-                    string DireccionHotel, 
-                    string TelefonoHotel, 
-                    string CorreoHotel, 
-                    string DescripcionHotel, 
+                    string nombreHotel, 
+                    int numeroHabitaciones, 
+                    string categoriaHotel, 
+                    string ciudadHotel, 
+                    string direccionHotel, 
+                    string telefonoHotel, 
+                    string correoHotel, 
+                    string descripcionHotel, 
                     string Original_codHotel, 
-                    string Original_NombreHotel, 
-                    int Original_NumeroHabitaciones, 
-                    string Original_CategoriaHotel, 
-                    string Original_CiudadHotel, 
-                    string Original_DireccionHotel, 
-                    string Original_TelefonoHotel, 
-                    string Original_CorreoHotel, 
-                    string Original_DescripcionHotel) {
-            return this.Update(Original_codHotel, NombreHotel, NumeroHabitaciones, CategoriaHotel, CiudadHotel, DireccionHotel, TelefonoHotel, CorreoHotel, DescripcionHotel, Original_codHotel, Original_NombreHotel, Original_NumeroHabitaciones, Original_CategoriaHotel, Original_CiudadHotel, Original_DireccionHotel, Original_TelefonoHotel, Original_CorreoHotel, Original_DescripcionHotel);
+                    string Original_nombreHotel, 
+                    int Original_numeroHabitaciones, 
+                    string Original_categoriaHotel, 
+                    string Original_ciudadHotel, 
+                    string Original_direccionHotel, 
+                    string Original_telefonoHotel, 
+                    string Original_correoHotel, 
+                    string Original_descripcionHotel) {
+            return this.Update(Original_codHotel, nombreHotel, numeroHabitaciones, categoriaHotel, ciudadHotel, direccionHotel, telefonoHotel, correoHotel, descripcionHotel, Original_codHotel, Original_nombreHotel, Original_numeroHabitaciones, Original_categoriaHotel, Original_ciudadHotel, Original_direccionHotel, Original_telefonoHotel, Original_correoHotel, Original_descripcionHotel);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(string codHotel) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((codHotel == null)) {
+                throw new global::System.ArgumentNullException("codHotel");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(codHotel));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(string codHotel, string nombreHotel, int numeroHabitaciones, string categoriaHotel, string ciudadHotel, string direccionHotel, string telefonoHotel, string correoHotel, string descripcionHotel) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            if ((codHotel == null)) {
+                throw new global::System.ArgumentNullException("codHotel");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(codHotel));
+            }
+            if ((nombreHotel == null)) {
+                throw new global::System.ArgumentNullException("nombreHotel");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(nombreHotel));
+            }
+            command.Parameters[2].Value = ((int)(numeroHabitaciones));
+            if ((categoriaHotel == null)) {
+                throw new global::System.ArgumentNullException("categoriaHotel");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(categoriaHotel));
+            }
+            if ((ciudadHotel == null)) {
+                throw new global::System.ArgumentNullException("ciudadHotel");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(ciudadHotel));
+            }
+            if ((direccionHotel == null)) {
+                throw new global::System.ArgumentNullException("direccionHotel");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(direccionHotel));
+            }
+            if ((telefonoHotel == null)) {
+                throw new global::System.ArgumentNullException("telefonoHotel");
+            }
+            else {
+                command.Parameters[6].Value = ((string)(telefonoHotel));
+            }
+            if ((correoHotel == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(correoHotel));
+            }
+            if ((descripcionHotel == null)) {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[8].Value = ((string)(descripcionHotel));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object unico(string nombreHotel, string codHotel) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            if ((nombreHotel == null)) {
+                throw new global::System.ArgumentNullException("nombreHotel");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(nombreHotel));
+            }
+            if ((codHotel == null)) {
+                throw new global::System.ArgumentNullException("codHotel");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(codHotel));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(string codHotel, string nombreHotel, int numeroHabitaciones, string categoriaHotel, string ciudadHotel, string direccionHotel, string telefonoHotel, string correoHotel, string descripcionHotel) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            if ((codHotel == null)) {
+                throw new global::System.ArgumentNullException("codHotel");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(codHotel));
+            }
+            if ((nombreHotel == null)) {
+                throw new global::System.ArgumentNullException("nombreHotel");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(nombreHotel));
+            }
+            command.Parameters[2].Value = ((int)(numeroHabitaciones));
+            if ((categoriaHotel == null)) {
+                throw new global::System.ArgumentNullException("categoriaHotel");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(categoriaHotel));
+            }
+            if ((ciudadHotel == null)) {
+                throw new global::System.ArgumentNullException("ciudadHotel");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(ciudadHotel));
+            }
+            if ((direccionHotel == null)) {
+                throw new global::System.ArgumentNullException("direccionHotel");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(direccionHotel));
+            }
+            if ((telefonoHotel == null)) {
+                throw new global::System.ArgumentNullException("telefonoHotel");
+            }
+            else {
+                command.Parameters[6].Value = ((string)(telefonoHotel));
+            }
+            if ((correoHotel == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(correoHotel));
+            }
+            if ((descripcionHotel == null)) {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[8].Value = ((string)(descripcionHotel));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -1482,7 +1744,7 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
         
         private UpdateOrderOption _updateOrder;
         
-        private HotelTableAdapter _hotelTableAdapter;
+        private hotelTableAdapter _hotelTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1504,7 +1766,7 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public HotelTableAdapter HotelTableAdapter {
+        public hotelTableAdapter hotelTableAdapter {
             get {
                 return this._hotelTableAdapter;
             }
@@ -1564,7 +1826,7 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
         private int UpdateUpdatedRows(Hotel dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._hotelTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet._Hotel.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                global::System.Data.DataRow[] updatedRows = dataSet.hotel.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
@@ -1583,7 +1845,7 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
         private int UpdateInsertedRows(Hotel dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._hotelTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet._Hotel.Select(null, null, global::System.Data.DataViewRowState.Added);
+                global::System.Data.DataRow[] addedRows = dataSet.hotel.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._hotelTableAdapter.Update(addedRows));
@@ -1601,7 +1863,7 @@ WHERE        (NombreHotel LIKE @NombreHotel) OR
         private int UpdateDeletedRows(Hotel dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._hotelTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet._Hotel.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                global::System.Data.DataRow[] deletedRows = dataSet.hotel.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._hotelTableAdapter.Update(deletedRows));

@@ -50,7 +50,7 @@
                   
                 </div>
                 <div class="form-group">
-                    <asp:TextBox ID="TxtCont" class="form-control form-control-lg" required="required" TextMode="Password" runat="server" placeholder="Contraseña"></asp:TextBox>
+                    <asp:TextBox ID="TxtCont" class="form-control form-control-lg" required="required" TextMode="Password" type="password" runat="server" placeholder="Contraseña"></asp:TextBox>
                  
                 </div>
                 <div class="mt-3">
@@ -86,7 +86,7 @@
     <!-- Custom js for this page-->
     <script src="../../Tema/js/dashboard.js"></script>
     <!-- End custom js for this page-->
-
+     <script src="../../Usuario/main.js"></script>
 
 </body>
 </html>

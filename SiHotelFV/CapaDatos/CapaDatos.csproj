@@ -50,10 +50,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cargo.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Clases\Cliente.Designer.cs">
+    <Compile Include="Clases\Distribucionhabitacion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Cliente.xsd</DependentUpon>
+      <DependentUpon>Distribucionhabitacion.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clases\Empleado.cs">
       <DependentUpon>Empleado.xsd</DependentUpon>
@@ -63,15 +63,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Empleado.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Clases\Habitacion.Designer.cs">
+    <Compile Include="Clases\Estadohabitacion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Habitacion.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Clases\HabitacionEstado.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HabitacionEstado.xsd</DependentUpon>
+      <DependentUpon>Estadohabitacion.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clases\Hotel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -88,15 +83,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Menucargo.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Clases\Reservacion.Designer.cs">
+    <Compile Include="Clases\Preciohabitacion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Reservacion.xsd</DependentUpon>
+      <DependentUpon>Preciohabitacion.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clases\Submenu.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Submenu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Tipohabitacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tipohabitacion.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clases\Usuario.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -134,16 +134,16 @@
     <None Include="Clases\Cargo.xss">
       <DependentUpon>Cargo.xsd</DependentUpon>
     </None>
-    <None Include="Clases\Cliente.xsc">
-      <DependentUpon>Cliente.xsd</DependentUpon>
+    <None Include="Clases\Distribucionhabitacion.xsc">
+      <DependentUpon>Distribucionhabitacion.xsd</DependentUpon>
     </None>
-    <None Include="Clases\Cliente.xsd">
+    <None Include="Clases\Distribucionhabitacion.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Cliente.Designer.cs</LastGenOutput>
+      <LastGenOutput>Distribucionhabitacion.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Clases\Cliente.xss">
-      <DependentUpon>Cliente.xsd</DependentUpon>
+    <None Include="Clases\Distribucionhabitacion.xss">
+      <DependentUpon>Distribucionhabitacion.xsd</DependentUpon>
     </None>
     <None Include="Clases\Empleado.xsc">
       <DependentUpon>Empleado.xsd</DependentUpon>
@@ -156,27 +156,16 @@
     <None Include="Clases\Empleado.xss">
       <DependentUpon>Empleado.xsd</DependentUpon>
     </None>
-    <None Include="Clases\Habitacion.xsc">
-      <DependentUpon>Habitacion.xsd</DependentUpon>
+    <None Include="Clases\Estadohabitacion.xsc">
+      <DependentUpon>Estadohabitacion.xsd</DependentUpon>
     </None>
-    <None Include="Clases\Habitacion.xsd">
+    <None Include="Clases\Estadohabitacion.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Habitacion.Designer.cs</LastGenOutput>
+      <LastGenOutput>Estadohabitacion.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Clases\Habitacion.xss">
-      <DependentUpon>Habitacion.xsd</DependentUpon>
-    </None>
-    <None Include="Clases\HabitacionEstado.xsc">
-      <DependentUpon>HabitacionEstado.xsd</DependentUpon>
-    </None>
-    <None Include="Clases\HabitacionEstado.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HabitacionEstado.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Clases\HabitacionEstado.xss">
-      <DependentUpon>HabitacionEstado.xsd</DependentUpon>
+    <None Include="Clases\Estadohabitacion.xss">
+      <DependentUpon>Estadohabitacion.xsd</DependentUpon>
     </None>
     <None Include="Clases\Hotel.xsc">
       <DependentUpon>Hotel.xsd</DependentUpon>
@@ -211,16 +200,16 @@
     <None Include="Clases\Menucargo.xss">
       <DependentUpon>Menucargo.xsd</DependentUpon>
     </None>
-    <None Include="Clases\Reservacion.xsc">
-      <DependentUpon>Reservacion.xsd</DependentUpon>
+    <None Include="Clases\Preciohabitacion.xsc">
+      <DependentUpon>Preciohabitacion.xsd</DependentUpon>
     </None>
-    <None Include="Clases\Reservacion.xsd">
+    <None Include="Clases\Preciohabitacion.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Reservacion.Designer.cs</LastGenOutput>
+      <LastGenOutput>Preciohabitacion.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Clases\Reservacion.xss">
-      <DependentUpon>Reservacion.xsd</DependentUpon>
+    <None Include="Clases\Preciohabitacion.xss">
+      <DependentUpon>Preciohabitacion.xsd</DependentUpon>
     </None>
     <None Include="Clases\Submenu.xsc">
       <DependentUpon>Submenu.xsd</DependentUpon>
@@ -232,6 +221,17 @@
     </None>
     <None Include="Clases\Submenu.xss">
       <DependentUpon>Submenu.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\Tipohabitacion.xsc">
+      <DependentUpon>Tipohabitacion.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\Tipohabitacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Tipohabitacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Clases\Tipohabitacion.xss">
+      <DependentUpon>Tipohabitacion.xsd</DependentUpon>
     </None>
     <None Include="Clases\Usuario.xsc">
       <DependentUpon>Usuario.xsd</DependentUpon>

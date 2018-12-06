@@ -14,7 +14,7 @@ namespace CapaWeb
             short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
             CapaProceso.Clases.Auditoria.Insertar("Usuario", "Salida del sistema", UsuarioId);
             Session.Abandon();
-            Response.Redirect("../../Index.aspx");
+            Response.Redirect("Index.aspx");
         }
     }
 }

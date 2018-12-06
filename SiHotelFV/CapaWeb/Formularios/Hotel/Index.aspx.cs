@@ -65,6 +65,5 @@ namespace CapaWeb.Formularios.Hotel
         }
 
 
-
     }
 }

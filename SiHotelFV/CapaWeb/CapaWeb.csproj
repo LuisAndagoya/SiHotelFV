@@ -209,31 +209,32 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Formularios\Auditoria\Index.aspx" />
+    <Content Include="Formularios\Distribucion\Container.aspx" />
+    <Content Include="Formularios\Distribucion\Index.aspx" />
     <Content Include="Formularios\Empleado\ValidarCedula.js" />
-    <Content Include="Formularios\Habitacion\Container.aspx" />
-    <Content Include="Formularios\Habitacion\Index.aspx" />
+    <Content Include="Formularios\Estadohabitacion\Container.aspx" />
+    <Content Include="Formularios\Estadohabitacion\Index.aspx" />
+    <Content Include="Formularios\Hotel\Container.aspx" />
+    <Content Include="Formularios\Hotel\Index.aspx" />
     <Content Include="Formularios\Menucargo\Container.aspx" />
     <Content Include="Formularios\Menucargo\Index.aspx" />
     <Content Include="Formularios\Menu\Container.aspx" />
     <Content Include="Formularios\Menu\Index.aspx" />
+    <Content Include="Formularios\Preciohabitacion\Container.aspx" />
+    <Content Include="Formularios\Preciohabitacion\Index.aspx" />
     <Content Include="Formularios\Submenu\Container.aspx" />
     <Content Include="Formularios\Submenu\Index.aspx" />
+    <Content Include="Formularios\Tipohabitacion\Container.aspx" />
+    <Content Include="Formularios\Tipohabitacion\Index.aspx" />
     <Content Include="Formularios\Usuario\Container.aspx" />
     <Content Include="Formularios\Usuario\Index.aspx" />
+    <Content Include="Formularios\Usuario\main.js" />
     <Content Include="Index.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Formularios\Cargo\Container.aspx" />
     <Content Include="Formularios\Cargo\Index.aspx" />
-    <Content Include="Formularios\Cliente\Container.aspx" />
-    <Content Include="Formularios\Cliente\Index.aspx" />
     <Content Include="Formularios\Empleado\Container.aspx" />
     <Content Include="Formularios\Empleado\Index.aspx" />
-    <Content Include="Formularios\HabitaconEstado\Container.aspx" />
-    <Content Include="Formularios\HabitaconEstado\Index.aspx" />
-    <Content Include="Formularios\Hotel\Container.aspx" />
-    <Content Include="Formularios\Hotel\Index.aspx" />
-    <Content Include="Formularios\Resrvacion\Container.aspx" />
-    <Content Include="Formularios\Resrvacion\Index.aspx" />
     <Content Include="inicio.aspx" />
     <Content Include="Salir.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
@@ -413,18 +414,18 @@
     <Compile Include="Formularios\Cargo\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Cliente\Container.aspx.cs">
+    <Compile Include="Formularios\Distribucion\Container.aspx.cs">
       <DependentUpon>Container.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Formularios\Cliente\Container.aspx.designer.cs">
+    <Compile Include="Formularios\Distribucion\Container.aspx.designer.cs">
       <DependentUpon>Container.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Cliente\Index.aspx.cs">
+    <Compile Include="Formularios\Distribucion\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Formularios\Cliente\Index.aspx.designer.cs">
+    <Compile Include="Formularios\Distribucion\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Empleado\Container.aspx.cs">
@@ -441,32 +442,18 @@
     <Compile Include="Formularios\Empleado\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Habitacion\Container.aspx.cs">
+    <Compile Include="Formularios\Estadohabitacion\Container.aspx.cs">
       <DependentUpon>Container.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Formularios\Habitacion\Container.aspx.designer.cs">
+    <Compile Include="Formularios\Estadohabitacion\Container.aspx.designer.cs">
       <DependentUpon>Container.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Habitacion\Index.aspx.cs">
+    <Compile Include="Formularios\Estadohabitacion\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Formularios\Habitacion\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\HabitaconEstado\Container.aspx.cs">
-      <DependentUpon>Container.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formularios\HabitaconEstado\Container.aspx.designer.cs">
-      <DependentUpon>Container.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\HabitaconEstado\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formularios\HabitaconEstado\Index.aspx.designer.cs">
+    <Compile Include="Formularios\Estadohabitacion\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Hotel\Container.aspx.cs">
@@ -511,18 +498,18 @@
     <Compile Include="Formularios\Menu\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Resrvacion\Container.aspx.cs">
+    <Compile Include="Formularios\Preciohabitacion\Container.aspx.cs">
       <DependentUpon>Container.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Formularios\Resrvacion\Container.aspx.designer.cs">
+    <Compile Include="Formularios\Preciohabitacion\Container.aspx.designer.cs">
       <DependentUpon>Container.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Resrvacion\Index.aspx.cs">
+    <Compile Include="Formularios\Preciohabitacion\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Formularios\Resrvacion\Index.aspx.designer.cs">
+    <Compile Include="Formularios\Preciohabitacion\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Submenu\Container.aspx.cs">
@@ -537,6 +524,20 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Formularios\Submenu\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Tipohabitacion\Container.aspx.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Tipohabitacion\Container.aspx.designer.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Tipohabitacion\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Tipohabitacion\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Usuario\Container.aspx.cs">

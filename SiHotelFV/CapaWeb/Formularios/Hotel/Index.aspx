@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWeb.Formularios.Hotel.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
+                    <h4 class="card-title">Hotel</h4>
                     <form id="Form1" runat="server">
                         <table class="table">
                             <tr>
@@ -17,7 +17,7 @@
                                                         <div class="input-group">
                                                             <asp:TextBox class="form-control" ID="TxtBuscar" placeholder="Buscar..." runat="server" />
                                                             <div class="input-group-append">
-                                                                <asp:Button ID="Button1" class="btn btn-sm btn-gradient-primary" runat="server" Text="Buscar"
+                                                                <asp:Button ID="Button1" class="btn btn-sm btn-gradient-primary" required ="required" runat="server" Text="Buscar"
                                                                     OnClick="Button1_Click" />
                                                             </div>
                                                               <div class="input-group-append">
@@ -69,45 +69,34 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                            <asp:TemplateColumn HeaderText="Hotel">
+                                            <asp:TemplateColumn HeaderText="DNI">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="NombreHotel" runat="server" Text='<%#Eval("NombreHotel") %>'></asp:Label>
+                                                        <asp:Label ID="nombreHotel" runat="server" Text='<%#Eval("nombreHotel") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-
-                                              <asp:TemplateColumn HeaderText="N° Habitaciones">
+                                            <asp:TemplateColumn HeaderText="N° Habitaciones">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="NumeroHabitaciones" runat="server" Text='<%#Eval("NumeroHabitaciones") %>'></asp:Label>
-                                                    </span>
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
-                                            
-                                                <asp:TemplateColumn HeaderText="Categoría">
-                                                <ItemTemplate>
-                                                    <span style="float: left;">
-                                                        <asp:Label ID="CategoriaHotel" runat="server" Text='<%#Eval("CategoriaHotel") %>'></asp:Label>
+                                                        <asp:Label ID="numeroHabitaciones" runat="server" Text='<%#Eval("numeroHabitaciones") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                               <asp:TemplateColumn HeaderText="Ciudad">
+                                            <asp:TemplateColumn HeaderText="Categoría">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="CiudadHotel" runat="server" Text='<%#Eval("CiudadHotel") %>'></asp:Label>
+                                                        <asp:Label ID="categoriaHotel" runat="server" Text='<%#Eval("categoriaHotel") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
-                                            
-
 
                                             <asp:TemplateColumn HeaderText="Dirección">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="DireccionHotel" runat="server" Text='<%#Eval("DireccionHotel") %>'></asp:Label>
+                                                        <asp:Label ID="direccionHotel" runat="server" Text='<%#Eval("direccionHotel") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
@@ -115,26 +104,11 @@
                                             <asp:TemplateColumn HeaderText="Teléfono">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="TelefonoHotel" runat="server" Text='<%#Eval("TelefonoHotel") %>'></asp:Label>
+                                                        <asp:Label ID="telefonoHotel" runat="server" Text='<%#Eval("telefonoHotel") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                              <asp:TemplateColumn HeaderText="Email">
-                                                <ItemTemplate>
-                                                    <span style="float: left;">
-                                                        <asp:Label ID="CorreoHotel" runat="server" Text='<%#Eval("CorreoHotel") %>'></asp:Label>
-                                                    </span>
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
-
-                                              <asp:TemplateColumn HeaderText="Descripción">
-                                                <ItemTemplate>
-                                                    <span style="float: left;">
-                                                        <asp:Label ID="DescripcionHotel" runat="server" Text='<%#Eval("DescripcionHotel") %>'></asp:Label>
-                                                    </span>
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
 
 
                                         </Columns>
@@ -157,10 +131,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 </asp:Content>
-
