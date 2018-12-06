@@ -56,12 +56,12 @@ namespace CapaWeb.Formularios.Distribucion
                     camaMatrimonial.Checked =true;
                     camaKing.Checked = true;
 
-                    televisionCable.SelectedValue = row["televisionCable"].ToString();
-                    aireAcondicionado.SelectedValue = row["aireAcondicionado"].ToString();
-                    ventilador.SelectedValue = row["ventilador"].ToString();
-                    wifi.SelectedValue = row["wifi"].ToString();
-                    toallas.SelectedValue = row["toallas"].ToString();
-                    banioPrivado.SelectedValue = row["banioPrivado"].ToString();
+                    television.SelectedValue = row["televisionCable"].ToString();
+                    aire.SelectedValue = row["aireAcondicionado"].ToString();
+                    ventilador1.SelectedValue = row["ventilador"].ToString();
+                    wifi1.SelectedValue = row["wifi"].ToString();
+                    toallas1.SelectedValue = row["toallas"].ToString();
+                    banio1.SelectedValue = row["banioPrivado"].ToString();
 
                     lblId.Text = row["idDistribucion"].ToString();
                 }
@@ -79,12 +79,12 @@ namespace CapaWeb.Formularios.Distribucion
             camaMatrimonial.Enabled = false;
             camaKing.Enabled = false;
             maximoPersonas.Enabled = false;
-            televisionCable.Enabled = false;
-            aireAcondicionado.Enabled = false;
-            ventilador.Enabled = false;
-            wifi.Enabled = false;
-            toallas.Enabled = false;
-            banioPrivado.Enabled = false;
+            television.Enabled = false;
+            aire.Enabled = false;
+            ventilador1.Enabled = false;
+            wifi1.Enabled = false;
+            toallas1.Enabled = false;
+            banio1.Enabled = false;
             LblErro.Text = "Confirme la eliminación de los datos";
         }
 

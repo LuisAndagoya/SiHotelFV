@@ -289,7 +289,7 @@ namespace CapaDatos.Clases {
             
             private global::System.Data.DataColumn columnmaximoPersonas;
             
-            private global::System.Data.DataColumn columntelevisionCable;
+            private global::System.Data.DataColumn columntelevisioCable;
             
             private global::System.Data.DataColumn columnaireAcondicionado;
             
@@ -300,6 +300,8 @@ namespace CapaDatos.Clases {
             private global::System.Data.DataColumn columntoallas;
             
             private global::System.Data.DataColumn columnbanioPrivado;
+            
+            private global::System.Data.DataColumn columndescripcion;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -376,9 +378,9 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn televisionCableColumn {
+            public global::System.Data.DataColumn televisioCableColumn {
                 get {
-                    return this.columntelevisionCable;
+                    return this.columntelevisioCable;
                 }
             }
             
@@ -424,6 +426,14 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn descripcionColumn {
+                get {
+                    return this.columndescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +469,7 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public distribucion_habitacionRow Adddistribucion_habitacionRow(int camaIndividual, int camaMatrimonial, int camaKing, int maximoPersonas, string televisionCable, string aireAcondicionado, string ventilador, string wifi, string toallas, string banioPrivado) {
+            public distribucion_habitacionRow Adddistribucion_habitacionRow(string camaIndividual, string camaMatrimonial, string camaKing, int maximoPersonas, string televisioCable, string aireAcondicionado, string ventilador, string wifi, string toallas, string banioPrivado, string descripcion) {
                 distribucion_habitacionRow rowdistribucion_habitacionRow = ((distribucion_habitacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -467,12 +477,13 @@ namespace CapaDatos.Clases {
                         camaMatrimonial,
                         camaKing,
                         maximoPersonas,
-                        televisionCable,
+                        televisioCable,
                         aireAcondicionado,
                         ventilador,
                         wifi,
                         toallas,
-                        banioPrivado};
+                        banioPrivado,
+                        descripcion};
                 rowdistribucion_habitacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdistribucion_habitacionRow);
                 return rowdistribucion_habitacionRow;
@@ -507,12 +518,13 @@ namespace CapaDatos.Clases {
                 this.columncamaMatrimonial = base.Columns["camaMatrimonial"];
                 this.columncamaKing = base.Columns["camaKing"];
                 this.columnmaximoPersonas = base.Columns["maximoPersonas"];
-                this.columntelevisionCable = base.Columns["televisionCable"];
+                this.columntelevisioCable = base.Columns["televisioCable"];
                 this.columnaireAcondicionado = base.Columns["aireAcondicionado"];
                 this.columnventilador = base.Columns["ventilador"];
                 this.columnwifi = base.Columns["wifi"];
                 this.columntoallas = base.Columns["toallas"];
                 this.columnbanioPrivado = base.Columns["banioPrivado"];
+                this.columndescripcion = base.Columns["descripcion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -520,16 +532,16 @@ namespace CapaDatos.Clases {
             private void InitClass() {
                 this.columnidDistribucion = new global::System.Data.DataColumn("idDistribucion", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidDistribucion);
-                this.columncamaIndividual = new global::System.Data.DataColumn("camaIndividual", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columncamaIndividual = new global::System.Data.DataColumn("camaIndividual", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncamaIndividual);
-                this.columncamaMatrimonial = new global::System.Data.DataColumn("camaMatrimonial", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columncamaMatrimonial = new global::System.Data.DataColumn("camaMatrimonial", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncamaMatrimonial);
-                this.columncamaKing = new global::System.Data.DataColumn("camaKing", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columncamaKing = new global::System.Data.DataColumn("camaKing", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncamaKing);
                 this.columnmaximoPersonas = new global::System.Data.DataColumn("maximoPersonas", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmaximoPersonas);
-                this.columntelevisionCable = new global::System.Data.DataColumn("televisionCable", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntelevisionCable);
+                this.columntelevisioCable = new global::System.Data.DataColumn("televisioCable", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntelevisioCable);
                 this.columnaireAcondicionado = new global::System.Data.DataColumn("aireAcondicionado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnaireAcondicionado);
                 this.columnventilador = new global::System.Data.DataColumn("ventilador", typeof(string), null, global::System.Data.MappingType.Element);
@@ -540,6 +552,8 @@ namespace CapaDatos.Clases {
                 base.Columns.Add(this.columntoallas);
                 this.columnbanioPrivado = new global::System.Data.DataColumn("banioPrivado", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbanioPrivado);
+                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescripcion);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidDistribucion}, true));
                 this.columnidDistribucion.AutoIncrement = true;
@@ -549,15 +563,19 @@ namespace CapaDatos.Clases {
                 this.columnidDistribucion.ReadOnly = true;
                 this.columnidDistribucion.Unique = true;
                 this.columncamaIndividual.AllowDBNull = false;
+                this.columncamaIndividual.MaxLength = 1;
                 this.columncamaMatrimonial.AllowDBNull = false;
+                this.columncamaMatrimonial.MaxLength = 1;
                 this.columncamaKing.AllowDBNull = false;
-                this.columnmaximoPersonas.AllowDBNull = false;
-                this.columntelevisionCable.MaxLength = 2;
-                this.columnaireAcondicionado.MaxLength = 2;
-                this.columnventilador.MaxLength = 2;
-                this.columnwifi.MaxLength = 2;
-                this.columntoallas.MaxLength = 2;
-                this.columnbanioPrivado.MaxLength = 2;
+                this.columncamaKing.MaxLength = 1;
+                this.columntelevisioCable.MaxLength = 1;
+                this.columnaireAcondicionado.MaxLength = 1;
+                this.columnventilador.MaxLength = 1;
+                this.columnwifi.MaxLength = 1;
+                this.columntoallas.MaxLength = 1;
+                this.columnbanioPrivado.MaxLength = 1;
+                this.columndescripcion.AllowDBNull = false;
+                this.columndescripcion.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -711,9 +729,9 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int camaIndividual {
+            public string camaIndividual {
                 get {
-                    return ((int)(this[this.tabledistribucion_habitacion.camaIndividualColumn]));
+                    return ((string)(this[this.tabledistribucion_habitacion.camaIndividualColumn]));
                 }
                 set {
                     this[this.tabledistribucion_habitacion.camaIndividualColumn] = value;
@@ -722,9 +740,9 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int camaMatrimonial {
+            public string camaMatrimonial {
                 get {
-                    return ((int)(this[this.tabledistribucion_habitacion.camaMatrimonialColumn]));
+                    return ((string)(this[this.tabledistribucion_habitacion.camaMatrimonialColumn]));
                 }
                 set {
                     this[this.tabledistribucion_habitacion.camaMatrimonialColumn] = value;
@@ -733,9 +751,9 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int camaKing {
+            public string camaKing {
                 get {
-                    return ((int)(this[this.tabledistribucion_habitacion.camaKingColumn]));
+                    return ((string)(this[this.tabledistribucion_habitacion.camaKingColumn]));
                 }
                 set {
                     this[this.tabledistribucion_habitacion.camaKingColumn] = value;
@@ -746,7 +764,13 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int maximoPersonas {
                 get {
-                    return ((int)(this[this.tabledistribucion_habitacion.maximoPersonasColumn]));
+                    try {
+                        return ((int)(this[this.tabledistribucion_habitacion.maximoPersonasColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'maximoPersonas\' de la tabla \'distribucion_habitacion\' es " +
+                                "DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tabledistribucion_habitacion.maximoPersonasColumn] = value;
@@ -755,18 +779,18 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string televisionCable {
+            public string televisioCable {
                 get {
                     try {
-                        return ((string)(this[this.tabledistribucion_habitacion.televisionCableColumn]));
+                        return ((string)(this[this.tabledistribucion_habitacion.televisioCableColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'televisionCable\' de la tabla \'distribucion_habitacion\' es" +
-                                " DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'televisioCable\' de la tabla \'distribucion_habitacion\' es " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledistribucion_habitacion.televisionCableColumn] = value;
+                    this[this.tabledistribucion_habitacion.televisioCableColumn] = value;
                 }
             }
             
@@ -856,14 +880,37 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IstelevisionCableNull() {
-                return this.IsNull(this.tabledistribucion_habitacion.televisionCableColumn);
+            public string descripcion {
+                get {
+                    return ((string)(this[this.tabledistribucion_habitacion.descripcionColumn]));
+                }
+                set {
+                    this[this.tabledistribucion_habitacion.descripcionColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SettelevisionCableNull() {
-                this[this.tabledistribucion_habitacion.televisionCableColumn] = global::System.Convert.DBNull;
+            public bool IsmaximoPersonasNull() {
+                return this.IsNull(this.tabledistribucion_habitacion.maximoPersonasColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmaximoPersonasNull() {
+                this[this.tabledistribucion_habitacion.maximoPersonasColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstelevisioCableNull() {
+                return this.IsNull(this.tabledistribucion_habitacion.televisioCableColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettelevisioCableNull() {
+                this[this.tabledistribucion_habitacion.televisioCableColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1091,24 +1138,26 @@ namespace CapaDatos.Clases.DistribucionhabitacionTableAdapters {
             tableMapping.ColumnMappings.Add("camaMatrimonial", "camaMatrimonial");
             tableMapping.ColumnMappings.Add("camaKing", "camaKing");
             tableMapping.ColumnMappings.Add("maximoPersonas", "maximoPersonas");
-            tableMapping.ColumnMappings.Add("televisionCable", "televisionCable");
+            tableMapping.ColumnMappings.Add("televisioCable", "televisioCable");
             tableMapping.ColumnMappings.Add("aireAcondicionado", "aireAcondicionado");
             tableMapping.ColumnMappings.Add("ventilador", "ventilador");
             tableMapping.ColumnMappings.Add("wifi", "wifi");
             tableMapping.ColumnMappings.Add("toallas", "toallas");
             tableMapping.ColumnMappings.Add("banioPrivado", "banioPrivado");
+            tableMapping.ColumnMappings.Add("descripcion", "descripcion");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[distribucion_habitacion] WHERE (([idDistribucion] = @Original_idDistribucion) AND ([camaIndividual] = @Original_camaIndividual) AND ([camaMatrimonial] = @Original_camaMatrimonial) AND ([camaKing] = @Original_camaKing) AND ([maximoPersonas] = @Original_maximoPersonas) AND ((@IsNull_televisionCable = 1 AND [televisionCable] IS NULL) OR ([televisionCable] = @Original_televisionCable)) AND ((@IsNull_aireAcondicionado = 1 AND [aireAcondicionado] IS NULL) OR ([aireAcondicionado] = @Original_aireAcondicionado)) AND ((@IsNull_ventilador = 1 AND [ventilador] IS NULL) OR ([ventilador] = @Original_ventilador)) AND ((@IsNull_wifi = 1 AND [wifi] IS NULL) OR ([wifi] = @Original_wifi)) AND ((@IsNull_toallas = 1 AND [toallas] IS NULL) OR ([toallas] = @Original_toallas)) AND ((@IsNull_banioPrivado = 1 AND [banioPrivado] IS NULL) OR ([banioPrivado] = @Original_banioPrivado)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[distribucion_habitacion] WHERE (([idDistribucion] = @Original_idDistribucion) AND ([camaIndividual] = @Original_camaIndividual) AND ([camaMatrimonial] = @Original_camaMatrimonial) AND ([camaKing] = @Original_camaKing) AND ((@IsNull_maximoPersonas = 1 AND [maximoPersonas] IS NULL) OR ([maximoPersonas] = @Original_maximoPersonas)) AND ((@IsNull_televisioCable = 1 AND [televisioCable] IS NULL) OR ([televisioCable] = @Original_televisioCable)) AND ((@IsNull_aireAcondicionado = 1 AND [aireAcondicionado] IS NULL) OR ([aireAcondicionado] = @Original_aireAcondicionado)) AND ((@IsNull_ventilador = 1 AND [ventilador] IS NULL) OR ([ventilador] = @Original_ventilador)) AND ((@IsNull_wifi = 1 AND [wifi] IS NULL) OR ([wifi] = @Original_wifi)) AND ((@IsNull_toallas = 1 AND [toallas] IS NULL) OR ([toallas] = @Original_toallas)) AND ((@IsNull_banioPrivado = 1 AND [banioPrivado] IS NULL) OR ([banioPrivado] = @Original_banioPrivado)) AND ([descripcion] = @Original_descripcion))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idDistribucion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idDistribucion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_camaIndividual", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaIndividual", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_camaMatrimonial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaMatrimonial", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_camaKing", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaKing", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_camaIndividual", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaIndividual", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_camaMatrimonial", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaMatrimonial", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_camaKing", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaKing", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_maximoPersonas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maximoPersonas", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_maximoPersonas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maximoPersonas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_televisionCable", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "televisionCable", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_televisionCable", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "televisionCable", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_televisioCable", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "televisioCable", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_televisioCable", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "televisioCable", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_aireAcondicionado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "aireAcondicionado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_aireAcondicionado", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "aireAcondicionado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ventilador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ventilador", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1119,43 +1168,65 @@ namespace CapaDatos.Clases.DistribucionhabitacionTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_toallas", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "toallas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_banioPrivado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "banioPrivado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_banioPrivado", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "banioPrivado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[distribucion_habitacion] ([camaIndividual], [camaMatrimonial], [camaKing], [maximoPersonas], [televisionCable], [aireAcondicionado], [ventilador], [wifi], [toallas], [banioPrivado]) VALUES (@camaIndividual, @camaMatrimonial, @camaKing, @maximoPersonas, @televisionCable, @aireAcondicionado, @ventilador, @wifi, @toallas, @banioPrivado);
-SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisionCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado FROM distribucion_habitacion WHERE (idDistribucion = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[distribucion_habitacion] ([camaIndividual], [camaMatrimonial], [camaKing], [maximoPersonas], [televisioCable], [aireAcondicionado], [ventilador], [wifi], [toallas], [banioPrivado], [descripcion]) VALUES (@camaIndividual, @camaMatrimonial, @camaKing, @maximoPersonas, @televisioCable, @aireAcondicionado, @ventilador, @wifi, @toallas, @banioPrivado, @descripcion);
+SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisioCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado, descripcion FROM distribucion_habitacion WHERE (idDistribucion = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaIndividual", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaIndividual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaMatrimonial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaMatrimonial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaKing", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaKing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaIndividual", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaIndividual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaMatrimonial", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaMatrimonial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaKing", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaKing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maximoPersonas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maximoPersonas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@televisionCable", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "televisionCable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@televisioCable", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "televisioCable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aireAcondicionado", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "aireAcondicionado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ventilador", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ventilador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wifi", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "wifi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@toallas", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "toallas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@banioPrivado", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "banioPrivado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[distribucion_habitacion] SET [camaIndividual] = @camaIndividual, [camaMatrimonial] = @camaMatrimonial, [camaKing] = @camaKing, [maximoPersonas] = @maximoPersonas, [televisionCable] = @televisionCable, [aireAcondicionado] = @aireAcondicionado, [ventilador] = @ventilador, [wifi] = @wifi, [toallas] = @toallas, [banioPrivado] = @banioPrivado WHERE (([idDistribucion] = @Original_idDistribucion) AND ([camaIndividual] = @Original_camaIndividual) AND ([camaMatrimonial] = @Original_camaMatrimonial) AND ([camaKing] = @Original_camaKing) AND ([maximoPersonas] = @Original_maximoPersonas) AND ((@IsNull_televisionCable = 1 AND [televisionCable] IS NULL) OR ([televisionCable] = @Original_televisionCable)) AND ((@IsNull_aireAcondicionado = 1 AND [aireAcondicionado] IS NULL) OR ([aireAcondicionado] = @Original_aireAcondicionado)) AND ((@IsNull_ventilador = 1 AND [ventilador] IS NULL) OR ([ventilador] = @Original_ventilador)) AND ((@IsNull_wifi = 1 AND [wifi] IS NULL) OR ([wifi] = @Original_wifi)) AND ((@IsNull_toallas = 1 AND [toallas] IS NULL) OR ([toallas] = @Original_toallas)) AND ((@IsNull_banioPrivado = 1 AND [banioPrivado] IS NULL) OR ([banioPrivado] = @Original_banioPrivado)));
-SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisionCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado FROM distribucion_habitacion WHERE (idDistribucion = @idDistribucion)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[distribucion_habitacion] SET [camaIndividual] = @camaIndividual, [c" +
+                "amaMatrimonial] = @camaMatrimonial, [camaKing] = @camaKing, [maximoPersonas] = @" +
+                "maximoPersonas, [televisioCable] = @televisioCable, [aireAcondicionado] = @aireA" +
+                "condicionado, [ventilador] = @ventilador, [wifi] = @wifi, [toallas] = @toallas, " +
+                "[banioPrivado] = @banioPrivado, [descripcion] = @descripcion WHERE (([idDistribu" +
+                "cion] = @Original_idDistribucion) AND ([camaIndividual] = @Original_camaIndividu" +
+                "al) AND ([camaMatrimonial] = @Original_camaMatrimonial) AND ([camaKing] = @Origi" +
+                "nal_camaKing) AND ((@IsNull_maximoPersonas = 1 AND [maximoPersonas] IS NULL) OR " +
+                "([maximoPersonas] = @Original_maximoPersonas)) AND ((@IsNull_televisioCable = 1 " +
+                "AND [televisioCable] IS NULL) OR ([televisioCable] = @Original_televisioCable)) " +
+                "AND ((@IsNull_aireAcondicionado = 1 AND [aireAcondicionado] IS NULL) OR ([aireAc" +
+                "ondicionado] = @Original_aireAcondicionado)) AND ((@IsNull_ventilador = 1 AND [v" +
+                "entilador] IS NULL) OR ([ventilador] = @Original_ventilador)) AND ((@IsNull_wifi" +
+                " = 1 AND [wifi] IS NULL) OR ([wifi] = @Original_wifi)) AND ((@IsNull_toallas = 1" +
+                " AND [toallas] IS NULL) OR ([toallas] = @Original_toallas)) AND ((@IsNull_banioP" +
+                "rivado = 1 AND [banioPrivado] IS NULL) OR ([banioPrivado] = @Original_banioPriva" +
+                "do)) AND ([descripcion] = @Original_descripcion));\r\nSELECT idDistribucion, camaI" +
+                "ndividual, camaMatrimonial, camaKing, maximoPersonas, televisioCable, aireAcondi" +
+                "cionado, ventilador, wifi, toallas, banioPrivado, descripcion FROM distribucion_" +
+                "habitacion WHERE (idDistribucion = @idDistribucion)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaIndividual", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaIndividual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaMatrimonial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaMatrimonial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaKing", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaKing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaIndividual", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaIndividual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaMatrimonial", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaMatrimonial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaKing", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaKing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maximoPersonas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maximoPersonas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@televisionCable", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "televisionCable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@televisioCable", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "televisioCable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aireAcondicionado", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "aireAcondicionado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ventilador", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ventilador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wifi", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "wifi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@toallas", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "toallas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@banioPrivado", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "banioPrivado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idDistribucion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idDistribucion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_camaIndividual", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaIndividual", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_camaMatrimonial", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaMatrimonial", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_camaKing", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaKing", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_camaIndividual", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaIndividual", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_camaMatrimonial", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaMatrimonial", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_camaKing", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "camaKing", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_maximoPersonas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maximoPersonas", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_maximoPersonas", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maximoPersonas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_televisionCable", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "televisionCable", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_televisionCable", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "televisionCable", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_televisioCable", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "televisioCable", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_televisioCable", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "televisioCable", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_aireAcondicionado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "aireAcondicionado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_aireAcondicionado", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "aireAcondicionado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ventilador", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ventilador", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1166,6 +1237,7 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_toallas", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "toallas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_banioPrivado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "banioPrivado", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_banioPrivado", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "banioPrivado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idDistribucion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idDistribucion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1179,12 +1251,12 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas," +
-                " televisionCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado FRO" +
-                "M dbo.distribucion_habitacion";
+                " televisioCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado, des" +
+                "cripcion FROM dbo.distribucion_habitacion";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -1194,51 +1266,66 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idDistribucion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idDistribucion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPe" +
-                "rsonas, televisionCable, aireAcondicionado, ventilador, wifi, toallas, banioPriv" +
-                "ado\r\nFROM            distribucion_habitacion";
+            this._commandCollection[2].CommandText = @"SELECT        idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisioCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado, descripcion
+FROM            distribucion_habitacion
+WHERE        (descripcion LIKE @descripcion)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT        idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPe" +
-                "rsonas, televisionCable, aireAcondicionado, ventilador, wifi, toallas, banioPriv" +
-                "ado\r\nFROM            distribucion_habitacion\r\nWHERE        (idDistribucion = @id" +
-                "Distribucion)";
+                "rsonas, televisioCable, aireAcondicionado, ventilador, wifi, toallas, banioPriva" +
+                "do, descripcion\r\nFROM            distribucion_habitacion";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idDistribucion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idDistribucion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"INSERT INTO distribucion_habitacion
-                         (camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisionCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado)
-VALUES        (@camaIndividual,@camaMatrimonial,@camaKing,@maximoPersonas,@televisionCable,@aireAcondicionado,@ventilador,@wifi,@toallas,@banioPrivado); 
-SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisionCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado FROM distribucion_habitacion WHERE (idDistribucion = SCOPE_IDENTITY())";
+            this._commandCollection[4].CommandText = @"SELECT        idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisioCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado, descripcion
+FROM            distribucion_habitacion
+WHERE        (idDistribucion = @idDistribucion)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaIndividual", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "camaIndividual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaMatrimonial", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "camaMatrimonial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaKing", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "camaKing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maximoPersonas", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "maximoPersonas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@televisionCable", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "televisionCable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aireAcondicionado", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "aireAcondicionado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ventilador", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "ventilador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wifi", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "wifi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@toallas", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "toallas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@banioPrivado", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "banioPrivado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idDistribucion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idDistribucion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"UPDATE [dbo].[distribucion_habitacion] SET [camaIndividual] = @camaIndividual, [camaMatrimonial] = @camaMatrimonial, [camaKing] = @camaKing, [maximoPersonas] = @maximoPersonas, [televisionCable] = @televisionCable, [aireAcondicionado] = @aireAcondicionado, [ventilador] = @ventilador, [wifi] = @wifi, [toallas] = @toallas, [banioPrivado] = @banioPrivado WHERE (([idDistribucion] = @idDistribucion));
-SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisionCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado FROM distribucion_habitacion WHERE (idDistribucion = @idDistribucion)";
+            this._commandCollection[5].CommandText = @"INSERT INTO [dbo].[distribucion_habitacion] ([camaIndividual], [camaMatrimonial], [camaKing], [maximoPersonas], [televisioCable], [aireAcondicionado], [ventilador], [wifi], [toallas], [banioPrivado], [descripcion]) VALUES (@camaIndividual, @camaMatrimonial, @camaKing, @maximoPersonas, @televisioCable, @aireAcondicionado, @ventilador, @wifi, @toallas, @banioPrivado, @descripcion);
+SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisioCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado, descripcion FROM distribucion_habitacion WHERE (idDistribucion = SCOPE_IDENTITY())";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaIndividual", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "camaIndividual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaMatrimonial", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "camaMatrimonial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaKing", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "camaKing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaIndividual", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "camaIndividual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaMatrimonial", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "camaMatrimonial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaKing", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "camaKing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maximoPersonas", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "maximoPersonas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@televisionCable", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "televisionCable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aireAcondicionado", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "aireAcondicionado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ventilador", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "ventilador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wifi", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "wifi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@toallas", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "toallas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@banioPrivado", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "banioPrivado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idDistribucion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idDistribucion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@televisioCable", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "televisioCable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aireAcondicionado", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "aireAcondicionado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ventilador", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "ventilador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wifi", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "wifi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@toallas", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "toallas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@banioPrivado", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "banioPrivado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT        COUNT(idDistribucion) AS Expr1\r\nFROM            distribucion_habita" +
+                "cion\r\nWHERE        (descripcion = @descripcion)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = @"UPDATE       distribucion_habitacion
+SET                camaIndividual = @camaIndividual, camaMatrimonial = @camaMatrimonial, camaKing = @camaKing, maximoPersonas = @maximoPersonas, televisioCable = @televisioCable, 
+                         aireAcondicionado = @aireAcondicionado, ventilador = @ventilador, wifi = @wifi, toallas = @toallas, banioPrivado = @banioPrivado, descripcion = @descripcion
+WHERE        (idDistribucion = @idDistribucion); 
+SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisioCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado, descripcion FROM distribucion_habitacion WHERE (idDistribucion = @idDistribucion)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaIndividual", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "camaIndividual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaMatrimonial", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "camaMatrimonial", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@camaKing", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "camaKing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maximoPersonas", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "maximoPersonas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@televisioCable", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "televisioCable", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aireAcondicionado", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "aireAcondicionado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ventilador", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "ventilador", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@wifi", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "wifi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@toallas", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "toallas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@banioPrivado", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "banioPrivado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idDistribucion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idDistribucion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1269,8 +1356,25 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Distribucionhabitacion.distribucion_habitacionDataTable GetLista() {
+        public virtual Distribucionhabitacion.distribucion_habitacionDataTable GetBuscar(string descripcion) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((descripcion == null)) {
+                throw new global::System.ArgumentNullException("descripcion");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(descripcion));
+            }
+            Distribucionhabitacion.distribucion_habitacionDataTable dataTable = new Distribucionhabitacion.distribucion_habitacionDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Distribucionhabitacion.distribucion_habitacionDataTable GetLista() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             Distribucionhabitacion.distribucion_habitacionDataTable dataTable = new Distribucionhabitacion.distribucion_habitacionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1281,7 +1385,7 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Distribucionhabitacion.distribucion_habitacionDataTable GetListaActualizar(int idDistribucion) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idDistribucion));
             Distribucionhabitacion.distribucion_habitacionDataTable dataTable = new Distribucionhabitacion.distribucion_habitacionDataTable();
             this.Adapter.Fill(dataTable);
@@ -1321,59 +1425,87 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idDistribucion, int Original_camaIndividual, int Original_camaMatrimonial, int Original_camaKing, int Original_maximoPersonas, string Original_televisionCable, string Original_aireAcondicionado, string Original_ventilador, string Original_wifi, string Original_toallas, string Original_banioPrivado) {
+        public virtual int Delete(int Original_idDistribucion, string Original_camaIndividual, string Original_camaMatrimonial, string Original_camaKing, global::System.Nullable<int> Original_maximoPersonas, string Original_televisioCable, string Original_aireAcondicionado, string Original_ventilador, string Original_wifi, string Original_toallas, string Original_banioPrivado, string Original_descripcion) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idDistribucion));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_camaIndividual));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_camaMatrimonial));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_camaKing));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_maximoPersonas));
-            if ((Original_televisionCable == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            if ((Original_camaIndividual == null)) {
+                throw new global::System.ArgumentNullException("Original_camaIndividual");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_televisionCable));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_camaIndividual));
+            }
+            if ((Original_camaMatrimonial == null)) {
+                throw new global::System.ArgumentNullException("Original_camaMatrimonial");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_camaMatrimonial));
+            }
+            if ((Original_camaKing == null)) {
+                throw new global::System.ArgumentNullException("Original_camaKing");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_camaKing));
+            }
+            if ((Original_maximoPersonas.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_maximoPersonas.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_televisioCable == null)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_televisioCable));
             }
             if ((Original_aireAcondicionado == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_aireAcondicionado));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_aireAcondicionado));
             }
             if ((Original_ventilador == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_ventilador));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_ventilador));
             }
             if ((Original_wifi == null)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_wifi));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_wifi));
             }
             if ((Original_toallas == null)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_toallas));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((string)(Original_toallas));
             }
             if ((Original_banioPrivado == null)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_banioPrivado));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((string)(Original_banioPrivado));
+            }
+            if ((Original_descripcion == null)) {
+                throw new global::System.ArgumentNullException("Original_descripcion");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_descripcion));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1395,16 +1527,36 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int camaIndividual, int camaMatrimonial, int camaKing, int maximoPersonas, string televisionCable, string aireAcondicionado, string ventilador, string wifi, string toallas, string banioPrivado) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(camaIndividual));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(camaMatrimonial));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(camaKing));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(maximoPersonas));
-            if ((televisionCable == null)) {
+        public virtual int Insert(string camaIndividual, string camaMatrimonial, string camaKing, global::System.Nullable<int> maximoPersonas, string televisioCable, string aireAcondicionado, string ventilador, string wifi, string toallas, string banioPrivado, string descripcion) {
+            if ((camaIndividual == null)) {
+                throw new global::System.ArgumentNullException("camaIndividual");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(camaIndividual));
+            }
+            if ((camaMatrimonial == null)) {
+                throw new global::System.ArgumentNullException("camaMatrimonial");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(camaMatrimonial));
+            }
+            if ((camaKing == null)) {
+                throw new global::System.ArgumentNullException("camaKing");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(camaKing));
+            }
+            if ((maximoPersonas.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(maximoPersonas.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((televisioCable == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(televisionCable));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(televisioCable));
             }
             if ((aireAcondicionado == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
@@ -1436,6 +1588,12 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = ((string)(banioPrivado));
             }
+            if ((descripcion == null)) {
+                throw new global::System.ArgumentNullException("descripcion");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(descripcion));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1457,37 +1615,59 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int camaIndividual, 
-                    int camaMatrimonial, 
-                    int camaKing, 
-                    int maximoPersonas, 
-                    string televisionCable, 
+                    string camaIndividual, 
+                    string camaMatrimonial, 
+                    string camaKing, 
+                    global::System.Nullable<int> maximoPersonas, 
+                    string televisioCable, 
                     string aireAcondicionado, 
                     string ventilador, 
                     string wifi, 
                     string toallas, 
                     string banioPrivado, 
+                    string descripcion, 
                     int Original_idDistribucion, 
-                    int Original_camaIndividual, 
-                    int Original_camaMatrimonial, 
-                    int Original_camaKing, 
-                    int Original_maximoPersonas, 
-                    string Original_televisionCable, 
+                    string Original_camaIndividual, 
+                    string Original_camaMatrimonial, 
+                    string Original_camaKing, 
+                    global::System.Nullable<int> Original_maximoPersonas, 
+                    string Original_televisioCable, 
                     string Original_aireAcondicionado, 
                     string Original_ventilador, 
                     string Original_wifi, 
                     string Original_toallas, 
                     string Original_banioPrivado, 
+                    string Original_descripcion, 
                     int idDistribucion) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(camaIndividual));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(camaMatrimonial));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(camaKing));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(maximoPersonas));
-            if ((televisionCable == null)) {
+            if ((camaIndividual == null)) {
+                throw new global::System.ArgumentNullException("camaIndividual");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(camaIndividual));
+            }
+            if ((camaMatrimonial == null)) {
+                throw new global::System.ArgumentNullException("camaMatrimonial");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(camaMatrimonial));
+            }
+            if ((camaKing == null)) {
+                throw new global::System.ArgumentNullException("camaKing");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(camaKing));
+            }
+            if ((maximoPersonas.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(maximoPersonas.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((televisioCable == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(televisionCable));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(televisioCable));
             }
             if ((aireAcondicionado == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
@@ -1519,60 +1699,94 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(banioPrivado));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_idDistribucion));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_camaIndividual));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_camaMatrimonial));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_camaKing));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_maximoPersonas));
-            if ((Original_televisionCable == null)) {
+            if ((descripcion == null)) {
+                throw new global::System.ArgumentNullException("descripcion");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(descripcion));
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_idDistribucion));
+            if ((Original_camaIndividual == null)) {
+                throw new global::System.ArgumentNullException("Original_camaIndividual");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_camaIndividual));
+            }
+            if ((Original_camaMatrimonial == null)) {
+                throw new global::System.ArgumentNullException("Original_camaMatrimonial");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_camaMatrimonial));
+            }
+            if ((Original_camaKing == null)) {
+                throw new global::System.ArgumentNullException("Original_camaKing");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_camaKing));
+            }
+            if ((Original_maximoPersonas.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_maximoPersonas.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_televisionCable));
-            }
-            if ((Original_aireAcondicionado == null)) {
+            if ((Original_televisioCable == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_aireAcondicionado));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_televisioCable));
             }
-            if ((Original_ventilador == null)) {
+            if ((Original_aireAcondicionado == null)) {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_ventilador));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_aireAcondicionado));
             }
-            if ((Original_wifi == null)) {
+            if ((Original_ventilador == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_wifi));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_ventilador));
             }
-            if ((Original_toallas == null)) {
+            if ((Original_wifi == null)) {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_toallas));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_wifi));
             }
-            if ((Original_banioPrivado == null)) {
+            if ((Original_toallas == null)) {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_banioPrivado));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_toallas));
             }
-            this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(idDistribucion));
+            if ((Original_banioPrivado == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_banioPrivado));
+            }
+            if ((Original_descripcion == null)) {
+                throw new global::System.ArgumentNullException("Original_descripcion");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_descripcion));
+            }
+            this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(idDistribucion));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1594,28 +1808,30 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int camaIndividual, 
-                    int camaMatrimonial, 
-                    int camaKing, 
-                    int maximoPersonas, 
-                    string televisionCable, 
+                    string camaIndividual, 
+                    string camaMatrimonial, 
+                    string camaKing, 
+                    global::System.Nullable<int> maximoPersonas, 
+                    string televisioCable, 
                     string aireAcondicionado, 
                     string ventilador, 
                     string wifi, 
                     string toallas, 
                     string banioPrivado, 
+                    string descripcion, 
                     int Original_idDistribucion, 
-                    int Original_camaIndividual, 
-                    int Original_camaMatrimonial, 
-                    int Original_camaKing, 
-                    int Original_maximoPersonas, 
-                    string Original_televisionCable, 
+                    string Original_camaIndividual, 
+                    string Original_camaMatrimonial, 
+                    string Original_camaKing, 
+                    global::System.Nullable<int> Original_maximoPersonas, 
+                    string Original_televisioCable, 
                     string Original_aireAcondicionado, 
                     string Original_ventilador, 
                     string Original_wifi, 
                     string Original_toallas, 
-                    string Original_banioPrivado) {
-            return this.Update(camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisionCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado, Original_idDistribucion, Original_camaIndividual, Original_camaMatrimonial, Original_camaKing, Original_maximoPersonas, Original_televisionCable, Original_aireAcondicionado, Original_ventilador, Original_wifi, Original_toallas, Original_banioPrivado, Original_idDistribucion);
+                    string Original_banioPrivado, 
+                    string Original_descripcion) {
+            return this.Update(camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisioCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado, descripcion, Original_idDistribucion, Original_camaIndividual, Original_camaMatrimonial, Original_camaKing, Original_maximoPersonas, Original_televisioCable, Original_aireAcondicionado, Original_ventilador, Original_wifi, Original_toallas, Original_banioPrivado, Original_descripcion, Original_idDistribucion);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1646,17 +1862,37 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(int camaIndividual, int camaMatrimonial, int camaKing, int maximoPersonas, string televisionCable, string aireAcondicionado, string ventilador, string wifi, string toallas, string banioPrivado) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
-            command.Parameters[0].Value = ((int)(camaIndividual));
-            command.Parameters[1].Value = ((int)(camaMatrimonial));
-            command.Parameters[2].Value = ((int)(camaKing));
-            command.Parameters[3].Value = ((int)(maximoPersonas));
-            if ((televisionCable == null)) {
+        public virtual int InsertQuery(string camaIndividual, string camaMatrimonial, string camaKing, global::System.Nullable<int> maximoPersonas, string televisioCable, string aireAcondicionado, string ventilador, string wifi, string toallas, string banioPrivado, string descripcion) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            if ((camaIndividual == null)) {
+                throw new global::System.ArgumentNullException("camaIndividual");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(camaIndividual));
+            }
+            if ((camaMatrimonial == null)) {
+                throw new global::System.ArgumentNullException("camaMatrimonial");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(camaMatrimonial));
+            }
+            if ((camaKing == null)) {
+                throw new global::System.ArgumentNullException("camaKing");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(camaKing));
+            }
+            if ((maximoPersonas.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(maximoPersonas.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((televisioCable == null)) {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[4].Value = ((string)(televisionCable));
+                command.Parameters[4].Value = ((string)(televisioCable));
             }
             if ((aireAcondicionado == null)) {
                 command.Parameters[5].Value = global::System.DBNull.Value;
@@ -1687,6 +1923,12 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
             }
             else {
                 command.Parameters[9].Value = ((string)(banioPrivado));
+            }
+            if ((descripcion == null)) {
+                throw new global::System.ArgumentNullException("descripcion");
+            }
+            else {
+                command.Parameters[10].Value = ((string)(descripcion));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1708,18 +1950,72 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> unico(string descripcion) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            if ((descripcion == null)) {
+                throw new global::System.ArgumentNullException("descripcion");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(descripcion));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(int camaIndividual, int camaMatrimonial, int camaKing, int maximoPersonas, string televisionCable, string aireAcondicionado, string ventilador, string wifi, string toallas, string banioPrivado, int idDistribucion) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
-            command.Parameters[0].Value = ((int)(camaIndividual));
-            command.Parameters[1].Value = ((int)(camaMatrimonial));
-            command.Parameters[2].Value = ((int)(camaKing));
-            command.Parameters[3].Value = ((int)(maximoPersonas));
-            if ((televisionCable == null)) {
+        public virtual int UpdateQuery(string camaIndividual, string camaMatrimonial, string camaKing, global::System.Nullable<int> maximoPersonas, string televisioCable, string aireAcondicionado, string ventilador, string wifi, string toallas, string banioPrivado, string descripcion, int idDistribucion) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            if ((camaIndividual == null)) {
+                throw new global::System.ArgumentNullException("camaIndividual");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(camaIndividual));
+            }
+            if ((camaMatrimonial == null)) {
+                throw new global::System.ArgumentNullException("camaMatrimonial");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(camaMatrimonial));
+            }
+            if ((camaKing == null)) {
+                throw new global::System.ArgumentNullException("camaKing");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(camaKing));
+            }
+            if ((maximoPersonas.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(maximoPersonas.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((televisioCable == null)) {
                 command.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[4].Value = ((string)(televisionCable));
+                command.Parameters[4].Value = ((string)(televisioCable));
             }
             if ((aireAcondicionado == null)) {
                 command.Parameters[5].Value = global::System.DBNull.Value;
@@ -1751,7 +2047,13 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
             else {
                 command.Parameters[9].Value = ((string)(banioPrivado));
             }
-            command.Parameters[10].Value = ((int)(idDistribucion));
+            if ((descripcion == null)) {
+                throw new global::System.ArgumentNullException("descripcion");
+            }
+            else {
+                command.Parameters[10].Value = ((string)(descripcion));
+            }
+            command.Parameters[11].Value = ((int)(idDistribucion));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

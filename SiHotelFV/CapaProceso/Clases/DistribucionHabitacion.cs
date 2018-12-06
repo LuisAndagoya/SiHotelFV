@@ -23,23 +23,23 @@ namespace CapaProceso.Clases
         }
 
 
-       /* public static CapaDatos.Clases.Distribucionhabitacion.distribucion_habitacionDataTable Buscar(string buscar)
+        public static CapaDatos.Clases.Distribucionhabitacion.distribucion_habitacionDataTable Buscar(string buscar)
         {
             String buscarAux = "%" + buscar.Trim() + "%";
             return CDistribucion.GetBuscar(buscarAux);
-        }*/
+        }
 
-        public static string Insertar(short camaIndividual, short camaMatrimonial, short camaKing, short maximoPersonas, string televisionCable, string aireAcondicionado, string ventilador, string wifi, string toallas, string banioPrivado)
+        public static string Insertar(string camaIndividual, string camaMatrimonial, string camaKing, short maximoPersonas, string televisionCable, string aireAcondicionado, string ventilador, string wifi, string toallas, string banioPrivado, string descripcion)
         {
 
-            //string Lista = CCargo.unico(nombreCargo).ToString();
+            string Lista = CDistribucion.unico(descripcion).ToString();
 
 
             string mensaje = "";
 
-            //if (Lista == "0")
-           // {
-                int resultado = CDistribucion.InsertQuery(camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisionCable.Trim(), aireAcondicionado.Trim(), ventilador.Trim(), wifi.Trim(), toallas.Trim(), banioPrivado.Trim());
+            if (Lista == "0")
+            {
+                int resultado = CDistribucion.InsertQuery(camaIndividual.Trim(), camaMatrimonial.Trim(), camaKing.Trim(), maximoPersonas, televisionCable.Trim(), aireAcondicionado.Trim(), ventilador.Trim(), wifi.Trim(), toallas.Trim(), banioPrivado.Trim(), descripcion.Trim());
                 if (resultado == 0)
                 {
                     return mensaje = "Error al insertar los registros";
@@ -50,21 +50,21 @@ namespace CapaProceso.Clases
 
                 }
 
-            //}
-            //else
-            //{
-              //  return mensaje = "La CI ya existe";
-            //}
+            }
+            else
+            {
+                return mensaje = "La CI ya existe";
+            }
         }
 
 
 
 
-        public static string Actualizar(short camaIndividual, short camaMatrimonial, short camaKing, short maximoPersonas, string televisionCable, string aireAcondicionado, string ventilador, string wifi, string toallas, string banioPrivado,short idDistribucion)
+        public static string Actualizar(string camaIndividual, string camaMatrimonial, string camaKing, short maximoPersonas, string televisionCable, string aireAcondicionado, string ventilador, string wifi, string toallas, string banioPrivado, string descripcion, short idDistribucion)
         {
 
             string mensaje = "";
-            int resultado = CDistribucion.UpdateQuery(camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisionCable.Trim(), aireAcondicionado.Trim(), ventilador.Trim(), wifi.Trim(), toallas.Trim(), banioPrivado.Trim(), idDistribucion);
+            int resultado = CDistribucion.UpdateQuery(camaIndividual.Trim(), camaMatrimonial.Trim(), camaKing.Trim(), maximoPersonas, televisionCable.Trim(), aireAcondicionado.Trim(), ventilador.Trim(), wifi.Trim(), toallas.Trim(), banioPrivado.Trim(), descripcion.Trim(), idDistribucion);
             if (resultado == 0)
             {
                 return mensaje = "Error al actualizar los registros";

@@ -27,73 +27,61 @@
                     
                     <div class="form-group">
                          <label for="camaKing">Cama King</label>
-                         <asp:CheckBox ID="camaKing" class="form-control" value="" runat="server" />
+                         <asp:CheckBox ID="camaKing" class="form-control"   runat="server" />
                        
                     </div>
 
                     
                     <div class="form-group">
                          <label for="camaMatrimonial">Máximo Personas</label>
-                        <asp:TextBox ID="maximoPersonas" type="number" step="1" class="form-control" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="maximoPersonas" type="number" step="1" class="form-control" required ="required" runat="server"></asp:TextBox>
                   
                     </div>
 
 
                   <div class="form-group">
                          <label for="televisionCable">Televisión Cable</label>
-                        <asp:DropDownList class="form-control" ID="televisionCable" runat="server">
-                            <asp:ListItem Selected="True" Value="SI">SI</asp:ListItem>
-                            <asp:ListItem Value="NO">NO</asp:ListItem>
-                        </asp:DropDownList>
+                         <asp:CheckBox ID="television" class="form-control"   runat="server" />
                       
                         
                     </div>
                      
                        <div class="form-group">
                          <label for="aireAcondicionado">Aire Acondicionado</label>
-                        <asp:DropDownList class="form-control" ID="aireAcondicionado" runat="server">
-                            <asp:ListItem Selected="True" Value="SI">SI</asp:ListItem>
-                            <asp:ListItem Value="NO">NO</asp:ListItem>
-                        </asp:DropDownList>
+                           <asp:CheckBox ID="aire" class="form-control"  runat="server" />
                         
                     </div>
 
                             <div class="form-group">
                          <label for="ventilador">Ventilador</label>
-                        <asp:DropDownList class="form-control" ID="ventilador" runat="server">
-                            <asp:ListItem Selected="True" Value="SI">SI</asp:ListItem>
-                            <asp:ListItem Value="NO">NO</asp:ListItem>
-                        </asp:DropDownList>
+                     <asp:CheckBox ID="ventilador1" class="form-control"  runat="server" />
                         
                     </div>
 
 
                     <div class="form-group">
                          <label for="wifi">Wifi</label>
-                        <asp:DropDownList class="form-control" ID="wifi" runat="server">
-                            <asp:ListItem Selected="True" Value="SI">SI</asp:ListItem>
-                            <asp:ListItem Value="NO">NO</asp:ListItem>
-                        </asp:DropDownList>
+                   <asp:CheckBox ID="wifi1" class="form-control"  runat="server" />
                         
                     </div>
 
                       <div class="form-group">
                          <label for="toallas">Toallas</label>
-                        <asp:DropDownList class="form-control" ID="toallas" runat="server">
-                            <asp:ListItem Selected="True" Value="SI">SI</asp:ListItem>
-                            <asp:ListItem Value="NO">NO</asp:ListItem>
-                        </asp:DropDownList>
+                          <asp:CheckBox ID="toallas1"  class="form-control" runat="server" />
                         
                     </div>
 
 
                       <div class="form-group">
                          <label for="banioPrivado">Baño Privado</label>
-                        <asp:DropDownList class="form-control" ID="banioPrivado" runat="server">
-                            <asp:ListItem Selected="True" Value="SI">SI</asp:ListItem>
-                            <asp:ListItem Value="NO">NO</asp:ListItem>
-                        </asp:DropDownList>
+                          <asp:CheckBox ID="banio1" class="form-control" runat="server" />
                         
+                    </div>
+
+                       <div class="form-group">
+                         <label for="descripcion">Descripcion</label>
+                          
+                           <asp:TextBox ID="descripcion" type="area"  required ="required" class="form-control" runat="server"></asp:TextBox>
                     </div>
 
 

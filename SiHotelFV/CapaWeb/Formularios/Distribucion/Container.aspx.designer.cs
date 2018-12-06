@@ -67,58 +67,67 @@ namespace CapaWeb.Formularios.Distribucion {
         protected global::System.Web.UI.WebControls.TextBox maximoPersonas;
         
         /// <summary>
-        /// Control televisionCable.
+        /// Control television.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList televisionCable;
+        protected global::System.Web.UI.WebControls.CheckBox television;
         
         /// <summary>
-        /// Control aireAcondicionado.
+        /// Control aire.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList aireAcondicionado;
+        protected global::System.Web.UI.WebControls.CheckBox aire;
         
         /// <summary>
-        /// Control ventilador.
+        /// Control ventilador1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ventilador;
+        protected global::System.Web.UI.WebControls.CheckBox ventilador1;
         
         /// <summary>
-        /// Control wifi.
+        /// Control wifi1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList wifi;
+        protected global::System.Web.UI.WebControls.CheckBox wifi1;
         
         /// <summary>
-        /// Control toallas.
+        /// Control toallas1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList toallas;
+        protected global::System.Web.UI.WebControls.CheckBox toallas1;
         
         /// <summary>
-        /// Control banioPrivado.
+        /// Control banio1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList banioPrivado;
+        protected global::System.Web.UI.WebControls.CheckBox banio1;
+        
+        /// <summary>
+        /// Control descripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox descripcion;
         
         /// <summary>
         /// Control Button1.
