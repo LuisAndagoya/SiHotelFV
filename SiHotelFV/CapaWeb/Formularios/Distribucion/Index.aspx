@@ -14,9 +14,13 @@
                                     <div align="right">
 
                                      
-                                                    <div class="form-group">
+                                                       <div class="form-group">
                                                         <div class="input-group">
-                                                          
+                                                            <asp:TextBox class="form-control" ID="TxtBuscar" placeholder="Buscar..." runat="server" />
+                                                            <div class="input-group-append">
+                                                                <asp:Button ID="Button1" class="btn btn-sm btn-gradient-primary" required ="required" runat="server" Text="Buscar"
+                                                                    OnClick="Button1_Click" />
+                                                            </div>
                                                               <div class="input-group-append">
                                                                    <a href=" Container.aspx?TRN=INS&Id=" class="btn btn-sm btn-gradient-primary"><i class="mdi mdi-database-plus"></i>Agregar</a>
                                                                   </div>
@@ -66,6 +70,14 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
+                                               <asp:TemplateColumn HeaderText="Descripción">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="descripcion" runat="server" Text='<%#Eval("descripcion") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
                                             <asp:TemplateColumn HeaderText="Cama Individual">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
@@ -82,6 +94,14 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
+                                               <asp:TemplateColumn HeaderText="Cama King">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="camaKing" runat="server" Text='<%#Eval("camaKing") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
                                              <asp:TemplateColumn HeaderText="maximoPersonas">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
@@ -89,6 +109,8 @@
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
+
+                                           
                                             
 
                                             

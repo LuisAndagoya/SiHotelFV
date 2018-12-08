@@ -87,23 +87,25 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                                  <asp:TemplateColumn HeaderText="camaMatrimonial">
+                                               <asp:TemplateColumn HeaderText="N° Personas">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="camaMatrimonial" runat="server" Text='<%#Eval("camaMatrimonial") %>'></asp:Label>
+                                                        <asp:Label ID="maximoPersonas" runat="server" Text='<%#Eval("maximoPersonas") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
+                                                  <asp:TemplateColumn HeaderText="Descripción">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="descripcion" runat="server" Text='<%#Eval("descripcion") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                             
 
 
-                                               <asp:TemplateColumn HeaderText="camaIndividual">
-                                                <ItemTemplate>
-                                                    <span style="float: left;">
-                                                        <asp:Label ID="camaIndividual" runat="server" Text='<%#Eval("camaIndividual") %>'></asp:Label>
-                                                    </span>
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
+                                             
                                             
 
 

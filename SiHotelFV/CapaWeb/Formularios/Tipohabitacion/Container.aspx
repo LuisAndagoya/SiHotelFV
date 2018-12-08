@@ -16,21 +16,21 @@
          
                     <div class="form-group">
                         <label for="nombreTipo">Tipo</label>
-                        <asp:TextBox ID="nombreTipo" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="nombreTipo"  required ="required" runat="server"></asp:TextBox>
                         
                     </div>
 
 
                     <div class="form-group">
                         <label for="ListaPrecio">Precio</label>
-                       <asp:DropDownList ID="ListaPrecio" class="form-control" runat="server">
+                       <asp:DropDownList ID="ListaPrecio" required ="required" class="form-control" runat="server">
                       </asp:DropDownList>
                     </div>
             
 
                      <div class="form-group">
                         <label for="ListaDistribucion">Distribución Habitación</label>
-                       <asp:DropDownList ID="ListaDistribucion" class="form-control" runat="server">
+                       <asp:DropDownList ID="ListaDistribucion" required ="required" class="form-control" runat="server">
                       </asp:DropDownList>
                     </div>
 

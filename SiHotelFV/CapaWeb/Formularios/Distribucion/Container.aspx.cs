@@ -51,18 +51,18 @@ namespace CapaWeb.Formularios.Distribucion
 
                 foreach (DataRow row in distribucion_habitacionDataTable.Rows)
                 {
-                    camaIndividual.Checked = true;
+                    //camaIndividual.Checked = true;
 
-                    camaMatrimonial.Checked =true;
-                    camaKing.Checked = true;
-
-                    television.SelectedValue = row["televisionCable"].ToString();
-                    aire.SelectedValue = row["aireAcondicionado"].ToString();
-                    ventilador1.SelectedValue = row["ventilador"].ToString();
-                    wifi1.SelectedValue = row["wifi"].ToString();
-                    toallas1.SelectedValue = row["toallas"].ToString();
-                    banio1.SelectedValue = row["banioPrivado"].ToString();
-
+                   // camaIndividual.Text = row["camaIndividual"].ToString();
+                     
+                    /* television.SelectedValue = row["televisionCable"].ToString();
+                     aire.SelectedValue = row["aireAcondicionado"].ToString();
+                     ventilador1.SelectedValue = row["ventilador"].ToString();
+                     wifi1.SelectedValue = row["wifi"].ToString();
+                     toallas1.SelectedValue = row["toallas"].ToString();
+                     banio1.SelectedValue = row["banioPrivado"].ToString();*/
+                    maximoPersonas.Text = row["maximoPersonas"].ToString();
+                    descripcion.Text = row["descripcion"].ToString();
                     lblId.Text = row["idDistribucion"].ToString();
                 }
             }
@@ -90,20 +90,65 @@ namespace CapaWeb.Formularios.Distribucion
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
             string error = "";
             short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
             short Maximo = short.Parse(maximoPersonas.Text);
-                
+
+            string individual = camaIndividual.Checked.ToString();
+            if (individual == "True")
+            {
+                individual = "S";
+            }
+             else  { individual = "N"; }
+
+            string matrimonial = camaMatrimonial.Checked.ToString();
+            if (matrimonial == "True")
+            { matrimonial = "S"; }
+            else { matrimonial = "N"; }
+
+            string king = camaKing.Checked.ToString();
+            if (king == "True") { king = "S"; }
+            else { king = "N"; }
+
+            string tv = television.Checked.ToString();
+            if (tv == "true") { tv = "S"; }
+            else { tv = "N"; }
+
+
+            string acondicionado = aire.Checked.ToString();
+            if (acondicionado == "True") { acondicionado = "S"; }
+            else { acondicionado = "N"; }
+
+
+            string vent = ventilador1.Checked.ToString();
+            if (vent == "True") { vent = "S"; }
+            else { vent = "N"; }
+
+            string wf = wifi1.Checked.ToString();
+            if( wf == "True")
+            { wf = "S"; }
+            else { wf = "N"; }
+
+            string to = toallas1.Checked.ToString();
+            if (to == "True") { to = "S"; }
+            else { to = "N"; }
+
+
+            string privado = banio1.Checked.ToString();
+            if (privado == "True") { privado = "S"; }
+            else { privado = "N"; }
+
 
             switch (Request.QueryString["TRN"]) //ultilizo la variable para la opcion
             {
 
                 case "INS": //ejecuta el codigo si el usuario ingresa el numero 1
-                    error = CapaProceso.Clases.DistribucionHabitacion.Insertar(Convert.ToInt16(camaIndividual.Checked.ToString()), Convert.ToInt16(camaMatrimonial.Checked.ToString()),Convert.ToInt16(camaKing.Checked.ToString()), Maximo,televisionCable.SelectedValue.ToString(), aireAcondicionado.SelectedValue.ToString(),ventilador.SelectedValue.ToString(), wifi.SelectedValue.ToString(), toallas.SelectedValue.ToString(), banioPrivado.SelectedValue.ToString());
+                    error = CapaProceso.Clases.DistribucionHabitacion.Insertar(individual, matrimonial,king, Maximo,tv, acondicionado,vent, wf, to, privado, descripcion.Text);
 
                     if (string.IsNullOrEmpty(error))
                     {
-                        CapaProceso.Clases.Auditoria.Insertar("Usuario", "Insertar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Distribucion", "Insertar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -114,10 +159,10 @@ namespace CapaWeb.Formularios.Distribucion
                     break;//termina la ejecucion del programa despues de ejecutar el codigo
                 case "UDP": //ejecuta el codigo si el usuario ingresa el numero 2
 
-                    error = CapaProceso.Clases.DistribucionHabitacion.Actualizar(Convert.ToInt16(camaIndividual.Checked.ToString()), Convert.ToInt16(camaMatrimonial.Checked.ToString()), Convert.ToInt16(camaKing.Checked.ToString()), Maximo, televisionCable.SelectedValue.ToString(), aireAcondicionado.SelectedValue.ToString(), ventilador.SelectedValue.ToString(), wifi.SelectedValue.ToString(), toallas.SelectedValue.ToString(), banioPrivado.SelectedValue.ToString(),short.Parse(lblId.Text));
+                    error = CapaProceso.Clases.DistribucionHabitacion.Actualizar(individual, matrimonial, king, Maximo, tv, acondicionado, vent, wf, to, privado, descripcion.Text,short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                        CapaProceso.Clases.Auditoria.Insertar("Usuario", "Actualizar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Distribucion", "Actualizar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -131,7 +176,7 @@ namespace CapaWeb.Formularios.Distribucion
                     error = CapaProceso.Clases.DistribucionHabitacion.Eliminar(short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                        CapaProceso.Clases.Auditoria.Insertar("Usuario", "Eliminar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Distribuición", "Eliminar", UsuarioId);
 
                         Response.Redirect("Index.aspx");
                     }

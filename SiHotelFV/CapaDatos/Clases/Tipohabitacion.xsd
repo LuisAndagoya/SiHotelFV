@@ -94,8 +94,9 @@ WHERE        (tipo_habitacion.nombreTipo LIKE @nombreTipo)</CommandText>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        tipo_habitacion.idtipo, tipo_habitacion.precioHabitacion_idPrecio, tipo_habitacion.distribucionHabitacion_idDistribucion, tipo_habitacion.nombreTipo, precio_habitacion.precioHabitacion, 
-                         distribucion_habitacion.camaIndividual, distribucion_habitacion.camaMatrimonial, distribucion_habitacion.camaKing, distribucion_habitacion.maximoPersonas, distribucion_habitacion.televisionCable, 
-                         distribucion_habitacion.aireAcondicionado, distribucion_habitacion.ventilador, distribucion_habitacion.wifi, distribucion_habitacion.toallas, distribucion_habitacion.banioPrivado
+                         distribucion_habitacion.camaIndividual, distribucion_habitacion.camaMatrimonial, distribucion_habitacion.camaKing, distribucion_habitacion.maximoPersonas, distribucion_habitacion.televisioCable, 
+                         distribucion_habitacion.descripcion, distribucion_habitacion.aireAcondicionado, distribucion_habitacion.ventilador, distribucion_habitacion.wifi, distribucion_habitacion.toallas, 
+                         distribucion_habitacion.banioPrivado
 FROM            tipo_habitacion INNER JOIN
                          precio_habitacion ON precio_habitacion.idPrecio = tipo_habitacion.precioHabitacion_idPrecio INNER JOIN
                          distribucion_habitacion ON distribucion_habitacion.idDistribucion = tipo_habitacion.distribucionHabitacion_idDistribucion</CommandText>
@@ -122,7 +123,7 @@ WHERE        (tipo_habitacion.idtipo = @idtipo)</CommandText>
               <DbSource ConnectionRef="BDHotelFuenteVidaConnectionString (Settings)" DbObjectName="BDHotelFuenteVida.dbo.distribucion_habitacion" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetListaDistribucion" GetMethodModifier="Public" GetMethodName="GetListaDistribucion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetListaDistribucion" UserSourceName="GetListaDistribucion">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisionCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado
+                    <CommandText>SELECT        idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisioCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado
 FROM            distribucion_habitacion</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -234,15 +235,16 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
               <DbSource ConnectionRef="BDHotelFuenteVidaConnectionString (Settings)" DbObjectName="BDHotelFuenteVida.dbo.distribucion_habitacion" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[distribucion_habitacion] WHERE (([idDistribucion] = @Original_idDistribucion) AND ([camaIndividual] = @Original_camaIndividual) AND ([camaMatrimonial] = @Original_camaMatrimonial) AND ([camaKing] = @Original_camaKing) AND ([maximoPersonas] = @Original_maximoPersonas) AND ((@IsNull_televisionCable = 1 AND [televisionCable] IS NULL) OR ([televisionCable] = @Original_televisionCable)) AND ((@IsNull_aireAcondicionado = 1 AND [aireAcondicionado] IS NULL) OR ([aireAcondicionado] = @Original_aireAcondicionado)) AND ((@IsNull_ventilador = 1 AND [ventilador] IS NULL) OR ([ventilador] = @Original_ventilador)) AND ((@IsNull_wifi = 1 AND [wifi] IS NULL) OR ([wifi] = @Original_wifi)) AND ((@IsNull_toallas = 1 AND [toallas] IS NULL) OR ([toallas] = @Original_toallas)) AND ((@IsNull_banioPrivado = 1 AND [banioPrivado] IS NULL) OR ([banioPrivado] = @Original_banioPrivado)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[distribucion_habitacion] WHERE (([idDistribucion] = @Original_idDistribucion) AND ([camaIndividual] = @Original_camaIndividual) AND ([camaMatrimonial] = @Original_camaMatrimonial) AND ([camaKing] = @Original_camaKing) AND ((@IsNull_maximoPersonas = 1 AND [maximoPersonas] IS NULL) OR ([maximoPersonas] = @Original_maximoPersonas)) AND ((@IsNull_televisioCable = 1 AND [televisioCable] IS NULL) OR ([televisioCable] = @Original_televisioCable)) AND ((@IsNull_aireAcondicionado = 1 AND [aireAcondicionado] IS NULL) OR ([aireAcondicionado] = @Original_aireAcondicionado)) AND ((@IsNull_ventilador = 1 AND [ventilador] IS NULL) OR ([ventilador] = @Original_ventilador)) AND ((@IsNull_wifi = 1 AND [wifi] IS NULL) OR ([wifi] = @Original_wifi)) AND ((@IsNull_toallas = 1 AND [toallas] IS NULL) OR ([toallas] = @Original_toallas)) AND ((@IsNull_banioPrivado = 1 AND [banioPrivado] IS NULL) OR ([banioPrivado] = @Original_banioPrivado)) AND ([descripcion] = @Original_descripcion))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idDistribucion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idDistribucion" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_camaIndividual" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="camaIndividual" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_camaMatrimonial" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="camaMatrimonial" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_camaKing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="camaKing" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_maximoPersonas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoPersonas" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_televisionCable" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="televisionCable" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_televisionCable" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="televisionCable" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_camaIndividual" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="camaIndividual" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_camaMatrimonial" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="camaMatrimonial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_camaKing" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="camaKing" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_maximoPersonas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoPersonas" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_maximoPersonas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoPersonas" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_televisioCable" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="televisioCable" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_televisioCable" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="televisioCable" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_aireAcondicionado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="aireAcondicionado" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_aireAcondicionado" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="aireAcondicionado" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ventilador" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ventilador" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -253,55 +255,59 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_toallas" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="toallas" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_banioPrivado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="banioPrivado" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_banioPrivado" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="banioPrivado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="descripcion" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[distribucion_habitacion] ([camaIndividual], [camaMatrimonial], [camaKing], [maximoPersonas], [televisionCable], [aireAcondicionado], [ventilador], [wifi], [toallas], [banioPrivado]) VALUES (@camaIndividual, @camaMatrimonial, @camaKing, @maximoPersonas, @televisionCable, @aireAcondicionado, @ventilador, @wifi, @toallas, @banioPrivado);
-SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisionCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado FROM distribucion_habitacion WHERE (idDistribucion = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [dbo].[distribucion_habitacion] ([camaIndividual], [camaMatrimonial], [camaKing], [maximoPersonas], [televisioCable], [aireAcondicionado], [ventilador], [wifi], [toallas], [banioPrivado], [descripcion]) VALUES (@camaIndividual, @camaMatrimonial, @camaKing, @maximoPersonas, @televisioCable, @aireAcondicionado, @ventilador, @wifi, @toallas, @banioPrivado, @descripcion);
+SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisioCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado, descripcion FROM distribucion_habitacion WHERE (idDistribucion = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@camaIndividual" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="camaIndividual" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@camaMatrimonial" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="camaMatrimonial" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@camaKing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="camaKing" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@maximoPersonas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoPersonas" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@televisionCable" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="televisionCable" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@camaIndividual" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="camaIndividual" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@camaMatrimonial" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="camaMatrimonial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@camaKing" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="camaKing" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@maximoPersonas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoPersonas" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@televisioCable" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="televisioCable" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@aireAcondicionado" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="aireAcondicionado" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@ventilador" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="ventilador" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@wifi" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="wifi" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@toallas" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="toallas" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@banioPrivado" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="banioPrivado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisionCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado FROM dbo.distribucion_habitacion</CommandText>
+                    <CommandText>SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisioCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado, descripcion FROM dbo.distribucion_habitacion</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[distribucion_habitacion] SET [camaIndividual] = @camaIndividual, [camaMatrimonial] = @camaMatrimonial, [camaKing] = @camaKing, [maximoPersonas] = @maximoPersonas, [televisionCable] = @televisionCable, [aireAcondicionado] = @aireAcondicionado, [ventilador] = @ventilador, [wifi] = @wifi, [toallas] = @toallas, [banioPrivado] = @banioPrivado WHERE (([idDistribucion] = @Original_idDistribucion) AND ([camaIndividual] = @Original_camaIndividual) AND ([camaMatrimonial] = @Original_camaMatrimonial) AND ([camaKing] = @Original_camaKing) AND ([maximoPersonas] = @Original_maximoPersonas) AND ((@IsNull_televisionCable = 1 AND [televisionCable] IS NULL) OR ([televisionCable] = @Original_televisionCable)) AND ((@IsNull_aireAcondicionado = 1 AND [aireAcondicionado] IS NULL) OR ([aireAcondicionado] = @Original_aireAcondicionado)) AND ((@IsNull_ventilador = 1 AND [ventilador] IS NULL) OR ([ventilador] = @Original_ventilador)) AND ((@IsNull_wifi = 1 AND [wifi] IS NULL) OR ([wifi] = @Original_wifi)) AND ((@IsNull_toallas = 1 AND [toallas] IS NULL) OR ([toallas] = @Original_toallas)) AND ((@IsNull_banioPrivado = 1 AND [banioPrivado] IS NULL) OR ([banioPrivado] = @Original_banioPrivado)));
-SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisionCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado FROM distribucion_habitacion WHERE (idDistribucion = @idDistribucion)</CommandText>
+                    <CommandText>UPDATE [dbo].[distribucion_habitacion] SET [camaIndividual] = @camaIndividual, [camaMatrimonial] = @camaMatrimonial, [camaKing] = @camaKing, [maximoPersonas] = @maximoPersonas, [televisioCable] = @televisioCable, [aireAcondicionado] = @aireAcondicionado, [ventilador] = @ventilador, [wifi] = @wifi, [toallas] = @toallas, [banioPrivado] = @banioPrivado, [descripcion] = @descripcion WHERE (([idDistribucion] = @Original_idDistribucion) AND ([camaIndividual] = @Original_camaIndividual) AND ([camaMatrimonial] = @Original_camaMatrimonial) AND ([camaKing] = @Original_camaKing) AND ((@IsNull_maximoPersonas = 1 AND [maximoPersonas] IS NULL) OR ([maximoPersonas] = @Original_maximoPersonas)) AND ((@IsNull_televisioCable = 1 AND [televisioCable] IS NULL) OR ([televisioCable] = @Original_televisioCable)) AND ((@IsNull_aireAcondicionado = 1 AND [aireAcondicionado] IS NULL) OR ([aireAcondicionado] = @Original_aireAcondicionado)) AND ((@IsNull_ventilador = 1 AND [ventilador] IS NULL) OR ([ventilador] = @Original_ventilador)) AND ((@IsNull_wifi = 1 AND [wifi] IS NULL) OR ([wifi] = @Original_wifi)) AND ((@IsNull_toallas = 1 AND [toallas] IS NULL) OR ([toallas] = @Original_toallas)) AND ((@IsNull_banioPrivado = 1 AND [banioPrivado] IS NULL) OR ([banioPrivado] = @Original_banioPrivado)) AND ([descripcion] = @Original_descripcion));
+SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas, televisioCable, aireAcondicionado, ventilador, wifi, toallas, banioPrivado, descripcion FROM distribucion_habitacion WHERE (idDistribucion = @idDistribucion)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@camaIndividual" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="camaIndividual" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@camaMatrimonial" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="camaMatrimonial" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@camaKing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="camaKing" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@maximoPersonas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoPersonas" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@televisionCable" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="televisionCable" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@camaIndividual" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="camaIndividual" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@camaMatrimonial" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="camaMatrimonial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@camaKing" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="camaKing" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@maximoPersonas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoPersonas" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@televisioCable" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="televisioCable" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@aireAcondicionado" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="aireAcondicionado" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@ventilador" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="ventilador" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@wifi" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="wifi" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@toallas" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="toallas" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@banioPrivado" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="banioPrivado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="descripcion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idDistribucion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idDistribucion" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_camaIndividual" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="camaIndividual" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_camaMatrimonial" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="camaMatrimonial" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_camaKing" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="camaKing" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_maximoPersonas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoPersonas" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_televisionCable" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="televisionCable" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_televisionCable" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="televisionCable" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_camaIndividual" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="camaIndividual" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_camaMatrimonial" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="camaMatrimonial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_camaKing" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="camaKing" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_maximoPersonas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoPersonas" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_maximoPersonas" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoPersonas" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_televisioCable" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="televisioCable" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_televisioCable" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="televisioCable" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_aireAcondicionado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="aireAcondicionado" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_aireAcondicionado" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="aireAcondicionado" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ventilador" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ventilador" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -312,6 +318,7 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_toallas" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="toallas" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_banioPrivado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="banioPrivado" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_banioPrivado" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="banioPrivado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_descripcion" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="descripcion" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="idDistribucion" ColumnName="idDistribucion" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idDistribucion" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idDistribucion" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
@@ -324,12 +331,13 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
               <Mapping SourceColumn="camaMatrimonial" DataSetColumn="camaMatrimonial" />
               <Mapping SourceColumn="camaKing" DataSetColumn="camaKing" />
               <Mapping SourceColumn="maximoPersonas" DataSetColumn="maximoPersonas" />
-              <Mapping SourceColumn="televisionCable" DataSetColumn="televisionCable" />
+              <Mapping SourceColumn="televisioCable" DataSetColumn="televisioCable" />
               <Mapping SourceColumn="aireAcondicionado" DataSetColumn="aireAcondicionado" />
               <Mapping SourceColumn="ventilador" DataSetColumn="ventilador" />
               <Mapping SourceColumn="wifi" DataSetColumn="wifi" />
               <Mapping SourceColumn="toallas" DataSetColumn="toallas" />
               <Mapping SourceColumn="banioPrivado" DataSetColumn="banioPrivado" />
+              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -365,53 +373,78 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="distribucion_habitacion" msprop:Generator_TableClassName="distribucion_habitacionDataTable" msprop:Generator_TableVarName="tabledistribucion_habitacion" msprop:Generator_TablePropName="distribucion_habitacion" msprop:Generator_RowDeletingName="distribucion_habitacionRowDeleting" msprop:Generator_RowChangingName="distribucion_habitacionRowChanging" msprop:Generator_RowEvHandlerName="distribucion_habitacionRowChangeEventHandler" msprop:Generator_RowDeletedName="distribucion_habitacionRowDeleted" msprop:Generator_UserTableName="distribucion_habitacion" msprop:Generator_RowChangedName="distribucion_habitacionRowChanged" msprop:Generator_RowEvArgName="distribucion_habitacionRowChangeEvent" msprop:Generator_RowClassName="distribucion_habitacionRow">
+        <xs:element name="distribucion_habitacion" msprop:Generator_TableClassName="distribucion_habitacionDataTable" msprop:Generator_TableVarName="tabledistribucion_habitacion" msprop:Generator_RowChangedName="distribucion_habitacionRowChanged" msprop:Generator_TablePropName="distribucion_habitacion" msprop:Generator_RowDeletingName="distribucion_habitacionRowDeleting" msprop:Generator_RowChangingName="distribucion_habitacionRowChanging" msprop:Generator_RowEvHandlerName="distribucion_habitacionRowChangeEventHandler" msprop:Generator_RowDeletedName="distribucion_habitacionRowDeleted" msprop:Generator_RowClassName="distribucion_habitacionRow" msprop:Generator_UserTableName="distribucion_habitacion" msprop:Generator_RowEvArgName="distribucion_habitacionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idDistribucion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidDistribucion" msprop:Generator_ColumnPropNameInRow="idDistribucion" msprop:Generator_ColumnPropNameInTable="idDistribucionColumn" msprop:Generator_UserColumnName="idDistribucion" type="xs:int" />
-              <xs:element name="camaIndividual" msprop:Generator_ColumnVarNameInTable="columncamaIndividual" msprop:Generator_ColumnPropNameInRow="camaIndividual" msprop:Generator_ColumnPropNameInTable="camaIndividualColumn" msprop:Generator_UserColumnName="camaIndividual" type="xs:int" />
-              <xs:element name="camaMatrimonial" msprop:Generator_ColumnVarNameInTable="columncamaMatrimonial" msprop:Generator_ColumnPropNameInRow="camaMatrimonial" msprop:Generator_ColumnPropNameInTable="camaMatrimonialColumn" msprop:Generator_UserColumnName="camaMatrimonial" type="xs:int" />
-              <xs:element name="camaKing" msprop:Generator_ColumnVarNameInTable="columncamaKing" msprop:Generator_ColumnPropNameInRow="camaKing" msprop:Generator_ColumnPropNameInTable="camaKingColumn" msprop:Generator_UserColumnName="camaKing" type="xs:int" />
-              <xs:element name="maximoPersonas" msprop:Generator_ColumnVarNameInTable="columnmaximoPersonas" msprop:Generator_ColumnPropNameInRow="maximoPersonas" msprop:Generator_ColumnPropNameInTable="maximoPersonasColumn" msprop:Generator_UserColumnName="maximoPersonas" type="xs:int" />
-              <xs:element name="televisionCable" msprop:Generator_ColumnVarNameInTable="columntelevisionCable" msprop:Generator_ColumnPropNameInRow="televisionCable" msprop:Generator_ColumnPropNameInTable="televisionCableColumn" msprop:Generator_UserColumnName="televisionCable" minOccurs="0">
+              <xs:element name="camaIndividual" msprop:Generator_ColumnVarNameInTable="columncamaIndividual" msprop:Generator_ColumnPropNameInRow="camaIndividual" msprop:Generator_ColumnPropNameInTable="camaIndividualColumn" msprop:Generator_UserColumnName="camaIndividual">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="camaMatrimonial" msprop:Generator_ColumnVarNameInTable="columncamaMatrimonial" msprop:Generator_ColumnPropNameInRow="camaMatrimonial" msprop:Generator_ColumnPropNameInTable="camaMatrimonialColumn" msprop:Generator_UserColumnName="camaMatrimonial">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="camaKing" msprop:Generator_ColumnVarNameInTable="columncamaKing" msprop:Generator_ColumnPropNameInRow="camaKing" msprop:Generator_ColumnPropNameInTable="camaKingColumn" msprop:Generator_UserColumnName="camaKing">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="maximoPersonas" msprop:Generator_ColumnVarNameInTable="columnmaximoPersonas" msprop:Generator_ColumnPropNameInRow="maximoPersonas" msprop:Generator_ColumnPropNameInTable="maximoPersonasColumn" msprop:Generator_UserColumnName="maximoPersonas" type="xs:int" minOccurs="0" />
+              <xs:element name="televisioCable" msprop:Generator_ColumnVarNameInTable="columntelevisioCable" msprop:Generator_ColumnPropNameInRow="televisioCable" msprop:Generator_ColumnPropNameInTable="televisioCableColumn" msprop:Generator_UserColumnName="televisioCable" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="aireAcondicionado" msprop:Generator_ColumnVarNameInTable="columnaireAcondicionado" msprop:Generator_ColumnPropNameInRow="aireAcondicionado" msprop:Generator_ColumnPropNameInTable="aireAcondicionadoColumn" msprop:Generator_UserColumnName="aireAcondicionado" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
+                    <xs:maxLength value="1" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ventilador" msprop:Generator_ColumnVarNameInTable="columnventilador" msprop:Generator_ColumnPropNameInRow="ventilador" msprop:Generator_ColumnPropNameInTable="ventiladorColumn" msprop:Generator_UserColumnName="ventilador" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
+                    <xs:maxLength value="1" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="wifi" msprop:Generator_ColumnVarNameInTable="columnwifi" msprop:Generator_ColumnPropNameInRow="wifi" msprop:Generator_ColumnPropNameInTable="wifiColumn" msprop:Generator_UserColumnName="wifi" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
+                    <xs:maxLength value="1" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="toallas" msprop:Generator_ColumnVarNameInTable="columntoallas" msprop:Generator_ColumnPropNameInRow="toallas" msprop:Generator_ColumnPropNameInTable="toallasColumn" msprop:Generator_UserColumnName="toallas" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
+                    <xs:maxLength value="1" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="banioPrivado" msprop:Generator_ColumnVarNameInTable="columnbanioPrivado" msprop:Generator_ColumnPropNameInRow="banioPrivado" msprop:Generator_ColumnPropNameInTable="banioPrivadoColumn" msprop:Generator_UserColumnName="banioPrivado" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -436,7 +469,7 @@ SELECT idDistribucion, camaIndividual, camaMatrimonial, camaKing, maximoPersonas
   <xs:annotation>
     <xs:appinfo>
       <msdata:Relationship name="FK__tipo_habi__preci__3B40CD36" msdata:parent="precio_habitacion" msdata:child="tipo_habitacion" msdata:parentkey="idPrecio" msdata:childkey="precioHabitacion_idPrecio" msprop:Generator_UserChildTable="tipo_habitacion" msprop:Generator_ChildPropName="Gettipo_habitacionRows" msprop:Generator_UserRelationName="FK__tipo_habi__preci__3B40CD36" msprop:Generator_RelationVarName="relationFK__tipo_habi__preci__3B40CD36" msprop:Generator_UserParentTable="precio_habitacion" msprop:Generator_ParentPropName="precio_habitacionRow" />
-      <msdata:Relationship name="FK__tipo_habi__distr__3A4CA8FD" msdata:parent="distribucion_habitacion" msdata:child="tipo_habitacion" msdata:parentkey="idDistribucion" msdata:childkey="distribucionHabitacion_idDistribucion" msprop:Generator_UserChildTable="tipo_habitacion" msprop:Generator_ChildPropName="Gettipo_habitacionRows" msprop:Generator_UserRelationName="FK__tipo_habi__distr__3A4CA8FD" msprop:Generator_RelationVarName="relationFK__tipo_habi__distr__3A4CA8FD" msprop:Generator_UserParentTable="distribucion_habitacion" msprop:Generator_ParentPropName="distribucion_habitacionRow" />
+      <msdata:Relationship name="FK_DISTRIBUCION_TIPO" msdata:parent="distribucion_habitacion" msdata:child="tipo_habitacion" msdata:parentkey="idDistribucion" msdata:childkey="distribucionHabitacion_idDistribucion" msprop:Generator_UserChildTable="tipo_habitacion" msprop:Generator_ChildPropName="Gettipo_habitacionRows" msprop:Generator_UserRelationName="FK_DISTRIBUCION_TIPO" msprop:Generator_ParentPropName="distribucion_habitacionRow" msprop:Generator_RelationVarName="relationFK_DISTRIBUCION_TIPO" msprop:Generator_UserParentTable="distribucion_habitacion" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

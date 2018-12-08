@@ -67,7 +67,7 @@ namespace CapaWeb.Formularios.Tipohabitacion
             {
                 //Llenar un combo box dinamicamente con tabla adapter
                 ListaDistribucion.DataSource = CapaProceso.Clases.DistribucionHabitacion.Lista();
-                ListaDistribucion.DataTextField = "camaIndividual";
+                ListaDistribucion.DataTextField = "descripcion";
                 ListaDistribucion.DataValueField = "idDistribucion";
                 ListaDistribucion.DataBind();
 

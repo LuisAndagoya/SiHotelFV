@@ -81,7 +81,7 @@
                        <div class="form-group">
                          <label for="descripcion">Descripcion</label>
                           
-                           <asp:TextBox ID="descripcion" type="area"  required ="required" class="form-control" runat="server"></asp:TextBox>
+                           <asp:TextBox ID="descripcion"  required ="required" class="form-control" runat="server"></asp:TextBox>
                     </div>
 
 

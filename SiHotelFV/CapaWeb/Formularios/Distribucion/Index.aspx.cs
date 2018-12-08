@@ -58,8 +58,15 @@ namespace CapaWeb.Formularios.Distribucion
             CargarGrilla();
         }
 
-  
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Grid.DataSource = CapaProceso.Clases.DistribucionHabitacion.Buscar(TxtBuscar.Text);
+
+            Grid.DataBind();
+            Grid.Height = 100;
+
+        }
 
 
     }
