@@ -26,8 +26,10 @@
                                                                     OnClick="Button1_Click" />
                                                             </div>
                                                               <div class="input-group-append">
-                                                                   <a href=" Container.aspx?TRN=INS&Id=" class="btn btn-sm btn-gradient-primary"><i class="mdi mdi-database-plus"></i>Agregar</a>
+                                                                   <asp:Button ID="Button2" class="btn btn-sm btn-gradient-primary" required ="required" runat="server" Text="Agregar"
+                                                                    OnClick="Button2_Click" />                                                                  
                                                                   </div>
+
                                                         </div>
                                                     </div>
                                                

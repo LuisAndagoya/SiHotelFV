@@ -6,7 +6,7 @@ namespace CapaProceso.Clases
 {
     public class Usuario
     {
-
+        private static Codificar codificar = new Codificar();
         private static usuarioTableAdapter CUsuario = new usuarioTableAdapter();
 
         public static CapaDatos.Clases.Usuario.usuarioDataTable Lista()
@@ -26,8 +26,9 @@ namespace CapaProceso.Clases
         public static int Login(string usernameUsuario, string passwordUsuario)
         {
             int Respuesta;
+            string contraseniaEncriptada = codificar.Base64Encode(passwordUsuario);
 
-            return Respuesta = int.Parse(CUsuario.Login(usernameUsuario.Trim(), passwordUsuario.Trim()).ToString());
+            return Respuesta = int.Parse(CUsuario.Login(usernameUsuario.Trim(), contraseniaEncriptada).ToString());
         }
         
 
@@ -67,7 +68,8 @@ namespace CapaProceso.Clases
         public static string Actualizar( string usernameUsuario, string passwordUsuario, string estadoUsuario, short idEmpleado, short idCargo, short idUsuario)
         {
             string mensaje = "";
-            int resultado = CUsuario.UpdateQuery( usernameUsuario.Trim(), passwordUsuario.Trim(), estadoUsuario.Trim(),idEmpleado, idCargo, idUsuario);
+            string contraseniaEncriptada = codificar.Base64Encode(passwordUsuario);
+            int resultado = CUsuario.UpdateQuery( usernameUsuario.Trim(), contraseniaEncriptada, estadoUsuario.Trim(),idEmpleado, idCargo, idUsuario);
             if (resultado == 0)
             {
                 return mensaje = "Error al insertar los registros";
@@ -86,7 +88,9 @@ namespace CapaProceso.Clases
 
             if (Lista == "0")
             {
-                int resultado = CUsuario.InsertQuery( usernameUsuario.Trim(), passwordUsuario.Trim(), estadoUsuario.Trim(), idEmpleado, idCargo );
+                string contraseniaEncriptada = codificar.Base64Encode(passwordUsuario);
+
+                int resultado = CUsuario.InsertQuery( usernameUsuario.Trim(), contraseniaEncriptada, estadoUsuario.Trim(), idEmpleado, idCargo );
                 if (resultado == 0)
                 {
                     return mensaje = "Error al insertar los registros";
