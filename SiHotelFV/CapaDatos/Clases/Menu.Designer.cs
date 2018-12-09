@@ -901,7 +901,7 @@ SELECT idMenu, nombreMenu, urlMenu, iconoMenu FROM menu WHERE (idMenu = @idMenu)
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idMenu, nombreMenu, urlMenu, iconoMenu FROM dbo.menu";
@@ -929,29 +929,43 @@ SELECT idMenu, nombreMenu, urlMenu, iconoMenu FROM menu WHERE (idMenu = @idMenu)
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "INSERT INTO [dbo].[menu] ([nombreMenu], [urlMenu],[iconoMenu]) VALUES (@nombreMen" +
-                "u, @urlMenu, @iconoMenu);\r\nSELECT idMenu, nombreMenu, urlMenu , iconoMenu FROM m" +
-                "enu WHERE (idMenu = SCOPE_IDENTITY())";
+            this._commandCollection[5].CommandText = @"SELECT        idMenu, nombreMenu, urlMenu, iconoMenu
+FROM            menu
+WHERE        (idMenu IN
+                             (SELECT        idMenu
+                               FROM            submenu
+                               WHERE        (idSubMenu IN
+                                                             (SELECT        idSubMenu
+                                                               FROM            menu_cargo
+                                                               WHERE        (idCargo = @idCargo)))
+                               GROUP BY idMenu))";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@urlMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "urlMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iconoMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        COUNT(idMenu) AS Expr1\r\nFROM            menu\r\nWHERE        (nombreM" +
-                "enu = @nombreMenu)";
+            this._commandCollection[6].CommandText = "INSERT INTO [dbo].[menu] ([nombreMenu], [urlMenu],[iconoMenu]) VALUES (@nombreMen" +
+                "u, @urlMenu, @iconoMenu);\r\nSELECT idMenu, nombreMenu, urlMenu , iconoMenu FROM m" +
+                "enu WHERE (idMenu = SCOPE_IDENTITY())";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@urlMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "urlMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iconoMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "UPDATE [dbo].[menu] SET [nombreMenu] = @nombreMenu, [urlMenu] = @urlMenu , [icono" +
-                "Menu]=@iconoMenu WHERE (([idMenu] = @idMenu));\r\nSELECT idMenu, nombreMenu, urlMe" +
-                "nu , iconoMenu FROM menu WHERE (idMenu = @idMenu)";
+            this._commandCollection[7].CommandText = "SELECT        COUNT(idMenu) AS Expr1\r\nFROM            menu\r\nWHERE        (nombreM" +
+                "enu = @nombreMenu)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@urlMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "urlMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iconoMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "UPDATE [dbo].[menu] SET [nombreMenu] = @nombreMenu, [urlMenu] = @urlMenu , [icono" +
+                "Menu]=@iconoMenu WHERE (([idMenu] = @idMenu));\r\nSELECT idMenu, nombreMenu, urlMe" +
+                "nu , iconoMenu FROM menu WHERE (idMenu = @idMenu)";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "nombreMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@urlMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "urlMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iconoMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "iconoMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1013,6 +1027,18 @@ SELECT idMenu, nombreMenu, urlMenu, iconoMenu FROM menu WHERE (idMenu = @idMenu)
         public virtual Menu.menuDataTable GetListaActualizar(int idMenu) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idMenu));
+            Menu.menuDataTable dataTable = new Menu.menuDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Menu.menuDataTable GetMenuAsignado(int idCargo) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idCargo));
             Menu.menuDataTable dataTable = new Menu.menuDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1234,7 +1260,7 @@ SELECT idMenu, nombreMenu, urlMenu, iconoMenu FROM menu WHERE (idMenu = @idMenu)
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string nombreMenu, string urlMenu, string iconoMenu) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((nombreMenu == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1274,7 +1300,7 @@ SELECT idMenu, nombreMenu, urlMenu, iconoMenu FROM menu WHERE (idMenu = @idMenu)
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> unico(string nombreMenu) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             if ((nombreMenu == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1309,7 +1335,7 @@ SELECT idMenu, nombreMenu, urlMenu, iconoMenu FROM menu WHERE (idMenu = @idMenu)
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(string nombreMenu, string urlMenu, string iconoMenu, int idMenu) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             if ((nombreMenu == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }

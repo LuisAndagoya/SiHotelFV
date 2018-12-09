@@ -13,7 +13,12 @@ namespace CapaProceso.Clases
             return CSubmenu.GetLista();
         }
 
-          public static CapaDatos.Clases.Submenu.submenuDataTable ListaActualizar(short idSubMenu)
+        public static CapaDatos.Clases.Submenu.submenuDataTable SubmenuAsigando(short idCargo, short idMenu )
+        {
+            return CSubmenu.GetSubmenuAsiganado(idMenu, idCargo);
+        }
+
+        public static CapaDatos.Clases.Submenu.submenuDataTable ListaActualizar(short idSubMenu)
          {
           return CSubmenu.GetListaActualizar(idSubMenu);
        }
@@ -48,7 +53,7 @@ namespace CapaProceso.Clases
 
              if (Lista == "0")
              {
-            int resultado = CSubmenu.InsertQuery(idMenu, nombreSubMenu.Trim().ToUpper(), urlSubMenu.Trim(), iconoSubMenu.Trim());
+            int resultado = CSubmenu.InsertQuery(idMenu, nombreSubMenu.Trim(), urlSubMenu.Trim(), iconoSubMenu.Trim());
             if (resultado == 0)
             {
                 return mensaje = "Error al insertar los registros";
@@ -72,7 +77,7 @@ namespace CapaProceso.Clases
         {
 
             string mensaje = "";
-            int resultado = CSubmenu.UpdateQuery(idMenu, nombreSubMenu.Trim().ToUpper(), urlSubMenu.Trim(), iconoSubMenu.Trim(), idSubMenu);
+            int resultado = CSubmenu.UpdateQuery(idMenu, nombreSubMenu.Trim(), urlSubMenu.Trim(), iconoSubMenu.Trim(), idSubMenu);
             if (resultado == 0)
             {
                 return mensaje = "Error al actualizar los registros";

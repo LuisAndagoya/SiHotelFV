@@ -17,6 +17,14 @@ namespace CapaProceso.Clases
             return CMenu.GetLista();
         }
 
+        public static CapaDatos.Clases.Menu.menuDataTable MneuAsignado(short idCargo)
+        {
+
+            return CMenu.GetMenuAsignado(idCargo);
+        }
+
+
+
         public static CapaDatos.Clases.Menu.menuDataTable ListaActualizar(short idMenu)
         {
             return CMenu.GetListaActualizar(idMenu);

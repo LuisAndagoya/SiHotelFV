@@ -29,12 +29,13 @@ namespace CapaWeb
             } else
             {
                 string UsuarioNomApe = Session["UsuarioNomApe"].ToString();
-                LblNombre.Text = UsuarioNomApe;
-               
+                LblNombre.Text = UsuarioNomApe;               
                 
             }
 
         }
+
+        
     }
 
 }

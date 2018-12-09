@@ -78,7 +78,7 @@ namespace CapaWeb.Formularios.Menu
         {
             nombreMenu.Enabled = false;
             urlMenu.Enabled = false;
-
+            iconoMenu.Enabled = false;
             LblErro.Text = "Confirme la eliminación de los datos";
         }
 
