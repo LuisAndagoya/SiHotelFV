@@ -5,24 +5,29 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using CapaProceso.Clases;
 
 namespace CapaWeb.Formularios.Distribucion
 {
     public partial class Container : System.Web.UI.Page
     {
+        private static Codificar codificar = new Codificar();
         protected void Page_Load(object sender, EventArgs e)
         {
-            switch (Request.QueryString["TRN"])
+            QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
+
+
+            switch (qs["TRN"].Substring(0, 3))
             {
 
                 case "INS":
-                   
+                    
 
 
                     break;
 
                 case "UDP":
-                   
+                    
 
                     LlenarFormulario();
 
@@ -34,33 +39,67 @@ namespace CapaWeb.Formularios.Distribucion
                     LlenarFormulario();
                     BloquerFormulario();
                     break;
+
             }
+
 
         }
 
-       
+
+        public QSencriptadoCSharp.QueryString ulrDesencriptada()
+        {
+            //1- guardo el Querystring encriptado que viene desde el request en mi objeto
+            QSencriptadoCSharp.QueryString qs = new QSencriptadoCSharp.QueryString(Request.QueryString);
+
+            ////2- Descencripto y de esta manera obtengo un array Clave/Valor normal
+            qs = QSencriptadoCSharp.Encryption.DecryptQueryString(qs);
+            return qs;
+        }
+
+
         protected void LlenarFormulario()
         {
             if (!IsPostBack)
             {
 
-                short Id = short.Parse(Request.QueryString["Id"]);
-                
+                QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
+
+                short Id = short.Parse(qs["Id"].ToString());
+
                 //Carga datos para actualizacion           
                 CapaDatos.Clases.Distribucionhabitacion.distribucion_habitacionDataTable distribucion_habitacionDataTable = CapaProceso.Clases.DistribucionHabitacion.ListaActualizar(Id);
 
                 foreach (DataRow row in distribucion_habitacionDataTable.Rows)
                 {
-                    //camaIndividual.Checked = true;
 
-                   // camaIndividual.Text = row["camaIndividual"].ToString();
-                     
-                    /* television.SelectedValue = row["televisionCable"].ToString();
-                     aire.SelectedValue = row["aireAcondicionado"].ToString();
-                     ventilador1.SelectedValue = row["ventilador"].ToString();
-                     wifi1.SelectedValue = row["wifi"].ToString();
-                     toallas1.SelectedValue = row["toallas"].ToString();
-                     banio1.SelectedValue = row["banioPrivado"].ToString();*/
+
+                    if (row["camaIndividual"].ToString().Equals("S"))
+                    { camaIndividual.Checked = true; }
+
+                    if (row["camaMatrimonial"].ToString().Equals("S"))
+                    { camaMatrimonial.Checked = true; }
+
+                    if (row["camaKing"].ToString().Equals("S"))
+                    { camaKing.Checked = true; }
+
+                    if (row["televisioCable"].ToString().Equals("S"))
+                    { television.Checked = true; }
+
+                    if (row["aireAcondicionado"].ToString().Equals("S"))
+                    { aire.Checked = true; }
+
+                    if (row["ventilador"].ToString().Equals("S"))
+                    { ventilador1.Checked = true; }
+
+                    if (row["wifi"].ToString().Equals("S"))
+                    { wifi1.Checked = true; }
+
+                    if (row["toallas"].ToString().Equals("S"))
+                    { toallas1.Checked = true; }
+
+                    if (row["banioPrivado"].ToString().Equals("S"))
+                    { banio1.Checked = true; }
+
                     maximoPersonas.Text = row["maximoPersonas"].ToString();
                     descripcion.Text = row["descripcion"].ToString();
                     lblId.Text = row["idDistribucion"].ToString();
@@ -90,7 +129,7 @@ namespace CapaWeb.Formularios.Distribucion
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
             string error = "";
             short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
             short Maximo = short.Parse(maximoPersonas.Text);
@@ -140,7 +179,7 @@ namespace CapaWeb.Formularios.Distribucion
             else { privado = "N"; }
 
 
-            switch (Request.QueryString["TRN"]) //ultilizo la variable para la opcion
+            switch (qs["TRN"].Substring(0, 3)) //ultilizo la variable para la opcion
             {
 
                 case "INS": //ejecuta el codigo si el usuario ingresa el numero 1

@@ -5,14 +5,20 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using CapaProceso.Clases;
+
 
 namespace CapaWeb.Formularios.Tipohabitacion
 {
     public partial class Container : System.Web.UI.Page
     {
+        private static Codificar codificar = new Codificar();
         protected void Page_Load(object sender, EventArgs e)
         {
-            switch (Request.QueryString["TRN"])
+            QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
+
+
+            switch (qs["TRN"].Substring(0, 3))
             {
 
                 case "INS":
@@ -34,17 +40,30 @@ namespace CapaWeb.Formularios.Tipohabitacion
                     LlenarFormulario();
                     BloquerFormulario();
                     break;
+
             }
 
         }
 
+
+        public QSencriptadoCSharp.QueryString ulrDesencriptada()
+        {
+            //1- guardo el Querystring encriptado que viene desde el request en mi objeto
+            QSencriptadoCSharp.QueryString qs = new QSencriptadoCSharp.QueryString(Request.QueryString);
+
+            ////2- Descencripto y de esta manera obtengo un array Clave/Valor normal
+            qs = QSencriptadoCSharp.Encryption.DecryptQueryString(qs);
+            return qs;
+        }
 
         protected void LlenarFormulario()
         {
             if (!IsPostBack)
             {
 
-                short Id = short.Parse(Request.QueryString["Id"]);
+                QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
+
+                short Id = short.Parse(qs["Id"].ToString());
                 //Carga datos para actualizacion           
                 CapaDatos.Clases.Tipohabitacion.tipo_habitacionDataTable tipo_habitacionDataTable = CapaProceso.Clases.TipoHabitacion.ListaActualizar(Id);
 
@@ -91,9 +110,10 @@ namespace CapaWeb.Formularios.Tipohabitacion
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
             string error = "";
             short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
-            switch (Request.QueryString["TRN"]) //ultilizo la variable para la opcion
+            switch (qs["TRN"].Substring(0, 3)) //ultilizo la variable para la opcion
             {
 
                 case "INS": //ejecuta el codigo si el usuario ingresa el numero 1

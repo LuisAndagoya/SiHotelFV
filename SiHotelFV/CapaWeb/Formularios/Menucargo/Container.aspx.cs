@@ -5,38 +5,43 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using CapaProceso.Clases;
 
 
 namespace CapaWeb.Formularios.Menucargo
 {
     public partial class Container : System.Web.UI.Page
     {
+        private static Codificar codificar = new Codificar();
         protected void Page_Load(object sender, EventArgs e)
         {
-            switch (Request.QueryString["TRN"])
+            QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
+
+
+            switch (qs["TRN"].Substring(0, 3))
             {
 
                 case "INS":
                     CargarCombo();
-                    
+
 
                     break;
 
                 case "UDP":
                     CargarCombo();
-                    
+
                     LlenarFormulario();
 
                     break;
 
                 case "DLT":
                     CargarCombo();
-                    
+
                     LlenarFormulario();
                     BloquerFormulario();
                     break;
-            }
 
+            }
 
         }
 
@@ -47,7 +52,9 @@ namespace CapaWeb.Formularios.Menucargo
             if (!IsPostBack)
             {
 
-                short Id = short.Parse(Request.QueryString["Id"]);
+                QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
+
+                short Id = short.Parse(qs["Id"].ToString());
                 //Carga datos para actualizacion           
                 CapaDatos.Clases.Menucargo.menu_cargoDataTable menu_cargoDataTable = CapaProceso.Clases.Menucargo.ListaActualizar(Id);
 
@@ -61,7 +68,16 @@ namespace CapaWeb.Formularios.Menucargo
             }
         }
 
-    
+        public QSencriptadoCSharp.QueryString ulrDesencriptada()
+        {
+            //1- guardo el Querystring encriptado que viene desde el request en mi objeto
+            QSencriptadoCSharp.QueryString qs = new QSencriptadoCSharp.QueryString(Request.QueryString);
+
+            ////2- Descencripto y de esta manera obtengo un array Clave/Valor normal
+            qs = QSencriptadoCSharp.Encryption.DecryptQueryString(qs);
+            return qs;
+        }
+
         protected void CargarCombo()
         {
             if (!IsPostBack)
@@ -91,9 +107,10 @@ namespace CapaWeb.Formularios.Menucargo
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
             string error = "";
             short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
-            switch (Request.QueryString["TRN"]) //ultilizo la variable para la opcion
+            switch (qs["TRN"].Substring(0, 3)) //ultilizo la variable para la opcion
             {
 
                 case "INS": //ejecuta el codigo si el usuario ingresa el numero 1

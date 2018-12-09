@@ -5,41 +5,62 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CapaProceso.Clases;
 
 namespace CapaWeb.Formularios.Cargo
 {
     public partial class Container : System.Web.UI.Page
     {
+        private static Codificar codificar = new Codificar();
         protected void Page_Load(object sender, EventArgs e)
         {
-            switch (Request.QueryString["TRN"])
+            QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
+
+
+            switch (qs["TRN"].Substring(0, 3))
             {
 
                 case "INS":
+                    
 
 
                     break;
 
                 case "UDP":
+                    
 
                     LlenarFormulario();
 
                     break;
 
                 case "DLT":
+                    
 
                     LlenarFormulario();
                     BloquerFormulario();
                     break;
+
             }
         }
 
+
+        public QSencriptadoCSharp.QueryString ulrDesencriptada()
+        {
+            //1- guardo el Querystring encriptado que viene desde el request en mi objeto
+            QSencriptadoCSharp.QueryString qs = new QSencriptadoCSharp.QueryString(Request.QueryString);
+
+            ////2- Descencripto y de esta manera obtengo un array Clave/Valor normal
+            qs = QSencriptadoCSharp.Encryption.DecryptQueryString(qs);
+            return qs;
+        }
 
         protected void LlenarFormulario()
         {
             if (!IsPostBack)
             {
-                short Id = short.Parse(Request.QueryString["Id"]);
+                QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
+                
+                short Id = short.Parse(qs["Id"].ToString());
                 //Carga datos para actualizacion           
                 CapaDatos.Clases.Cargo.cargoDataTable DataTable = CapaProceso.Clases.Cargo.ListaActualizar(Id);
 
@@ -62,9 +83,10 @@ namespace CapaWeb.Formularios.Cargo
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
             string error = "";
             short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
-            switch (Request.QueryString["TRN"])
+            switch (qs["TRN"].Substring(0, 3)) //ultilizo la variable para la opcion
             {
 
                 case "INS":
