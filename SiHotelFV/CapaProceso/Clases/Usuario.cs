@@ -30,7 +30,8 @@ namespace CapaProceso.Clases
 
             return Respuesta = int.Parse(CUsuario.Login(usernameUsuario.Trim(), contraseniaEncriptada).ToString());
         }
-        
+
+      
 
         public static CapaDatos.Clases.Usuario.usuarioDataTable DatosUsuario(string Login)
         {

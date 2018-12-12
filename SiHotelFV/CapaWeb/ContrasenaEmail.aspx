@@ -1,8 +1,7 @@
-﻿
-    <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWeb.Index" %>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ContrasenaEmail.aspx.cs" Inherits="CapaWeb.ContrasenaEmail" %>
 
-    
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
     <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8">
@@ -16,7 +15,7 @@
                 location.replace(history.forward(1))
         }
 </script>
-
+    
         <!-- Required meta tags -->
   
  
@@ -32,6 +31,7 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="../../Tema/images/favicon.png" />
 </head>
+
 <body>
 <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -42,26 +42,20 @@
               <div class="brand-logo">
                 <img src="../../Tema/images/HFV.png">
               </div>
-              <h4>¡Hola! empecemos</h4>
-              <h6 class="font-weight-light">Inicia sesión para continuar.</h6>
+              <h4>¡Hola! </h4>
+              <h6 class="font-weight-light">Ingrese su usuario</h6>
               <form runat="server" class="pt-3">
                 <div class="form-group">
                     <asp:TextBox ID="TxtUsu" class="form-control form-control-lg" required="required" runat="server" placeholder="Usuario"  ></asp:TextBox>
                   
                 </div>
-                <div class="form-group">
-                    <asp:TextBox ID="TxtCont" class="form-control form-control-lg" required="required" TextMode="Password" type="password" runat="server" placeholder="Contraseña"></asp:TextBox>
-                 
-                </div>
+             
                 <div class="mt-3">
                   
-				   <asp:Button ID="Button1"  class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" runat="server" Text="Ingresar" 
+				   <asp:Button ID="Button1"  class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" runat="server" Text="Enviar Email" 
                                 onclick="Button1_Click" />
                 </div>
-                <div class="my-2 d-flex justify-content-between align-items-center">
-                  
-                  <a href="ContrasenaEmail.aspx" class="auth-link text-black">¿Se te olvidó tu contraseña?</a>
-                </div>
+              
                 
               </form>
             </div>
@@ -90,4 +84,3 @@
 
 </body>
 </html>
-

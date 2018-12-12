@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Clases\Auditoria.cs" />
     <Compile Include="Clases\Cargo.cs" />
+    <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\Codificar.cs" />
     <Compile Include="Clases\DistribucionHabitacion.cs" />
     <Compile Include="Clases\Email.cs" />

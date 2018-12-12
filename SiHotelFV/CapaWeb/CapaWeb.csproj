@@ -200,6 +200,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="ContrasenaEmail.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -209,6 +210,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Formularios\Auditoria\Index.aspx" />
+    <Content Include="Formularios\Cliente\Container.aspx" />
+    <Content Include="Formularios\Cliente\Index.aspx" />
     <Content Include="Formularios\Distribucion\Container.aspx" />
     <Content Include="Formularios\Distribucion\Index.aspx" />
     <Content Include="Formularios\Empleado\ValidarCedula.js" />
@@ -394,6 +397,27 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="ContrasenaEmail.aspx.cs">
+      <DependentUpon>ContrasenaEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContrasenaEmail.aspx.designer.cs">
+      <DependentUpon>ContrasenaEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cliente\Container.aspx.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cliente\Container.aspx.designer.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cliente\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cliente\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="QueryString.cs" />
     <Compile Include="Formularios\Auditoria\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

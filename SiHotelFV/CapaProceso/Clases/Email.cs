@@ -7,21 +7,28 @@ using System.Web;
 using System.Net;
 using System.Net.Mail;
 using System.Net.Http;
+using CapaDatos.Clases.EmailTableAdapters;
 
 namespace CapaProceso.Clases
 {
     public class Email
     {
+        private static host_mailTableAdapter CEmail = new host_mailTableAdapter();
 
         MailMessage email = new MailMessage();
         SmtpClient smtp = new SmtpClient();
-        
 
-        public bool enviarcorreo(string paraMail, string asunto, string mensaje) {
+        public static CapaDatos.Clases.Email.host_mailDataTable Lista()
+        {
+            return CEmail.GetLista();
+        }
+        public bool enviarcorreo(string paraMail) {
 
 
             try
             {
+                string asunto="Contraseña temporal";
+                string mensaje = "no se";
                 /* recuperar de base de tabla HostMail */
                 string Usuario = "cepes@cepes.ec";
                 string Contrasenia = "Orlando26";

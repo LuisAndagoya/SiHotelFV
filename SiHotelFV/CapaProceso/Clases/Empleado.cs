@@ -55,7 +55,7 @@ namespace CapaProceso.Clases
 
       
 
-    public static string Actualizar(string dniEmpleado, string nombreEmpleado, string apellidoEmpleado, String fnacimientoEmpleado, string sexoEmpleado, string estadocivilEmpleado, string domicilioEmpleado, string telefmovilEmpleado, string emailEmpleado, short idEmpleado, String fecharegistroEmpleado)
+    public static string Actualizar(string dniEmpleado, string nombreEmpleado, string apellidoEmpleado, string fnacimientoEmpleado, string sexoEmpleado, string estadocivilEmpleado, string domicilioEmpleado, string telefmovilEmpleado, string emailEmpleado, short idEmpleado, String fecharegistroEmpleado)
     {
        
         string mensaje = "";

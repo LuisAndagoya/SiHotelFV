@@ -50,10 +50,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cargo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Clases\Cliente.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cliente.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Distribucionhabitacion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Distribucionhabitacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Email.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Email.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clases\Empleado.cs">
       <DependentUpon>Empleado.xsd</DependentUpon>
@@ -134,6 +144,17 @@
     <None Include="Clases\Cargo.xss">
       <DependentUpon>Cargo.xsd</DependentUpon>
     </None>
+    <None Include="Clases\Cliente.xsc">
+      <DependentUpon>Cliente.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\Cliente.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cliente.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Clases\Cliente.xss">
+      <DependentUpon>Cliente.xsd</DependentUpon>
+    </None>
     <None Include="Clases\Distribucionhabitacion.xsc">
       <DependentUpon>Distribucionhabitacion.xsd</DependentUpon>
     </None>
@@ -144,6 +165,17 @@
     </None>
     <None Include="Clases\Distribucionhabitacion.xss">
       <DependentUpon>Distribucionhabitacion.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\Email.xsc">
+      <DependentUpon>Email.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\Email.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Email.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Clases\Email.xss">
+      <DependentUpon>Email.xsd</DependentUpon>
     </None>
     <None Include="Clases\Empleado.xsc">
       <DependentUpon>Empleado.xsd</DependentUpon>

@@ -42,13 +42,13 @@ namespace CapaProceso.Clases
         public static string Insertar(short idCargo, short idSubMenu)
         {
 
-          // string Lista = CMenucargo.unico(idCargo, idSubMenu);
+          string Lista = CMenucargo.unico(idCargo, idSubMenu).ToString();
 
 
             string mensaje = "";
 
-           // if (Lista == "0")
-           // {
+            if (Lista == "0")
+            {
                 int resultado = CMenucargo.InsertQuery(idCargo, idSubMenu);
                 if (resultado == 0)
                 {
@@ -59,11 +59,11 @@ namespace CapaProceso.Clases
                     return mensaje = "";
                 }
 
-           /* }
+            }
             else
             {
                 return mensaje = "La CI ya existe";
-            }*/
+            }
         }
 
 
