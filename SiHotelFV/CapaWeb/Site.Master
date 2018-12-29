@@ -33,7 +33,21 @@
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item nav-profile dropdown"><a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                        <div class="nav-profile-img"><i class="mdi mdi-account-circle" aria-hidden="true"></i><span class="availability-status online"></span></div>
+                        
+<div class="nav-profile-img">
+      <% CapaDatos.Clases.Usuario.usuarioDataTable Dato = CapaProceso.Clases.Usuario.Empleado(short.Parse(Session["UsuarioId"].ToString()));
+
+                        foreach (System.Data.DataRow row in Dato.Rows)
+                        { %>
+
+                        
+                        
+                 <i class="../../<%Response.Write(row["imagenEmpleado"].ToString());%> "></i><span class="availability-status online"></span></div>
+                        
+                        
+                          <% } %>   
+                        
+                        
                         <div class="nav-profile-text">
                             <p class="mb-1 text-black">
                                 <asp:Label ID="LblNombre" runat="server" Text="Label"></asp:Label>

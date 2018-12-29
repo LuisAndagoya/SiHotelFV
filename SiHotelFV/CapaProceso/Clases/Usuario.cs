@@ -14,7 +14,11 @@ namespace CapaProceso.Clases
             return CUsuario.GetLista();
         }
 
-       
+        public static CapaDatos.Clases.Usuario.usuarioDataTable Empleado(short idUsuario)
+        {
+            return CUsuario.GetEmpleado(idUsuario);
+        }
+
 
 
         public static CapaDatos.Clases.Usuario.usuarioDataTable Buscar(string buscar)
