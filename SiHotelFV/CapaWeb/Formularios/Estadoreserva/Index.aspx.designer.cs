@@ -7,37 +7,28 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CapaWeb.Formularios.Estadohabitacion {
+namespace CapaWeb.Formularios.Estadoreserva {
     
     
-    public partial class Container {
+    public partial class Index {
         
         /// <summary>
-        /// Control form1.
+        /// Control Form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
-        /// Control LblErro.
+        /// Control TxtBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblErro;
-        
-        /// <summary>
-        /// Control nombreEstadoHabitacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreEstadoHabitacion;
+        protected global::System.Web.UI.WebControls.TextBox TxtBuscar;
         
         /// <summary>
         /// Control Button1.
@@ -49,12 +40,21 @@ namespace CapaWeb.Formularios.Estadohabitacion {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// Control lblId.
+        /// Control Button2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblId;
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// Control Grid.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataGrid Grid;
     }
 }

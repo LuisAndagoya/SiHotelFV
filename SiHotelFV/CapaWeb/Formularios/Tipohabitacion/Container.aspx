@@ -16,7 +16,7 @@
          
                     <div class="form-group">
                         <label for="nombreTipo">Tipo</label>
-                        <asp:TextBox ID="nombreTipo"  required ="required" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="nombreTipo" class="form-control"  required ="required" runat="server"></asp:TextBox>
                         
                     </div>
 
@@ -27,14 +27,25 @@
                       </asp:DropDownList>
                     </div>
             
+                  
+                 
 
                      <div class="form-group">
-                        <label for="ListaDistribucion">Distribución Habitación</label>
-                       <asp:DropDownList ID="ListaDistribucion" required ="required" class="form-control" runat="server">
-                      </asp:DropDownList>
+                            <label for="imagenEmpleado">Imagen</label>
+                            <asp:TextBox ID="txtfot" class="form-control" runat="server"></asp:TextBox>
+                             <asp:FileUpload ID="FileUpload1"  class="form-control" runat="server" />
+                            <div><asp:Image ID="Image1" runat="server"  class="form-control" /></div>
+                            
+                            <asp:Button ID="btnSubir"  class="btn btn-light" runat="server" Text="Subir Imágen" OnClick="btnSubir_Click1" />
                     </div>
 
-
+                       <div class="form-group">
+                        <label for="estadoEmpleado">Estado</label>
+                          <asp:DropDownList ID="estadoTipo"  class="form-control" runat="server">
+                          <asp:ListItem Selected="True" Value="ACTIVO">ACTIVO</asp:ListItem>
+                          <asp:ListItem Value="INACTIVO">INACTIVO</asp:ListItem>
+                      </asp:DropDownList>
+                    </div>
                   
                       
    

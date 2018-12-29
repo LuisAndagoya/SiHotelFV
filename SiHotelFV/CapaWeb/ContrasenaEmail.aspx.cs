@@ -25,7 +25,7 @@ namespace CapaWeb
        
         protected void Email()
         {
-            string DatosEmail = CapaProceso.Clases.Email.Lista();
+           // string DatosEmail = CapaProceso.Clases.Email.Lista();
             string Mensaje = "Se envió sus datos a su  correo antes registrado. Gracias";
            
          

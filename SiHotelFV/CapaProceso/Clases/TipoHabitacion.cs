@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaDatos.Clases.TipohabitacionTableAdapters;
+using CapaDatos.Clases.TipoHabitacionTableAdapters;
 
 namespace CapaProceso.Clases
 {
@@ -11,30 +11,27 @@ namespace CapaProceso.Clases
     {
         private static tipo_habitacionTableAdapter CTipo = new tipo_habitacionTableAdapter();
 
-        public static CapaDatos.Clases.Tipohabitacion.tipo_habitacionDataTable Lista()
+        public static CapaDatos.Clases.TipoHabitacion.tipo_habitacionDataTable Lista()
         {
             return CTipo.GetLista();
         }
 
-        public static CapaDatos.Clases.Tipohabitacion.tipo_habitacionDataTable ListaActualizar(short idtipo)
+        public static CapaDatos.Clases.TipoHabitacion.tipo_habitacionDataTable ListaActualizar(short idtipo)
         {
             return CTipo.GetListaActualizar(idtipo);
         }
 
 
-        public static CapaDatos.Clases.Tipohabitacion.tipo_habitacionDataTable Buscar(string buscar)
+        public static CapaDatos.Clases.TipoHabitacion.tipo_habitacionDataTable Buscar(string buscar)
         {
             String buscarAux = "%" + buscar.Trim() + "%";
             return CTipo.GetBuscar(buscarAux);
         }
 
-        public static CapaDatos.Clases.Tipohabitacion.tipo_habitacionDataTable ListaDistribucion()
-        {
-            return CTipo.GetListaDistribucion();
-        }
+     
 
 
-        public static CapaDatos.Clases.Tipohabitacion.tipo_habitacionDataTable ListaPrecio()
+        public static CapaDatos.Clases.TipoHabitacion.tipo_habitacionDataTable ListaPrecio()
         {
             return CTipo.GetListaPrecio();
         }
@@ -42,17 +39,17 @@ namespace CapaProceso.Clases
 
 
 
-        public static string Insertar(string nombreTipo, short precioHabitacion_idPrecio, short distribucionHabitacion_idDistribucion)
+        public static string Insertar(string nombreTipo, short idPrecio, string imagenTipo, string estadoTipo)
         {
 
-            // string Lista = CMenucargo.unico(idCargo, idSubMenu);
+            string Lista = CTipo.unico(nombreTipo).ToString();
 
 
             string mensaje = "";
 
-            // if (Lista == "0")
-            // {
-            int resultado = CTipo.InsertQuery(nombreTipo.Trim().ToUpper(),precioHabitacion_idPrecio, distribucionHabitacion_idDistribucion);
+             if (Lista == "0")
+             {
+            int resultado = CTipo.InsertQuery(nombreTipo.Trim().ToUpper(),idPrecio, imagenTipo.Trim(), estadoTipo.Trim().ToUpper());
             if (resultado == 0)
             {
                 return mensaje = "Error al insertar los registros";
@@ -62,21 +59,21 @@ namespace CapaProceso.Clases
                 return mensaje = "";
             }
 
-            /* }
+             }
              else
              {
                  return mensaje = "La CI ya existe";
-             }*/
+             }
         }
 
 
 
 
-        public static string Actualizar(string nombreTipo, short precioHabitacion_idPrecio, short distribucionHabitacion_idDistribucion, short idtipo)
+        public static string Actualizar(string nombreTipo, short idPrecio, string imagenTipo, string estadoTipo, short idtipo)
         {
 
             string mensaje = "";
-            int resultado = CTipo.UpdateQuery(nombreTipo.Trim().ToUpper(), precioHabitacion_idPrecio, distribucionHabitacion_idDistribucion, idtipo);
+            int resultado = CTipo.UpdateQuery(nombreTipo.Trim().ToUpper(),idPrecio,imagenTipo.Trim(), estadoTipo.Trim().ToUpper(), idtipo );
             if (resultado == 0)
             {
                 return mensaje = "Error al actualizar los registros";

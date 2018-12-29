@@ -20,7 +20,7 @@ namespace CapaWeb
         {
             bool respuesta;
 
-            respuesta = email.enviarcorreo(TextBox1.Text, TextBox2.Text, TextBox3.Text);
+           // respuesta = email.enviarcorreo(TextBox1.Text, TextBox2.Text, TextBox3.Text);
 
             this.Page.Response.Write("<script language='JavaScript'>window.alert('Se a enviado una nueva contraseña al email del usuario.');</script>");
         }

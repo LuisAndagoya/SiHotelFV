@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using CapaWeb.Formularios.Empleado;
 using CapaProceso.Clases;
+using System.IO;
 
 namespace CapaWeb.Formularios.Empleado
 {
@@ -21,20 +22,20 @@ namespace CapaWeb.Formularios.Empleado
             {
 
                 case "INS":
-                    
+
 
 
                     break;
 
                 case "UDP":
-                    
+
 
                     LlenarFormulario();
 
                     break;
 
                 case "DLT":
-                    
+
 
                     LlenarFormulario();
                     BloquerFormulario();
@@ -54,6 +55,8 @@ namespace CapaWeb.Formularios.Empleado
             return qs;
         }
 
+
+       
 
         protected void LlenarFormulario()
         {
@@ -77,6 +80,7 @@ namespace CapaWeb.Formularios.Empleado
                     telefmovilEmpleado.Text = row["telefmovilEmpleado"].ToString();
                     fecharegistroEmpleado.Text = row["fecharegistroEmpleado"].ToString();
                     emailEmpleado.Text = row["emailEmpleado"].ToString();
+                    txtfot.Text = row["imagenEmpleado"].ToString();
 
                     lblId.Text = row["IdEmpleado"].ToString();
                 }
@@ -95,7 +99,9 @@ namespace CapaWeb.Formularios.Empleado
             telefmovilEmpleado.Enabled = false;
             fecharegistroEmpleado.Enabled = false;
             emailEmpleado.Enabled = false;
-            
+            txtfot.Enabled = false;
+          
+
 
             LblErro.Text = "Confirme la eliminación de los datos";
         }
@@ -106,12 +112,13 @@ namespace CapaWeb.Formularios.Empleado
             QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
             string error = "";
             short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
+            
             //DateTime fechaNacimiento = DateTime.Parse(fnacimiento.Text);
             switch (qs["TRN"].Substring(0, 3)) //ultilizo la variable para la opcion
             {
 
                 case "INS":
-                    error = CapaProceso.Clases.Empleado.Insertar(dniEmpleado.Text, nombreEmpleado.Text, apellidoEmpleado.Text, fnacimiento.Text, sexoEmpleado.Text, estadocivilEmpleado.Text, domicilioEmpleado.Text,telefmovilEmpleado.Text, emailEmpleado.Text, fecharegistroEmpleado.Text);
+                    error = CapaProceso.Clases.Empleado.Insertar(dniEmpleado.Text, nombreEmpleado.Text, apellidoEmpleado.Text, fnacimiento.Text, sexoEmpleado.Text, estadocivilEmpleado.Text, domicilioEmpleado.Text, telefmovilEmpleado.Text, emailEmpleado.Text, fecharegistroEmpleado.Text, txtfot.Text, estadoEmpleado.Text);
 
                     if (string.IsNullOrEmpty(error))
                     {
@@ -127,7 +134,7 @@ namespace CapaWeb.Formularios.Empleado
                     break;
                 case "UDP":
 
-                    error = CapaProceso.Clases.Empleado.Actualizar(dniEmpleado.Text, nombreEmpleado.Text, apellidoEmpleado.Text, fnacimiento.Text, sexoEmpleado.Text, estadocivilEmpleado.Text, domicilioEmpleado.Text, telefmovilEmpleado.Text, emailEmpleado.Text, short.Parse(lblId.Text), fecharegistroEmpleado.Text);
+                    error = CapaProceso.Clases.Empleado.Actualizar(dniEmpleado.Text, nombreEmpleado.Text, apellidoEmpleado.Text, fnacimiento.Text, sexoEmpleado.Text, estadocivilEmpleado.Text, domicilioEmpleado.Text, telefmovilEmpleado.Text, emailEmpleado.Text, short.Parse(lblId.Text), fecharegistroEmpleado.Text, txtfot.Text, estadoEmpleado.Text);
                     if (string.IsNullOrEmpty(error))
                     {
                         CapaProceso.Clases.Auditoria.Insertar("Empleado", "Actualizar", UsuarioId);
@@ -144,7 +151,7 @@ namespace CapaWeb.Formularios.Empleado
                     error = CapaProceso.Clases.Empleado.Eliminar(short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                         CapaProceso.Clases.Auditoria.Insertar("Empleado", "Eliminar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Empleado", "Eliminar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -157,5 +164,92 @@ namespace CapaWeb.Formularios.Empleado
         }
 
 
+        protected void btnSubir_Click1(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (FileUpload1.HasFile)
+                {
+
+                    // Se verifica que la extensión sea de un formato válido
+
+                    string ext = FileUpload1.PostedFile.FileName;
+
+                    string rutas = FileUpload1.FileName;
+
+                    ext = ext.Substring(ext.LastIndexOf(".") + 1).ToLower();
+
+                    string[] formatos = new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
+
+                    if (Array.IndexOf(formatos, ext) < 0)
+                    {
+
+                        Response.Write("<script language=javascript>alert('Formato de imagen inválido.');</script>");
+
+                    }
+
+                    else
+                    {
+
+                        string ruta = Server.MapPath("~/Fotos");
+
+                        // Si el directorio no existe, crearlo
+
+                        if (!Directory.Exists(ruta))
+
+                            Directory.CreateDirectory(ruta);
+
+                        string archivo = String.Format("{0}\\{1}", ruta, FileUpload1.FileName);
+
+                        // Verificar que el archivo no exista
+
+                        if (File.Exists(archivo))
+                        {
+
+                            // MensajeError(String.Format(
+
+                            Response.Write("<script language=javascript>alert('Ya existe una imagen con este nombre " + FileUpload1.FileName + "');</script>");
+
+                            string foto = "~/Fotos/" + rutas;
+
+                            FileUpload1.SaveAs(archivo);
+
+                            Image1.ImageUrl = foto;
+
+                            txtfot.Text = foto;
+
+                        }
+
+                        else
+                        {
+
+                            string foto = "~/Fotos/" + rutas;
+
+                            FileUpload1.SaveAs(archivo);
+
+                            Image1.ImageUrl = foto;
+
+                            txtfot.Text = foto;
+
+                        }
+
+                    }
+
+                }
+
+                else
+
+                    Response.Write("<script language=javascript>alert('No ha seleccionado  ninguna imagen.');</script>");
+
+            }
+
+            catch (Exception ex)
+            {
+
+                Response.Write("<script language=javascript>alert('" + ex.Message + "');</script>");
+
+            }
+        }
     }
-}
+    }

@@ -6,10 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaProceso.Clases;
 
-namespace CapaWeb.Formularios.Distribucion
+namespace CapaWeb.Formularios.Descripcionhabitacion
 {
     public partial class Index : System.Web.UI.Page
     {
+        private static Codificar codificar = new Codificar(); // Clase para emcriptar
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -21,7 +22,7 @@ namespace CapaWeb.Formularios.Distribucion
 
         private void CargarGrilla()
         {
-            Grid.DataSource = CapaProceso.Clases.DistribucionHabitacion.Lista();
+            Grid.DataSource = CapaProceso.Clases.DescripcionHabitacion.Lista();
 
 
 
@@ -66,6 +67,7 @@ namespace CapaWeb.Formularios.Distribucion
 
 
 
+
         protected void Grid_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
         {
             // paginar la grilla asegurarse que la obcion que la propiedad AllowPaging sea True.
@@ -74,10 +76,9 @@ namespace CapaWeb.Formularios.Distribucion
             CargarGrilla();
         }
 
-
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Grid.DataSource = CapaProceso.Clases.DistribucionHabitacion.Buscar(TxtBuscar.Text);
+            Grid.DataSource = CapaProceso.Clases.DescripcionHabitacion.Buscar(TxtBuscar.Text);
 
             Grid.DataBind();
             Grid.Height = 100;
@@ -95,6 +96,6 @@ namespace CapaWeb.Formularios.Distribucion
             Response.Redirect("Container.aspx" + QSencriptadoCSharp.Encryption.EncryptQueryString(qs).ToString());
         }
 
-    }
 
+    }
 }

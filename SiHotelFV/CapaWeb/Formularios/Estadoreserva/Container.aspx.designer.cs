@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CapaWeb.Formularios.Estadohabitacion {
+namespace CapaWeb.Formularios.Estadoreserva {
     
     
     public partial class Container {
@@ -31,13 +31,13 @@ namespace CapaWeb.Formularios.Estadohabitacion {
         protected global::System.Web.UI.WebControls.Label LblErro;
         
         /// <summary>
-        /// Control nombreEstadoHabitacion.
+        /// Control nombreEstado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nombreEstadoHabitacion;
+        protected global::System.Web.UI.WebControls.TextBox nombreEstado;
         
         /// <summary>
         /// Control Button1.

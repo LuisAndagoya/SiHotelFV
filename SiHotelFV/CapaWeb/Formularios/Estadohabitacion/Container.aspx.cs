@@ -53,13 +53,13 @@ namespace CapaWeb.Formularios.Estadohabitacion
 
                 short Id = short.Parse(qs["Id"].ToString());
                 //Carga datos para actualizacion           
-                CapaDatos.Clases.Estadohabitacion.estado_habitacionDataTable DataTable = CapaProceso.Clases.EstadoHabitacion.ListaActualizar(Id);
+                CapaDatos.Clases.EstadoHabitacion.estado_habitacionDataTable DataTable = CapaProceso.Clases.EstadoHabitacion.ListaActualizar(Id);
 
                 foreach (DataRow row in DataTable.Rows)
                 {
-                    NombreEstado.Text = row["NombreEstado"].ToString();
+                    nombreEstadoHabitacion.Text = row["nombreEstadoHabitacion"].ToString();
 
-                    lblId.Text = row["IdEstadoHabitacion"].ToString();
+                    lblId.Text = row["idEstadoHabitacion"].ToString();
                 }
             }
         }
@@ -76,7 +76,7 @@ namespace CapaWeb.Formularios.Estadohabitacion
         }
         protected void BloquerFormulario()
         {
-            NombreEstado.Enabled = false;
+            nombreEstadoHabitacion.Enabled = false;
 
             LblErro.Text = "Confirme la eliminación de los datos";
         }
@@ -91,7 +91,7 @@ namespace CapaWeb.Formularios.Estadohabitacion
             {
 
                 case "INS":
-                    error = CapaProceso.Clases.EstadoHabitacion.Insertar(NombreEstado.Text);
+                    error = CapaProceso.Clases.EstadoHabitacion.Insertar(nombreEstadoHabitacion.Text);
 
                     if (string.IsNullOrEmpty(error))
                     {
@@ -107,7 +107,7 @@ namespace CapaWeb.Formularios.Estadohabitacion
                     break;
                 case "UDP":
 
-                    error = CapaProceso.Clases.EstadoHabitacion.Actualizar(NombreEstado.Text, short.Parse(lblId.Text));
+                    error = CapaProceso.Clases.EstadoHabitacion.Actualizar(nombreEstadoHabitacion.Text, short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
                         CapaProceso.Clases.Auditoria.Insertar("EstadoHabitacion", "Actualizar", UsuarioId);

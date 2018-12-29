@@ -79,7 +79,21 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                            
+                                              <asp:TemplateColumn HeaderText="Fecha">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="fechaPrecio" runat="server" Text='<%#Eval("fechaPrecio") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
+                                                <asp:TemplateColumn HeaderText="Estado">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="estadoPrecio" runat="server" Text='<%#Eval("estadoPrecio") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
 
                                             
 

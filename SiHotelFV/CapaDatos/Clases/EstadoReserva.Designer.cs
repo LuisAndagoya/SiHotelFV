@@ -20,17 +20,17 @@ namespace CapaDatos.Clases {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("EstadoHabitacion")]
+    [global::System.Xml.Serialization.XmlRootAttribute("EstadoReserva")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class EstadoHabitacion : global::System.Data.DataSet {
+    public partial class EstadoReserva : global::System.Data.DataSet {
         
-        private estado_habitacionDataTable tableestado_habitacion;
+        private estado_reservaDataTable tableestado_reserva;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public EstadoHabitacion() {
+        public EstadoReserva() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CapaDatos.Clases {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected EstadoHabitacion(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected EstadoReserva(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace CapaDatos.Clases {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["estado_habitacion"] != null)) {
-                    base.Tables.Add(new estado_habitacionDataTable(ds.Tables["estado_habitacion"]));
+                if ((ds.Tables["estado_reserva"] != null)) {
+                    base.Tables.Add(new estado_reservaDataTable(ds.Tables["estado_reserva"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace CapaDatos.Clases {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public estado_habitacionDataTable estado_habitacion {
+        public estado_reservaDataTable estado_reserva {
             get {
-                return this.tableestado_habitacion;
+                return this.tableestado_reserva;
             }
         }
         
@@ -127,7 +127,7 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            EstadoHabitacion cln = ((EstadoHabitacion)(base.Clone()));
+            EstadoReserva cln = ((EstadoReserva)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace CapaDatos.Clases {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["estado_habitacion"] != null)) {
-                    base.Tables.Add(new estado_habitacionDataTable(ds.Tables["estado_habitacion"]));
+                if ((ds.Tables["estado_reserva"] != null)) {
+                    base.Tables.Add(new estado_reservaDataTable(ds.Tables["estado_reserva"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableestado_habitacion = ((estado_habitacionDataTable)(base.Tables["estado_habitacion"]));
+            this.tableestado_reserva = ((estado_reservaDataTable)(base.Tables["estado_reserva"]));
             if ((initTable == true)) {
-                if ((this.tableestado_habitacion != null)) {
-                    this.tableestado_habitacion.InitVars();
+                if ((this.tableestado_reserva != null)) {
+                    this.tableestado_reserva.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "EstadoHabitacion";
+            this.DataSetName = "EstadoReserva";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/EstadoHabitacion.xsd";
+            this.Namespace = "http://tempuri.org/EstadoReserva.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableestado_habitacion = new estado_habitacionDataTable();
-            base.Tables.Add(this.tableestado_habitacion);
+            this.tableestado_reserva = new estado_reservaDataTable();
+            base.Tables.Add(this.tableestado_reserva);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeestado_habitacion() {
+        private bool ShouldSerializeestado_reserva() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            EstadoHabitacion ds = new EstadoHabitacion();
+            EstadoReserva ds = new EstadoReserva();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,23 @@ namespace CapaDatos.Clases {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void estado_habitacionRowChangeEventHandler(object sender, estado_habitacionRowChangeEvent e);
+        public delegate void estado_reservaRowChangeEventHandler(object sender, estado_reservaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class estado_habitacionDataTable : global::System.Data.TypedTableBase<estado_habitacionRow> {
+        public partial class estado_reservaDataTable : global::System.Data.TypedTableBase<estado_reservaRow> {
             
-            private global::System.Data.DataColumn columnidEstadoHabitacion;
+            private global::System.Data.DataColumn columnidEstadoReserva;
             
-            private global::System.Data.DataColumn columnnombreEstadoHabitacion;
+            private global::System.Data.DataColumn columnnombreEstado;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public estado_habitacionDataTable() {
-                this.TableName = "estado_habitacion";
+            public estado_reservaDataTable() {
+                this.TableName = "estado_reserva";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +294,7 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal estado_habitacionDataTable(global::System.Data.DataTable table) {
+            internal estado_reservaDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,24 +311,24 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected estado_habitacionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected estado_reservaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn idEstadoHabitacionColumn {
+            public global::System.Data.DataColumn idEstadoReservaColumn {
                 get {
-                    return this.columnidEstadoHabitacion;
+                    return this.columnidEstadoReserva;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nombreEstadoHabitacionColumn {
+            public global::System.Data.DataColumn nombreEstadoColumn {
                 get {
-                    return this.columnnombreEstadoHabitacion;
+                    return this.columnnombreEstado;
                 }
             }
             
@@ -343,53 +343,53 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public estado_habitacionRow this[int index] {
+            public estado_reservaRow this[int index] {
                 get {
-                    return ((estado_habitacionRow)(this.Rows[index]));
+                    return ((estado_reservaRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event estado_habitacionRowChangeEventHandler estado_habitacionRowChanging;
+            public event estado_reservaRowChangeEventHandler estado_reservaRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event estado_habitacionRowChangeEventHandler estado_habitacionRowChanged;
+            public event estado_reservaRowChangeEventHandler estado_reservaRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event estado_habitacionRowChangeEventHandler estado_habitacionRowDeleting;
+            public event estado_reservaRowChangeEventHandler estado_reservaRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event estado_habitacionRowChangeEventHandler estado_habitacionRowDeleted;
+            public event estado_reservaRowChangeEventHandler estado_reservaRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addestado_habitacionRow(estado_habitacionRow row) {
+            public void Addestado_reservaRow(estado_reservaRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public estado_habitacionRow Addestado_habitacionRow(string nombreEstadoHabitacion) {
-                estado_habitacionRow rowestado_habitacionRow = ((estado_habitacionRow)(this.NewRow()));
+            public estado_reservaRow Addestado_reservaRow(string nombreEstado) {
+                estado_reservaRow rowestado_reservaRow = ((estado_reservaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        nombreEstadoHabitacion};
-                rowestado_habitacionRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowestado_habitacionRow);
-                return rowestado_habitacionRow;
+                        nombreEstado};
+                rowestado_reservaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowestado_reservaRow);
+                return rowestado_reservaRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public estado_habitacionRow FindByidEstadoHabitacion(int idEstadoHabitacion) {
-                return ((estado_habitacionRow)(this.Rows.Find(new object[] {
-                            idEstadoHabitacion})));
+            public estado_reservaRow FindByidEstadoReserva(int idEstadoReserva) {
+                return ((estado_reservaRow)(this.Rows.Find(new object[] {
+                            idEstadoReserva})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                estado_habitacionDataTable cln = ((estado_habitacionDataTable)(base.Clone()));
+                estado_reservaDataTable cln = ((estado_reservaDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -397,59 +397,59 @@ namespace CapaDatos.Clases {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new estado_habitacionDataTable();
+                return new estado_reservaDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnidEstadoHabitacion = base.Columns["idEstadoHabitacion"];
-                this.columnnombreEstadoHabitacion = base.Columns["nombreEstadoHabitacion"];
+                this.columnidEstadoReserva = base.Columns["idEstadoReserva"];
+                this.columnnombreEstado = base.Columns["nombreEstado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnidEstadoHabitacion = new global::System.Data.DataColumn("idEstadoHabitacion", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidEstadoHabitacion);
-                this.columnnombreEstadoHabitacion = new global::System.Data.DataColumn("nombreEstadoHabitacion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombreEstadoHabitacion);
+                this.columnidEstadoReserva = new global::System.Data.DataColumn("idEstadoReserva", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidEstadoReserva);
+                this.columnnombreEstado = new global::System.Data.DataColumn("nombreEstado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombreEstado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnidEstadoHabitacion}, true));
-                this.columnidEstadoHabitacion.AutoIncrement = true;
-                this.columnidEstadoHabitacion.AutoIncrementSeed = -1;
-                this.columnidEstadoHabitacion.AutoIncrementStep = -1;
-                this.columnidEstadoHabitacion.AllowDBNull = false;
-                this.columnidEstadoHabitacion.ReadOnly = true;
-                this.columnidEstadoHabitacion.Unique = true;
-                this.columnnombreEstadoHabitacion.AllowDBNull = false;
-                this.columnnombreEstadoHabitacion.MaxLength = 20;
+                                this.columnidEstadoReserva}, true));
+                this.columnidEstadoReserva.AutoIncrement = true;
+                this.columnidEstadoReserva.AutoIncrementSeed = -1;
+                this.columnidEstadoReserva.AutoIncrementStep = -1;
+                this.columnidEstadoReserva.AllowDBNull = false;
+                this.columnidEstadoReserva.ReadOnly = true;
+                this.columnidEstadoReserva.Unique = true;
+                this.columnnombreEstado.AllowDBNull = false;
+                this.columnnombreEstado.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public estado_habitacionRow Newestado_habitacionRow() {
-                return ((estado_habitacionRow)(this.NewRow()));
+            public estado_reservaRow Newestado_reservaRow() {
+                return ((estado_reservaRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new estado_habitacionRow(builder);
+                return new estado_reservaRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(estado_habitacionRow);
+                return typeof(estado_reservaRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.estado_habitacionRowChanged != null)) {
-                    this.estado_habitacionRowChanged(this, new estado_habitacionRowChangeEvent(((estado_habitacionRow)(e.Row)), e.Action));
+                if ((this.estado_reservaRowChanged != null)) {
+                    this.estado_reservaRowChanged(this, new estado_reservaRowChangeEvent(((estado_reservaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -457,8 +457,8 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.estado_habitacionRowChanging != null)) {
-                    this.estado_habitacionRowChanging(this, new estado_habitacionRowChangeEvent(((estado_habitacionRow)(e.Row)), e.Action));
+                if ((this.estado_reservaRowChanging != null)) {
+                    this.estado_reservaRowChanging(this, new estado_reservaRowChangeEvent(((estado_reservaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -466,8 +466,8 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.estado_habitacionRowDeleted != null)) {
-                    this.estado_habitacionRowDeleted(this, new estado_habitacionRowChangeEvent(((estado_habitacionRow)(e.Row)), e.Action));
+                if ((this.estado_reservaRowDeleted != null)) {
+                    this.estado_reservaRowDeleted(this, new estado_reservaRowChangeEvent(((estado_reservaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -475,14 +475,14 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.estado_habitacionRowDeleting != null)) {
-                    this.estado_habitacionRowDeleting(this, new estado_habitacionRowChangeEvent(((estado_habitacionRow)(e.Row)), e.Action));
+                if ((this.estado_reservaRowDeleting != null)) {
+                    this.estado_reservaRowDeleting(this, new estado_reservaRowChangeEvent(((estado_reservaRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removeestado_habitacionRow(estado_habitacionRow row) {
+            public void Removeestado_reservaRow(estado_reservaRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -491,7 +491,7 @@ namespace CapaDatos.Clases {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                EstadoHabitacion ds = new EstadoHabitacion();
+                EstadoReserva ds = new EstadoReserva();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -509,7 +509,7 @@ namespace CapaDatos.Clases {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "estado_habitacionDataTable";
+                attribute2.FixedValue = "estado_reservaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -553,36 +553,36 @@ namespace CapaDatos.Clases {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class estado_habitacionRow : global::System.Data.DataRow {
+        public partial class estado_reservaRow : global::System.Data.DataRow {
             
-            private estado_habitacionDataTable tableestado_habitacion;
+            private estado_reservaDataTable tableestado_reserva;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal estado_habitacionRow(global::System.Data.DataRowBuilder rb) : 
+            internal estado_reservaRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableestado_habitacion = ((estado_habitacionDataTable)(this.Table));
+                this.tableestado_reserva = ((estado_reservaDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int idEstadoHabitacion {
+            public int idEstadoReserva {
                 get {
-                    return ((int)(this[this.tableestado_habitacion.idEstadoHabitacionColumn]));
+                    return ((int)(this[this.tableestado_reserva.idEstadoReservaColumn]));
                 }
                 set {
-                    this[this.tableestado_habitacion.idEstadoHabitacionColumn] = value;
+                    this[this.tableestado_reserva.idEstadoReservaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nombreEstadoHabitacion {
+            public string nombreEstado {
                 get {
-                    return ((string)(this[this.tableestado_habitacion.nombreEstadoHabitacionColumn]));
+                    return ((string)(this[this.tableestado_reserva.nombreEstadoColumn]));
                 }
                 set {
-                    this[this.tableestado_habitacion.nombreEstadoHabitacionColumn] = value;
+                    this[this.tableestado_reserva.nombreEstadoColumn] = value;
                 }
             }
         }
@@ -591,22 +591,22 @@ namespace CapaDatos.Clases {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class estado_habitacionRowChangeEvent : global::System.EventArgs {
+        public class estado_reservaRowChangeEvent : global::System.EventArgs {
             
-            private estado_habitacionRow eventRow;
+            private estado_reservaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public estado_habitacionRowChangeEvent(estado_habitacionRow row, global::System.Data.DataRowAction action) {
+            public estado_reservaRowChangeEvent(estado_reservaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public estado_habitacionRow Row {
+            public estado_reservaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -622,7 +622,7 @@ namespace CapaDatos.Clases {
         }
     }
 }
-namespace CapaDatos.Clases.EstadoHabitacionTableAdapters {
+namespace CapaDatos.Clases.EstadoReservaTableAdapters {
     
     
     /// <summary>
@@ -634,7 +634,7 @@ namespace CapaDatos.Clases.EstadoHabitacionTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class estado_habitacionTableAdapter : global::System.ComponentModel.Component {
+    public partial class estado_reservaTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -648,7 +648,7 @@ namespace CapaDatos.Clases.EstadoHabitacionTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public estado_habitacionTableAdapter() {
+        public estado_reservaTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -745,34 +745,33 @@ namespace CapaDatos.Clases.EstadoHabitacionTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "estado_habitacion";
-            tableMapping.ColumnMappings.Add("idEstadoHabitacion", "idEstadoHabitacion");
-            tableMapping.ColumnMappings.Add("nombreEstadoHabitacion", "nombreEstadoHabitacion");
+            tableMapping.DataSetTable = "estado_reserva";
+            tableMapping.ColumnMappings.Add("idEstadoReserva", "idEstadoReserva");
+            tableMapping.ColumnMappings.Add("nombreEstado", "nombreEstado");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[estado_habitacion] WHERE (([idEstadoHabitacion] = @Original_id" +
-                "EstadoHabitacion) AND ([nombreEstadoHabitacion] = @Original_nombreEstadoHabitaci" +
-                "on))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[estado_reserva] WHERE (([idEstadoReserva] = @Original_idEstado" +
+                "Reserva) AND ([nombreEstado] = @Original_nombreEstado))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idEstadoHabitacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoHabitacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombreEstadoHabitacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstadoHabitacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idEstadoReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombreEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[estado_habitacion] ([nombreEstadoHabitacion]) VALUES (@nombreE" +
-                "stadoHabitacion);\r\nSELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado" +
-                "_habitacion WHERE (idEstadoHabitacion = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[estado_reserva] ([nombreEstado]) VALUES (@nombreEstado);\r\nSELE" +
+                "CT idEstadoReserva, nombreEstado FROM estado_reserva WHERE (idEstadoReserva = SC" +
+                "OPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstadoHabitacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstadoHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[estado_habitacion] SET [nombreEstadoHabitacion] = @nombreEstadoHabitacion WHERE (([idEstadoHabitacion] = @Original_idEstadoHabitacion) AND ([nombreEstadoHabitacion] = @Original_nombreEstadoHabitacion));
-SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (idEstadoHabitacion = @idEstadoHabitacion)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[estado_reserva] SET [nombreEstado] = @nombreEstado WHERE (([idEstadoReserva] = @Original_idEstadoReserva) AND ([nombreEstado] = @Original_nombreEstado));
+SELECT idEstadoReserva, nombreEstado FROM estado_reserva WHERE (idEstadoReserva = @idEstadoReserva)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstadoHabitacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstadoHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idEstadoHabitacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoHabitacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombreEstadoHabitacion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstadoHabitacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoHabitacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idEstadoReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombreEstado", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoReserva", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -788,58 +787,58 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM dbo.estado_habitacion";
+            this._commandCollection[0].CommandText = "SELECT idEstadoReserva, nombreEstado FROM dbo.estado_reserva";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[estado_habitacion] WHERE (([idEstadoHabitacion] = @idEstadoHab" +
-                "itacion))";
+            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[estado_reserva] WHERE (([idEstadoReserva] = @idEstadoReserva))" +
+                "";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoHabitacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoHabitacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoReserva", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        idEstadoHabitacion, nombreEstadoHabitacion\r\nFROM            estado_" +
-                "habitacion\r\nWHERE        (nombreEstadoHabitacion LIKE @nombreEstadoHabitacion)";
+            this._commandCollection[2].CommandText = "SELECT        idEstadoReserva, nombreEstado\r\nFROM            estado_reserva\r\nWHER" +
+                "E        (nombreEstado LIKE @nombreEstado)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstadoHabitacion", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstadoHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstado", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        idEstadoHabitacion, nombreEstadoHabitacion\r\nFROM            estado_" +
-                "habitacion";
+            this._commandCollection[3].CommandText = "SELECT idEstadoReserva, nombreEstado FROM dbo.estado_reserva";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        idEstadoHabitacion, nombreEstadoHabitacion\r\nFROM            estado_" +
-                "habitacion\r\nWHERE        (idEstadoHabitacion = @idEstadoHabitacion)";
+            this._commandCollection[4].CommandText = "SELECT        idEstadoReserva, nombreEstado\r\nFROM            estado_reserva\r\nWHER" +
+                "E        (idEstadoReserva = @idEstadoReserva)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoHabitacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoReserva", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "INSERT INTO [dbo].[estado_habitacion] ([nombreEstadoHabitacion]) VALUES (@nombreE" +
-                "stadoHabitacion);\r\nSELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado" +
-                "_habitacion WHERE (idEstadoHabitacion = SCOPE_IDENTITY())";
+            this._commandCollection[5].CommandText = "INSERT INTO [dbo].[estado_reserva] ([nombreEstado]) VALUES (@nombreEstado);\r\nSELE" +
+                "CT idEstadoReserva, nombreEstado FROM estado_reserva WHERE (idEstadoReserva = SC" +
+                "OPE_IDENTITY())";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstadoHabitacion", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstadoHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstado", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        COUNT(idEstadoHabitacion) AS Expr1\r\nFROM            estado_habitaci" +
-                "on\r\nWHERE        (nombreEstadoHabitacion = @nombreEstadoHabitacion)";
+            this._commandCollection[6].CommandText = "SELECT        COUNT(idEstadoReserva) AS Expr1\r\nFROM            estado_reserva\r\nWH" +
+                "ERE        (nombreEstado = @nombreEstado)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstadoHabitacion", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstadoHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstado", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"UPDATE [dbo].[estado_habitacion] SET [nombreEstadoHabitacion] = @nombreEstadoHabitacion WHERE (([idEstadoHabitacion] = @idEstadoHabitacion));
-SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (idEstadoHabitacion = @idEstadoHabitacion)";
+            this._commandCollection[7].CommandText = "UPDATE [dbo].[estado_reserva] SET [nombreEstado] = @nombreEstado WHERE (([idEstad" +
+                "oReserva] = @idEstadoReserva));\r\nSELECT idEstadoReserva, nombreEstado FROM estad" +
+                "o_reserva WHERE (idEstadoReserva = @idEstadoReserva)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstadoHabitacion", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstadoHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoHabitacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoHabitacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstado", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoReserva", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(EstadoHabitacion.estado_habitacionDataTable dataTable) {
+        public virtual int Fill(EstadoReserva.estado_reservaDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -852,9 +851,9 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual EstadoHabitacion.estado_habitacionDataTable GetData() {
+        public virtual EstadoReserva.estado_reservaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            EstadoHabitacion.estado_habitacionDataTable dataTable = new EstadoHabitacion.estado_habitacionDataTable();
+            EstadoReserva.estado_reservaDataTable dataTable = new EstadoReserva.estado_reservaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -863,15 +862,15 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual EstadoHabitacion.estado_habitacionDataTable GetBuscar(string nombreEstadoHabitacion) {
+        public virtual EstadoReserva.estado_reservaDataTable GetBuscar(string nombreEstado) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((nombreEstadoHabitacion == null)) {
-                throw new global::System.ArgumentNullException("nombreEstadoHabitacion");
+            if ((nombreEstado == null)) {
+                throw new global::System.ArgumentNullException("nombreEstado");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nombreEstadoHabitacion));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nombreEstado));
             }
-            EstadoHabitacion.estado_habitacionDataTable dataTable = new EstadoHabitacion.estado_habitacionDataTable();
+            EstadoReserva.estado_reservaDataTable dataTable = new EstadoReserva.estado_reservaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -880,9 +879,9 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual EstadoHabitacion.estado_habitacionDataTable GetLista() {
+        public virtual EstadoReserva.estado_reservaDataTable GetLista() {
             this.Adapter.SelectCommand = this.CommandCollection[3];
-            EstadoHabitacion.estado_habitacionDataTable dataTable = new EstadoHabitacion.estado_habitacionDataTable();
+            EstadoReserva.estado_reservaDataTable dataTable = new EstadoReserva.estado_reservaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -891,10 +890,10 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual EstadoHabitacion.estado_habitacionDataTable GetListaActualizar(int idEstadoHabitacion) {
+        public virtual EstadoReserva.estado_reservaDataTable GetListaActualizar(int idEstadoReserva) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idEstadoHabitacion));
-            EstadoHabitacion.estado_habitacionDataTable dataTable = new EstadoHabitacion.estado_habitacionDataTable();
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idEstadoReserva));
+            EstadoReserva.estado_reservaDataTable dataTable = new EstadoReserva.estado_reservaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -902,15 +901,15 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(EstadoHabitacion.estado_habitacionDataTable dataTable) {
+        public virtual int Update(EstadoReserva.estado_reservaDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(EstadoHabitacion dataSet) {
-            return this.Adapter.Update(dataSet, "estado_habitacion");
+        public virtual int Update(EstadoReserva dataSet) {
+            return this.Adapter.Update(dataSet, "estado_reserva");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -932,13 +931,13 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idEstadoHabitacion, string Original_nombreEstadoHabitacion) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idEstadoHabitacion));
-            if ((Original_nombreEstadoHabitacion == null)) {
-                throw new global::System.ArgumentNullException("Original_nombreEstadoHabitacion");
+        public virtual int Delete(int Original_idEstadoReserva, string Original_nombreEstado) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idEstadoReserva));
+            if ((Original_nombreEstado == null)) {
+                throw new global::System.ArgumentNullException("Original_nombreEstado");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_nombreEstadoHabitacion));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_nombreEstado));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -960,12 +959,12 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string nombreEstadoHabitacion) {
-            if ((nombreEstadoHabitacion == null)) {
-                throw new global::System.ArgumentNullException("nombreEstadoHabitacion");
+        public virtual int Insert(string nombreEstado) {
+            if ((nombreEstado == null)) {
+                throw new global::System.ArgumentNullException("nombreEstado");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(nombreEstadoHabitacion));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(nombreEstado));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -987,21 +986,21 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nombreEstadoHabitacion, int Original_idEstadoHabitacion, string Original_nombreEstadoHabitacion, int idEstadoHabitacion) {
-            if ((nombreEstadoHabitacion == null)) {
-                throw new global::System.ArgumentNullException("nombreEstadoHabitacion");
+        public virtual int Update(string nombreEstado, int Original_idEstadoReserva, string Original_nombreEstado, int idEstadoReserva) {
+            if ((nombreEstado == null)) {
+                throw new global::System.ArgumentNullException("nombreEstado");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nombreEstadoHabitacion));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(nombreEstado));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_idEstadoHabitacion));
-            if ((Original_nombreEstadoHabitacion == null)) {
-                throw new global::System.ArgumentNullException("Original_nombreEstadoHabitacion");
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_idEstadoReserva));
+            if ((Original_nombreEstado == null)) {
+                throw new global::System.ArgumentNullException("Original_nombreEstado");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_nombreEstadoHabitacion));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_nombreEstado));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(idEstadoHabitacion));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(idEstadoReserva));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1022,17 +1021,17 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nombreEstadoHabitacion, int Original_idEstadoHabitacion, string Original_nombreEstadoHabitacion) {
-            return this.Update(nombreEstadoHabitacion, Original_idEstadoHabitacion, Original_nombreEstadoHabitacion, Original_idEstadoHabitacion);
+        public virtual int Update(string nombreEstado, int Original_idEstadoReserva, string Original_nombreEstado) {
+            return this.Update(nombreEstado, Original_idEstadoReserva, Original_nombreEstado, Original_idEstadoReserva);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(int idEstadoHabitacion) {
+        public virtual int DeleteQuery(int idEstadoReserva) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(idEstadoHabitacion));
+            command.Parameters[0].Value = ((int)(idEstadoReserva));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1054,13 +1053,13 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string nombreEstadoHabitacion) {
+        public virtual int InsertQuery(string nombreEstado) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
-            if ((nombreEstadoHabitacion == null)) {
-                throw new global::System.ArgumentNullException("nombreEstadoHabitacion");
+            if ((nombreEstado == null)) {
+                throw new global::System.ArgumentNullException("nombreEstado");
             }
             else {
-                command.Parameters[0].Value = ((string)(nombreEstadoHabitacion));
+                command.Parameters[0].Value = ((string)(nombreEstado));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1082,13 +1081,13 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> unico(string nombreEstadoHabitacion) {
+        public virtual global::System.Nullable<int> unico(string nombreEstado) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
-            if ((nombreEstadoHabitacion == null)) {
-                throw new global::System.ArgumentNullException("nombreEstadoHabitacion");
+            if ((nombreEstado == null)) {
+                throw new global::System.ArgumentNullException("nombreEstado");
             }
             else {
-                command.Parameters[0].Value = ((string)(nombreEstadoHabitacion));
+                command.Parameters[0].Value = ((string)(nombreEstado));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1117,15 +1116,15 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(string nombreEstadoHabitacion, int idEstadoHabitacion) {
+        public virtual int UpdateQuery(string nombreEstado, int idEstadoReserva) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
-            if ((nombreEstadoHabitacion == null)) {
-                throw new global::System.ArgumentNullException("nombreEstadoHabitacion");
+            if ((nombreEstado == null)) {
+                throw new global::System.ArgumentNullException("nombreEstado");
             }
             else {
-                command.Parameters[0].Value = ((string)(nombreEstadoHabitacion));
+                command.Parameters[0].Value = ((string)(nombreEstado));
             }
-            command.Parameters[1].Value = ((int)(idEstadoHabitacion));
+            command.Parameters[1].Value = ((int)(idEstadoReserva));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1156,7 +1155,7 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         
         private UpdateOrderOption _updateOrder;
         
-        private estado_habitacionTableAdapter _estado_habitacionTableAdapter;
+        private estado_reservaTableAdapter _estado_reservaTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1178,12 +1177,12 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public estado_habitacionTableAdapter estado_habitacionTableAdapter {
+        public estado_reservaTableAdapter estado_reservaTableAdapter {
             get {
-                return this._estado_habitacionTableAdapter;
+                return this._estado_reservaTableAdapter;
             }
             set {
-                this._estado_habitacionTableAdapter = value;
+                this._estado_reservaTableAdapter = value;
             }
         }
         
@@ -1206,9 +1205,9 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._estado_habitacionTableAdapter != null) 
-                            && (this._estado_habitacionTableAdapter.Connection != null))) {
-                    return this._estado_habitacionTableAdapter.Connection;
+                if (((this._estado_reservaTableAdapter != null) 
+                            && (this._estado_reservaTableAdapter.Connection != null))) {
+                    return this._estado_reservaTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1223,7 +1222,7 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._estado_habitacionTableAdapter != null)) {
+                if ((this._estado_reservaTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1235,14 +1234,14 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(EstadoHabitacion dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(EstadoReserva dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._estado_habitacionTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.estado_habitacion.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._estado_reservaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.estado_reserva.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._estado_habitacionTableAdapter.Update(updatedRows));
+                    result = (result + this._estado_reservaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1254,13 +1253,13 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(EstadoHabitacion dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(EstadoReserva dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._estado_habitacionTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.estado_habitacion.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._estado_reservaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.estado_reserva.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._estado_habitacionTableAdapter.Update(addedRows));
+                    result = (result + this._estado_reservaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1272,13 +1271,13 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(EstadoHabitacion dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(EstadoReserva dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._estado_habitacionTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.estado_habitacion.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._estado_reservaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.estado_reserva.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._estado_habitacionTableAdapter.Update(deletedRows));
+                    result = (result + this._estado_reservaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1314,15 +1313,15 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(EstadoHabitacion dataSet) {
+        public virtual int UpdateAll(EstadoReserva dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._estado_habitacionTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._estado_habitacionTableAdapter.Connection) == false))) {
+            if (((this._estado_reservaTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._estado_reservaTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -1358,13 +1357,13 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._estado_habitacionTableAdapter != null)) {
-                    revertConnections.Add(this._estado_habitacionTableAdapter, this._estado_habitacionTableAdapter.Connection);
-                    this._estado_habitacionTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._estado_habitacionTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._estado_habitacionTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._estado_habitacionTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._estado_habitacionTableAdapter.Adapter);
+                if ((this._estado_reservaTableAdapter != null)) {
+                    revertConnections.Add(this._estado_reservaTableAdapter, this._estado_reservaTableAdapter.Connection);
+                    this._estado_reservaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._estado_reservaTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._estado_reservaTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._estado_reservaTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._estado_reservaTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1425,9 +1424,9 @@ SELECT idEstadoHabitacion, nombreEstadoHabitacion FROM estado_habitacion WHERE (
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._estado_habitacionTableAdapter != null)) {
-                    this._estado_habitacionTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._estado_habitacionTableAdapter]));
-                    this._estado_habitacionTableAdapter.Transaction = null;
+                if ((this._estado_reservaTableAdapter != null)) {
+                    this._estado_reservaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._estado_reservaTableAdapter]));
+                    this._estado_reservaTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

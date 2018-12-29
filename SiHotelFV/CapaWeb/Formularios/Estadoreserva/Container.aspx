@@ -1,10 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Container.aspx.cs" Inherits="CapaWeb.Formularios.Estadohabitacion.Container" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Container.aspx.cs" Inherits="CapaWeb.Formularios.Estadoreserva.Container" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<div class="col-md-8 grid-margin stretch-card">
+
+
+           <div class="col-md-8 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">ESTADO HABITACIÓN</h4>
+                <h4 class="card-title">ESTADO RESERVA</h4>
 
                 <form id="form1" class="forms-sample" runat="server">
                     <div class="form-group">
@@ -13,7 +15,7 @@
    
                      <div class="form-group">
                         <label for="nombreCargo">Estado</label>
-                        <asp:TextBox ID="nombreEstadoHabitacion"   class="form-control" required ="required"  runat="server"></asp:TextBox>
+                        <asp:TextBox ID="nombreEstado"   class="form-control" required ="required"  runat="server"></asp:TextBox>
                     </div>
                       
                  
@@ -29,6 +31,4 @@
             </div>
         </div>
     </div>
-
-
 </asp:Content>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaDatos.Clases.PreciohabitacionTableAdapters;
+using CapaDatos.Clases.PrecioHabitacionTableAdapters;
 
 namespace CapaProceso.Clases
 {
@@ -11,24 +11,24 @@ namespace CapaProceso.Clases
     {
         private static precio_habitacionTableAdapter CPrecio = new precio_habitacionTableAdapter();
 
-        public static CapaDatos.Clases.Preciohabitacion.precio_habitacionDataTable Lista()
+        public static CapaDatos.Clases.PrecioHabitacion.precio_habitacionDataTable Lista()
         {
             return CPrecio.GetLista();
         }
 
-        public static CapaDatos.Clases.Preciohabitacion.precio_habitacionDataTable ListaActualizar(short idPrecio)
+        public static CapaDatos.Clases.PrecioHabitacion.precio_habitacionDataTable ListaActualizar(short idPrecio)
         {
             return CPrecio.GetListaActualizar(idPrecio);
         }
 
 
-        public static CapaDatos.Clases.Preciohabitacion.precio_habitacionDataTable Buscar(string buscar)
+        public static CapaDatos.Clases.PrecioHabitacion.precio_habitacionDataTable Buscar(string buscar)
         {
             String buscarAux = "%" + buscar.Trim() + "%";
             return CPrecio.GetBuscar(Convert.ToInt16(buscarAux));
         }
 
-        public static string Insertar(float precioHabitacion)
+        public static string Insertar(float precioHabitacion, string fechaPrecio, string estadoPrecio)
         {
 
             string Lista = CPrecio.unico(precioHabitacion).ToString();
@@ -38,7 +38,7 @@ namespace CapaProceso.Clases
 
             if (Lista == "0")
             {
-                int resultado = CPrecio.InsertQuery(precioHabitacion);
+                int resultado = CPrecio.InsertQuery(precioHabitacion, fechaPrecio.Trim(), estadoPrecio.Trim().ToUpper());
                 if (resultado == 0)
                 {
                     return mensaje = "Error al insertar los registros";
@@ -59,11 +59,11 @@ namespace CapaProceso.Clases
 
 
 
-        public static string Actualizar(float precioHabitacion, short idPrecio)
+        public static string Actualizar(float precioHabitacion, string fechaPrecio, string estadoPrecio, short idPrecio)
         {
 
             string mensaje = "";
-            int resultado = CPrecio.UpdateQuery(precioHabitacion,idPrecio);
+            int resultado = CPrecio.UpdateQuery(precioHabitacion,fechaPrecio.Trim(), estadoPrecio.Trim().ToUpper(), idPrecio);
             if (resultado == 0)
             {
                 return mensaje = "Error al actualizar los registros";

@@ -2055,9 +2055,10 @@ WHERE        (usuario.idUsuario = @idUsuario)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT        idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, 
-                         emailEmpleado
-FROM            empleado";
+            this._commandCollection[6].CommandText = @"SELECT        idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, 
+                         imagenEmpleado, estadoEmpleado
+FROM            empleado
+WHERE        (estadoEmpleado = 'ACTIVO')";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;

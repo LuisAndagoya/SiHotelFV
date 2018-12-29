@@ -88,24 +88,18 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                               <asp:TemplateColumn HeaderText="N° Personas">
-                                                <ItemTemplate>
-                                                    <span style="float: left;">
-                                                        <asp:Label ID="maximoPersonas" runat="server" Text='<%#Eval("maximoPersonas") %>'></asp:Label>
-                                                    </span>
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
+                                         
 
-                                                  <asp:TemplateColumn HeaderText="Descripción">
-                                                <ItemTemplate>
-                                                    <span style="float: left;">
-                                                        <asp:Label ID="descripcion" runat="server" Text='<%#Eval("descripcion") %>'></asp:Label>
-                                                    </span>
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
+                                           
                                             
 
-
+                                                  <asp:TemplateColumn HeaderText="Estado">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="estadoTipo" runat="server" Text='<%#Eval("estadoTipo") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
                                              
                                             
 

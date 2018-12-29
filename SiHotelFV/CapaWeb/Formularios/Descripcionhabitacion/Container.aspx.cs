@@ -5,23 +5,20 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using System.Text;
-using System.Security.Cryptography;
+using CapaWeb.Formularios.Descripcionhabitacion;
 using CapaProceso.Clases;
+using System.IO;
 
-namespace CapaWeb.Formularios.Usuario
+namespace CapaWeb.Formularios.Descripcionhabitacion
 {
     public partial class Container : System.Web.UI.Page
     {
-        private static Codificar codificar = new Codificar();
-
         protected void Page_Load(object sender, EventArgs e)
         {
-
             QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
 
 
-            switch (qs["TRN"].Substring(0,3))
+            switch (qs["TRN"].Substring(0, 3))
             {
 
                 case "INS":
@@ -42,7 +39,7 @@ namespace CapaWeb.Formularios.Usuario
 
                     LlenarFormulario();
                     BloquerFormulario();
-                    break;              
+                    break;
 
             }
 
@@ -58,6 +55,9 @@ namespace CapaWeb.Formularios.Usuario
             return qs;
         }
 
+
+
+
         protected void LlenarFormulario()
         {
             if (!IsPostBack)
@@ -66,73 +66,62 @@ namespace CapaWeb.Formularios.Usuario
 
                 short Id = short.Parse(qs["Id"].ToString());
                 //Carga datos para actualizacion           
-                CapaDatos.Clases.Usuario.usuarioDataTable usuarioDataTable = CapaProceso.Clases.Usuario.ListaActualizar(Id);
+                CapaDatos.Clases.DescripcionHabitacion.descripcion_habitacionDataTable DataTable = CapaProceso.Clases.DescripcionHabitacion.ListaActualizar(Id);
 
-
-
-                foreach (DataRow row in usuarioDataTable.Rows)
+                foreach (DataRow row in DataTable.Rows)
                 {
+                    descripcionHabitacion.Text = row["descripcionHabitacion"].ToString();
+                    estadoDescripcion.Text = row["estadoDescripcion"].ToString();
+                    ListaHabitacion.SelectedValue= row["idTipoHabitacion"].ToString();
+                 
 
-                    ListaEmpleado.SelectedValue = row["idEmpleado"].ToString();
-                    ListaCargo.SelectedValue = row["idCargo"].ToString();
-                    usernameUsuario.Text = row["usernameUsuario"].ToString();
-
-                    passwordUsuario.Text = codificar.Base64Decode(row["passwordUsuario"].ToString());
-                    DropDownList1.SelectedValue = row["estadoUsuario"].ToString();
-
-                    lblId.Text = row["idUsuario"].ToString();
+                    lblId.Text = row["idDescripcion"].ToString();
                 }
             }
         }
-        
+
+        protected void BloquerFormulario()
+        {
+            descripcionHabitacion.Enabled = false;
+            estadoDescripcion.Enabled = false;
+            ListaHabitacion.Enabled = false;
+           
+
+
+
+            LblErro.Text = "Confirme la eliminación de los datos";
+        }
+
         protected void CargarCombo()
         {
             if (!IsPostBack)
             {
                 //Llenar un combo box dinamicamente con tabla adapter
-                ListaEmpleado.DataSource = CapaProceso.Clases.Empleado.ListaEmpleado();
-                ListaEmpleado.DataTextField = "nombreEmpleado";
-                ListaEmpleado.DataValueField = "idEmpleado";
-                ListaEmpleado.DataBind();
+                ListaHabitacion.DataSource = CapaProceso.Clases.TipoHabitacion.Lista();
+                ListaHabitacion.DataTextField = "nombreTipo";
+                ListaHabitacion.DataValueField = "idtipo";
+                ListaHabitacion.DataBind();
 
 
-
-                ListaCargo.DataSource = CapaProceso.Clases.Cargo.Lista();
-                ListaCargo.DataTextField = "nombreCargo";
-                ListaCargo.DataValueField = "idCargo";
-                ListaCargo.DataBind();
 
             }
 
         }
 
-        protected void BloquerFormulario()
-        {
-
-            ListaCargo.Enabled = false;
-            ListaEmpleado.Enabled = false;
-            usernameUsuario.Enabled = false;
-            passwordUsuario.Enabled = false;
-            DropDownList1.Enabled = false;
-            
-            LblErro.Text = "Confirme la eliminación de los datos";
-        }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
             QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
-
             string error = "";
-             short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
+            short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
             switch (qs["TRN"].Substring(0, 3)) //ultilizo la variable para la opcion
             {
 
                 case "INS": //ejecuta el codigo si el usuario ingresa el numero 1
-                    error = CapaProceso.Clases.Usuario.Insertar(usernameUsuario.Text, passwordUsuario.Text, DropDownList1.SelectedValue.ToString(), Convert.ToInt16(ListaEmpleado.SelectedValue.ToString()),Convert.ToInt16(ListaCargo.SelectedValue.ToString()));
+                    error = CapaProceso.Clases.DescripcionHabitacion.Insertar(descripcionHabitacion.Text, estadoDescripcion.Text, Convert.ToInt16(ListaHabitacion.SelectedValue.ToString()));
 
                     if (string.IsNullOrEmpty(error))
                     {
-                       CapaProceso.Clases.Auditoria.Insertar("Usuario", "Insertar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Descripción H.", "Insertar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -143,10 +132,10 @@ namespace CapaWeb.Formularios.Usuario
                     break;//termina la ejecucion del programa despues de ejecutar el codigo
                 case "UDP": //ejecuta el codigo si el usuario ingresa el numero 2
 
-                    error = CapaProceso.Clases.Usuario.Actualizar(usernameUsuario.Text, passwordUsuario.Text, DropDownList1.SelectedValue.ToString(), Convert.ToInt16(ListaEmpleado.SelectedValue.ToString()), Convert.ToInt16(ListaCargo.SelectedValue.ToString()), short.Parse(lblId.Text));
+                    error = CapaProceso.Clases.DescripcionHabitacion.Actualizar(descripcionHabitacion.Text,estadoDescripcion.Text, Convert.ToInt16(ListaHabitacion.SelectedValue.ToString()), short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                        CapaProceso.Clases.Auditoria.Insertar("Usuario", "Actualizar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Descripción H.", "Actualizar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -157,10 +146,10 @@ namespace CapaWeb.Formularios.Usuario
                     break;
                 case "DLT": //ejecuta el codigo si el usuario ingresa el numero 2
 
-                    error = CapaProceso.Clases.Usuario.Eliminar(short.Parse(lblId.Text));
+                    error = CapaProceso.Clases.DescripcionHabitacion.Eliminar(short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                        CapaProceso.Clases.Auditoria.Insertar("Usuario", "Eliminar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Descripción H", "Eliminar", UsuarioId);
 
                         Response.Redirect("Index.aspx");
                     }

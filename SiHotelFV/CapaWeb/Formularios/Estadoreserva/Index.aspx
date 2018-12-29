@@ -1,11 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWeb.Formularios.Estadohabitacion.Index" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWeb.Formularios.Estadoreserva.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<div class="row">
+
+     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                   <h4 class="card-title">Estado habitación</h4>
+                   <h4 class="card-title">Estado Reserva</h4>
                     <form id="Form1" runat="server">
                         <table class="table">
                             <tr>
@@ -16,12 +17,12 @@
                                      
                                                     <div class="form-group">
                                                         <div class="input-group">
-                                                            <asp:TextBox class="form-control" ID="TxtBuscar"  placeholder="Buscar..." runat="server" />
+                                                            <asp:TextBox class="form-control" ID="TxtBuscar" placeholder="Buscar..." runat="server" />
                                                             <div class="input-group-append">
-                                                                <asp:Button ID="Button1" class="btn btn-sm btn-gradient-primary"  runat="server" Text="Buscar"
+                                                                <asp:Button ID="Button1" class="btn btn-sm btn-gradient-primary" required ="required" runat="server" Text="Buscar"
                                                                     OnClick="Button1_Click" />
                                                             </div>
-                                                             <div class="input-group-append">
+                                                                 <div class="input-group-append">
                                                                    <asp:Button ID="Button2" class="btn btn-sm btn-gradient-primary" required ="required" runat="server" Text="Agregar"
                                                                     OnClick="Button2_Click" />                                                                  
                                                                   </div>
@@ -66,7 +67,7 @@
                                             <asp:TemplateColumn HeaderText="id" Visible="False">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="lblId" runat="server" Text='<%#Eval("idEstadoHabitacion") %>'></asp:Label>
+                                                        <asp:Label ID="lblId" runat="server" Text='<%#Eval("idEstadoReserva") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
@@ -74,7 +75,7 @@
                                             <asp:TemplateColumn HeaderText="Estado">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="nombreEstadoHabitacion" runat="server" Text='<%#Eval("nombreEstadoHabitacion") %>'></asp:Label>
+                                                        <asp:Label ID="nombreEstado" runat="server" Text='<%#Eval("nombreEstado") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
@@ -108,4 +109,3 @@
 
 
 </asp:Content>
-

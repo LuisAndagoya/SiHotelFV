@@ -1,11 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWeb.Formularios.Distribucion.Index" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWeb.Formularios.Descripcionhabitacion.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="row">
+
+     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                   <h4 class="card-title">Distribución Habitación</h4>
+                   <h4 class="card-title">Descripción Habitación</h4>
                     <form id="Form1" runat="server">
                         <table class="table">
                             <tr>
@@ -14,14 +15,14 @@
                                     <div align="right">
 
                                      
-                                                       <div class="form-group">
+                                                    <div class="form-group">
                                                         <div class="input-group">
                                                             <asp:TextBox class="form-control" ID="TxtBuscar" placeholder="Buscar..." runat="server" />
                                                             <div class="input-group-append">
                                                                 <asp:Button ID="Button1" class="btn btn-sm btn-gradient-primary" required ="required" runat="server" Text="Buscar"
                                                                     OnClick="Button1_Click" />
                                                             </div>
-                                                               <div class="input-group-append">
+                                                                 <div class="input-group-append">
                                                                    <asp:Button ID="Button2" class="btn btn-sm btn-gradient-primary" required ="required" runat="server" Text="Agregar"
                                                                     OnClick="Button2_Click" />                                                                  
                                                                   </div>
@@ -66,32 +67,35 @@
                                             <asp:TemplateColumn HeaderText="id" Visible="False">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="lblId" runat="server" Text='<%#Eval("idDistribucion") %>'></asp:Label>
+                                                        <asp:Label ID="lblId" runat="server" Text='<%#Eval("idDescripcion") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                               <asp:TemplateColumn HeaderText="Descripción">
+                                            <asp:TemplateColumn HeaderText="Descripción">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="descripcion" runat="server" Text='<%#Eval("descripcion") %>'></asp:Label>
+                                                        <asp:Label ID="descripcionHabitacion" runat="server" Text='<%#Eval("descripcionHabitacion") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                             <asp:TemplateColumn HeaderText="maximoPersonas">
+
+                                              <asp:TemplateColumn HeaderText="Tipo Habitación">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
-                                                        <asp:Label ID="maximoPersonas" runat="server" Text='<%#Eval("maximoPersonas") %>'></asp:Label>
+                                                        <asp:Label ID="nombreTipo" runat="server" Text='<%#Eval("nombreTipo") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                           
-
-                                            
-
-                                           
+                                                <asp:TemplateColumn HeaderText="Estado">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="estadoDescripcion" runat="server" Text='<%#Eval("estadoDescripcion") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
                                             
 
                                             
@@ -118,4 +122,7 @@
             </div>
         </div>
     </div>
+
+
+
 </asp:Content>

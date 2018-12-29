@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using CapaProceso.Clases;
+using System.IO;
 
 
 namespace CapaWeb.Formularios.Tipohabitacion
@@ -65,16 +66,17 @@ namespace CapaWeb.Formularios.Tipohabitacion
 
                 short Id = short.Parse(qs["Id"].ToString());
                 //Carga datos para actualizacion           
-                CapaDatos.Clases.Tipohabitacion.tipo_habitacionDataTable tipo_habitacionDataTable = CapaProceso.Clases.TipoHabitacion.ListaActualizar(Id);
+                CapaDatos.Clases.TipoHabitacion.tipo_habitacionDataTable tipo_habitacionDataTable = CapaProceso.Clases.TipoHabitacion.ListaActualizar(Id);
 
                 foreach (DataRow row in tipo_habitacionDataTable.Rows)
                 {
 
                     ListaPrecio.SelectedValue = row["idPrecio"].ToString();
-                    ListaDistribucion.SelectedValue = row["idDistribucion"].ToString();
+                    estadoTipo.SelectedValue = row["estadoTipo"].ToString();
                     nombreTipo.Text = row["nombreTipo"].ToString();
+                    txtfot.Text = row["imagenTipo"].ToString();
 
-                    lblId.Text = row["idMenu_Cargo"].ToString();
+                    lblId.Text = row["idtipo"].ToString();
                 }
             }
         }
@@ -85,10 +87,7 @@ namespace CapaWeb.Formularios.Tipohabitacion
             if (!IsPostBack)
             {
                 //Llenar un combo box dinamicamente con tabla adapter
-                ListaDistribucion.DataSource = CapaProceso.Clases.DistribucionHabitacion.Lista();
-                ListaDistribucion.DataTextField = "descripcion";
-                ListaDistribucion.DataValueField = "idDistribucion";
-                ListaDistribucion.DataBind();
+              
 
                 ListaPrecio.DataSource = CapaProceso.Clases.PrecioHabitacion.Lista();
                 ListaPrecio.DataTextField = "precioHabitacion";
@@ -102,9 +101,11 @@ namespace CapaWeb.Formularios.Tipohabitacion
         protected void BloquerFormulario()
         {
 
-            ListaDistribucion.Enabled = false;
+           
             ListaPrecio.Enabled = false;
             nombreTipo.Enabled = false;
+            txtfot.Enabled = false;
+            estadoTipo.Enabled = false;
             LblErro.Text = "Confirme la eliminación de los datos";
         }
 
@@ -117,7 +118,7 @@ namespace CapaWeb.Formularios.Tipohabitacion
             {
 
                 case "INS": //ejecuta el codigo si el usuario ingresa el numero 1
-                    error = CapaProceso.Clases.TipoHabitacion.Insertar(nombreTipo.Text,Convert.ToInt16(ListaPrecio.SelectedValue.ToString()), Convert.ToInt16(ListaDistribucion.SelectedValue.ToString()));
+                    error = CapaProceso.Clases.TipoHabitacion.Insertar(nombreTipo.Text,Convert.ToInt16(ListaPrecio.SelectedValue.ToString()),txtfot.Text,estadoTipo.SelectedValue.ToString());
 
                     if (string.IsNullOrEmpty(error))
                     {
@@ -132,7 +133,7 @@ namespace CapaWeb.Formularios.Tipohabitacion
                     break;//termina la ejecucion del programa despues de ejecutar el codigo
                 case "UDP": //ejecuta el codigo si el usuario ingresa el numero 2
 
-                    error = CapaProceso.Clases.TipoHabitacion.Actualizar( nombreTipo.Text,Convert.ToInt16(ListaPrecio.SelectedValue.ToString()), Convert.ToInt16(ListaDistribucion.SelectedValue.ToString()), short.Parse(lblId.Text));
+                    error = CapaProceso.Clases.TipoHabitacion.Actualizar( nombreTipo.Text,Convert.ToInt16(ListaPrecio.SelectedValue.ToString()), txtfot.Text, estadoTipo.SelectedValue.ToString(), short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
                         CapaProceso.Clases.Auditoria.Insertar("TipoHabitación", "Actualizar", UsuarioId);
@@ -162,7 +163,93 @@ namespace CapaWeb.Formularios.Tipohabitacion
             }
         }
 
+        protected void btnSubir_Click1(object sender, EventArgs e)
+        {
+            try
+            {
 
+                if (FileUpload1.HasFile)
+                {
+
+                    // Se verifica que la extensión sea de un formato válido
+
+                    string ext = FileUpload1.PostedFile.FileName;
+
+                    string rutas = FileUpload1.FileName;
+
+                    ext = ext.Substring(ext.LastIndexOf(".") + 1).ToLower();
+
+                    string[] formatos = new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
+
+                    if (Array.IndexOf(formatos, ext) < 0)
+                    {
+
+                        Response.Write("<script language=javascript>alert('Formato de imagen inválido.');</script>");
+
+                    }
+
+                    else
+                    {
+
+                        string ruta = Server.MapPath("~/Fotos");
+
+                        // Si el directorio no existe, crearlo
+
+                        if (!Directory.Exists(ruta))
+
+                            Directory.CreateDirectory(ruta);
+
+                        string archivo = String.Format("{0}\\{1}", ruta, FileUpload1.FileName);
+
+                        // Verificar que el archivo no exista
+
+                        if (File.Exists(archivo))
+                        {
+
+                            // MensajeError(String.Format(
+
+                            Response.Write("<script language=javascript>alert('Ya existe una imagen con este nombre " + FileUpload1.FileName + "');</script>");
+
+                            string foto = "~/Fotos/" + rutas;
+
+                            FileUpload1.SaveAs(archivo);
+
+                            Image1.ImageUrl = foto;
+
+                            txtfot.Text = foto;
+
+                        }
+
+                        else
+                        {
+
+                            string foto = "~/Fotos/" + rutas;
+
+                            FileUpload1.SaveAs(archivo);
+
+                            Image1.ImageUrl = foto;
+
+                            txtfot.Text = foto;
+
+                        }
+
+                    }
+
+                }
+
+                else
+
+                    Response.Write("<script language=javascript>alert('No ha seleccionado  ninguna imagen.');</script>");
+
+            }
+
+            catch (Exception ex)
+            {
+
+                Response.Write("<script language=javascript>alert('" + ex.Message + "');</script>");
+
+            }
+        }
 
 
     }

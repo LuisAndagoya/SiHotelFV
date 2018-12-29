@@ -40,6 +40,24 @@ namespace CapaWeb.Formularios.Preciohabitacion {
         protected global::System.Web.UI.WebControls.TextBox precioHabitacion;
         
         /// <summary>
+        /// Control fechaPrecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox fechaPrecio;
+        
+        /// <summary>
+        /// Control estadoPrecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList estadoPrecio;
+        
+        /// <summary>
         /// Control Button1.
         /// </summary>
         /// <remarks>

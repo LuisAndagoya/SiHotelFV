@@ -20,9 +20,9 @@ namespace CapaDatos.Clases {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Preciohabitacion")]
+    [global::System.Xml.Serialization.XmlRootAttribute("PrecioHabitacion")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Preciohabitacion : global::System.Data.DataSet {
+    public partial class PrecioHabitacion : global::System.Data.DataSet {
         
         private precio_habitacionDataTable tableprecio_habitacion;
         
@@ -30,7 +30,7 @@ namespace CapaDatos.Clases {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Preciohabitacion() {
+        public PrecioHabitacion() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CapaDatos.Clases {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected Preciohabitacion(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected PrecioHabitacion(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Preciohabitacion cln = ((Preciohabitacion)(base.Clone()));
+            PrecioHabitacion cln = ((PrecioHabitacion)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Preciohabitacion";
+            this.DataSetName = "PrecioHabitacion";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Preciohabitacion.xsd";
+            this.Namespace = "http://tempuri.org/PrecioHabitacion.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableprecio_habitacion = new precio_habitacionDataTable();
@@ -225,7 +225,7 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Preciohabitacion ds = new Preciohabitacion();
+            PrecioHabitacion ds = new PrecioHabitacion();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -283,6 +283,10 @@ namespace CapaDatos.Clases {
             
             private global::System.Data.DataColumn columnprecioHabitacion;
             
+            private global::System.Data.DataColumn columnfechaPrecio;
+            
+            private global::System.Data.DataColumn columnestadoPrecio;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public precio_habitacionDataTable() {
@@ -334,6 +338,22 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fechaPrecioColumn {
+                get {
+                    return this.columnfechaPrecio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn estadoPrecioColumn {
+                get {
+                    return this.columnestadoPrecio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -369,11 +389,13 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public precio_habitacionRow Addprecio_habitacionRow(double precioHabitacion) {
+            public precio_habitacionRow Addprecio_habitacionRow(double precioHabitacion, System.DateTime fechaPrecio, string estadoPrecio) {
                 precio_habitacionRow rowprecio_habitacionRow = ((precio_habitacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        precioHabitacion};
+                        precioHabitacion,
+                        fechaPrecio,
+                        estadoPrecio};
                 rowprecio_habitacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowprecio_habitacionRow);
                 return rowprecio_habitacionRow;
@@ -405,6 +427,8 @@ namespace CapaDatos.Clases {
             internal void InitVars() {
                 this.columnidPrecio = base.Columns["idPrecio"];
                 this.columnprecioHabitacion = base.Columns["precioHabitacion"];
+                this.columnfechaPrecio = base.Columns["fechaPrecio"];
+                this.columnestadoPrecio = base.Columns["estadoPrecio"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -414,6 +438,10 @@ namespace CapaDatos.Clases {
                 base.Columns.Add(this.columnidPrecio);
                 this.columnprecioHabitacion = new global::System.Data.DataColumn("precioHabitacion", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprecioHabitacion);
+                this.columnfechaPrecio = new global::System.Data.DataColumn("fechaPrecio", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaPrecio);
+                this.columnestadoPrecio = new global::System.Data.DataColumn("estadoPrecio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestadoPrecio);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidPrecio}, true));
                 this.columnidPrecio.AutoIncrement = true;
@@ -423,6 +451,9 @@ namespace CapaDatos.Clases {
                 this.columnidPrecio.ReadOnly = true;
                 this.columnidPrecio.Unique = true;
                 this.columnprecioHabitacion.AllowDBNull = false;
+                this.columnfechaPrecio.AllowDBNull = false;
+                this.columnestadoPrecio.AllowDBNull = false;
+                this.columnestadoPrecio.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -490,7 +521,7 @@ namespace CapaDatos.Clases {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Preciohabitacion ds = new Preciohabitacion();
+                PrecioHabitacion ds = new PrecioHabitacion();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -584,6 +615,28 @@ namespace CapaDatos.Clases {
                     this[this.tableprecio_habitacion.precioHabitacionColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fechaPrecio {
+                get {
+                    return ((global::System.DateTime)(this[this.tableprecio_habitacion.fechaPrecioColumn]));
+                }
+                set {
+                    this[this.tableprecio_habitacion.fechaPrecioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string estadoPrecio {
+                get {
+                    return ((string)(this[this.tableprecio_habitacion.estadoPrecioColumn]));
+                }
+                set {
+                    this[this.tableprecio_habitacion.estadoPrecioColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -621,7 +674,7 @@ namespace CapaDatos.Clases {
         }
     }
 }
-namespace CapaDatos.Clases.PreciohabitacionTableAdapters {
+namespace CapaDatos.Clases.PrecioHabitacionTableAdapters {
     
     
     /// <summary>
@@ -747,29 +800,39 @@ namespace CapaDatos.Clases.PreciohabitacionTableAdapters {
             tableMapping.DataSetTable = "precio_habitacion";
             tableMapping.ColumnMappings.Add("idPrecio", "idPrecio");
             tableMapping.ColumnMappings.Add("precioHabitacion", "precioHabitacion");
+            tableMapping.ColumnMappings.Add("fechaPrecio", "fechaPrecio");
+            tableMapping.ColumnMappings.Add("estadoPrecio", "estadoPrecio");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[precio_habitacion] WHERE (([idPrecio] = @Original_idPrecio) AN" +
-                "D ([precioHabitacion] = @Original_precioHabitacion))";
+                "D ([precioHabitacion] = @Original_precioHabitacion) AND ([fechaPrecio] = @Origin" +
+                "al_fechaPrecio) AND ([estadoPrecio] = @Original_estadoPrecio))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idPrecio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idPrecio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_precioHabitacion", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precioHabitacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fechaPrecio", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrecio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_estadoPrecio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoPrecio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[precio_habitacion] ([precioHabitacion]) VALUES (@precioHabitac" +
-                "ion);\r\nSELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio " +
-                "= SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[precio_habitacion] ([precioHabitacion], [fechaPrecio], [estadoPrecio]) VALUES (@precioHabitacion, @fechaPrecio, @estadoPrecio);
+SELECT idPrecio, precioHabitacion, fechaPrecio, estadoPrecio FROM precio_habitacion WHERE (idPrecio = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precioHabitacion", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precioHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaPrecio", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoPrecio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[precio_habitacion] SET [precioHabitacion] = @precioHabitacion WHERE (([idPrecio] = @Original_idPrecio) AND ([precioHabitacion] = @Original_precioHabitacion));
-SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPrecio)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[precio_habitacion] SET [precioHabitacion] = @precioHabitacion, [fechaPrecio] = @fechaPrecio, [estadoPrecio] = @estadoPrecio WHERE (([idPrecio] = @Original_idPrecio) AND ([precioHabitacion] = @Original_precioHabitacion) AND ([fechaPrecio] = @Original_fechaPrecio) AND ([estadoPrecio] = @Original_estadoPrecio));
+SELECT idPrecio, precioHabitacion, fechaPrecio, estadoPrecio FROM precio_habitacion WHERE (idPrecio = @idPrecio)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precioHabitacion", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precioHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaPrecio", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoPrecio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idPrecio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idPrecio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_precioHabitacion", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "precioHabitacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fechaPrecio", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrecio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_estadoPrecio", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoPrecio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPrecio", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -786,7 +849,8 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idPrecio, precioHabitacion FROM dbo.precio_habitacion";
+            this._commandCollection[0].CommandText = "SELECT idPrecio, precioHabitacion, fechaPrecio, estadoPrecio FROM dbo.precio_habi" +
+                "tacion";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -795,27 +859,29 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPrecio", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idPrecio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        idPrecio, precioHabitacion\r\nFROM            precio_habitacion\r\nWHER" +
-                "E        (precioHabitacion LIKE @precioHabitacion)";
+            this._commandCollection[2].CommandText = "SELECT        idPrecio, precioHabitacion, fechaPrecio, estadoPrecio\r\nFROM        " +
+                "    precio_habitacion\r\nWHERE        (precioHabitacion LIKE @precioHabitacion)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precioHabitacion", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "precioHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT idPrecio, precioHabitacion FROM dbo.precio_habitacion";
+            this._commandCollection[3].CommandText = "SELECT        idPrecio, precioHabitacion, fechaPrecio, estadoPrecio\r\nFROM        " +
+                "    precio_habitacion";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        idPrecio, precioHabitacion\r\nFROM            precio_habitacion\r\nWHER" +
-                "E        (idPrecio = @idPrecio)";
+            this._commandCollection[4].CommandText = "SELECT        idPrecio, precioHabitacion, fechaPrecio, estadoPrecio\r\nFROM        " +
+                "    precio_habitacion\r\nWHERE        (idPrecio = @idPrecio)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPrecio", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "INSERT INTO precio_habitacion\r\n                         (precioHabitacion)\r\nVALUE" +
-                "S        (@precioHabitacion); \r\nSELECT idPrecio, precioHabitacion FROM precio_ha" +
-                "bitacion WHERE (idPrecio = SCOPE_IDENTITY())";
+            this._commandCollection[5].CommandText = @"INSERT INTO [dbo].[precio_habitacion] ([precioHabitacion], [fechaPrecio], [estadoPrecio]) VALUES (@precioHabitacion, @fechaPrecio, @estadoPrecio);
+SELECT idPrecio, precioHabitacion, fechaPrecio, estadoPrecio FROM precio_habitacion WHERE (idPrecio = SCOPE_IDENTITY())";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precioHabitacion", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "precioHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaPrecio", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoPrecio", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "estadoPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
             this._commandCollection[6].CommandText = "SELECT        COUNT(idPrecio) AS Expr1\r\nFROM            precio_habitacion\r\nWHERE " +
@@ -824,11 +890,12 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precioHabitacion", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "precioHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "UPDATE       precio_habitacion\r\nSET                precioHabitacion = @precioHabi" +
-                "tacion\r\nWHERE        (idPrecio = @idPrecio); \r\nSELECT idPrecio, precioHabitacion" +
-                " FROM precio_habitacion WHERE (idPrecio = @idPrecio)";
+            this._commandCollection[7].CommandText = @"UPDATE [dbo].[precio_habitacion] SET [precioHabitacion] = @precioHabitacion, [fechaPrecio] = @fechaPrecio, [estadoPrecio] = @estadoPrecio WHERE (([idPrecio] = @idPrecio));
+SELECT idPrecio, precioHabitacion, fechaPrecio, estadoPrecio FROM precio_habitacion WHERE (idPrecio = @idPrecio)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@precioHabitacion", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "precioHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaPrecio", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fechaPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoPrecio", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "estadoPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPrecio", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idPrecio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -836,7 +903,7 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Preciohabitacion.precio_habitacionDataTable dataTable) {
+        public virtual int Fill(PrecioHabitacion.precio_habitacionDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -849,9 +916,9 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Preciohabitacion.precio_habitacionDataTable GetData() {
+        public virtual PrecioHabitacion.precio_habitacionDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Preciohabitacion.precio_habitacionDataTable dataTable = new Preciohabitacion.precio_habitacionDataTable();
+            PrecioHabitacion.precio_habitacionDataTable dataTable = new PrecioHabitacion.precio_habitacionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -860,10 +927,10 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Preciohabitacion.precio_habitacionDataTable GetBuscar(double precioHabitacion) {
+        public virtual PrecioHabitacion.precio_habitacionDataTable GetBuscar(double precioHabitacion) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((double)(precioHabitacion));
-            Preciohabitacion.precio_habitacionDataTable dataTable = new Preciohabitacion.precio_habitacionDataTable();
+            PrecioHabitacion.precio_habitacionDataTable dataTable = new PrecioHabitacion.precio_habitacionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -872,9 +939,9 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Preciohabitacion.precio_habitacionDataTable GetLista() {
+        public virtual PrecioHabitacion.precio_habitacionDataTable GetLista() {
             this.Adapter.SelectCommand = this.CommandCollection[3];
-            Preciohabitacion.precio_habitacionDataTable dataTable = new Preciohabitacion.precio_habitacionDataTable();
+            PrecioHabitacion.precio_habitacionDataTable dataTable = new PrecioHabitacion.precio_habitacionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -883,10 +950,10 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Preciohabitacion.precio_habitacionDataTable GetListaActualizar(int idPrecio) {
+        public virtual PrecioHabitacion.precio_habitacionDataTable GetListaActualizar(int idPrecio) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idPrecio));
-            Preciohabitacion.precio_habitacionDataTable dataTable = new Preciohabitacion.precio_habitacionDataTable();
+            PrecioHabitacion.precio_habitacionDataTable dataTable = new PrecioHabitacion.precio_habitacionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -894,14 +961,14 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Preciohabitacion.precio_habitacionDataTable dataTable) {
+        public virtual int Update(PrecioHabitacion.precio_habitacionDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Preciohabitacion dataSet) {
+        public virtual int Update(PrecioHabitacion dataSet) {
             return this.Adapter.Update(dataSet, "precio_habitacion");
         }
         
@@ -924,9 +991,16 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idPrecio, double Original_precioHabitacion) {
+        public virtual int Delete(int Original_idPrecio, double Original_precioHabitacion, System.DateTime Original_fechaPrecio, string Original_estadoPrecio) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idPrecio));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((double)(Original_precioHabitacion));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_fechaPrecio));
+            if ((Original_estadoPrecio == null)) {
+                throw new global::System.ArgumentNullException("Original_estadoPrecio");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_estadoPrecio));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -947,8 +1021,15 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(double precioHabitacion) {
+        public virtual int Insert(double precioHabitacion, System.DateTime fechaPrecio, string estadoPrecio) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((double)(precioHabitacion));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(fechaPrecio));
+            if ((estadoPrecio == null)) {
+                throw new global::System.ArgumentNullException("estadoPrecio");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(estadoPrecio));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -969,11 +1050,25 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(double precioHabitacion, int Original_idPrecio, double Original_precioHabitacion, int idPrecio) {
+        public virtual int Update(double precioHabitacion, System.DateTime fechaPrecio, string estadoPrecio, int Original_idPrecio, double Original_precioHabitacion, System.DateTime Original_fechaPrecio, string Original_estadoPrecio, int idPrecio) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((double)(precioHabitacion));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_idPrecio));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((double)(Original_precioHabitacion));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(idPrecio));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(fechaPrecio));
+            if ((estadoPrecio == null)) {
+                throw new global::System.ArgumentNullException("estadoPrecio");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(estadoPrecio));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_idPrecio));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(Original_precioHabitacion));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_fechaPrecio));
+            if ((Original_estadoPrecio == null)) {
+                throw new global::System.ArgumentNullException("Original_estadoPrecio");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_estadoPrecio));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(idPrecio));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -994,8 +1089,8 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(double precioHabitacion, int Original_idPrecio, double Original_precioHabitacion) {
-            return this.Update(precioHabitacion, Original_idPrecio, Original_precioHabitacion, Original_idPrecio);
+        public virtual int Update(double precioHabitacion, System.DateTime fechaPrecio, string estadoPrecio, int Original_idPrecio, double Original_precioHabitacion, System.DateTime Original_fechaPrecio, string Original_estadoPrecio) {
+            return this.Update(precioHabitacion, fechaPrecio, estadoPrecio, Original_idPrecio, Original_precioHabitacion, Original_fechaPrecio, Original_estadoPrecio, Original_idPrecio);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1026,9 +1121,21 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(double precioHabitacion) {
+        public virtual int InsertQuery(double precioHabitacion, string fechaPrecio, string estadoPrecio) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             command.Parameters[0].Value = ((double)(precioHabitacion));
+            if ((fechaPrecio == null)) {
+                throw new global::System.ArgumentNullException("fechaPrecio");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(fechaPrecio));
+            }
+            if ((estadoPrecio == null)) {
+                throw new global::System.ArgumentNullException("estadoPrecio");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(estadoPrecio));
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1079,10 +1186,22 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(double precioHabitacion, int idPrecio) {
+        public virtual int UpdateQuery(double precioHabitacion, string fechaPrecio, string estadoPrecio, int idPrecio) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             command.Parameters[0].Value = ((double)(precioHabitacion));
-            command.Parameters[1].Value = ((int)(idPrecio));
+            if ((fechaPrecio == null)) {
+                throw new global::System.ArgumentNullException("fechaPrecio");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(fechaPrecio));
+            }
+            if ((estadoPrecio == null)) {
+                throw new global::System.ArgumentNullException("estadoPrecio");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(estadoPrecio));
+            }
+            command.Parameters[3].Value = ((int)(idPrecio));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1192,7 +1311,7 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(Preciohabitacion dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(PrecioHabitacion dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._precio_habitacionTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.precio_habitacion.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1211,7 +1330,7 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(Preciohabitacion dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(PrecioHabitacion dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._precio_habitacionTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.precio_habitacion.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1229,7 +1348,7 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(Preciohabitacion dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(PrecioHabitacion dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._precio_habitacionTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.precio_habitacion.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1271,7 +1390,7 @@ SELECT idPrecio, precioHabitacion FROM precio_habitacion WHERE (idPrecio = @idPr
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(Preciohabitacion dataSet) {
+        public virtual int UpdateAll(PrecioHabitacion dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

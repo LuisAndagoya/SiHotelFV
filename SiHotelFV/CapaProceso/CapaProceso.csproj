@@ -44,10 +44,11 @@
     <Compile Include="Clases\Cargo.cs" />
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\Codificar.cs" />
-    <Compile Include="Clases\DistribucionHabitacion.cs" />
+    <Compile Include="Clases\DescripcionHabitacion.cs" />
     <Compile Include="Clases\Email.cs" />
     <Compile Include="Clases\Empleado.cs" />
     <Compile Include="Clases\EstadoHabitacion.cs" />
+    <Compile Include="Clases\EstadoReserva.cs" />
     <Compile Include="Clases\Hotel.cs" />
     <Compile Include="Clases\Menu.cs" />
     <Compile Include="Clases\Menucargo.cs" />

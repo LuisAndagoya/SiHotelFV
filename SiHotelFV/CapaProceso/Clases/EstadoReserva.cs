@@ -3,43 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaDatos.Clases.EstadoHabitacionTableAdapters;
+using CapaDatos.Clases.EstadoReservaTableAdapters;
 
 namespace CapaProceso.Clases
 {
-    public class EstadoHabitacion
+   public  class EstadoReserva
     {
+        private static estado_reservaTableAdapter CReserva = new estado_reservaTableAdapter();
 
-        private static estado_habitacionTableAdapter CEstado = new estado_habitacionTableAdapter();
-
-        public static CapaDatos.Clases.EstadoHabitacion.estado_habitacionDataTable Lista()
+        public static CapaDatos.Clases.EstadoReserva.estado_reservaDataTable Lista()
         {
-            return CEstado.GetLista();
+            return CReserva.GetLista();
         }
 
-        public static CapaDatos.Clases.EstadoHabitacion.estado_habitacionDataTable ListaActualizar(short idEstadoHabitacion)
+        public static CapaDatos.Clases.EstadoReserva.estado_reservaDataTable ListaActualizar(short idEstadoReserva)
         {
-            return CEstado.GetListaActualizar(idEstadoHabitacion);
+            return CReserva.GetListaActualizar(idEstadoReserva);
         }
 
 
-        public static CapaDatos.Clases.EstadoHabitacion.estado_habitacionDataTable Buscar(string buscar)
+        public static CapaDatos.Clases.EstadoReserva.estado_reservaDataTable Buscar(string buscar)
         {
             String buscarAux = "%" + buscar.Trim() + "%";
-            return CEstado.GetBuscar(buscarAux);
+            return CReserva.GetBuscar(buscarAux);
         }
 
-        public static string Insertar(string NombreEstado)
+        public static string Insertar(string nombreEstado)
         {
 
-            string Lista = CEstado.unico(NombreEstado).ToString();
+            string Lista = CReserva.unico(nombreEstado).ToString();
 
 
             string mensaje = "";
 
             if (Lista == "0")
             {
-                int resultado = CEstado.InsertQuery(NombreEstado.Trim().ToUpper());
+                int resultado = CReserva.InsertQuery(nombreEstado.Trim().ToUpper());
                 if (resultado == 0)
                 {
                     return mensaje = "Error al insertar los registros";
@@ -60,11 +59,11 @@ namespace CapaProceso.Clases
 
 
 
-        public static string Actualizar(string NombreEstado, short idEstadoHabitacion)
+        public static string Actualizar(string nombreEstado, short idEstadoReserva)
         {
 
             string mensaje = "";
-            int resultado = CEstado.UpdateQuery(NombreEstado.Trim(), idEstadoHabitacion);
+            int resultado = CReserva.UpdateQuery(nombreEstado.Trim(), idEstadoReserva);
             if (resultado == 0)
             {
                 return mensaje = "Error al actualizar los registros";
@@ -75,14 +74,14 @@ namespace CapaProceso.Clases
             }
         }
 
-        public static string Eliminar(short idEstadoHabitacion)
+        public static string Eliminar(short idEstadoReserva)
         {
             string mensaje = "";
 
             try
             {
 
-                int resultado = CEstado.DeleteQuery(idEstadoHabitacion);
+                int resultado = CReserva.DeleteQuery(idEstadoReserva);
                 if (resultado == 0)
                 {
                     return mensaje = "No se puede eliminar una asignación inactiva";
@@ -101,7 +100,6 @@ namespace CapaProceso.Clases
 
 
         }
-
 
 
 

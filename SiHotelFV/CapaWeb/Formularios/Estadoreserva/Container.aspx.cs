@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using CapaProceso.Clases;
+using System.Data;
 
-namespace CapaWeb.Formularios.Preciohabitacion
+namespace CapaWeb.Formularios.Estadoreserva
 {
     public partial class Container : System.Web.UI.Page
     {
@@ -21,20 +21,20 @@ namespace CapaWeb.Formularios.Preciohabitacion
             {
 
                 case "INS":
-                    
+
 
 
                     break;
 
                 case "UDP":
-                    
+
 
                     LlenarFormulario();
 
                     break;
 
                 case "DLT":
-                    
+
 
                     LlenarFormulario();
                     BloquerFormulario();
@@ -61,23 +61,20 @@ namespace CapaWeb.Formularios.Preciohabitacion
 
                 short Id = short.Parse(qs["Id"].ToString());
                 //Carga datos para actualizacion           
-                CapaDatos.Clases.PrecioHabitacion.precio_habitacionDataTable DataTable = CapaProceso.Clases.PrecioHabitacion.ListaActualizar(Id);
+                CapaDatos.Clases.EstadoReserva.estado_reservaDataTable DataTable = CapaProceso.Clases.EstadoReserva.ListaActualizar(Id);
 
                 foreach (DataRow row in DataTable.Rows)
                 {
-                    precioHabitacion.Text = row["precioHabitacion"].ToString();
-                    fechaPrecio.Text = row["fechaPrecio"].ToString();
-                    estadoPrecio.Text = row["estadoPrecio"].ToString();
-                    lblId.Text = row["IdPrecio"].ToString();
+                    nombreEstado.Text = row["nombreEstado"].ToString();
+
+                    lblId.Text = row["idEstadoReserva"].ToString();
                 }
             }
         }
 
         protected void BloquerFormulario()
         {
-            precioHabitacion.Enabled = false;
-            fechaPrecio.Enabled = false;
-            estadoPrecio.Enabled = false;
+            nombreEstado.Enabled = false;
 
             LblErro.Text = "Confirme la eliminación de los datos";
         }
@@ -86,19 +83,18 @@ namespace CapaWeb.Formularios.Preciohabitacion
         protected void Button1_Click(object sender, EventArgs e)
         {
             QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
-            float precioH = float.Parse(precioHabitacion.Text);
             string error = "";
             short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
             switch (qs["TRN"].Substring(0, 3)) //ultilizo la variable para la opcion
             {
 
                 case "INS":
-                    error = CapaProceso.Clases.PrecioHabitacion.Insertar(precioH, fechaPrecio.Text,estadoPrecio.Text);
+                    error = CapaProceso.Clases.EstadoReserva.Insertar(nombreEstado.Text);
 
                     if (string.IsNullOrEmpty(error))
                     {
 
-                        CapaProceso.Clases.Auditoria.Insertar("PrecioHabitacion", "Insertar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Estado R.", "Insertar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -109,10 +105,10 @@ namespace CapaWeb.Formularios.Preciohabitacion
                     break;
                 case "UDP":
 
-                    error = CapaProceso.Clases.PrecioHabitacion.Actualizar(precioH,fechaPrecio.Text, estadoPrecio.Text, short.Parse(lblId.Text));
+                    error = CapaProceso.Clases.Cargo.Actualizar(nombreEstado.Text, short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                        CapaProceso.Clases.Auditoria.Insertar("PrecioHabitacion", "Actualizar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Estado R.", "Actualizar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -123,10 +119,10 @@ namespace CapaWeb.Formularios.Preciohabitacion
                     break;
                 case "DLT":
 
-                    error = CapaProceso.Clases.PrecioHabitacion.Eliminar(short.Parse(lblId.Text));
+                    error = CapaProceso.Clases.Cargo.Eliminar(short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
-                        CapaProceso.Clases.Auditoria.Insertar("PrecioHabitacion", "Eliminar", UsuarioId);
+                        CapaProceso.Clases.Auditoria.Insertar("Estado R.", "Eliminar", UsuarioId);
                         Response.Redirect("Index.aspx");
                     }
                     else
@@ -137,6 +133,7 @@ namespace CapaWeb.Formularios.Preciohabitacion
                     break;
             }
         }
+
 
     }
 }
