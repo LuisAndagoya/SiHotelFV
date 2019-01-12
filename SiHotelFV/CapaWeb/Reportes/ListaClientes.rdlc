@@ -444,7 +444,7 @@
         <Top>1.61078cm</Top>
         <Left>0.47307cm</Left>
         <Height>0cm</Height>
-        <Width>15.10901cm</Width>
+        <Width>14.50047cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -462,6 +462,7 @@
                 <Value>LISTA CLIENTES</Value>
                 <Style>
                   <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>

@@ -245,6 +245,7 @@
     <Content Include="inicio.aspx" />
     <Content Include="Reportes\ReporteClientes.aspx" />
     <Content Include="Reportes\ReporteEmpleados.aspx" />
+    <Content Include="Reportes\ReporteReservaciones.aspx" />
     <Content Include="Reportes\ReporteTipoHab.aspx" />
     <Content Include="Salir.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
@@ -637,6 +638,13 @@
     <Compile Include="Reportes\ReporteEmpleados.aspx.designer.cs">
       <DependentUpon>ReporteEmpleados.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReporteReservaciones.aspx.cs">
+      <DependentUpon>ReporteReservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteReservaciones.aspx.designer.cs">
+      <DependentUpon>ReporteReservaciones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReporteTipoHab.aspx.cs">
       <DependentUpon>ReporteTipoHab.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -690,6 +698,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Reportes\ListaClientes.rdlc" />
     <EmbeddedResource Include="Reportes\ListaEmpleados.rdlc" />
+    <EmbeddedResource Include="Reportes\ListaReservas.rdlc" />
     <EmbeddedResource Include="Reportes\ListaTipoHabitacion.rdlc" />
   </ItemGroup>
   <PropertyGroup>

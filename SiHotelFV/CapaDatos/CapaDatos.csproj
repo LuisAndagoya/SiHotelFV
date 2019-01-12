@@ -95,6 +95,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PrecioHabitacion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Clases\Reserva.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reserva.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Submenu.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -244,6 +249,17 @@
     </None>
     <None Include="Clases\PrecioHabitacion.xss">
       <DependentUpon>PrecioHabitacion.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\Reserva.xsc">
+      <DependentUpon>Reserva.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\Reserva.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Reserva.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Clases\Reserva.xss">
+      <DependentUpon>Reserva.xsd</DependentUpon>
     </None>
     <None Include="Clases\Submenu.xsc">
       <DependentUpon>Submenu.xsd</DependentUpon>

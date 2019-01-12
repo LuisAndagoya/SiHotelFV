@@ -61,7 +61,7 @@ namespace CapaWeb
 
             else
             {
-                this.Page.Response.Write("<script language='JavaScript'>window.alert('Usuario no registrado.');</script>");
+                Response.Redirect("ContrasenaEmail.aspx");
 
             }
 
