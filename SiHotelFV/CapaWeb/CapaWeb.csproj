@@ -76,6 +76,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -242,6 +243,9 @@
     <Content Include="Formularios\Empleado\Container.aspx" />
     <Content Include="Formularios\Empleado\Index.aspx" />
     <Content Include="inicio.aspx" />
+    <Content Include="Reportes\ReporteClientes.aspx" />
+    <Content Include="Reportes\ReporteEmpleados.aspx" />
+    <Content Include="Reportes\ReporteTipoHab.aspx" />
     <Content Include="Salir.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -619,6 +623,27 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\ReporteClientes.aspx.cs">
+      <DependentUpon>ReporteClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteClientes.aspx.designer.cs">
+      <DependentUpon>ReporteClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteEmpleados.aspx.cs">
+      <DependentUpon>ReporteEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteEmpleados.aspx.designer.cs">
+      <DependentUpon>ReporteEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteTipoHab.aspx.cs">
+      <DependentUpon>ReporteTipoHab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteTipoHab.aspx.designer.cs">
+      <DependentUpon>ReporteTipoHab.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Salir.aspx.cs">
       <DependentUpon>Salir.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -661,6 +686,11 @@
       <Project>{c74ed6b7-9b52-4352-92cc-b4ef339b9d1b}</Project>
       <Name>CapaProceso</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reportes\ListaClientes.rdlc" />
+    <EmbeddedResource Include="Reportes\ListaEmpleados.rdlc" />
+    <EmbeddedResource Include="Reportes\ListaTipoHabitacion.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
