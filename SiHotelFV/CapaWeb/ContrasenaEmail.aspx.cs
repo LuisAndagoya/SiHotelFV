@@ -15,44 +15,66 @@ namespace CapaWeb
         Email email = new Email();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UsuarioId"] != null)
-            {
-                Response.Redirect("inicio.aspx");
-            }
+            
         }
 
 
-       
-        protected void Email()
-        {
-           // string DatosEmail = CapaProceso.Clases.Email.Lista();
-            string Mensaje = "Se envió sus datos a su  correo antes registrado. Gracias";
-           
-         
-                CapaDatos.Clases.Usuario.usuarioDataTable DataTable = CapaProceso.Clases.Usuario.DatosUsuario(TxtUsu.Text);
 
+        public void enviar() {
 
+             
+            
+            CapaDatos.Clases.Usuario.usuarioDataTable DataTable = Usuario.ListaRecuperar (TxtUsu.Text);
+
+            int contar = 0;
+
+            foreach (DataRow row in DataTable.Rows)
+            {
+                contar++;
+            }
+
+            if (contar > 0)
+            {
+                Email email = new Email();
+                string nombre = "";
+                string apellido = "";
+                string correo = "";
+                short idUsuario = 0;
                 foreach (DataRow row in DataTable.Rows)
                 {
-                    Session["UsuarioId"] = row["idUsuario"];
-                    Session["UsuarioNomApe"] = row["nombreEmpleado"].ToString() + " " + row["apellidoEmpleado"].ToString();
-                    Session["idCargo"] = row["idCargo"];
-                    Session["estadoUsuario"] = row["estadoUsuario"];
+                    nombre = row["apellidoEmpleado"].ToString();
+                    apellido = row["nombreEmpleado"].ToString();
+                    correo = row["emailEmpleado"].ToString();
+                    idUsuario = short.Parse(row["idUsuario"].ToString());
+
                 }
-                short idUsuario = short.Parse(Session["UsuarioId"].ToString());
-                
-                Response.Redirect("Index.aspx");
+
+                var contrasenia = new Random().Next(0, 1000000000);
+
+                String mensaje = "<strong> Estimado(a): </strong>" + apellido.ToUpper() + " " + nombre.ToUpper() + "<br/>" + "Su nueva contraseña es: " + contrasenia;
+
+
+                email.enviarcorreo("Envio de  Contraseña", mensaje, correo);
+                CapaProceso.Clases.Usuario.ActualizarContrasenia(idUsuario, contrasenia.ToString());
+                this.Page.Response.Write("<script language='JavaScript'>window.alert('Se a enviado una nueva contraseña al email del usuario.');</script>");
             }
+
+            else
+            {
+                this.Page.Response.Write("<script language='JavaScript'>window.alert('Usuario no registrado.');</script>");
+
+            }
+
+
+           
+
+        }
 
         
         protected void Button1_Click(object sender, EventArgs e)
         {
-           
-            bool respuesta;
-
-            respuesta = email.enviarcorreo(TxtUsu.Text);
-
-            this.Page.Response.Write("<script language='JavaScript'>window.alert('Se a enviado una nueva contraseña al email del usuario.');</script>");
+            enviar();
+            
         }
     }
     }

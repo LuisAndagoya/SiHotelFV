@@ -14,6 +14,18 @@ namespace CapaProceso.Clases
             return CUsuario.GetLista();
         }
 
+        public static CapaDatos.Clases.Usuario.usuarioDataTable ListaRecuperar(string usernameUsuario)
+        {
+            
+            return CUsuario.GetListaRecuperar(usernameUsuario.Trim());
+        }
+
+        public static CapaDatos.Clases.Usuario.usuarioDataTable ListaContrasenia(int idUsuario)
+        {
+
+            return CUsuario.GetListaContrasenia(idUsuario);
+        }
+
         public static CapaDatos.Clases.Usuario.usuarioDataTable Empleado(short idUsuario)
         {
             return CUsuario.GetEmpleado(idUsuario);
@@ -48,7 +60,7 @@ namespace CapaProceso.Clases
             return CUsuario.GetListaActualizar(idUsuario);
         }
 
-      
+        
 
         public static string Eliminar(short idUsuario)
         {
@@ -85,6 +97,14 @@ namespace CapaProceso.Clases
                 return mensaje = "";
             }
         }
+
+        public static int ActualizarContrasenia(short idUsuario, string passwordUsuario)
+        {
+            string contraseniaEncriptada = codificar.Base64Encode(passwordUsuario);
+            CUsuario.ActualizarContrasenia(contraseniaEncriptada, idUsuario);
+            return 1;
+        }
+            
 
         public static string Insertar( string usernameUsuario, string passwordUsuario, string estadoUsuario, short idEmpleado, short idCargo)
         {

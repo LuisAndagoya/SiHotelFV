@@ -8,6 +8,8 @@ using System.Net;
 using System.Net.Mail;
 using System.Net.Http;
 using CapaDatos.Clases.EmailTableAdapters;
+using System.Data;
+
 
 namespace CapaProceso.Clases
 {
@@ -17,20 +19,17 @@ namespace CapaProceso.Clases
 
         MailMessage email = new MailMessage();
         SmtpClient smtp = new SmtpClient();
+       
 
-        public static CapaDatos.Clases.Email.host_mailDataTable Lista()
+       public bool enviarcorreo(string asunto, string mensaje, string correo)
         {
-            return CEmail.GetLista();
-        }
-        public bool enviarcorreo(string paraMail) {
-
 
             try
-            {
-                string asunto="Contraseña temporal";
-                string mensaje = "no se";
+            {    
+                              
+                
                 /* recuperar de base de tabla HostMail */
-                string Usuario = "cepes@cepes.ec";
+                string Usuario = "cordillera@cepes.ec";
                 string Contrasenia = "Orlando26";
                 string smtpHost = "mail.cepes.ec";
                 int puerto = 587;
@@ -38,7 +37,7 @@ namespace CapaProceso.Clases
                 /* recuperar de base de tabla HostMail */
 
                 email.From = new MailAddress(Usuario);
-                email.To.Add(new MailAddress(paraMail));
+                email.To.Add(new MailAddress(correo));                
                 email.Subject = asunto;
                 email.Body = mensaje;
                 email.IsBodyHtml = true;
@@ -51,8 +50,7 @@ namespace CapaProceso.Clases
                 return true;
             }
             catch (Exception e)
-            {
-               // Console.WriteLine(e.StackTrace);
+            {               
                 return false;
             }
 

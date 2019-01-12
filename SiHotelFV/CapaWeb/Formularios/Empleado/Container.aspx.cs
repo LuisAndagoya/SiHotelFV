@@ -217,7 +217,7 @@ namespace CapaWeb.Formularios.Empleado
 
                             Image1.ImageUrl = foto;
 
-                            txtfot.Text = foto;
+                            txtfot.Text = "Fotos/" + rutas;
 
                         }
 
@@ -230,7 +230,7 @@ namespace CapaWeb.Formularios.Empleado
 
                             Image1.ImageUrl = foto;
 
-                            txtfot.Text = foto;
+                            txtfot.Text = "Fotos/" + rutas; ;
 
                         }
 

@@ -201,6 +201,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="ContrasenaEmail.aspx" />
+    <Content Include="Contrasenia.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -241,7 +242,6 @@
     <Content Include="Formularios\Empleado\Container.aspx" />
     <Content Include="Formularios\Empleado\Index.aspx" />
     <Content Include="inicio.aspx" />
-    <Content Include="RecuperarContrasenia.aspx" />
     <Content Include="Salir.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -405,6 +405,13 @@
     </Compile>
     <Compile Include="ContrasenaEmail.aspx.designer.cs">
       <DependentUpon>ContrasenaEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contrasenia.aspx.cs">
+      <DependentUpon>Contrasenia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contrasenia.aspx.designer.cs">
+      <DependentUpon>Contrasenia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Cliente\Container.aspx.cs">
       <DependentUpon>Container.aspx</DependentUpon>
@@ -612,13 +619,6 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RecuperarContrasenia.aspx.cs">
-      <DependentUpon>RecuperarContrasenia.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="RecuperarContrasenia.aspx.designer.cs">
-      <DependentUpon>RecuperarContrasenia.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Salir.aspx.cs">
       <DependentUpon>Salir.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
