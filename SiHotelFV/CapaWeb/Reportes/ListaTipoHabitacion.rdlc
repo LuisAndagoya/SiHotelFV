@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.29375cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -301,7 +301,7 @@
         <Top>1.61078cm</Top>
         <Left>1.55787cm</Left>
         <Height>1.2cm</Height>
-        <Width>10cm</Width>
+        <Width>10.79375cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -312,7 +312,7 @@
         <Top>1.29328cm</Top>
         <Left>1.47849cm</Left>
         <Height>0cm</Height>
-        <Width>10.07938cm</Width>
+        <Width>10.87312cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -338,8 +338,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>0.37578cm</Top>
-        <Left>2.6162cm</Left>
+        <Top>0.34051cm</Top>
+        <Left>3.85974cm</Left>
         <Height>0.81167cm</Height>
         <Width>8.49187cm</Width>
         <ZIndex>2</ZIndex>
@@ -357,7 +357,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>4.96875in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
