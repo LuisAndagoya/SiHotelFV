@@ -229,6 +229,7 @@
     <Content Include="Formularios\Menu\Index.aspx" />
     <Content Include="Formularios\Preciohabitacion\Container.aspx" />
     <Content Include="Formularios\Preciohabitacion\Index.aspx" />
+    <Content Include="Formularios\Reserva.aspx" />
     <Content Include="Formularios\Submenu\Container.aspx" />
     <Content Include="Formularios\Submenu\Index.aspx" />
     <Content Include="Formularios\Tipohabitacion\Container.aspx" />
@@ -458,6 +459,13 @@
     </Compile>
     <Compile Include="Formularios\Estadoreserva\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reserva.aspx.cs">
+      <DependentUpon>Reserva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reserva.aspx.designer.cs">
+      <DependentUpon>Reserva.aspx</DependentUpon>
     </Compile>
     <Compile Include="QueryString.cs" />
     <Compile Include="Formularios\Auditoria\Index.aspx.cs">
