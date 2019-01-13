@@ -15,5 +15,15 @@ namespace CapaProceso.Clases
         {
             return CReserva.GetListaReservaRe();
         }
+
+        public static CapaDatos.Clases.Reserva.reservasDataTable Factura(short Id)
+        {
+            return CReserva.GetFactura(Id);
+        }
+        public static CapaDatos.Clases.Reserva.reservasDataTable Buscar(string buscar)
+        {
+            String buscarAux = "%" + buscar.Trim() + "%";
+            return CReserva.GetBuscar( buscarAux, buscarAux);
+        }
     }
 }
