@@ -20,9 +20,9 @@ namespace CapaDatos.Clases {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Empleado")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ReporteEmpleado")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Empleado : global::System.Data.DataSet {
+    public partial class ReporteEmpleado : global::System.Data.DataSet {
         
         private empleadoDataTable tableempleado;
         
@@ -30,7 +30,7 @@ namespace CapaDatos.Clases {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Empleado() {
+        public ReporteEmpleado() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CapaDatos.Clases {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected Empleado(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ReporteEmpleado(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Empleado cln = ((Empleado)(base.Clone()));
+            ReporteEmpleado cln = ((ReporteEmpleado)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Empleado";
+            this.DataSetName = "ReporteEmpleado";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Empleado.xsd";
+            this.Namespace = "http://tempuri.org/ReporteEmpleado.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableempleado = new empleadoDataTable();
@@ -225,7 +225,7 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Empleado ds = new Empleado();
+            ReporteEmpleado ds = new ReporteEmpleado();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -660,7 +660,7 @@ namespace CapaDatos.Clases {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Empleado ds = new Empleado();
+                ReporteEmpleado ds = new ReporteEmpleado();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -997,7 +997,7 @@ namespace CapaDatos.Clases {
         }
     }
 }
-namespace CapaDatos.Clases.EmpleadoTableAdapters {
+namespace CapaDatos.Clases.ReporteEmpleadoTableAdapters {
     
     
     /// <summary>
@@ -1243,7 +1243,7 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[10];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpl" +
@@ -1253,104 +1253,19 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM empleado\r\nWHERE        (idEmpleado = @idEmpleado)";
+            this._commandCollection[1].CommandText = @"SELECT        idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, 
+                         imagenEmpleado, estadoEmpleado
+FROM            empleado
+WHERE        (idEmpleado = @Id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmpleado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, 
-                         imagenEmpleado, estadoEmpleado
-FROM            empleado
-WHERE        (idEmpleado = @idEmpleado)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmpleado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, 
-                         imagenEmpleado, estadoEmpleado
-FROM            empleado
-WHERE        (nombreEmpleado LIKE @nombreEmpleado) OR
-                         (apellidoEmpleado LIKE @apellidoEmpleado) OR
-                         (dniEmpleado LIKE @dniEmpleado)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEmpleado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellidoEmpleado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "apellidoEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dniEmpleado", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dniEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT        idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, 
-                         imagenEmpleado, estadoEmpleado
-FROM            empleado";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, imagenEmpleado, estadoEmpleado FROM dbo.empleado
-
-WHERE idEmpleado=@idEmpleado";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmpleado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT        idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, 
-                         imagenEmpleado, estadoEmpleado
-FROM            empleado
-WHERE        (estadoEmpleado = 'ACTIVO')";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"INSERT INTO empleado
-                         (dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, 
-                         imagenEmpleado, estadoEmpleado)
-VALUES        (@dniEmpleado,@nombreEmpleado,@apellidoEmpleado,@fnacimientoEmpleado,@sexoEmpleado,@estadocivilEmpleado,@domicilioEmpleado,@telefmovilEmpleado,@fecharegistroEmpleado,@emailEmpleado,@imagenEmpleado,@estadoEmpleado); 
-SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, imagenEmpleado, estadoEmpleado FROM empleado WHERE (idEmpleado = SCOPE_IDENTITY())";
-            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dniEmpleado", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dniEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEmpleado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellidoEmpleado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "apellidoEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fnacimientoEmpleado", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fnacimientoEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sexoEmpleado", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "sexoEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadocivilEmpleado", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "estadocivilEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@domicilioEmpleado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "domicilioEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefmovilEmpleado", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "telefmovilEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecharegistroEmpleado", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fecharegistroEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emailEmpleado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "emailEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagenEmpleado", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "imagenEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoEmpleado", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "estadoEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "SELECT        COUNT(idEmpleado) AS Expr1\r\nFROM            empleado\r\nWHERE        " +
-                "(dniEmpleado = @dniEmpleado)";
-            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dniEmpleado", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dniEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = @"UPDATE       empleado
-SET                dniEmpleado = @dniEmpleado, nombreEmpleado = @nombreEmpleado, apellidoEmpleado = @apellidoEmpleado, fnacimientoEmpleado = @fnacimientoEmpleado, sexoEmpleado = @sexoEmpleado, 
-                         estadocivilEmpleado = @estadocivilEmpleado, domicilioEmpleado = @domicilioEmpleado, telefmovilEmpleado = @telefmovilEmpleado, fecharegistroEmpleado = @fecharegistroEmpleado, 
-                         emailEmpleado = @emailEmpleado, imagenEmpleado = @imagenEmpleado, estadoEmpleado = @estadoEmpleado
-WHERE        (idEmpleado = @idEmpleado); 
-SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, imagenEmpleado, estadoEmpleado FROM empleado WHERE (idEmpleado = @idEmpleado)";
-            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dniEmpleado", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dniEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEmpleado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellidoEmpleado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "apellidoEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fnacimientoEmpleado", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fnacimientoEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sexoEmpleado", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "sexoEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadocivilEmpleado", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "estadocivilEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@domicilioEmpleado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "domicilioEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telefmovilEmpleado", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "telefmovilEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fecharegistroEmpleado", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fecharegistroEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emailEmpleado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "emailEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagenEmpleado", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "imagenEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoEmpleado", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "estadoEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmpleado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Empleado.empleadoDataTable dataTable) {
+        public virtual int Fill(ReporteEmpleado.empleadoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1363,9 +1278,9 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Empleado.empleadoDataTable GetData() {
+        public virtual ReporteEmpleado.empleadoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Empleado.empleadoDataTable dataTable = new Empleado.empleadoDataTable();
+            ReporteEmpleado.empleadoDataTable dataTable = new ReporteEmpleado.empleadoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1374,9 +1289,9 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(Empleado.empleadoDataTable dataTable, int idEmpleado) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idEmpleado));
+        public virtual int FillBy(ReporteEmpleado.empleadoDataTable dataTable, int Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1388,10 +1303,10 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Empleado.empleadoDataTable GetReporte(int idEmpleado) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idEmpleado));
-            Empleado.empleadoDataTable dataTable = new Empleado.empleadoDataTable();
+        public virtual ReporteEmpleado.empleadoDataTable Reporte(int Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
+            ReporteEmpleado.empleadoDataTable dataTable = new ReporteEmpleado.empleadoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1399,77 +1314,14 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Empleado.empleadoDataTable GetBuscar(string nombreEmpleado, string apellidoEmpleado, string dniEmpleado) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((nombreEmpleado == null)) {
-                throw new global::System.ArgumentNullException("nombreEmpleado");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nombreEmpleado));
-            }
-            if ((apellidoEmpleado == null)) {
-                throw new global::System.ArgumentNullException("apellidoEmpleado");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(apellidoEmpleado));
-            }
-            if ((dniEmpleado == null)) {
-                throw new global::System.ArgumentNullException("dniEmpleado");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(dniEmpleado));
-            }
-            Empleado.empleadoDataTable dataTable = new Empleado.empleadoDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Empleado.empleadoDataTable GetLista() {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
-            Empleado.empleadoDataTable dataTable = new Empleado.empleadoDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Empleado.empleadoDataTable GetListaActualizar(int idEmpleado) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idEmpleado));
-            Empleado.empleadoDataTable dataTable = new Empleado.empleadoDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Empleado.empleadoDataTable GetListaEmpleado() {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
-            Empleado.empleadoDataTable dataTable = new Empleado.empleadoDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Empleado.empleadoDataTable dataTable) {
+        public virtual int Update(ReporteEmpleado.empleadoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Empleado dataSet) {
+        public virtual int Update(ReporteEmpleado dataSet) {
             return this.Adapter.Update(dataSet, "empleado");
         }
         
@@ -1920,255 +1772,6 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
                     string Original_estadoEmpleado) {
             return this.Update(dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, imagenEmpleado, estadoEmpleado, Original_idEmpleado, Original_dniEmpleado, Original_nombreEmpleado, Original_apellidoEmpleado, Original_fnacimientoEmpleado, Original_sexoEmpleado, Original_estadocivilEmpleado, Original_domicilioEmpleado, Original_telefmovilEmpleado, Original_fecharegistroEmpleado, Original_emailEmpleado, Original_imagenEmpleado, Original_estadoEmpleado, Original_idEmpleado);
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(int idEmpleado) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(idEmpleado));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string dniEmpleado, string nombreEmpleado, string apellidoEmpleado, string fnacimientoEmpleado, string sexoEmpleado, string estadocivilEmpleado, string domicilioEmpleado, string telefmovilEmpleado, string fecharegistroEmpleado, string emailEmpleado, string imagenEmpleado, string estadoEmpleado) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
-            if ((dniEmpleado == null)) {
-                throw new global::System.ArgumentNullException("dniEmpleado");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(dniEmpleado));
-            }
-            if ((nombreEmpleado == null)) {
-                throw new global::System.ArgumentNullException("nombreEmpleado");
-            }
-            else {
-                command.Parameters[1].Value = ((string)(nombreEmpleado));
-            }
-            if ((apellidoEmpleado == null)) {
-                throw new global::System.ArgumentNullException("apellidoEmpleado");
-            }
-            else {
-                command.Parameters[2].Value = ((string)(apellidoEmpleado));
-            }
-            if ((fnacimientoEmpleado == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[3].Value = ((string)(fnacimientoEmpleado));
-            }
-            if ((sexoEmpleado == null)) {
-                throw new global::System.ArgumentNullException("sexoEmpleado");
-            }
-            else {
-                command.Parameters[4].Value = ((string)(sexoEmpleado));
-            }
-            if ((estadocivilEmpleado == null)) {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[5].Value = ((string)(estadocivilEmpleado));
-            }
-            if ((domicilioEmpleado == null)) {
-                throw new global::System.ArgumentNullException("domicilioEmpleado");
-            }
-            else {
-                command.Parameters[6].Value = ((string)(domicilioEmpleado));
-            }
-            if ((telefmovilEmpleado == null)) {
-                throw new global::System.ArgumentNullException("telefmovilEmpleado");
-            }
-            else {
-                command.Parameters[7].Value = ((string)(telefmovilEmpleado));
-            }
-            if ((fecharegistroEmpleado == null)) {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[8].Value = ((string)(fecharegistroEmpleado));
-            }
-            if ((emailEmpleado == null)) {
-                throw new global::System.ArgumentNullException("emailEmpleado");
-            }
-            else {
-                command.Parameters[9].Value = ((string)(emailEmpleado));
-            }
-            if ((imagenEmpleado == null)) {
-                command.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[10].Value = ((string)(imagenEmpleado));
-            }
-            if ((estadoEmpleado == null)) {
-                command.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[11].Value = ((string)(estadoEmpleado));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> unico(string dniEmpleado) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
-            if ((dniEmpleado == null)) {
-                throw new global::System.ArgumentNullException("dniEmpleado");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(dniEmpleado));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            object returnValue;
-            try {
-                returnValue = command.ExecuteScalar();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            if (((returnValue == null) 
-                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
-            }
-            else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(string dniEmpleado, string nombreEmpleado, string apellidoEmpleado, string fnacimientoEmpleado, string sexoEmpleado, string estadocivilEmpleado, string domicilioEmpleado, string telefmovilEmpleado, string fecharegistroEmpleado, string emailEmpleado, string imagenEmpleado, string estadoEmpleado, int idEmpleado) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
-            if ((dniEmpleado == null)) {
-                throw new global::System.ArgumentNullException("dniEmpleado");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(dniEmpleado));
-            }
-            if ((nombreEmpleado == null)) {
-                throw new global::System.ArgumentNullException("nombreEmpleado");
-            }
-            else {
-                command.Parameters[1].Value = ((string)(nombreEmpleado));
-            }
-            if ((apellidoEmpleado == null)) {
-                throw new global::System.ArgumentNullException("apellidoEmpleado");
-            }
-            else {
-                command.Parameters[2].Value = ((string)(apellidoEmpleado));
-            }
-            if ((fnacimientoEmpleado == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[3].Value = ((string)(fnacimientoEmpleado));
-            }
-            if ((sexoEmpleado == null)) {
-                throw new global::System.ArgumentNullException("sexoEmpleado");
-            }
-            else {
-                command.Parameters[4].Value = ((string)(sexoEmpleado));
-            }
-            if ((estadocivilEmpleado == null)) {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[5].Value = ((string)(estadocivilEmpleado));
-            }
-            if ((domicilioEmpleado == null)) {
-                throw new global::System.ArgumentNullException("domicilioEmpleado");
-            }
-            else {
-                command.Parameters[6].Value = ((string)(domicilioEmpleado));
-            }
-            if ((telefmovilEmpleado == null)) {
-                throw new global::System.ArgumentNullException("telefmovilEmpleado");
-            }
-            else {
-                command.Parameters[7].Value = ((string)(telefmovilEmpleado));
-            }
-            if ((fecharegistroEmpleado == null)) {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[8].Value = ((string)(fecharegistroEmpleado));
-            }
-            if ((emailEmpleado == null)) {
-                throw new global::System.ArgumentNullException("emailEmpleado");
-            }
-            else {
-                command.Parameters[9].Value = ((string)(emailEmpleado));
-            }
-            if ((imagenEmpleado == null)) {
-                command.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[10].Value = ((string)(imagenEmpleado));
-            }
-            if ((estadoEmpleado == null)) {
-                command.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[11].Value = ((string)(estadoEmpleado));
-            }
-            command.Parameters[12].Value = ((int)(idEmpleado));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
     }
     
     /// <summary>
@@ -2262,7 +1865,7 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(Empleado dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ReporteEmpleado dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._empleadoTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.empleado.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -2281,7 +1884,7 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(Empleado dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ReporteEmpleado dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._empleadoTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.empleado.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -2299,7 +1902,7 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(Empleado dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ReporteEmpleado dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._empleadoTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.empleado.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -2341,7 +1944,7 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(Empleado dataSet) {
+        public virtual int UpdateAll(ReporteEmpleado dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

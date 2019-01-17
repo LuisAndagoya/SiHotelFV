@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace CapaWeb.Reportes
 {
-    public partial class ReservaFac : System.Web.UI.Page
+    public partial class Habitacion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

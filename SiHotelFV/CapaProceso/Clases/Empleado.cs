@@ -12,6 +12,10 @@ namespace CapaProceso.Clases
             return CEmpleado.GetLista();
         }
 
+        public static CapaDatos.Clases.Empleado.empleadoDataTable Reporte(short Id)
+        {
+            return CEmpleado.GetReporte(Id);
+        }
 
         public static CapaDatos.Clases.Empleado.empleadoDataTable ListaEmpleado()
         {

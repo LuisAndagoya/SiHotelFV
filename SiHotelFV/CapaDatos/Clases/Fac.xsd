@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Fac" targetNamespace="http://tempuri.org/Fac.xsd" xmlns:mstns="http://tempuri.org/Fac.xsd" xmlns="http://tempuri.org/Fac.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BDHotelFuenteVidaConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="BDHotelFuenteVidaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CapaDatos.Properties.Settings.GlobalReference.Default.BDHotelFuenteVidaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="reservasTableAdapter" GeneratorDataComponentClassName="reservasTableAdapter" Name="reservas" UserDataComponentName="reservasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDHotelFuenteVidaConnectionString (Settings)" DbObjectName="BDHotelFuenteVida.dbo.reservas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        * From reservas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idReservacion" DataSetColumn="idReservacion" />
+              <Mapping SourceColumn="idCliente" DataSetColumn="idCliente" />
+              <Mapping SourceColumn="idUsuario" DataSetColumn="idUsuario" />
+              <Mapping SourceColumn="fechaReservacion" DataSetColumn="fechaReservacion" />
+              <Mapping SourceColumn="fechaEntrada" DataSetColumn="fechaEntrada" />
+              <Mapping SourceColumn="fechaSalida" DataSetColumn="fechaSalida" />
+              <Mapping SourceColumn="idEstadoReserva" DataSetColumn="idEstadoReserva" />
+              <Mapping SourceColumn="totalReservacion" DataSetColumn="totalReservacion" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="BDHotelFuenteVidaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="Lista" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="Lista" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="Lista" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        detalle_reserva.idDetalle, detalle_reserva.idReserva, detalle_reserva.numeroHabitacion, detalle_reserva.fechaActual, detalle_reserva.valor, reservas.idReservacion, reservas.idCliente, reservas.idUsuario, 
+                         reservas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.idEstadoReserva, reservas.totalReservacion, cliente.idCliente AS Expr1, cliente.dniCliente, cliente.nombreCliente, 
+                         cliente.apellidoCliente, cliente.direccionCliente, usuario.idUsuario AS Expr2, usuario.usernameUsuario, estado_reserva.idEstadoReserva AS Expr3, estado_reserva.nombreEstado
+FROM            detalle_reserva INNER JOIN
+                         reservas ON detalle_reserva.idReserva = reservas.idReservacion INNER JOIN
+                         cliente ON reservas.idCliente = cliente.idCliente INNER JOIN
+                         usuario ON reservas.idUsuario = usuario.idUsuario INNER JOIN
+                         estado_reserva ON reservas.idEstadoReserva = estado_reserva.idEstadoReserva
+WHERE(idReserva=@Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="idReserva" DataSourceName="BDHotelFuenteVida.dbo.detalle_reserva" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idReserva" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Fac" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Fac" msprop:Generator_UserDSName="Fac">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="reservas" msprop:Generator_TableClassName="reservasDataTable" msprop:Generator_TableVarName="tablereservas" msprop:Generator_TablePropName="reservas" msprop:Generator_RowDeletingName="reservasRowDeleting" msprop:Generator_RowChangingName="reservasRowChanging" msprop:Generator_RowEvHandlerName="reservasRowChangeEventHandler" msprop:Generator_RowDeletedName="reservasRowDeleted" msprop:Generator_UserTableName="reservas" msprop:Generator_RowChangedName="reservasRowChanged" msprop:Generator_RowEvArgName="reservasRowChangeEvent" msprop:Generator_RowClassName="reservasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idReservacion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidReservacion" msprop:Generator_ColumnPropNameInRow="idReservacion" msprop:Generator_ColumnPropNameInTable="idReservacionColumn" msprop:Generator_UserColumnName="idReservacion" type="xs:int" />
+              <xs:element name="idCliente" msprop:Generator_ColumnVarNameInTable="columnidCliente" msprop:Generator_ColumnPropNameInRow="idCliente" msprop:Generator_ColumnPropNameInTable="idClienteColumn" msprop:Generator_UserColumnName="idCliente" type="xs:int" />
+              <xs:element name="idUsuario" msprop:Generator_ColumnVarNameInTable="columnidUsuario" msprop:Generator_ColumnPropNameInRow="idUsuario" msprop:Generator_ColumnPropNameInTable="idUsuarioColumn" msprop:Generator_UserColumnName="idUsuario" type="xs:int" />
+              <xs:element name="fechaReservacion" msprop:Generator_ColumnVarNameInTable="columnfechaReservacion" msprop:Generator_ColumnPropNameInRow="fechaReservacion" msprop:Generator_ColumnPropNameInTable="fechaReservacionColumn" msprop:Generator_UserColumnName="fechaReservacion" type="xs:dateTime" />
+              <xs:element name="fechaEntrada" msprop:Generator_ColumnVarNameInTable="columnfechaEntrada" msprop:Generator_ColumnPropNameInRow="fechaEntrada" msprop:Generator_ColumnPropNameInTable="fechaEntradaColumn" msprop:Generator_UserColumnName="fechaEntrada" type="xs:dateTime" />
+              <xs:element name="fechaSalida" msprop:Generator_ColumnVarNameInTable="columnfechaSalida" msprop:Generator_ColumnPropNameInRow="fechaSalida" msprop:Generator_ColumnPropNameInTable="fechaSalidaColumn" msprop:Generator_UserColumnName="fechaSalida" type="xs:dateTime" />
+              <xs:element name="idEstadoReserva" msprop:Generator_ColumnVarNameInTable="columnidEstadoReserva" msprop:Generator_ColumnPropNameInRow="idEstadoReserva" msprop:Generator_ColumnPropNameInTable="idEstadoReservaColumn" msprop:Generator_UserColumnName="idEstadoReserva" type="xs:int" />
+              <xs:element name="totalReservacion" msprop:Generator_ColumnVarNameInTable="columntotalReservacion" msprop:Generator_ColumnPropNameInRow="totalReservacion" msprop:Generator_ColumnPropNameInTable="totalReservacionColumn" msprop:Generator_UserColumnName="totalReservacion" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:reservas" />
+      <xs:field xpath="mstns:idReservacion" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

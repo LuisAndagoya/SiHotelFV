@@ -6,11 +6,10 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CapaProceso.Clases;
 
-namespace CapaWeb.Formularios.Reserva
+namespace CapaWeb.Formularios.Habitacion
 {
     public partial class Index : System.Web.UI.Page
     {
-
         private static Codificar codificar = new Codificar(); // Clase para emcriptar
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,11 +18,12 @@ namespace CapaWeb.Formularios.Reserva
 
                 CargarGrilla();
             }
+
         }
 
         private void CargarGrilla()
         {
-            Grid.DataSource = CapaProceso.Clases.Reserva.ListaReservaRe();
+            Grid.DataSource = CapaProceso.Clases.Habitacion.Lista();
 
 
 
@@ -32,6 +32,7 @@ namespace CapaWeb.Formularios.Reserva
 
 
         }
+
         protected void Grid_ItemCommand(object source, DataGridCommandEventArgs e)
         {
             //1 primero creo un objeto Clave/Valor de QueryString 
@@ -61,16 +62,6 @@ namespace CapaWeb.Formularios.Reserva
 
                     Response.Redirect("Container.aspx" + QSencriptadoCSharp.Encryption.EncryptQueryString(qs).ToString());
                     break;
-
-                case "Factura": //ejecuta el codigo si el usuario ingresa el numero 2
-                    Id = Convert.ToInt32(((Label)e.Item.Cells[1].FindControl("LblId")).Text);
-
-                    //2 voy a agregando los valores que deseo
-                    qs.Add("TRN", "FAC");
-                    qs.Add("Id", Id.ToString());
-
-                    Response.Redirect("../../Reportes/Factura.aspx" + QSencriptadoCSharp.Encryption.EncryptQueryString(qs).ToString());
-                    break;
             }
         }
 
@@ -85,7 +76,8 @@ namespace CapaWeb.Formularios.Reserva
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Grid.DataSource = CapaProceso.Clases.Reserva.Buscar(TxtBuscar.Text);
+            short Id = short.Parse(TxtBuscar.ToString());
+            Grid.DataSource = CapaProceso.Clases.Habitacion.Buscar(Id);
 
             Grid.DataBind();
             Grid.Height = 100;
@@ -102,7 +94,5 @@ namespace CapaWeb.Formularios.Reserva
             qs.Add("Id", "");
             Response.Redirect("Container.aspx" + QSencriptadoCSharp.Encryption.EncryptQueryString(qs).ToString());
         }
-
-
     }
 }

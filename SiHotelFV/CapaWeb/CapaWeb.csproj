@@ -221,6 +221,8 @@
     <Content Include="Formularios\Estadohabitacion\Index.aspx" />
     <Content Include="Formularios\Estadoreserva\Container.aspx" />
     <Content Include="Formularios\Estadoreserva\Index.aspx" />
+    <Content Include="Formularios\Habitacion\Container.aspx" />
+    <Content Include="Formularios\Habitacion\Index.aspx" />
     <Content Include="Formularios\Hotel\Container.aspx" />
     <Content Include="Formularios\Hotel\Index.aspx" />
     <Content Include="Formularios\Menucargo\Container.aspx" />
@@ -245,11 +247,15 @@
     <Content Include="Formularios\Empleado\Container.aspx" />
     <Content Include="Formularios\Empleado\Index.aspx" />
     <Content Include="inicio.aspx" />
+    <Content Include="Reportes\Factura.aspx" />
+    <Content Include="Reportes\Habitacion.aspx" />
     <Content Include="Reportes\ReporteClientes.aspx" />
     <Content Include="Reportes\ReporteEmpleados.aspx" />
+    <Content Include="Reportes\ReporteFilEmpleados.aspx" />
+    <Content Include="Reportes\ReporteFilHabitacion.aspx" />
+    <Content Include="Reportes\ReporteFilTHabitacion.aspx" />
     <Content Include="Reportes\ReporteReservaciones.aspx" />
     <Content Include="Reportes\ReporteTipoHab.aspx" />
-    <Content Include="Reportes\ReservaFac.aspx" />
     <Content Include="Salir.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -463,6 +469,20 @@
     <Compile Include="Formularios\Estadoreserva\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Habitacion\Container.aspx.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Habitacion\Container.aspx.designer.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Habitacion\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Habitacion\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Reserva\Container.aspx.cs">
       <DependentUpon>Container.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -641,6 +661,20 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\Factura.aspx.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\Factura.aspx.designer.cs">
+      <DependentUpon>Factura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Habitacion.aspx.cs">
+      <DependentUpon>Habitacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\Habitacion.aspx.designer.cs">
+      <DependentUpon>Habitacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReporteClientes.aspx.cs">
       <DependentUpon>ReporteClientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -655,6 +689,27 @@
     <Compile Include="Reportes\ReporteEmpleados.aspx.designer.cs">
       <DependentUpon>ReporteEmpleados.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReporteFilEmpleados.aspx.cs">
+      <DependentUpon>ReporteFilEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteFilEmpleados.aspx.designer.cs">
+      <DependentUpon>ReporteFilEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteFilHabitacion.aspx.cs">
+      <DependentUpon>ReporteFilHabitacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteFilHabitacion.aspx.designer.cs">
+      <DependentUpon>ReporteFilHabitacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteFilTHabitacion.aspx.cs">
+      <DependentUpon>ReporteFilTHabitacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteFilTHabitacion.aspx.designer.cs">
+      <DependentUpon>ReporteFilTHabitacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReporteReservaciones.aspx.cs">
       <DependentUpon>ReporteReservaciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -668,13 +723,6 @@
     </Compile>
     <Compile Include="Reportes\ReporteTipoHab.aspx.designer.cs">
       <DependentUpon>ReporteTipoHab.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\ReservaFac.aspx.cs">
-      <DependentUpon>ReservaFac.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reportes\ReservaFac.aspx.designer.cs">
-      <DependentUpon>ReservaFac.aspx</DependentUpon>
     </Compile>
     <Compile Include="Salir.aspx.cs">
       <DependentUpon>Salir.aspx</DependentUpon>
@@ -720,11 +768,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\FiltroTipoHabitacion.rdlc" />
     <EmbeddedResource Include="Reportes\ListaClientes.rdlc" />
     <EmbeddedResource Include="Reportes\ListaEmpleados.rdlc" />
     <EmbeddedResource Include="Reportes\ListaReservas.rdlc" />
     <EmbeddedResource Include="Reportes\ListaTipoHabitacion.rdlc" />
-    <EmbeddedResource Include="Reportes\ReservaFac.rdlc" />
+    <EmbeddedResource Include="Reportes\Nuevo.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporHabitacion.rdlc" />
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteHabitacion.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
