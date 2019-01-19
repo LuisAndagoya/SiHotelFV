@@ -16,6 +16,10 @@ namespace CapaProceso.Clases
             return CReserva.GetListaReservaRe();
         }
 
+        public static CapaDatos.Clases.Reserva.reservasDataTable Detalle()
+        {
+            return CReserva.GetDetalle();
+        }
         public static CapaDatos.Clases.Reserva.reservasDataTable Factura(short Id)
         {
             return CReserva.GetFactura(Id);
@@ -25,5 +29,25 @@ namespace CapaProceso.Clases
             String buscarAux = "%" + buscar.Trim() + "%";
             return CReserva.GetBuscar( buscarAux, buscarAux);
         }
+
+       
+        public static string Insertar(ReservaGuardar reservaGuardar)
+        {
+            string mensaje = "";
+
+
+            int resultado = CReserva.InsertarReserva(reservaGuardar.idCliente, reservaGuardar.idUsuario, reservaGuardar.fechaReservacion, reservaGuardar.fechaEntrada, reservaGuardar.fechaSalida, reservaGuardar.idEstadoReserva, reservaGuardar.totalReservacion, reservaGuardar.SaldoReserva, reservaGuardar.PagadoReserva);
+            if (resultado == 0)
+            {
+                return mensaje = "Error al insertar los registros";
+            }
+            else
+            {
+                return mensaje = "";
+            }
+
+        }
+
     }
 }
+

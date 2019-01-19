@@ -45,6 +45,7 @@
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\Codificar.cs" />
     <Compile Include="Clases\DescripcionHabitacion.cs" />
+    <Compile Include="Clases\DetalleReserva.cs" />
     <Compile Include="Clases\Email.cs" />
     <Compile Include="Clases\Empleado.cs" />
     <Compile Include="Clases\EstadoHabitacion.cs" />

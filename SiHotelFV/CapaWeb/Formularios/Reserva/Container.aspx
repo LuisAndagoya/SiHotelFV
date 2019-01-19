@@ -21,28 +21,25 @@
                     </div>
 
 
-                    <div class="form-group">
-                        <label for="ListaPrecio">Usuario</label>
-                       <asp:TextBox ID="TextBox1" class="form-control"  required ="required" runat="server"></asp:TextBox>
-                    </div>
+             
             
                   
                     <div class="form-group">
                             <label for="fechaReservacion">Fecha Reservación</label>
-                            <asp:TextBox type="datetime" ID="fechaReservacion" class="form-control" runat="server"></asp:TextBox>
+                            <asp:TextBox type="date" required ="required" ID="fechaReservacion" class="form-control" runat="server"></asp:TextBox>
                             
                     </div>
                  
 
                      <div class="form-group">
                             <label for="fechaEntrada">Fecha Entrada</label>
-                            <asp:TextBox type="datetime" ID="fechaEntrada" class="form-control" runat="server"></asp:TextBox>
+                            <asp:TextBox type="date" required ="required" ID="fechaEntrada" class="form-control" runat="server"></asp:TextBox>
                             
                     </div>
 
                      <div class="form-group">
                             <label for="fechaSalida">Fecha Salida</label>
-                            <asp:TextBox type="datetime" ID="fechaSalida" class="form-control" runat="server"></asp:TextBox>
+                            <asp:TextBox type="date" required ="required" ID="fechaSalida" class="form-control" runat="server"></asp:TextBox>
                             
                     </div>
                      
@@ -59,8 +56,31 @@
                          <asp:TextBox ID="totalReservacion" required ="required" class="form-control" runat="server"></asp:TextBox>
                     </div>
                   
-                      
+                      <div class="form-group">
+                        <label for="SaldoReserva">Saldo Reservación</label>
+                         <asp:TextBox ID="SaldoReserva" required ="required" class="form-control" runat="server"></asp:TextBox>
+                    </div>
+                     
+                     <div class="form-group">
+                        <label for="PagadoReserva">Pago Reservación</label>
+                         <asp:TextBox ID="PagadoReserva" required ="required" class="form-control" runat="server"></asp:TextBox>
+                    </div> 
    
+                     <div class="form-group">
+                        <label for="numeroHabitacion">N° Habitación</label>
+                         <asp:DropDownList ID="ListaHabitacion" required ="required" class="form-control" runat="server">
+                      </asp:DropDownList>
+                    </div> 
+
+                     <div class="form-group">
+                        <label for="valor">Precio</label>
+                         <asp:TextBox ID="valor" required ="required" class="form-control" runat="server"></asp:TextBox>
+                    </div> 
+                      <asp:Button class="btn btn-gradient-primary mr-2" ID="Button2" runat="server" 
+                          Text="Agregar Habitación" onclick="Button2_Click" />
+
+                    <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+
                       <asp:Button class="btn btn-gradient-primary mr-2" ID="Button1" runat="server" 
                           Text="Guardar" onclick="Button1_Click" />
                       <a href="Index.aspx" class="btn btn-light">Cancelar</a>

@@ -8,11 +8,11 @@ namespace CapaProceso.Clases
 {
     public class ModeloReservacionDetalle
     {
-        private int idDetalle { get; set; }
-        private int idReserva { get; set; }
-        private int numeroHabitacion { get; set; }
-        private string fechaActual { get; set; }
-        private float valor { get; set; }
+        public int idDetalle { get; set; }
+        public int idReserva { get; set; }
+        public int numeroHabitacion { get; set; }
+        public string fechaActual { get; set; }
+        public float valor { get; set; }
         public void load(int idDetalle, int idReserva, int numeroHabitacion, string fechaActual, float valor)
         {
             this.idDetalle = idDetalle;

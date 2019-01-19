@@ -60,6 +60,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DescripcionHabitacion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Clases\DetalleReserva.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DetalleReserva.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Email.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -197,6 +202,17 @@
     </None>
     <None Include="Clases\DescripcionHabitacion.xss">
       <DependentUpon>DescripcionHabitacion.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\DetalleReserva.xsc">
+      <DependentUpon>DetalleReserva.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\DetalleReserva.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DetalleReserva.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Clases\DetalleReserva.xss">
+      <DependentUpon>DetalleReserva.xsd</DependentUpon>
     </None>
     <None Include="Clases\Email.xsc">
       <DependentUpon>Email.xsd</DependentUpon>
