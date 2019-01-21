@@ -7,19 +7,22 @@ using System.Threading.Tasks;
 namespace CapaProceso.Clases
 {
     public class ModeloReservacionDetalle
-    {
-        public int idDetalle { get; set; }
-        public int idReserva { get; set; }
+    {       
+        
         public int numeroHabitacion { get; set; }
-        public string fechaActual { get; set; }
+        
         public float valor { get; set; }
-        public void ModeloReservacionDetalle(int numeroHabitacion, float valor)
+        public  ModeloReservacionDetalle(int numeroHabitacion, float valor)
         {            
             this.numeroHabitacion = numeroHabitacion;           
             this.valor = valor;
         }
 
-       
+        public ModeloReservacionDetalle()
+        {
+
+        }
+
 
 
     }

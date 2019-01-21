@@ -10,12 +10,12 @@ namespace CapaProceso.Clases
    public class DetalleReserva
     {
         private static detalle_reservaTableAdapter CReserva = new detalle_reservaTableAdapter();
-        public static string Insertar(ModeloReservacionDetalle detalleGuardar)
+        /*public static string Insertar(ModeloReservacionDetalle detalleGuardar)
         {
             string mensaje = "";
 
 
-            int resultado = CReserva.InsertarDetalle(detalleGuardar.idReserva, detalleGuardar.numeroHabitacion, detalleGuardar.fechaActual, detalleGuardar.valor);
+            int resultado = CReserva.InsertarDetalle(int idReserva, detalleGuardar.numeroHabitacion, detalleGuardar.fechaActual, detalleGuardar.valor);
             if (resultado == 0)
             {
                 return mensaje = "Error al insertar los registros";
@@ -25,6 +25,6 @@ namespace CapaProceso.Clases
                 return mensaje = "";
             }
 
-        }
+        }*/
     }
 }
