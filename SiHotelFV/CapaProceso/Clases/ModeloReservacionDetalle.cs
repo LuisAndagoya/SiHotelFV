@@ -13,14 +13,10 @@ namespace CapaProceso.Clases
         public int numeroHabitacion { get; set; }
         public string fechaActual { get; set; }
         public float valor { get; set; }
-        public void load(int idDetalle, int idReserva, int numeroHabitacion, string fechaActual, float valor)
-        {
-            this.idDetalle = idDetalle;
-            this.idReserva = idReserva;
-            this.numeroHabitacion = numeroHabitacion;
-            this.fechaActual = fechaActual;
+        public void ModeloReservacionDetalle(int numeroHabitacion, float valor)
+        {            
+            this.numeroHabitacion = numeroHabitacion;           
             this.valor = valor;
-
         }
 
        

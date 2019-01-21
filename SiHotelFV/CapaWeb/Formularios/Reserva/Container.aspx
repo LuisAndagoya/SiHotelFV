@@ -85,7 +85,7 @@
                           Text="Guardar" onclick="Button1_Click" />
                       <a href="Index.aspx" class="btn btn-light">Cancelar</a>
  
-        <asp:Label Visible ="false" ID="lblId" runat="server" Text=""></asp:Label>
+   
 
               </form>
             </div>
