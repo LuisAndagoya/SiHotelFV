@@ -2402,7 +2402,7 @@ SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitac
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitaci" +
@@ -2446,28 +2446,38 @@ WHERE        (habitacion.numeroHabitacion = @numeroHabitacion)";
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroHabitacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"INSERT INTO [dbo].[habitacion] ([numeroHabitacion], [tipoHabitacion_Idtipo], [hotel_CodigoHotel], [estadoHabitacion_idEstado]) VALUES (@numeroHabitacion, @tipoHabitacion_Idtipo, @hotel_CodigoHotel, @estadoHabitacion_idEstado);
-SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitacion_idEstado FROM habitacion WHERE (numeroHabitacion = @numeroHabitacion)";
+            this._commandCollection[5].CommandText = @"SELECT        precio_habitacion.precioHabitacion, tipo_habitacion.idtipo, tipo_habitacion.nombreTipo, tipo_habitacion.idPrecio, tipo_habitacion.imagenTipo, tipo_habitacion.estadoTipo, precio_habitacion.idPrecio AS Expr1, 
+                         precio_habitacion.fechaPrecio, precio_habitacion.estadoPrecio, habitacion.numeroHabitacion, habitacion.tipoHabitacion_Idtipo, habitacion.hotel_CodigoHotel, habitacion.estadoHabitacion_idEstado
+FROM            habitacion INNER JOIN
+                         tipo_habitacion ON habitacion.tipoHabitacion_Idtipo = tipo_habitacion.idtipo INNER JOIN
+                         precio_habitacion ON tipo_habitacion.idPrecio = precio_habitacion.idPrecio
+WHERE        (habitacion.numeroHabitacion = @numeroHabitacion) AND (precio_habitacion.estadoPrecio = 'ACTIVO')";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroHabitacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipoHabitacion_Idtipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "tipoHabitacion_Idtipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hotel_CodigoHotel", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "hotel_CodigoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoHabitacion_idEstado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "estadoHabitacion_idEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        COUNT(numeroHabitacion) AS Expr1\r\nFROM            habitacion\r\nWHERE" +
-                "        (numeroHabitacion = @numeroHabitacion)";
+            this._commandCollection[6].CommandText = @"INSERT INTO [dbo].[habitacion] ([numeroHabitacion], [tipoHabitacion_Idtipo], [hotel_CodigoHotel], [estadoHabitacion_idEstado]) VALUES (@numeroHabitacion, @tipoHabitacion_Idtipo, @hotel_CodigoHotel, @estadoHabitacion_idEstado);
+SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitacion_idEstado FROM habitacion WHERE (numeroHabitacion = @numeroHabitacion)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroHabitacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipoHabitacion_Idtipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "tipoHabitacion_Idtipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hotel_CodigoHotel", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "hotel_CodigoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoHabitacion_idEstado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "estadoHabitacion_idEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"UPDATE [dbo].[habitacion] SET [numeroHabitacion] = @numeroHabitacion, [tipoHabitacion_Idtipo] = @tipoHabitacion_Idtipo, [hotel_CodigoHotel] = @hotel_CodigoHotel, [estadoHabitacion_idEstado] = @estadoHabitacion_idEstado WHERE (([numeroHabitacion] = @numeroHabitacion));
-SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitacion_idEstado FROM habitacion WHERE (numeroHabitacion = @numeroHabitacion)";
+            this._commandCollection[7].CommandText = "SELECT        COUNT(numeroHabitacion) AS Expr1\r\nFROM            habitacion\r\nWHERE" +
+                "        (numeroHabitacion = @numeroHabitacion)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroHabitacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipoHabitacion_Idtipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "tipoHabitacion_Idtipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hotel_CodigoHotel", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "hotel_CodigoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoHabitacion_idEstado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "estadoHabitacion_idEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = @"UPDATE [dbo].[habitacion] SET [numeroHabitacion] = @numeroHabitacion, [tipoHabitacion_Idtipo] = @tipoHabitacion_Idtipo, [hotel_CodigoHotel] = @hotel_CodigoHotel, [estadoHabitacion_idEstado] = @estadoHabitacion_idEstado WHERE (([numeroHabitacion] = @numeroHabitacion));
+SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitacion_idEstado FROM habitacion WHERE (numeroHabitacion = @numeroHabitacion)";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroHabitacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipoHabitacion_Idtipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "tipoHabitacion_Idtipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hotel_CodigoHotel", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "hotel_CodigoHotel", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoHabitacion_idEstado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "estadoHabitacion_idEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2523,6 +2533,18 @@ SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitac
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Habitacion.habitacionDataTable GetListaActualizar(int numeroHabitacion) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(numeroHabitacion));
+            Habitacion.habitacionDataTable dataTable = new Habitacion.habitacionDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Habitacion.habitacionDataTable GetPrecioHabitacion(int numeroHabitacion) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(numeroHabitacion));
             Habitacion.habitacionDataTable dataTable = new Habitacion.habitacionDataTable();
             this.Adapter.Fill(dataTable);
@@ -2694,7 +2716,7 @@ SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitac
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(int numeroHabitacion, int tipoHabitacion_Idtipo, string hotel_CodigoHotel, int estadoHabitacion_idEstado) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             command.Parameters[0].Value = ((int)(numeroHabitacion));
             command.Parameters[1].Value = ((int)(tipoHabitacion_Idtipo));
             if ((hotel_CodigoHotel == null)) {
@@ -2725,7 +2747,7 @@ SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitac
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> unico(int numeroHabitacion) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             command.Parameters[0].Value = ((int)(numeroHabitacion));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2755,7 +2777,7 @@ SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitac
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(int numeroHabitacion, int tipoHabitacion_Idtipo, string hotel_CodigoHotel, int estadoHabitacion_idEstado) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             command.Parameters[0].Value = ((int)(numeroHabitacion));
             command.Parameters[1].Value = ((int)(tipoHabitacion_Idtipo));
             if ((hotel_CodigoHotel == null)) {

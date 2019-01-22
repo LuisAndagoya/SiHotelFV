@@ -18,11 +18,22 @@
                             <td>
                                 <table style="border-top: hidden">
                                     <tr>
-                                        <td colspan="3">
-                                            <label for="ListaCliente">Cliente</label></td>
-                                        <td colspan="3">
-                                            <asp:DropDownList ID="ListaCliente" required="required" class="form-control" runat="server">
-                                            </asp:DropDownList></td>
+                                        <td>
+                                            <label for="dniCliente">Cliente</label></td>
+                                        <td>
+                                            <asp:Label ID="idCliente" runat="server" Text="" Visible="False"></asp:Label>
+                                            <asp:TextBox required="required" ID="dniCliente" class="form-control" runat="server" OnTextChanged="dniCliente_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                        <td>
+
+                                            <label for="nombreCliente">Nombres</label></td>
+                                        <td>
+                                            <asp:TextBox required="required" ID="nombreCliente" class="form-control" runat="server" ReadOnly="true"></asp:TextBox>
+
+                                        <td>
+
+                                            <label for="apellidoCliente">Apellidos</label></td>
+                                        <td>
+                                            <asp:TextBox required="required" ID="apellidoCliente" class="form-control" runat="server" ReadOnly="true"></asp:TextBox>
                                     </tr>
 
                                 </table>
@@ -33,6 +44,12 @@
                             <td>
                                 <table style="border-top: hidden">
                                     <tr>
+
+                                        <td>
+                                            <label for="fechaReservacion">Fecha Reserva</label></td>
+                                        <td>
+                                            <asp:TextBox type="date" required="required" ID="fechaReservacion" class="form-control" runat="server"></asp:TextBox></td>
+
                                         <td>
                                             <label for="fechaEntrada">Fecha Entrada</label></td>
                                         <td>
@@ -42,6 +59,8 @@
                                             <label for="fechaSalida">Fecha Salida</label></td>
                                         <td>
                                             <asp:TextBox type="date" required="required" ID="fechaSalida" class="form-control" runat="server"></asp:TextBox></td>
+
+
                                     </tr>
                                 </table>
                             </td>
@@ -51,17 +70,20 @@
                                 <table style="border-top: hidden">
                                     <tr>
                                         <td>
-                                            <label for="totalReservacion">Total Reservación</label></td>
-                                        <td>
-                                            <asp:TextBox ID="totalReservacion" required="required" class="form-control" runat="server"></asp:TextBox></td>
-                                        <td>
                                             <label for="PagadoReserva">Pago Reservación</label></td>
                                         <td>
-                                            <asp:TextBox ID="PagadoReserva" required="required" class="form-control" runat="server"></asp:TextBox></td>
+                                            
+                                            <asp:TextBox  type="number" min="0.00" step="0.01" ID="PagadoReserva" required="required" class="form-control" runat="server" OnTextChanged="PagadoReserva_TextChanged" AutoPostBack="true"></asp:TextBox></td>
+                                        <td>
+
+                                            <label for="totalReservacion">Total Reservación</label></td>
+                                        <td>
+                                            <asp:TextBox ID="totalReservacion" ReadOnly="true" required="required" class="form-control" runat="server"></asp:TextBox></td>
+
                                         <td>
                                             <label for="SaldoReserva">Saldo Reservación</label></td>
                                         <td>
-                                            <asp:TextBox ID="SaldoReserva" required="required" class="form-control" runat="server"></asp:TextBox></td>
+                                            <asp:TextBox ID="SaldoReserva" ReadOnly="true" required="required" class="form-control" runat="server"></asp:TextBox></td>
                                     </tr>
                                 </table>
                             </td>
@@ -76,15 +98,16 @@
                                             <td>
                                                 <label for="ListaHabitacion">N° Habitación</label></td>
                                             <td colspan="2">
-                                                <asp:DropDownList ID="ListaHabitacion" required="required" class="form-control" runat="server">
+                                                <asp:DropDownList  ID="ListaHabitacion" required="required" class="form-control" runat="server" OnTextChanged="ListaHabitacion_TextChanged" AutoPostBack="true">
+                                                
                                                 </asp:DropDownList></td>
                                             <td>
                                                 <label for="valor">Precio</label></td>
                                             <td>
-                                                <asp:TextBox ID="valor" required="required" class="form-control" runat="server"></asp:TextBox></td>
+                                                <asp:TextBox   type="number" min="0.00" step="0.01" ID="valor" required="required" class="form-control" runat="server"></asp:TextBox></td>
                                             <td>
                                                 <asp:Button class="btn btn-gradient-dark btn-icon-text" ID="Button2" runat="server"
-                                                    Text="Agregar Habitación" OnClick="Button2_Click" UseSubmitBehavior="False" /></td>
+                                                    Text="Agregar Habitación" OnClick="Button2_Click" /></td>
                                         </td>
                                     </tr>
                                 </table>
@@ -115,7 +138,7 @@
                                         <asp:TemplateColumn HeaderText="Numero">
                                             <ItemTemplate>
                                                 <span style="float: left;">
-                                                    <asp:Label ID="fechaPrecio" runat="server" Text='<%#Eval("numeroHabitacion") %>'></asp:Label>
+                                                    <asp:Label ID="numeroHabitacion" runat="server" Text='<%#Eval("numeroHabitacion") %>'></asp:Label>
                                                 </span>
                                             </ItemTemplate>
                                         </asp:TemplateColumn>
@@ -123,7 +146,7 @@
                                         <asp:TemplateColumn HeaderText="Valor">
                                             <ItemTemplate>
                                                 <span style="float: left;">
-                                                    <asp:Label ID="estadoPrecio" runat="server" Text='<%#Eval("valor") %>'></asp:Label>
+                                                    <asp:Label ID="valor" runat="server" Text='<%#Eval("valor") %>'></asp:Label>
                                                 </span>
                                             </ItemTemplate>
                                         </asp:TemplateColumn>
@@ -143,7 +166,7 @@
                         </tr>
                         <tr>
                             <td>
-                                                                
+
                                 <table style="border-top: hidden">
                                     <tr>
                                         <td>

@@ -31,13 +31,49 @@ namespace CapaWeb.Formularios.Reserva {
         protected global::System.Web.UI.WebControls.Label LblErro;
         
         /// <summary>
-        /// Control ListaCliente.
+        /// Control idCliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ListaCliente;
+        protected global::System.Web.UI.WebControls.Label idCliente;
+        
+        /// <summary>
+        /// Control dniCliente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dniCliente;
+        
+        /// <summary>
+        /// Control nombreCliente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nombreCliente;
+        
+        /// <summary>
+        /// Control apellidoCliente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox apellidoCliente;
+        
+        /// <summary>
+        /// Control fechaReservacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox fechaReservacion;
         
         /// <summary>
         /// Control fechaEntrada.
@@ -58,15 +94,6 @@ namespace CapaWeb.Formularios.Reserva {
         protected global::System.Web.UI.WebControls.TextBox fechaSalida;
         
         /// <summary>
-        /// Control totalReservacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox totalReservacion;
-        
-        /// <summary>
         /// Control PagadoReserva.
         /// </summary>
         /// <remarks>
@@ -74,6 +101,15 @@ namespace CapaWeb.Formularios.Reserva {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox PagadoReserva;
+        
+        /// <summary>
+        /// Control totalReservacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox totalReservacion;
         
         /// <summary>
         /// Control SaldoReserva.

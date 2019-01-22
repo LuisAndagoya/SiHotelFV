@@ -29,6 +29,11 @@ namespace CapaProceso.Clases
             return CCliente.GetBuscar(buscarAux, buscarAux, buscarAux);
         }
 
+        public static CapaDatos.Clases.Cliente.clienteDataTable BuscarCi(string buscar)
+        {
+           
+            return CCliente.GetBuscarCi(buscar.Trim());
+        }
 
         public static string Insertar(string dniCliente, string nombreCliente, string apellidoCliente, string sexoCliente, string direccionCliente, string telefonoCliente, string correoCliente, string estadoCliente)
         {
