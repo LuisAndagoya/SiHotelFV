@@ -12,9 +12,15 @@ namespace CapaProceso.Clases
 
         private static tipo_habitacionTableAdapter CReporte = new tipo_habitacionTableAdapter();
 
-        public static CapaDatos.Clases.ReporteTipoHabitacion.tipo_habitacionDataTable Reporte(short Id)
+        public static CapaDatos.Clases.ReporteTipoHabitacion.tipo_habitacionDataTable Lista()
         {
-            return CReporte.Reporte(Id);
+            return CReporte.Lista();
+        }
+
+
+        public static CapaDatos.Clases.ReporteTipoHabitacion.tipo_habitacionDataTable Reporte1(short Id)
+        {
+            return CReporte.Reporte1(Id);
         }
     }
 }

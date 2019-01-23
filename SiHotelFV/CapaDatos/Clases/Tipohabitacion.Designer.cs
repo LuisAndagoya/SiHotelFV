@@ -331,6 +331,8 @@ namespace CapaDatos.Clases {
             
             private global::System.Data.DataColumn columnestadoTipo;
             
+            private global::System.Data.DataColumn columnmaximoTipo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tipo_habitacionDataTable() {
@@ -406,6 +408,14 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn maximoTipoColumn {
+                get {
+                    return this.columnmaximoTipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -441,14 +451,15 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tipo_habitacionRow Addtipo_habitacionRow(string nombreTipo, precio_habitacionRow parentprecio_habitacionRowByFK__tipo_habi__preci__1F63A897, string imagenTipo, string estadoTipo) {
+            public tipo_habitacionRow Addtipo_habitacionRow(string nombreTipo, precio_habitacionRow parentprecio_habitacionRowByFK__tipo_habi__preci__1F63A897, string imagenTipo, string estadoTipo, int maximoTipo) {
                 tipo_habitacionRow rowtipo_habitacionRow = ((tipo_habitacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         nombreTipo,
                         null,
                         imagenTipo,
-                        estadoTipo};
+                        estadoTipo,
+                        maximoTipo};
                 if ((parentprecio_habitacionRowByFK__tipo_habi__preci__1F63A897 != null)) {
                     columnValuesArray[2] = parentprecio_habitacionRowByFK__tipo_habi__preci__1F63A897[0];
                 }
@@ -486,6 +497,7 @@ namespace CapaDatos.Clases {
                 this.columnidPrecio = base.Columns["idPrecio"];
                 this.columnimagenTipo = base.Columns["imagenTipo"];
                 this.columnestadoTipo = base.Columns["estadoTipo"];
+                this.columnmaximoTipo = base.Columns["maximoTipo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -501,6 +513,8 @@ namespace CapaDatos.Clases {
                 base.Columns.Add(this.columnimagenTipo);
                 this.columnestadoTipo = new global::System.Data.DataColumn("estadoTipo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestadoTipo);
+                this.columnmaximoTipo = new global::System.Data.DataColumn("maximoTipo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmaximoTipo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidtipo}, true));
                 this.columnidtipo.AutoIncrement = true;
@@ -1025,6 +1039,22 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int maximoTipo {
+                get {
+                    try {
+                        return ((int)(this[this.tabletipo_habitacion.maximoTipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'maximoTipo\' de la tabla \'tipo_habitacion\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletipo_habitacion.maximoTipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public precio_habitacionRow precio_habitacionRow {
                 get {
                     return ((precio_habitacionRow)(this.GetParentRow(this.Table.ParentRelations["FK__tipo_habi__preci__1F63A897"])));
@@ -1044,6 +1074,18 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetimagenTipoNull() {
                 this[this.tabletipo_habitacion.imagenTipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmaximoTipoNull() {
+                return this.IsNull(this.tabletipo_habitacion.maximoTipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmaximoTipoNull() {
+                this[this.tabletipo_habitacion.maximoTipoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1315,10 +1357,11 @@ namespace CapaDatos.Clases.TipoHabitacionTableAdapters {
             tableMapping.ColumnMappings.Add("idPrecio", "idPrecio");
             tableMapping.ColumnMappings.Add("imagenTipo", "imagenTipo");
             tableMapping.ColumnMappings.Add("estadoTipo", "estadoTipo");
+            tableMapping.ColumnMappings.Add("maximoTipo", "maximoTipo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[tipo_habitacion] WHERE (([idtipo] = @Original_idtipo) AND ([nombreTipo] = @Original_nombreTipo) AND ([idPrecio] = @Original_idPrecio) AND ((@IsNull_imagenTipo = 1 AND [imagenTipo] IS NULL) OR ([imagenTipo] = @Original_imagenTipo)) AND ([estadoTipo] = @Original_estadoTipo))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[tipo_habitacion] WHERE (([idtipo] = @Original_idtipo) AND ([nombreTipo] = @Original_nombreTipo) AND ([idPrecio] = @Original_idPrecio) AND ((@IsNull_imagenTipo = 1 AND [imagenTipo] IS NULL) OR ([imagenTipo] = @Original_imagenTipo)) AND ([estadoTipo] = @Original_estadoTipo) AND ((@IsNull_maximoTipo = 1 AND [maximoTipo] IS NULL) OR ([maximoTipo] = @Original_maximoTipo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idtipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idtipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombreTipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreTipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1326,30 +1369,36 @@ namespace CapaDatos.Clases.TipoHabitacionTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_imagenTipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagenTipo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imagenTipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagenTipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_estadoTipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoTipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_maximoTipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maximoTipo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_maximoTipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maximoTipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tipo_habitacion] ([nombreTipo], [idPrecio], [imagenTipo], [estadoTipo]) VALUES (@nombreTipo, @idPrecio, @imagenTipo, @estadoTipo);
-SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion WHERE (idtipo = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tipo_habitacion] ([nombreTipo], [idPrecio], [imagenTipo], [estadoTipo], [maximoTipo]) VALUES (@nombreTipo, @idPrecio, @imagenTipo, @estadoTipo, @maximoTipo);
+SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo, maximoTipo FROM tipo_habitacion WHERE (idtipo = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreTipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPrecio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagenTipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagenTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoTipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maximoTipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maximoTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tipo_habitacion] SET [nombreTipo] = @nombreTipo, [idPrecio] = @idPrecio, [imagenTipo] = @imagenTipo, [estadoTipo] = @estadoTipo WHERE (([idtipo] = @Original_idtipo) AND ([nombreTipo] = @Original_nombreTipo) AND ([idPrecio] = @Original_idPrecio) AND ((@IsNull_imagenTipo = 1 AND [imagenTipo] IS NULL) OR ([imagenTipo] = @Original_imagenTipo)) AND ([estadoTipo] = @Original_estadoTipo));
-SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion WHERE (idtipo = @idtipo)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tipo_habitacion] SET [nombreTipo] = @nombreTipo, [idPrecio] = @idPrecio, [imagenTipo] = @imagenTipo, [estadoTipo] = @estadoTipo, [maximoTipo] = @maximoTipo WHERE (([idtipo] = @Original_idtipo) AND ([nombreTipo] = @Original_nombreTipo) AND ([idPrecio] = @Original_idPrecio) AND ((@IsNull_imagenTipo = 1 AND [imagenTipo] IS NULL) OR ([imagenTipo] = @Original_imagenTipo)) AND ([estadoTipo] = @Original_estadoTipo) AND ((@IsNull_maximoTipo = 1 AND [maximoTipo] IS NULL) OR ([maximoTipo] = @Original_maximoTipo)));
+SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo, maximoTipo FROM tipo_habitacion WHERE (idtipo = @idtipo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreTipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPrecio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagenTipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagenTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoTipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maximoTipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maximoTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idtipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idtipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombreTipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombreTipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idPrecio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idPrecio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_imagenTipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagenTipo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imagenTipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagenTipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_estadoTipo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "estadoTipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_maximoTipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maximoTipo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_maximoTipo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "maximoTipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idtipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idtipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1366,33 +1415,37 @@ SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM dbo.tipo_habitac" +
-                "ion";
+            this._commandCollection[0].CommandText = "SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo, maximoTipo FROM dbo." +
+                "tipo_habitacion";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[tipo_habitacion] WHERE (([idtipo] = @idtipo))";
+            this._commandCollection[1].CommandText = "DELETE FROM tipo_habitacion\r\nWHERE        (idtipo = @idtipo)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idtipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idtipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        tipo_habitacion.idtipo, tipo_habitacion.nombreTipo, precio_habitacion.precioHabitacion, tipo_habitacion.idPrecio, tipo_habitacion.imagenTipo, tipo_habitacion.estadoTipo
+            this._commandCollection[2].CommandText = @"SELECT        tipo_habitacion.idtipo, tipo_habitacion.nombreTipo, tipo_habitacion.idPrecio, tipo_habitacion.imagenTipo, tipo_habitacion.estadoTipo, tipo_habitacion.maximoTipo, precio_habitacion.idPrecio AS Expr1, 
+                         precio_habitacion.precioHabitacion
 FROM            tipo_habitacion INNER JOIN
-                         precio_habitacion ON precio_habitacion.idPrecio = tipo_habitacion.idPrecio
+                         precio_habitacion ON tipo_habitacion.idPrecio = precio_habitacion.idPrecio AND tipo_habitacion.idPrecio = precio_habitacion.idPrecio
 WHERE        (tipo_habitacion.nombreTipo = @nombreTipo)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreTipo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        tipo_habitacion.idtipo, tipo_habitacion.nombreTipo, precio_habitacion.precioHabitacion, tipo_habitacion.idPrecio, tipo_habitacion.imagenTipo, tipo_habitacion.estadoTipo
+            this._commandCollection[3].CommandText = @"SELECT        tipo_habitacion.idtipo, tipo_habitacion.nombreTipo, tipo_habitacion.idPrecio, tipo_habitacion.imagenTipo, tipo_habitacion.estadoTipo, tipo_habitacion.maximoTipo, precio_habitacion.idPrecio AS Expr1, 
+                         precio_habitacion.precioHabitacion
 FROM            tipo_habitacion INNER JOIN
-                         precio_habitacion ON precio_habitacion.idPrecio = tipo_habitacion.idPrecio";
+                         precio_habitacion ON tipo_habitacion.idPrecio = precio_habitacion.idPrecio AND tipo_habitacion.idPrecio = precio_habitacion.idPrecio";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT idtipo, nombreTipo, precioHabitacion, tipo_habitacion.idPrecio,imagenTipo," +
-                " estadoTipo FROM dbo.tipo_habitacion\r\nINNER JOIN precio_habitacion ON precio_hab" +
-                "itacion.idPrecio= tipo_habitacion.idPrecio\r\nWHERE(idtipo=@idtipo)";
+            this._commandCollection[4].CommandText = @"SELECT        tipo_habitacion.idtipo, tipo_habitacion.nombreTipo, tipo_habitacion.idPrecio, tipo_habitacion.imagenTipo, tipo_habitacion.estadoTipo, tipo_habitacion.maximoTipo, precio_habitacion.idPrecio AS Expr1, 
+                         precio_habitacion.precioHabitacion
+FROM            tipo_habitacion INNER JOIN
+                         precio_habitacion ON tipo_habitacion.idPrecio = precio_habitacion.idPrecio AND tipo_habitacion.idPrecio = precio_habitacion.idPrecio
+WHERE        (tipo_habitacion.idtipo = @idtipo)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idtipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idtipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
@@ -1402,13 +1455,14 @@ FROM            tipo_habitacion INNER JOIN
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"INSERT INTO [dbo].[tipo_habitacion] ([nombreTipo], [idPrecio], [imagenTipo], [estadoTipo]) VALUES (@nombreTipo, @idPrecio, @imagenTipo, @estadoTipo);
-SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion WHERE (idtipo = SCOPE_IDENTITY())";
+            this._commandCollection[6].CommandText = @"INSERT INTO [dbo].[tipo_habitacion] ([nombreTipo], [idPrecio], [imagenTipo], [estadoTipo], [maximoTipo]) VALUES (@nombreTipo, @idPrecio, @imagenTipo, @estadoTipo, @maximoTipo);
+SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo, maximoTipo FROM tipo_habitacion WHERE (idtipo = SCOPE_IDENTITY())";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreTipo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPrecio", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagenTipo", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "imagenTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoTipo", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "estadoTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maximoTipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "maximoTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
             this._commandCollection[7].CommandText = "SELECT        COUNT(idtipo) AS Expr1\r\nFROM            tipo_habitacion\r\nWHERE     " +
@@ -1417,15 +1471,14 @@ SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreTipo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = @"UPDATE       tipo_habitacion
-SET                nombreTipo = @nombreTipo, idPrecio = @idPrecio, imagenTipo = @imagenTipo, estadoTipo = @estadoTipo
-WHERE        (idtipo = @idtipo); 
-SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion WHERE (idtipo = @idtipo)";
+            this._commandCollection[8].CommandText = @"UPDATE [dbo].[tipo_habitacion] SET [nombreTipo] = @nombreTipo, [idPrecio] = @idPrecio, [imagenTipo] = @imagenTipo, [estadoTipo] = @estadoTipo, [maximoTipo] = @maximoTipo WHERE (([idtipo] = @idtipo));
+SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo, maximoTipo FROM tipo_habitacion WHERE (idtipo = @idtipo)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreTipo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idPrecio", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagenTipo", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "imagenTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoTipo", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "estadoTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@maximoTipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "maximoTipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idtipo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idtipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -1537,7 +1590,7 @@ SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idtipo, string Original_nombreTipo, int Original_idPrecio, string Original_imagenTipo, string Original_estadoTipo) {
+        public virtual int Delete(int Original_idtipo, string Original_nombreTipo, int Original_idPrecio, string Original_imagenTipo, string Original_estadoTipo, global::System.Nullable<int> Original_maximoTipo) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idtipo));
             if ((Original_nombreTipo == null)) {
                 throw new global::System.ArgumentNullException("Original_nombreTipo");
@@ -1560,6 +1613,14 @@ SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_estadoTipo));
             }
+            if ((Original_maximoTipo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_maximoTipo.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1580,7 +1641,7 @@ SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string nombreTipo, int idPrecio, string imagenTipo, string estadoTipo) {
+        public virtual int Insert(string nombreTipo, int idPrecio, string imagenTipo, string estadoTipo, global::System.Nullable<int> maximoTipo) {
             if ((nombreTipo == null)) {
                 throw new global::System.ArgumentNullException("nombreTipo");
             }
@@ -1599,6 +1660,12 @@ SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(estadoTipo));
+            }
+            if ((maximoTipo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(maximoTipo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1620,7 +1687,7 @@ SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nombreTipo, int idPrecio, string imagenTipo, string estadoTipo, int Original_idtipo, string Original_nombreTipo, int Original_idPrecio, string Original_imagenTipo, string Original_estadoTipo, int idtipo) {
+        public virtual int Update(string nombreTipo, int idPrecio, string imagenTipo, string estadoTipo, global::System.Nullable<int> maximoTipo, int Original_idtipo, string Original_nombreTipo, int Original_idPrecio, string Original_imagenTipo, string Original_estadoTipo, global::System.Nullable<int> Original_maximoTipo, int idtipo) {
             if ((nombreTipo == null)) {
                 throw new global::System.ArgumentNullException("nombreTipo");
             }
@@ -1640,29 +1707,43 @@ SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(estadoTipo));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_idtipo));
+            if ((maximoTipo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(maximoTipo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_idtipo));
             if ((Original_nombreTipo == null)) {
                 throw new global::System.ArgumentNullException("Original_nombreTipo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_nombreTipo));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_nombreTipo));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_idPrecio));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_idPrecio));
             if ((Original_imagenTipo == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_imagenTipo));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_imagenTipo));
             }
             if ((Original_estadoTipo == null)) {
                 throw new global::System.ArgumentNullException("Original_estadoTipo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_estadoTipo));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_estadoTipo));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(idtipo));
+            if ((Original_maximoTipo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_maximoTipo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(idtipo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1683,8 +1764,8 @@ SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string nombreTipo, int idPrecio, string imagenTipo, string estadoTipo, int Original_idtipo, string Original_nombreTipo, int Original_idPrecio, string Original_imagenTipo, string Original_estadoTipo) {
-            return this.Update(nombreTipo, idPrecio, imagenTipo, estadoTipo, Original_idtipo, Original_nombreTipo, Original_idPrecio, Original_imagenTipo, Original_estadoTipo, Original_idtipo);
+        public virtual int Update(string nombreTipo, int idPrecio, string imagenTipo, string estadoTipo, global::System.Nullable<int> maximoTipo, int Original_idtipo, string Original_nombreTipo, int Original_idPrecio, string Original_imagenTipo, string Original_estadoTipo, global::System.Nullable<int> Original_maximoTipo) {
+            return this.Update(nombreTipo, idPrecio, imagenTipo, estadoTipo, maximoTipo, Original_idtipo, Original_nombreTipo, Original_idPrecio, Original_imagenTipo, Original_estadoTipo, Original_maximoTipo, Original_idtipo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1715,7 +1796,7 @@ SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string nombreTipo, int idPrecio, string imagenTipo, string estadoTipo) {
+        public virtual int InsertQuery(string nombreTipo, int idPrecio, string imagenTipo, string estadoTipo, global::System.Nullable<int> maximoTipo) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((nombreTipo == null)) {
                 throw new global::System.ArgumentNullException("nombreTipo");
@@ -1735,6 +1816,12 @@ SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion
             }
             else {
                 command.Parameters[3].Value = ((string)(estadoTipo));
+            }
+            if ((maximoTipo.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(maximoTipo.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1791,7 +1878,7 @@ SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(string nombreTipo, int idPrecio, string imagenTipo, string estadoTipo, int idtipo) {
+        public virtual int UpdateQuery(string nombreTipo, int idPrecio, string imagenTipo, string estadoTipo, global::System.Nullable<int> maximoTipo, int idtipo) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             if ((nombreTipo == null)) {
                 throw new global::System.ArgumentNullException("nombreTipo");
@@ -1812,7 +1899,13 @@ SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo FROM tipo_habitacion
             else {
                 command.Parameters[3].Value = ((string)(estadoTipo));
             }
-            command.Parameters[4].Value = ((int)(idtipo));
+            if ((maximoTipo.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(maximoTipo.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[5].Value = ((int)(idtipo));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

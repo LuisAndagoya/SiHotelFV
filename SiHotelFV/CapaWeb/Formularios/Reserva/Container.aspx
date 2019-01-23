@@ -80,7 +80,7 @@
                           Text="Agregar Habitación" onclick="Button2_Click" />
 
                     <asp:GridView ID="GridView1" runat="server"></asp:GridView>
-
+                    
                       <asp:Button class="btn btn-gradient-primary mr-2" ID="Button1" runat="server" 
                           Text="Guardar" onclick="Button1_Click" />
                       <a href="Index.aspx" class="btn btn-light">Cancelar</a>

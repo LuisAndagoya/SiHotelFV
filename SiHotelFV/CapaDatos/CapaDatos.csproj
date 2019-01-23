@@ -120,6 +120,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteHabitacion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Clases\ReportePersona.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportePersona.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\ReporteTipoHabitacion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -334,6 +339,17 @@
     </None>
     <None Include="Clases\ReporteHabitacion.xss">
       <DependentUpon>ReporteHabitacion.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\ReportePersona.xsc">
+      <DependentUpon>ReportePersona.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\ReportePersona.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportePersona.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Clases\ReportePersona.xss">
+      <DependentUpon>ReportePersona.xsd</DependentUpon>
     </None>
     <None Include="Clases\ReporteTipoHabitacion.xsc">
       <DependentUpon>ReporteTipoHabitacion.xsd</DependentUpon>

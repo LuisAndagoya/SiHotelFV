@@ -17,6 +17,10 @@ namespace CapaProceso.Clases
             return CCliente.GetLista();
         }
 
+        public static CapaDatos.Clases.Cliente.clienteDataTable Reporte(string Id)
+        {
+            return CCliente.Reporte(Id);
+        }
         public static CapaDatos.Clases.Cliente.clienteDataTable ListaActualizar(short idCliente)
         {
             return CCliente.GetListaActualizar(idCliente);

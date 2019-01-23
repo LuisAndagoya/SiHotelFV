@@ -16,7 +16,7 @@
                     </div>
          
                     <div class="form-group">
-                        <label for="ListaEmpleado">Empleado</label>
+                        <label for="ListaEmpleado">Cargo</label>
                          <asp:DropDownList ID="ListaEmpleado" class="form-control" runat="server">
                       </asp:DropDownList>
                         
@@ -32,13 +32,13 @@
         <asp:Label Visible ="false" ID="lblId" runat="server" Text=""></asp:Label>
                     <asp:TextBox Visible="false" ID="TextBox1" runat="server"></asp:TextBox>
                     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="500px" Width="100%">
-                        <LocalReport ReportPath="Reportes\Nuevo.rdlc">
+                        <LocalReport ReportPath="Reportes\Empleado.rdlc">
                              <DataSources>
-                                <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
+                                <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSetCargo" />
                             </DataSources>
                         </LocalReport>
                      </rsweb:ReportViewer>
-                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="Reporte"
+                     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="Cargo"
                         TypeName="CapaProceso.Clases.ReporteEmpleado" OldValuesParameterFormatString="original_{0}">
                          <SelectParameters>
                              <asp:ControlParameter ControlID="ListaEmpleado" Name="Id" PropertyName="SelectedValue" Type="Int16" />

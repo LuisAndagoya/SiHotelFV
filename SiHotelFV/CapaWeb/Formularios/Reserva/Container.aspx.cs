@@ -46,23 +46,22 @@ namespace CapaWeb.Formularios.Reserva
         }
         
        
-        protected void Grid_ItemCommand(object source, DataGridCommandEventArgs e)
-        {
-           
-        }
+       
 
-
+        List<ModeloReservacionDetalle> Lista= new List<ModeloReservacionDetalle>();
         public void InsertarDetalle()
         {
+
+
             ModeloReservacionDetalle item = new ModeloReservacionDetalle(int.Parse(ListaHabitacion.SelectedValue.ToString()), float.Parse(valor.Text));
-                       
-           
+
+            Lista.Add(item);
             
-            modeloReservacionDetalle.Add(item);
+            //modeloReservacionDetalle.Add(item);
 
             GridView1.DataSource = null;
-            GridView1.DataSource = modeloReservacionDetalle;
-
+            GridView1.DataSource = Lista;
+            
 
         } 
        

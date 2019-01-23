@@ -17,7 +17,30 @@
         </rsweb:ReportViewer>
 
 
-         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="Lista" TypeName="CapaDatos.Clases.ReporteHabitacionTableAdapters.habitacionTableAdapter">
+         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Lista" TypeName="CapaDatos.Clases.ReporteHabitacionTableAdapters.habitacionTableAdapter" UpdateMethod="Update" DeleteMethod="Delete" InsertMethod="Insert">
+            
+             <DeleteParameters>
+                 <asp:Parameter Name="Original_numeroHabitacion" Type="Int32" />
+                 <asp:Parameter Name="Original_tipoHabitacion_Idtipo" Type="Int32" />
+                 <asp:Parameter Name="Original_hotel_CodigoHotel" Type="String" />
+                 <asp:Parameter Name="Original_estadoHabitacion_idEstado" Type="Int32" />
+             </DeleteParameters>
+             <InsertParameters>
+                 <asp:Parameter Name="numeroHabitacion" Type="Int32" />
+                 <asp:Parameter Name="tipoHabitacion_Idtipo" Type="Int32" />
+                 <asp:Parameter Name="hotel_CodigoHotel" Type="String" />
+                 <asp:Parameter Name="estadoHabitacion_idEstado" Type="Int32" />
+             </InsertParameters>
+            
+             <UpdateParameters>
+                 <asp:Parameter Name="tipoHabitacion_Idtipo" Type="Int32" />
+                 <asp:Parameter Name="hotel_CodigoHotel" Type="String" />
+                 <asp:Parameter Name="estadoHabitacion_idEstado" Type="Int32" />
+                 <asp:Parameter Name="Original_numeroHabitacion" Type="Int32" />
+                 <asp:Parameter Name="Original_tipoHabitacion_Idtipo" Type="Int32" />
+                 <asp:Parameter Name="Original_hotel_CodigoHotel" Type="String" />
+                 <asp:Parameter Name="Original_estadoHabitacion_idEstado" Type="Int32" />
+             </UpdateParameters>
     
           </asp:ObjectDataSource>
         </form>

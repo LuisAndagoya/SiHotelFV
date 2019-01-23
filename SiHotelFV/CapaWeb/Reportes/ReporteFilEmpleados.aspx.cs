@@ -30,9 +30,9 @@ namespace CapaWeb.Reportes
         {
        
             //Llenar un combo box dinamicamente con tabla adapter
-            ListaEmpleado.DataSource = CapaProceso.Clases.Empleado.Lista();
-                ListaEmpleado.DataTextField = "dniEmpleado";
-                ListaEmpleado.DataValueField = "idEmpleado";
+            ListaEmpleado.DataSource = CapaProceso.Clases.Cargo.Lista();
+                ListaEmpleado.DataTextField = "nombreCargo";
+                ListaEmpleado.DataValueField = "idCargo";
                 ListaEmpleado.DataBind();
             
         }
@@ -50,7 +50,7 @@ namespace CapaWeb.Reportes
             
             string Id = ListaEmpleado.SelectedValue.ToString();
             ReportParameter[] parametros = new ReportParameter[1];
-            parametros[0] = new ReportParameter("idEmpleado", Id);
+            parametros[0] = new ReportParameter("idCargo", Id);
             this.ReportViewer1.LocalReport.SetParameters(parametros);
 
             this.ReportViewer1.LocalReport.Refresh();

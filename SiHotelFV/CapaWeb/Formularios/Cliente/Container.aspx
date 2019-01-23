@@ -66,7 +66,7 @@
 
                     
                       <div class="form-group">
-                        <label for="estadoCliente">Estado civil</label>
+                        <label for="estadoCliente">Estado</label>
                               <asp:DropDownList ID="estadoCliente" class="form-control" runat="server">
                           <asp:ListItem Selected="True" Value="ACTIVO">ACTIVO</asp:ListItem>
                           <asp:ListItem Value="INACTIVO">INACTIVO</asp:ListItem>

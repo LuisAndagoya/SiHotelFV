@@ -1243,7 +1243,7 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpl" +
@@ -1253,12 +1253,26 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, 
-                         imagenEmpleado, estadoEmpleado
-FROM            empleado
-WHERE        (idEmpleado = @Id)";
+            this._commandCollection[1].CommandText = @"SELECT        usuario.idUsuario, usuario.idEmpleado, usuario.idCargo, empleado.idEmpleado AS Expr1, empleado.dniEmpleado, empleado.nombreEmpleado, empleado.apellidoEmpleado, empleado.fnacimientoEmpleado, 
+                         empleado.sexoEmpleado, empleado.estadocivilEmpleado, empleado.domicilioEmpleado, empleado.telefmovilEmpleado, empleado.fecharegistroEmpleado, empleado.emailEmpleado, 
+                         empleado.imagenEmpleado, empleado.estadoEmpleado, cargo.idCargo AS Expr2, cargo.nombreCargo
+FROM            usuario INNER JOIN
+                         empleado ON usuario.idEmpleado = empleado.idEmpleado INNER JOIN
+                         cargo ON usuario.idCargo = cargo.idCargo
+WHERE        (usuario.idCargo = @Id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        cargo.idCargo, cargo.nombreCargo, usuario.idUsuario, usuario.usernameUsuario, usuario.estadoUsuario, usuario.idEmpleado, usuario.idCargo AS Expr1, empleado.idEmpleado AS Expr2, 
+                         empleado.dniEmpleado, empleado.nombreEmpleado, empleado.apellidoEmpleado, empleado.fnacimientoEmpleado, empleado.sexoEmpleado, empleado.estadocivilEmpleado, empleado.domicilioEmpleado, 
+                         empleado.telefmovilEmpleado, empleado.fecharegistroEmpleado, empleado.emailEmpleado, empleado.imagenEmpleado, empleado.estadoEmpleado
+FROM            cargo INNER JOIN
+                         usuario ON usuario.idCargo = cargo.idCargo INNER JOIN
+                         empleado ON usuario.idEmpleado = empleado.idEmpleado
+WHERE        (cargo.idCargo = @Id)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1305,6 +1319,32 @@ WHERE        (idEmpleado = @Id)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ReporteEmpleado.empleadoDataTable Reporte(int Id) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
+            ReporteEmpleado.empleadoDataTable dataTable = new ReporteEmpleado.empleadoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(ReporteEmpleado.empleadoDataTable dataTable, int Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ReporteEmpleado.empleadoDataTable Cargo(int Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
             ReporteEmpleado.empleadoDataTable dataTable = new ReporteEmpleado.empleadoDataTable();
             this.Adapter.Fill(dataTable);

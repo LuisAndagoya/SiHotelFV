@@ -247,6 +247,8 @@
     <Content Include="Formularios\Empleado\Container.aspx" />
     <Content Include="Formularios\Empleado\Index.aspx" />
     <Content Include="inicio.aspx" />
+    <Content Include="Reportes\ClienteReporte.aspx" />
+    <Content Include="Reportes\EstadoHabitacion.aspx" />
     <Content Include="Reportes\Factura.aspx" />
     <Content Include="Reportes\Habitacion.aspx" />
     <Content Include="Reportes\ReporteClientes.aspx" />
@@ -661,6 +663,20 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\ClienteReporte.aspx.cs">
+      <DependentUpon>ClienteReporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ClienteReporte.aspx.designer.cs">
+      <DependentUpon>ClienteReporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EstadoHabitacion.aspx.cs">
+      <DependentUpon>EstadoHabitacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\EstadoHabitacion.aspx.designer.cs">
+      <DependentUpon>EstadoHabitacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Factura.aspx.cs">
       <DependentUpon>Factura.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -768,6 +784,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\Cliente.rdlc" />
+    <EmbeddedResource Include="Reportes\Empleado.rdlc" />
     <EmbeddedResource Include="Reportes\FiltroTipoHabitacion.rdlc" />
     <EmbeddedResource Include="Reportes\ListaClientes.rdlc" />
     <EmbeddedResource Include="Reportes\ListaEmpleados.rdlc" />
@@ -776,7 +794,10 @@
     <EmbeddedResource Include="Reportes\Nuevo.rdlc" />
     <EmbeddedResource Include="Reportes\ReporHabitacion.rdlc" />
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteCliente.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteEstado.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteHabitacion.rdlc" />
+    <EmbeddedResource Include="Reportes\TipoHabitacionR.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -841,7 +841,7 @@ SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitac
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitaci" +
@@ -856,9 +856,9 @@ FROM            habitacion INNER JOIN
                          precio_habitacion ON tipo_habitacion.idPrecio = precio_habitacion.idPrecio AND tipo_habitacion.idPrecio = precio_habitacion.idPrecio INNER JOIN
                          hotel ON habitacion.hotel_CodigoHotel = hotel.codHotel AND habitacion.hotel_CodigoHotel = hotel.codHotel INNER JOIN
                          estado_habitacion ON habitacion.estadoHabitacion_idEstado = estado_habitacion.idEstadoHabitacion
-WHERE        (habitacion.numeroHabitacion = @Id)";
+WHERE        (tipo_habitacion.idtipo = @Id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idtipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT        habitacion.numeroHabitacion, habitacion.tipoHabitacion_Idtipo, habitacion.hotel_CodigoHotel, habitacion.estadoHabitacion_idEstado, tipo_habitacion.idtipo, tipo_habitacion.nombreTipo, tipo_habitacion.idPrecio, 
@@ -870,6 +870,18 @@ FROM            habitacion INNER JOIN
                          estado_habitacion ON habitacion.estadoHabitacion_idEstado = estado_habitacion.idEstadoHabitacion
 ";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT        habitacion.numeroHabitacion, habitacion.tipoHabitacion_Idtipo, habitacion.hotel_CodigoHotel, habitacion.estadoHabitacion_idEstado, tipo_habitacion.idtipo, tipo_habitacion.nombreTipo, tipo_habitacion.idPrecio, 
+                         precio_habitacion.precioHabitacion, precio_habitacion.idPrecio AS Expr1, hotel.nombreHotel, hotel.codHotel, estado_habitacion.idEstadoHabitacion, estado_habitacion.nombreEstadoHabitacion
+FROM            habitacion INNER JOIN
+                         tipo_habitacion ON habitacion.tipoHabitacion_Idtipo = tipo_habitacion.idtipo AND habitacion.tipoHabitacion_Idtipo = tipo_habitacion.idtipo INNER JOIN
+                         precio_habitacion ON tipo_habitacion.idPrecio = precio_habitacion.idPrecio AND tipo_habitacion.idPrecio = precio_habitacion.idPrecio INNER JOIN
+                         hotel ON habitacion.hotel_CodigoHotel = hotel.codHotel AND habitacion.hotel_CodigoHotel = hotel.codHotel INNER JOIN
+                         estado_habitacion ON habitacion.estadoHabitacion_idEstado = estado_habitacion.idEstadoHabitacion
+WHERE        (estado_habitacion.idEstadoHabitacion = @Id)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -941,6 +953,32 @@ FROM            habitacion INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual ReporteHabitacion.habitacionDataTable Lista() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            ReporteHabitacion.habitacionDataTable dataTable = new ReporteHabitacion.habitacionDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy2(ReporteHabitacion.habitacionDataTable dataTable, int Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ReporteHabitacion.habitacionDataTable Estado(int Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
             ReporteHabitacion.habitacionDataTable dataTable = new ReporteHabitacion.habitacionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

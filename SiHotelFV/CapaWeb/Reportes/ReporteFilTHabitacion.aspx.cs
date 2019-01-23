@@ -28,9 +28,9 @@ namespace CapaWeb.Reportes
         {
 
             //Llenar un combo box dinamicamente con tabla adapter
-            ListaHabitacion.DataSource = CapaProceso.Clases.TipoHabitacion.Lista();
-            ListaHabitacion.DataTextField = "nombreTipo";
-            ListaHabitacion.DataValueField = "idtipo";
+            ListaHabitacion.DataSource = CapaProceso.Clases.PrecioHabitacion.Lista();
+            ListaHabitacion.DataTextField = "precioHabitacion";
+            ListaHabitacion.DataValueField = "idPrecio";
             ListaHabitacion.DataBind();
 
         }
@@ -44,7 +44,7 @@ namespace CapaWeb.Reportes
 
            string Id = ListaHabitacion.SelectedValue.ToString();
             ReportParameter[] parametros = new ReportParameter[1];
-            parametros[0] = new ReportParameter("idtipo", Id);
+            parametros[0] = new ReportParameter("idPrecio", Id);
             this.ReportViewer1.LocalReport.SetParameters(parametros);
 
             this.ReportViewer1.LocalReport.Refresh();

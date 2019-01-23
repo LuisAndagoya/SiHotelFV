@@ -57,6 +57,7 @@
     <Compile Include="Clases\Menucargo.cs" />
     <Compile Include="Clases\ModeloReservacionDetalle.cs" />
     <Compile Include="Clases\PrecioHabitacion.cs" />
+    <Compile Include="Clases\ReporteCliente.cs" />
     <Compile Include="Clases\ReporteEmpleado.cs" />
     <Compile Include="Clases\ReporteHabitacion.cs" />
     <Compile Include="Clases\ReporteTipoHabitacion.cs" />

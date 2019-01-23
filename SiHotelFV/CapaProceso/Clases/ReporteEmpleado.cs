@@ -15,5 +15,10 @@ namespace CapaProceso.Clases
         {
             return CReporte.Reporte(Id);
         }
+        public static CapaDatos.Clases.ReporteEmpleado.empleadoDataTable Cargo(short Id)
+        {
+            return CReporte.Cargo(Id);
+        }
+
     }
 }

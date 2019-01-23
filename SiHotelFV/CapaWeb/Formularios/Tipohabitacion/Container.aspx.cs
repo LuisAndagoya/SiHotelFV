@@ -75,6 +75,7 @@ namespace CapaWeb.Formularios.Tipohabitacion
                     estadoTipo.SelectedValue = row["estadoTipo"].ToString();
                     nombreTipo.Text = row["nombreTipo"].ToString();
                     txtfot.Text = row["imagenTipo"].ToString();
+                    maximoTipo.Text = row["maximoTipo"].ToString();
 
                     lblId.Text = row["idtipo"].ToString();
                 }
@@ -106,6 +107,7 @@ namespace CapaWeb.Formularios.Tipohabitacion
             nombreTipo.Enabled = false;
             txtfot.Enabled = false;
             estadoTipo.Enabled = false;
+            maximoTipo.Enabled = false;
             LblErro.Text = "Confirme la eliminación de los datos";
         }
 
@@ -118,7 +120,7 @@ namespace CapaWeb.Formularios.Tipohabitacion
             {
 
                 case "INS": //ejecuta el codigo si el usuario ingresa el numero 1
-                    error = CapaProceso.Clases.TipoHabitacion.Insertar(nombreTipo.Text,Convert.ToInt16(ListaPrecio.SelectedValue.ToString()),txtfot.Text,estadoTipo.SelectedValue.ToString());
+                    error = CapaProceso.Clases.TipoHabitacion.Insertar(nombreTipo.Text,Convert.ToInt16(ListaPrecio.SelectedValue.ToString()),txtfot.Text,  estadoTipo.SelectedValue.ToString(),Convert.ToInt16(maximoTipo.ToString()));
 
                     if (string.IsNullOrEmpty(error))
                     {
@@ -133,7 +135,7 @@ namespace CapaWeb.Formularios.Tipohabitacion
                     break;//termina la ejecucion del programa despues de ejecutar el codigo
                 case "UDP": //ejecuta el codigo si el usuario ingresa el numero 2
 
-                    error = CapaProceso.Clases.TipoHabitacion.Actualizar( nombreTipo.Text,Convert.ToInt16(ListaPrecio.SelectedValue.ToString()), txtfot.Text, estadoTipo.SelectedValue.ToString(), short.Parse(lblId.Text));
+                    error = CapaProceso.Clases.TipoHabitacion.Actualizar( nombreTipo.Text,Convert.ToInt16(ListaPrecio.SelectedValue.ToString()), txtfot.Text, estadoTipo.SelectedValue.ToString(), short.Parse(lblId.Text), Convert.ToInt16(maximoTipo.ToString()));
                     if (string.IsNullOrEmpty(error))
                     {
                         CapaProceso.Clases.Auditoria.Insertar("TipoHabitación", "Actualizar", UsuarioId);

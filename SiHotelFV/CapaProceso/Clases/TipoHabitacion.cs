@@ -39,7 +39,7 @@ namespace CapaProceso.Clases
 
 
 
-        public static string Insertar(string nombreTipo, short idPrecio, string imagenTipo, string estadoTipo)
+        public static string Insertar(string nombreTipo, short idPrecio, string imagenTipo, string estadoTipo,short maximoTipo)
         {
 
             string Lista = CTipo.unico(nombreTipo).ToString();
@@ -49,7 +49,7 @@ namespace CapaProceso.Clases
 
              if (Lista == "0")
              {
-            int resultado = CTipo.InsertQuery(nombreTipo.Trim().ToUpper(),idPrecio, imagenTipo.Trim(), estadoTipo.Trim().ToUpper());
+            int resultado = CTipo.InsertQuery(nombreTipo.Trim().ToUpper(),idPrecio, imagenTipo.Trim(), estadoTipo.Trim().ToUpper(), maximoTipo);
             if (resultado == 0)
             {
                 return mensaje = "Error al insertar los registros";
@@ -69,11 +69,11 @@ namespace CapaProceso.Clases
 
 
 
-        public static string Actualizar(string nombreTipo, short idPrecio, string imagenTipo, string estadoTipo, short idtipo)
+        public static string Actualizar(string nombreTipo, short idPrecio, string imagenTipo, string estadoTipo,short maximoTipo, short idtipo)
         {
 
             string mensaje = "";
-            int resultado = CTipo.UpdateQuery(nombreTipo.Trim().ToUpper(),idPrecio,imagenTipo.Trim(), estadoTipo.Trim().ToUpper(), idtipo );
+            int resultado = CTipo.UpdateQuery(nombreTipo.Trim().ToUpper(),idPrecio,imagenTipo.Trim(), estadoTipo.Trim().ToUpper(),maximoTipo, idtipo );
             if (resultado == 0)
             {
                 return mensaje = "Error al actualizar los registros";

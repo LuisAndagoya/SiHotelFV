@@ -7,38 +7,71 @@
 
         <asp:ScriptManager runat="server"></asp:ScriptManager>
 
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="500px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="500px" Width="100%">
             <LocalReport ReportPath="Reportes\ListaTipoHabitacion.rdlc">
-                <DataSources>
-                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSetListaHabitacion" />
+                  <DataSources>
+                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
                 </DataSources>
             </LocalReport>
         </rsweb:ReportViewer>
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetLista" TypeName="CapaDatos.Clases.TipoHabitacionTableAdapters.tipo_habitacionTableAdapter" UpdateMethod="Update">
+         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="Lista" TypeName="CapaProceso.Clases.ReporteTipoHabitacion" UpdateMethod="Update">
             <DeleteParameters>
-                <asp:Parameter Name="Original_idtipo" Type="Int32" />
-                <asp:Parameter Name="Original_nombreTipo" Type="String" />
-                <asp:Parameter Name="Original_idPrecio" Type="Int32" />
-                <asp:Parameter Name="Original_imagenTipo" Type="String" />
-                <asp:Parameter Name="Original_estadoTipo" Type="String" />
+                <asp:Parameter Name="Original_idEmpleado" Type="Int32" />
+                <asp:Parameter Name="Original_dniEmpleado" Type="String" />
+                <asp:Parameter Name="Original_nombreEmpleado" Type="String" />
+                <asp:Parameter Name="Original_apellidoEmpleado" Type="String" />
+                <asp:Parameter Name="Original_fnacimientoEmpleado" Type="DateTime" />
+                <asp:Parameter Name="Original_sexoEmpleado" Type="String" />
+                <asp:Parameter Name="Original_estadocivilEmpleado" Type="String" />
+                <asp:Parameter Name="Original_domicilioEmpleado" Type="String" />
+                <asp:Parameter Name="Original_telefmovilEmpleado" Type="String" />
+                <asp:Parameter Name="Original_fecharegistroEmpleado" Type="DateTime" />
+                <asp:Parameter Name="Original_emailEmpleado" Type="String" />
+                <asp:Parameter Name="Original_imagenEmpleado" Type="String" />
+                <asp:Parameter Name="Original_estadoEmpleado" Type="String" />
             </DeleteParameters>
             <InsertParameters>
-                <asp:Parameter Name="nombreTipo" Type="String" />
-                <asp:Parameter Name="idPrecio" Type="Int32" />
-                <asp:Parameter Name="imagenTipo" Type="String" />
-                <asp:Parameter Name="estadoTipo" Type="String" />
+                <asp:Parameter Name="dniEmpleado" Type="String" />
+                <asp:Parameter Name="nombreEmpleado" Type="String" />
+                <asp:Parameter Name="apellidoEmpleado" Type="String" />
+                <asp:Parameter Name="fnacimientoEmpleado" Type="DateTime" />
+                <asp:Parameter Name="sexoEmpleado" Type="String" />
+                <asp:Parameter Name="estadocivilEmpleado" Type="String" />
+                <asp:Parameter Name="domicilioEmpleado" Type="String" />
+                <asp:Parameter Name="telefmovilEmpleado" Type="String" />
+                <asp:Parameter Name="fecharegistroEmpleado" Type="DateTime" />
+                <asp:Parameter Name="emailEmpleado" Type="String" />
+                <asp:Parameter Name="imagenEmpleado" Type="String" />
+                <asp:Parameter Name="estadoEmpleado" Type="String" />
             </InsertParameters>
             <UpdateParameters>
-                <asp:Parameter Name="nombreTipo" Type="String" />
-                <asp:Parameter Name="idPrecio" Type="Int32" />
-                <asp:Parameter Name="imagenTipo" Type="String" />
-                <asp:Parameter Name="estadoTipo" Type="String" />
-                <asp:Parameter Name="Original_idtipo" Type="Int32" />
-                <asp:Parameter Name="Original_nombreTipo" Type="String" />
-                <asp:Parameter Name="Original_idPrecio" Type="Int32" />
-                <asp:Parameter Name="Original_imagenTipo" Type="String" />
-                <asp:Parameter Name="Original_estadoTipo" Type="String" />
+                <asp:Parameter Name="dniEmpleado" Type="String" />
+                <asp:Parameter Name="nombreEmpleado" Type="String" />
+                <asp:Parameter Name="apellidoEmpleado" Type="String" />
+                <asp:Parameter Name="fnacimientoEmpleado" Type="DateTime" />
+                <asp:Parameter Name="sexoEmpleado" Type="String" />
+                <asp:Parameter Name="estadocivilEmpleado" Type="String" />
+                <asp:Parameter Name="domicilioEmpleado" Type="String" />
+                <asp:Parameter Name="telefmovilEmpleado" Type="String" />
+                <asp:Parameter Name="fecharegistroEmpleado" Type="DateTime" />
+                <asp:Parameter Name="emailEmpleado" Type="String" />
+                <asp:Parameter Name="imagenEmpleado" Type="String" />
+                <asp:Parameter Name="estadoEmpleado" Type="String" />
+                <asp:Parameter Name="Original_idEmpleado" Type="Int32" />
+                <asp:Parameter Name="Original_dniEmpleado" Type="String" />
+                <asp:Parameter Name="Original_nombreEmpleado" Type="String" />
+                <asp:Parameter Name="Original_apellidoEmpleado" Type="String" />
+                <asp:Parameter Name="Original_fnacimientoEmpleado" Type="DateTime" />
+                <asp:Parameter Name="Original_sexoEmpleado" Type="String" />
+                <asp:Parameter Name="Original_estadocivilEmpleado" Type="String" />
+                <asp:Parameter Name="Original_domicilioEmpleado" Type="String" />
+                <asp:Parameter Name="Original_telefmovilEmpleado" Type="String" />
+                <asp:Parameter Name="Original_fecharegistroEmpleado" Type="DateTime" />
+                <asp:Parameter Name="Original_emailEmpleado" Type="String" />
+                <asp:Parameter Name="Original_imagenEmpleado" Type="String" />
+                <asp:Parameter Name="Original_estadoEmpleado" Type="String" />
             </UpdateParameters>
         </asp:ObjectDataSource>
+       
         </form>
 </asp:Content>

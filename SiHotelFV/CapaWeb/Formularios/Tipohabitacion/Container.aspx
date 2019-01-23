@@ -39,6 +39,12 @@
                             <asp:Button ID="btnSubir"  class="btn btn-light" runat="server" Text="Subir Imágen" OnClick="btnSubir_Click1" />
                     </div>
 
+                     <div class="form-group">
+                        <label for="maximoTipo">Máximo Personas</label>
+                        <asp:TextBox ID="maximoTipo" class="form-control" type="number" required ="required" runat="server"></asp:TextBox>
+                        
+                    </div>
+
                        <div class="form-group">
                         <label for="estadoEmpleado">Estado</label>
                           <asp:DropDownList ID="estadoTipo"  class="form-control" runat="server">
