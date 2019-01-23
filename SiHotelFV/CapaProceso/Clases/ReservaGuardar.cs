@@ -23,7 +23,7 @@ namespace CapaProceso.Clases
         public decimal PagadoReserva { get; set; }
 
 
-        public void load(int idReservacion, int idCliente, int idUsuario, String fechaReservacion, String fechaEntrada, String fechaSalida, int idEstadoReserva, float totalReservacion, decimal SaldoReserva, decimal PagadoReserva)
+        public ReservaGuardar(int idReservacion, int idCliente, int idUsuario, String fechaReservacion, String fechaEntrada, String fechaSalida, int idEstadoReserva, float totalReservacion, decimal SaldoReserva, decimal PagadoReserva)
         {
             this.idReservacion = idReservacion;
             this.idCliente = idCliente;
@@ -35,6 +35,11 @@ namespace CapaProceso.Clases
             this.totalReservacion = totalReservacion;
             this.SaldoReserva = SaldoReserva;
             this.PagadoReserva = PagadoReserva;
+
+        }
+
+        public ReservaGuardar()
+        {
 
         }
     }

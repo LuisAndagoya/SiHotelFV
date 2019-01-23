@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CapaProceso.Clases
 {
     public class ModeloReservacionDetalle
-    {
+    {       
         
         public int numeroHabitacion { get; set; }
         
@@ -18,7 +18,11 @@ namespace CapaProceso.Clases
             this.valor = valor;
         }
 
-       
+        public ModeloReservacionDetalle()
+        {
+
+        }
+
 
 
     }

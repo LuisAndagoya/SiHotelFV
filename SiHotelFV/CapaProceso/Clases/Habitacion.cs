@@ -32,6 +32,12 @@ namespace CapaProceso.Clases
             return CHabitacion.GetBuscar(buscar);
         }
 
+        public static CapaDatos.Clases.Habitacion.habitacionDataTable BuscarPrecio(short buscar)
+        {
+            
+            return CHabitacion.GetPrecioHabitacion(buscar);
+        }
+
 
         public static string Insertar(short numeroHabitacion, short tipoHabitacion_Idtipo, string hotel_CodigoHotel, short estadoHabitacion_idEstado)
         {
