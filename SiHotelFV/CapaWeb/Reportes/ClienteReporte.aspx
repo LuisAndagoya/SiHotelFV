@@ -17,83 +17,51 @@
               <div class="form-group">
                         <asp:Label ID="LblErro" runat="server" Text="" ForeColor="Red"></asp:Label>
                     </div>
-                     
-                    <a href="ReporteClientes.aspx" class="btn btn-light">Todos</a>
-                        <div class="form-group">
-                        <label for="estadoCliente">Estado</label>
-                              <asp:DropDownList ID="estadoCliente" class="form-control" runat="server">
-                          <asp:ListItem Selected="True" Value="ACTIVO">ACTIVO</asp:ListItem>
-                          <asp:ListItem Value="INACTIVO">INACTIVO</asp:ListItem>
-                           
-                      </asp:DropDownList>
-                    </div>
-
-         
-                          <asp:Button class="btn btn-gradient-primary mr-2" ID="Button1" runat="server" 
-                          Text="Reporte Cliente" onclick="Button1_Click" />
-                      
- 
-        <asp:Label Visible ="false" ID="lblId" runat="server" Text=""></asp:Label>
 
 
-
-         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="500px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
-             <LocalReport ReportPath="Reportes\Cliente.rdlc">
-                 <DataSources>
-                     <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
-                 </DataSources>
-             </LocalReport>
-         </rsweb:ReportViewer>
+         <table style="border-top: hidden">
+             <tr>
+                 <td>
 
 
-   
+                     <label for="estadoCliente">Estado</label></td>
+
+                 <td>
+                     <asp:DropDownList ID="estadoCliente" class="form-control" runat="server">
+                         <asp:ListItem Selected="True" Value="ACTIVO">ACTIVO</asp:ListItem>
+                         <asp:ListItem Value="INACTIVO">INACTIVO</asp:ListItem>
+
+                     </asp:DropDownList>
+                 </td>
+                 <td>
+                     <asp:Button class="btn btn-gradient-info btn-sm" ID="Button1" runat="server"
+                         Text="Filtrar" OnClick="Button1_Click" />
+                 </td>
+                 <td>
+                     <a href="ReporteClientes.aspx" class="btn btn-gradient-dark btn-sm">Listar Todos</a></td>
+             </tr>
+
+             <tr>
+                 <td colspan="4">
+                     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="500px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="700px">
+                         <LocalReport ReportPath="Reportes\Cliente.rdlc">
+                             <DataSources>
+                                 <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
+                             </DataSources>
+                         </LocalReport>
+                     </rsweb:ReportViewer>
 
                      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="Reporte" TypeName="CapaDatos.Clases.ClienteTableAdapters.clienteTableAdapter" UpdateMethod="Update">
-                         <DeleteParameters>
-                             <asp:Parameter Name="Original_idCliente" Type="Int32" />
-                             <asp:Parameter Name="Original_dniCliente" Type="String" />
-                             <asp:Parameter Name="Original_nombreCliente" Type="String" />
-                             <asp:Parameter Name="Original_apellidoCliente" Type="String" />
-                             <asp:Parameter Name="Original_sexoCliente" Type="String" />
-                             <asp:Parameter Name="Original_direccionCliente" Type="String" />
-                             <asp:Parameter Name="Original_telefonoCliente" Type="String" />
-                             <asp:Parameter Name="Original_correoCliente" Type="String" />
-                             <asp:Parameter Name="Original_estadoCliente" Type="String" />
-                         </DeleteParameters>
-                         <InsertParameters>
-                             <asp:Parameter Name="dniCliente" Type="String" />
-                             <asp:Parameter Name="nombreCliente" Type="String" />
-                             <asp:Parameter Name="apellidoCliente" Type="String" />
-                             <asp:Parameter Name="sexoCliente" Type="String" />
-                             <asp:Parameter Name="direccionCliente" Type="String" />
-                             <asp:Parameter Name="telefonoCliente" Type="String" />
-                             <asp:Parameter Name="correoCliente" Type="String" />
-                             <asp:Parameter Name="estadoCliente" Type="String" />
-                         </InsertParameters>
+
                          <SelectParameters>
                              <asp:ControlParameter ControlID="estadoCliente" Name="Id" PropertyName="SelectedValue" Type="String" />
                          </SelectParameters>
-                         <UpdateParameters>
-                             <asp:Parameter Name="dniCliente" Type="String" />
-                             <asp:Parameter Name="nombreCliente" Type="String" />
-                             <asp:Parameter Name="apellidoCliente" Type="String" />
-                             <asp:Parameter Name="sexoCliente" Type="String" />
-                             <asp:Parameter Name="direccionCliente" Type="String" />
-                             <asp:Parameter Name="telefonoCliente" Type="String" />
-                             <asp:Parameter Name="correoCliente" Type="String" />
-                             <asp:Parameter Name="estadoCliente" Type="String" />
-                             <asp:Parameter Name="Original_idCliente" Type="Int32" />
-                             <asp:Parameter Name="Original_dniCliente" Type="String" />
-                             <asp:Parameter Name="Original_nombreCliente" Type="String" />
-                             <asp:Parameter Name="Original_apellidoCliente" Type="String" />
-                             <asp:Parameter Name="Original_sexoCliente" Type="String" />
-                             <asp:Parameter Name="Original_direccionCliente" Type="String" />
-                             <asp:Parameter Name="Original_telefonoCliente" Type="String" />
-                             <asp:Parameter Name="Original_correoCliente" Type="String" />
-                             <asp:Parameter Name="Original_estadoCliente" Type="String" />
-                         </UpdateParameters>
-         </asp:ObjectDataSource>
 
+                     </asp:ObjectDataSource>
+                 </td>
+             </tr>
+
+         </table>
 
    
 

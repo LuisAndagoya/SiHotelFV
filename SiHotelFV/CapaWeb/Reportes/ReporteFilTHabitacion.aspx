@@ -17,25 +17,31 @@
                         <asp:Label ID="LblErro" runat="server" Text="" ForeColor="Red"></asp:Label>
                     </div>
                      
-                    <a href="ReporteTipoHab.aspx" class="btn btn-light">Todos</a>
-                    <div class="form-group">
-                       
-                        <label for="ListaHabitacion">Por Tarifa</label>
-                          <asp:DropDownList ID="ListaHabitacion" class="form-control" runat="server">
-                      </asp:DropDownList>
-                        
-                       
-                          
-                    </div>
+                                          <table style="border-top: hidden">
+                        <tr>
+                            <td>
+                             
+								 <label for="ListaHabitacion">Por Tarifa</label></td>
 
-   
-                          <asp:Button class="btn btn-gradient-primary mr-2" ID="Button1" runat="server" 
-                          Text="Reporte Tipo Habitación" onclick="Button1_Click" />
-                      
- 
-        <asp:Label Visible ="false" ID="lblId" runat="server" Text=""></asp:Label>
+                            <td>
+
+                                    <asp:DropDownList ID="ListaHabitacion" class="form-control" runat="server">
+                                    </asp:DropDownList>
+                            </td>
+                            <td>
+							        <asp:Button class="btn btn-gradient-info btn-sm" ID="Button1" runat="server" 
+                                   Text="Filtrar" onclick="Button1_Click" />
+                            </td>
+                            <td>
+								 
+								 <a href="ReporteTipoHab.aspx" class="btn btn-gradient-dark btn-sm">Listar Todos</a></td>
+                         </tr>
+
+                        <tr>
+                            <td  colspan="4">
+                 <asp:Label Visible ="false" ID="lblId" runat="server" Text=""></asp:Label>
                     <asp:TextBox Visible="false" ID="TextBox1" runat="server"></asp:TextBox>
-                    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="500px" Width="100%">
+                    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="550px" Width="700px">
                         <LocalReport ReportPath="Reportes\TipoHabitacionR.rdlc">
                              <DataSources>
                                 <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
@@ -47,7 +53,11 @@
                    <SelectParameters>
                              <asp:ControlParameter ControlID="ListaHabitacion" Name="Id" PropertyName="SelectedValue" Type="Int16" />
                          </SelectParameters>   
-                 </asp:ObjectDataSource>
+                 </asp:ObjectDataSource>             
+                            </td>
+                        </tr>
+
+                    </table>
                  
               </form>
             </div>

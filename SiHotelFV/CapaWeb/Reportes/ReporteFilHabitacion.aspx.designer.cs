@@ -31,15 +31,6 @@ namespace CapaWeb.Reportes {
         protected global::System.Web.UI.WebControls.Label LblErro;
         
         /// <summary>
-        /// Control ListaHabitacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ListaHabitacion;
-        
-        /// <summary>
         /// Control ListaEstado.
         /// </summary>
         /// <remarks>
@@ -56,6 +47,15 @@ namespace CapaWeb.Reportes {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// Control ListaHabitacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ListaHabitacion;
         
         /// <summary>
         /// Control Button2.

@@ -251,6 +251,7 @@
     <Content Include="Reportes\EstadoHabitacion.aspx" />
     <Content Include="Reportes\Factura.aspx" />
     <Content Include="Reportes\Habitacion.aspx" />
+    <Content Include="Reportes\ReporteAuditoria.aspx" />
     <Content Include="Reportes\ReporteClientes.aspx" />
     <Content Include="Reportes\ReporteEmpleados.aspx" />
     <Content Include="Reportes\ReporteFilEmpleados.aspx" />
@@ -691,6 +692,13 @@
     <Compile Include="Reportes\Habitacion.aspx.designer.cs">
       <DependentUpon>Habitacion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReporteAuditoria.aspx.cs">
+      <DependentUpon>ReporteAuditoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteAuditoria.aspx.designer.cs">
+      <DependentUpon>ReporteAuditoria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReporteClientes.aspx.cs">
       <DependentUpon>ReporteClientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -794,6 +802,7 @@
     <EmbeddedResource Include="Reportes\Nuevo.rdlc" />
     <EmbeddedResource Include="Reportes\ReporHabitacion.rdlc" />
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteAuditoria.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteCliente.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteEstado.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteHabitacion.rdlc" />

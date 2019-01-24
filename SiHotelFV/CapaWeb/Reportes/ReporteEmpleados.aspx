@@ -5,6 +5,10 @@
 
     <form id="form1" class="forms-sample" runat="server">
 
+
+          <asp:ImageButton ID="imgEliminar" runat="server" OnClick="imgEliminar_Click"
+            ImageUrl="~/img/Atras.png" Width="30" />
+
         <asp:ScriptManager runat="server"></asp:ScriptManager>
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" DocumentMapWidth="100%" Font-Names="Verdana" Font-Size="8pt" Height="500px" style="margin-right: 4px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
             <LocalReport ReportPath="Reportes\ListaEmpleados.rdlc">

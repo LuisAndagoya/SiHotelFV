@@ -6,6 +6,13 @@
 
         <asp:ScriptManager runat="server"></asp:ScriptManager>
 
+        <asp:Button class="btn btn-gradient-primary mr-2" ID="Button1" runat="server"
+            Text="Regresar" visible="false" OnClick="Button1_Click" />
+       
+
+        <asp:ImageButton ID="imgEliminar" runat="server" OnClick="imgEliminar_Click"
+            ImageUrl="~/img/Atras.png" Width="30" />
+
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="500px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
             <LocalReport ReportPath="Reportes\ReporHabitacion.rdlc">
                   <DataSources>
