@@ -49,19 +49,8 @@
 
 
                                         <Columns>
-                                            <asp:TemplateColumn>
-                                                <ItemTemplate>
-                                                    <asp:ImageButton ID="imgEliminar" runat="server" CausesValidation="false" CommandName="Eliminar"
-                                                        ImageUrl="~/img/ActionDelete.png" ToolTip="Editar" Width="16" />
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
+                                            
 
-                                            <asp:TemplateColumn>
-                                                <ItemTemplate>
-                                                    <asp:ImageButton ID="imgEditar" runat="server" CausesValidation="false" CommandName="Editar"
-                                                        ImageUrl="~/img/ActionUpdate.png" ToolTip="Editar" Width="16" />
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
                                             <asp:TemplateColumn>
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="imgFac" runat="server" CausesValidation="false" CommandName="Factura"

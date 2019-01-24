@@ -60,6 +60,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DescripcionHabitacion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Clases\DetalleReserva.cs">
+      <DependentUpon>DetalleReserva.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\DetalleReserva.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -129,6 +132,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteTipoHabitacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\Reserva.cs">
+      <DependentUpon>Reserva.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clases\Reserva.Designer.cs">
       <AutoGen>True</AutoGen>

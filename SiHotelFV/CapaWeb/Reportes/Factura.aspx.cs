@@ -14,33 +14,9 @@ namespace CapaWeb.Reportes
         private static Codificar codificar = new Codificar();
         protected void Page_Load(object sender, EventArgs e)
         {
-            QSencriptadoCSharp.QueryString qs = ulrDesencriptada();
-
-
-            switch (qs["TRN"].Substring(0, 3))
-            {
-
-                case "INS":
-                   
-
-
-                    break;
-
-                case "UDP":
-                  
-
-                    break;
-
-                case "DLT":
-                    
-                    break;
-                case "FAC":
-                    break;
-
-            }
+            QSencriptadoCSharp.QueryString qs = ulrDesencriptada();           
             
-            string Id = (qs["Id"].ToString());
-           // string Id = (qs["Id"]);
+            string Id = (qs["Id"].ToString());           
             ObjectDataSource1.SelectParameters.Add("Id",Id);
         }
 

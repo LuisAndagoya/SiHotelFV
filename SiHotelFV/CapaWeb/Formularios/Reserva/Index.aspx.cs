@@ -23,7 +23,7 @@ namespace CapaWeb.Formularios.Reserva
 
         private void CargarGrilla()
         {
-            Grid.DataSource = CapaProceso.Clases.Reserva.ListaReservaRe();
+            Grid.DataSource = CapaProceso.Clases.Reserva.GetListaReserva();
 
 
 

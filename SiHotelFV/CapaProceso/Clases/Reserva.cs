@@ -16,6 +16,11 @@ namespace CapaProceso.Clases
             return CReserva.GetListaReservaRe();
         }
 
+        public static CapaDatos.Clases.Reserva.reservasDataTable GetListaReserva()
+        {
+            return CReserva.GetListaReserva();
+        }
+
         public static CapaDatos.Clases.Reserva.reservasDataTable Detalle()
         {
             return CReserva.GetDetalle();
@@ -24,6 +29,12 @@ namespace CapaProceso.Clases
         {
             return CReserva.GetFactura(Id);
         }
+
+        public static short IdReserva()
+        {
+            return (short) CReserva.GetIdReserva();
+        }
+
         public static CapaDatos.Clases.Reserva.reservasDataTable Buscar(string buscar)
         {
             String buscarAux = "%" + buscar.Trim() + "%";

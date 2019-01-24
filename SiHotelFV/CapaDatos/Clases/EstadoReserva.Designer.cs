@@ -784,7 +784,7 @@ SELECT idEstadoReserva, nombreEstado FROM estado_reserva WHERE (idEstadoReserva 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idEstadoReserva, nombreEstado FROM dbo.estado_reserva";
@@ -803,35 +803,40 @@ SELECT idEstadoReserva, nombreEstado FROM estado_reserva WHERE (idEstadoReserva 
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstado", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT idEstadoReserva, nombreEstado FROM dbo.estado_reserva";
+            this._commandCollection[3].CommandText = "SELECT\r\ndbo.estado_reserva.idEstadoReserva,\r\ndbo.estado_reserva.nombreEstado\r\n\r\nF" +
+                "ROM\r\ndbo.estado_reserva\r\nWHERE\r\ndbo.estado_reserva.idEstadoReserva IN (1,2)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        idEstadoReserva, nombreEstado\r\nFROM            estado_reserva\r\nWHER" +
-                "E        (idEstadoReserva = @idEstadoReserva)";
+            this._commandCollection[4].CommandText = "SELECT idEstadoReserva, nombreEstado FROM dbo.estado_reserva";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoReserva", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "INSERT INTO [dbo].[estado_reserva] ([nombreEstado]) VALUES (@nombreEstado);\r\nSELE" +
-                "CT idEstadoReserva, nombreEstado FROM estado_reserva WHERE (idEstadoReserva = SC" +
-                "OPE_IDENTITY())";
+            this._commandCollection[5].CommandText = "SELECT        idEstadoReserva, nombreEstado\r\nFROM            estado_reserva\r\nWHER" +
+                "E        (idEstadoReserva = @idEstadoReserva)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstado", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoReserva", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        COUNT(idEstadoReserva) AS Expr1\r\nFROM            estado_reserva\r\nWH" +
-                "ERE        (nombreEstado = @nombreEstado)";
+            this._commandCollection[6].CommandText = "INSERT INTO [dbo].[estado_reserva] ([nombreEstado]) VALUES (@nombreEstado);\r\nSELE" +
+                "CT idEstadoReserva, nombreEstado FROM estado_reserva WHERE (idEstadoReserva = SC" +
+                "OPE_IDENTITY())";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstado", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "UPDATE [dbo].[estado_reserva] SET [nombreEstado] = @nombreEstado WHERE (([idEstad" +
-                "oReserva] = @idEstadoReserva));\r\nSELECT idEstadoReserva, nombreEstado FROM estad" +
-                "o_reserva WHERE (idEstadoReserva = @idEstadoReserva)";
+            this._commandCollection[7].CommandText = "SELECT        COUNT(idEstadoReserva) AS Expr1\r\nFROM            estado_reserva\r\nWH" +
+                "ERE        (nombreEstado = @nombreEstado)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstado", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoReserva", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "UPDATE [dbo].[estado_reserva] SET [nombreEstado] = @nombreEstado WHERE (([idEstad" +
+                "oReserva] = @idEstadoReserva));\r\nSELECT idEstadoReserva, nombreEstado FROM estad" +
+                "o_reserva WHERE (idEstadoReserva = @idEstadoReserva)";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEstado", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEstado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoReserva", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -879,7 +884,7 @@ SELECT idEstadoReserva, nombreEstado FROM estado_reserva WHERE (idEstadoReserva 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual EstadoReserva.estado_reservaDataTable GetLista() {
+        public virtual EstadoReserva.estado_reservaDataTable GetEstadoReserva12() {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             EstadoReserva.estado_reservaDataTable dataTable = new EstadoReserva.estado_reservaDataTable();
             this.Adapter.Fill(dataTable);
@@ -890,8 +895,19 @@ SELECT idEstadoReserva, nombreEstado FROM estado_reserva WHERE (idEstadoReserva 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual EstadoReserva.estado_reservaDataTable GetListaActualizar(int idEstadoReserva) {
+        public virtual EstadoReserva.estado_reservaDataTable GetLista() {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            EstadoReserva.estado_reservaDataTable dataTable = new EstadoReserva.estado_reservaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual EstadoReserva.estado_reservaDataTable GetListaActualizar(int idEstadoReserva) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idEstadoReserva));
             EstadoReserva.estado_reservaDataTable dataTable = new EstadoReserva.estado_reservaDataTable();
             this.Adapter.Fill(dataTable);
@@ -1054,7 +1070,7 @@ SELECT idEstadoReserva, nombreEstado FROM estado_reserva WHERE (idEstadoReserva 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string nombreEstado) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((nombreEstado == null)) {
                 throw new global::System.ArgumentNullException("nombreEstado");
             }
@@ -1082,7 +1098,7 @@ SELECT idEstadoReserva, nombreEstado FROM estado_reserva WHERE (idEstadoReserva 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> unico(string nombreEstado) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             if ((nombreEstado == null)) {
                 throw new global::System.ArgumentNullException("nombreEstado");
             }
@@ -1117,7 +1133,7 @@ SELECT idEstadoReserva, nombreEstado FROM estado_reserva WHERE (idEstadoReserva 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(string nombreEstado, int idEstadoReserva) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             if ((nombreEstado == null)) {
                 throw new global::System.ArgumentNullException("nombreEstado");
             }

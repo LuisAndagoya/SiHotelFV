@@ -94,6 +94,15 @@ namespace CapaWeb.Formularios.Reserva {
         protected global::System.Web.UI.WebControls.TextBox fechaSalida;
         
         /// <summary>
+        /// Control idEstadoReserva.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList idEstadoReserva;
+        
+        /// <summary>
         /// Control PagadoReserva.
         /// </summary>
         /// <remarks>
@@ -164,5 +173,14 @@ namespace CapaWeb.Formularios.Reserva {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// Control btnCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

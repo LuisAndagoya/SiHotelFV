@@ -21,6 +21,11 @@ namespace CapaProceso.Clases
             return CReserva.GetListaActualizar(idEstadoReserva);
         }
 
+        public static CapaDatos.Clases.EstadoReserva.estado_reservaDataTable GetEstadoReserva12()
+        {
+            return CReserva.GetEstadoReserva12();
+        }
+
 
         public static CapaDatos.Clases.EstadoReserva.estado_reservaDataTable Buscar(string buscar)
         {

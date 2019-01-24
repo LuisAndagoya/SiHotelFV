@@ -68,6 +68,18 @@ SELECT idDetalle, idReserva, numeroHabitacion, fechaActual, valor FROM detalle_r
               <Mapping SourceColumn="valor" DataSetColumn="valor" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="BDHotelFuenteVidaConnectionString (Settings)" DbObjectType="Unknown" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetListaDetalleReserva" GetMethodModifier="Public" GetMethodName="GetListaDetalleReserva" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetListaDetalleReserva" UserSourceName="GetListaDetalleReserva">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        detalle_reserva.idDetalle, detalle_reserva.idReserva, detalle_reserva.numeroHabitacion, detalle_reserva.fechaActual, detalle_reserva.valor, habitacion.numeroHabitacion AS Expr1, habitacion.tipoHabitacion_Idtipo, 
+                         habitacion.hotel_CodigoHotel, habitacion.estadoHabitacion_idEstado, estado_habitacion.idEstadoHabitacion, estado_habitacion.nombreEstadoHabitacion
+FROM            detalle_reserva INNER JOIN
+                         habitacion ON detalle_reserva.numeroHabitacion = habitacion.numeroHabitacion INNER JOIN
+                         estado_habitacion ON habitacion.estadoHabitacion_idEstado = estado_habitacion.idEstadoHabitacion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="BDHotelFuenteVidaConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertarDetalle" Modifier="Public" Name="InsertarDetalle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertarDetalle">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -94,7 +106,7 @@ VALUES        (@idReserva,@numeroHabitacion,@fechaActual,@valor);
   <xs:element name="DetalleReserva" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DetalleReserva" msprop:Generator_UserDSName="DetalleReserva">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="detalle_reserva" msprop:Generator_TableClassName="detalle_reservaDataTable" msprop:Generator_TableVarName="tabledetalle_reserva" msprop:Generator_TablePropName="detalle_reserva" msprop:Generator_RowDeletingName="detalle_reservaRowDeleting" msprop:Generator_RowChangingName="detalle_reservaRowChanging" msprop:Generator_RowEvHandlerName="detalle_reservaRowChangeEventHandler" msprop:Generator_RowDeletedName="detalle_reservaRowDeleted" msprop:Generator_UserTableName="detalle_reserva" msprop:Generator_RowChangedName="detalle_reservaRowChanged" msprop:Generator_RowEvArgName="detalle_reservaRowChangeEvent" msprop:Generator_RowClassName="detalle_reservaRow">
+        <xs:element name="detalle_reserva" msprop:Generator_TableClassName="detalle_reservaDataTable" msprop:Generator_TableVarName="tabledetalle_reserva" msprop:Generator_RowChangedName="detalle_reservaRowChanged" msprop:Generator_TablePropName="detalle_reserva" msprop:Generator_RowDeletingName="detalle_reservaRowDeleting" msprop:Generator_RowChangingName="detalle_reservaRowChanging" msprop:Generator_RowEvHandlerName="detalle_reservaRowChangeEventHandler" msprop:Generator_RowDeletedName="detalle_reservaRowDeleted" msprop:Generator_RowClassName="detalle_reservaRow" msprop:Generator_UserTableName="detalle_reserva" msprop:Generator_RowEvArgName="detalle_reservaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidDetalle" msprop:Generator_ColumnPropNameInRow="idDetalle" msprop:Generator_ColumnPropNameInTable="idDetalleColumn" msprop:Generator_UserColumnName="idDetalle" type="xs:int" />

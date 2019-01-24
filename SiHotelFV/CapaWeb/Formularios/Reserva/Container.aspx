@@ -51,6 +51,7 @@
                                             <asp:TextBox type="date" required="required" ID="fechaReservacion" class="form-control" runat="server"></asp:TextBox></td>
 
                                         <td>
+
                                             <label for="fechaEntrada">Fecha Entrada</label></td>
                                         <td>
                                             <asp:TextBox type="date" required="required" ID="fechaEntrada" class="form-control" runat="server"></asp:TextBox>
@@ -66,14 +67,33 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <table style="border-top: hidden">
+                           <td>
+                                <table>
                                     <tr>
+                                        <td>
+                                            <label for="idEstadoReserva">Estado</label>
+                                        <td>
+
+                                        <td>
+                                            <asp:DropDownList ID="idEstadoReserva" class="form-control" runat="server">
+                                            </asp:DropDownList>
+                                        </td>
+
                                         <td>
                                             <label for="PagadoReserva">Pago Reservación</label></td>
                                         <td>
-                                            
-                                            <asp:TextBox  type="number" min="0.00" step="0.01" ID="PagadoReserva" required="required" class="form-control" runat="server" OnTextChanged="PagadoReserva_TextChanged" AutoPostBack="true"></asp:TextBox></td>
+
+                                            <asp:TextBox type="number" min="0.00" step="0.01" ID="PagadoReserva" required="required" class="form-control" runat="server" OnTextChanged="PagadoReserva_TextChanged" AutoPostBack="true"></asp:TextBox></td>
+                                    </tr>
+                                </table>
+
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <table style="border-top: hidden">
+                                    <tr>
                                         <td>
 
                                             <label for="totalReservacion">Total Reservación</label></td>
@@ -87,9 +107,7 @@
                                     </tr>
                                 </table>
                             </td>
-
                         </tr>
-
                         <tr>
                             <td>
                                 <table style="border-top: hidden">
@@ -98,13 +116,12 @@
                                             <td>
                                                 <label for="ListaHabitacion">N° Habitación</label></td>
                                             <td colspan="2">
-                                                <asp:DropDownList  ID="ListaHabitacion" required="required" class="form-control" runat="server" OnTextChanged="ListaHabitacion_TextChanged" AutoPostBack="true">
-                                                
+                                                <asp:DropDownList ID="ListaHabitacion" required="required" class="form-control" runat="server" OnTextChanged="ListaHabitacion_TextChanged" AutoPostBack="true">
                                                 </asp:DropDownList></td>
                                             <td>
                                                 <label for="valor">Precio</label></td>
                                             <td>
-                                                <asp:TextBox   type="number" min="0.00" step="0.01" ID="valor" required="required" class="form-control" runat="server"></asp:TextBox></td>
+                                                <asp:TextBox type="number" min="0.00" step="0.01" ID="valor" required="required" class="form-control" runat="server"></asp:TextBox></td>
                                             <td>
                                                 <asp:Button class="btn btn-gradient-dark btn-icon-text" ID="Button2" runat="server"
                                                     Text="Agregar Habitación" OnClick="Button2_Click" /></td>
@@ -172,7 +189,10 @@
                                         <td>
                                             <asp:Button class="btn btn-gradient-primary mr-2" ID="Button1" runat="server"
                                                 Text="Guardar" OnClick="Button1_Click" /></td>
-                                        <td><a href="Index.aspx" class="btn btn-gradient-light btn-fw">Cancelar</a></td>
+                                        <td>
+                                           <asp:Button class="btn btn-gradient-light btn-fw" ID="btnCancelar" runat="server" 
+                          Text="Cancelar" onclick="Cancelar_Click" />
+                                            
                                     </tr>
                                 </table>
                             </td>
