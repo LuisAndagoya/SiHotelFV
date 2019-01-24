@@ -10,7 +10,7 @@
 namespace CapaWeb.Reportes {
     
     
-    public partial class ClienteReporte {
+    public partial class ReporteAuditoria {
         
         /// <summary>
         /// Control form1.
@@ -22,22 +22,22 @@ namespace CapaWeb.Reportes {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control LblErro.
+        /// Control fechInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblErro;
+        protected global::System.Web.UI.WebControls.TextBox fechInicio;
         
         /// <summary>
-        /// Control estadoCliente.
+        /// Control fechaFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList estadoCliente;
+        protected global::System.Web.UI.WebControls.TextBox fechaFin;
         
         /// <summary>
         /// Control Button1.
@@ -47,6 +47,24 @@ namespace CapaWeb.Reportes {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// Control lblId.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblId;
+        
+        /// <summary>
+        /// Control TextBox1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
         /// Control ReportViewer1.

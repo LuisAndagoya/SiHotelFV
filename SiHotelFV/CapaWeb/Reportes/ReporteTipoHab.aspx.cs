@@ -13,5 +13,10 @@ namespace CapaWeb.Reportes
         {
 
         }
+        protected void imgEliminar_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("ReporteFilTHabitacion.aspx");
+        }
     }
 }

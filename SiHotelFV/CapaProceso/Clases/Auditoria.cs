@@ -18,6 +18,10 @@ namespace CapaProceso.Clases
             return CAuditoria.GetLista();
         }
 
+        public static CapaDatos.Clases.Auditoria.auditoriaDataTable Reporte(DateTime Inicio, DateTime Fin)
+        {
+            return CAuditoria.Reporte(Inicio, Fin);
+        }
         public static void Insertar(string AuditoriaTabla, string AuditoriaAccion, short UsuarioId)
         {
 

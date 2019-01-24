@@ -998,7 +998,7 @@ SELECT idAuditoria, ipAuditoria, tablaAuditoria, accionAditoria, idUsuario, fech
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idAuditoria, ipAuditoria, tablaAuditoria, accionAditoria, idUsuario, fecha" +
@@ -1006,30 +1006,39 @@ SELECT idAuditoria, ipAuditoria, tablaAuditoria, accionAditoria, idUsuario, fech
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        auditoria.idAuditoria, auditoria.ipAuditoria, auditoria.tablaAuditoria, auditoria.accionAditoria, usuario.usernameUsuario, auditoria.fechaAditoria
+            this._commandCollection[1].CommandText = @"SELECT        auditoria.idAuditoria, auditoria.ipAuditoria, auditoria.tablaAuditoria, auditoria.accionAditoria, auditoria.idUsuario, auditoria.fechaAditoria, usuario.idUsuario AS Expr1, usuario.usernameUsuario
 FROM            auditoria INNER JOIN
-                         usuario ON usuario.idUsuario = auditoria.idUsuario
-WHERE        (usuario.usernameUsuario LIKE @usernameUsuario)";
+                         usuario ON auditoria.idUsuario = usuario.idUsuario
+WHERE        (auditoria.fechaAditoria BETWEEN @Inicio AND @Fin)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usernameUsuario", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "usernameUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inicio", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "fechaAditoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fin", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "fechaAditoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT        auditoria.idAuditoria, auditoria.ipAuditoria, auditoria.tablaAuditoria, auditoria.accionAditoria, usuario.usernameUsuario, auditoria.fechaAditoria
 FROM            auditoria INNER JOIN
-                         usuario ON usuario.idUsuario = auditoria.idUsuario";
+                         usuario ON usuario.idUsuario = auditoria.idUsuario
+WHERE        (usuario.usernameUsuario LIKE @usernameUsuario)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usernameUsuario", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "usernameUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"INSERT INTO auditoria
+            this._commandCollection[3].CommandText = @"SELECT        auditoria.idAuditoria, auditoria.ipAuditoria, auditoria.tablaAuditoria, auditoria.accionAditoria, usuario.usernameUsuario, auditoria.fechaAditoria
+FROM            auditoria INNER JOIN
+                         usuario ON usuario.idUsuario = auditoria.idUsuario";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"INSERT INTO auditoria
                          (ipAuditoria, tablaAuditoria, accionAditoria, idUsuario, fechaAditoria)
 VALUES        (@ipAuditoria,@tablaAuditoria,@accionAditoria,@idUsuario,@fechaAditoria); 
 SELECT idAuditoria, ipAuditoria, tablaAuditoria, accionAditoria, idUsuario, fechaAditoria FROM auditoria WHERE (idAuditoria = SCOPE_IDENTITY())";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ipAuditoria", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ipAuditoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tablaAuditoria", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "tablaAuditoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@accionAditoria", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "accionAditoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaAditoria", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "fechaAditoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ipAuditoria", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ipAuditoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tablaAuditoria", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "tablaAuditoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@accionAditoria", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "accionAditoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaAditoria", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "fechaAditoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1059,9 +1068,57 @@ SELECT idAuditoria, ipAuditoria, tablaAuditoria, accionAditoria, idUsuario, fech
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(Auditoria.auditoriaDataTable dataTable, global::System.Nullable<global::System.DateTime> Inicio, global::System.Nullable<global::System.DateTime> Fin) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Inicio.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Inicio.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Fin.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Fin.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Auditoria.auditoriaDataTable Reporte(global::System.Nullable<global::System.DateTime> Inicio, global::System.Nullable<global::System.DateTime> Fin) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Inicio.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Inicio.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Fin.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Fin.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            Auditoria.auditoriaDataTable dataTable = new Auditoria.auditoriaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Auditoria.auditoriaDataTable GetBuscar(string usernameUsuario) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((usernameUsuario == null)) {
                 throw new global::System.ArgumentNullException("usernameUsuario");
             }
@@ -1078,7 +1135,7 @@ SELECT idAuditoria, ipAuditoria, tablaAuditoria, accionAditoria, idUsuario, fech
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Auditoria.auditoriaDataTable GetLista() {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             Auditoria.auditoriaDataTable dataTable = new Auditoria.auditoriaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1332,7 +1389,7 @@ SELECT idAuditoria, ipAuditoria, tablaAuditoria, accionAditoria, idUsuario, fech
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int SetInsertar(string ipAuditoria, string tablaAuditoria, string accionAditoria, global::System.Nullable<int> idUsuario, global::System.Nullable<global::System.DateTime> fechaAditoria) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((ipAuditoria == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }

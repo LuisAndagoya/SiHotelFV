@@ -52,5 +52,12 @@ namespace CapaWeb.Reportes
             qs = QSencriptadoCSharp.Encryption.DecryptQueryString(qs);
             return qs;
         }
+
+
+        protected void imgEliminar_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("ReporteFilHabitacion.aspx");
+        }
     }
 }

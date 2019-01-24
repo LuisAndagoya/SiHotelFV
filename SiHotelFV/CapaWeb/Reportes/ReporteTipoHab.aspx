@@ -7,6 +7,9 @@
 
         <asp:ScriptManager runat="server"></asp:ScriptManager>
 
+        <asp:ImageButton ID="imgEliminar" runat="server" OnClick="imgEliminar_Click"
+            ImageUrl="~/img/Atras.png" Width="30" />
+
         <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="500px" Width="100%">
             <LocalReport ReportPath="Reportes\ListaTipoHabitacion.rdlc">
                   <DataSources>

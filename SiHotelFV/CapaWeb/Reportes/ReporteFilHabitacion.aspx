@@ -14,30 +14,48 @@
                     <div class="form-group">
                         <asp:Label ID="LblErro" runat="server" Text="" ForeColor="Red"></asp:Label>
                     </div>
-         
-                    <div class="form-group">
-                        <label for="ListaHabitacion">Tipo Habitación</label>
-                         <asp:DropDownList ID="ListaHabitacion" class="form-control" runat="server">
-                      </asp:DropDownList>
+                 
+                                        <table style="border-top: hidden">
+                        <tr>
+                            <td>
+                                 <label for="ListaEstado">Estado Habitación</label></td>
 
-                    </div>
-                      <div class="form-group">
-                        <label for="ListaEstado">Estado Habitación</label>
-                         <asp:DropDownList ID="ListaEstado" class="form-control" runat="server">
-                      </asp:DropDownList>
+                            <td>
 
-                    </div>
+                                   <asp:DropDownList ID="ListaEstado" class="form-control" runat="server">
+                                  </asp:DropDownList>
+                            </td>
+                            <td>
+                              
+									  <asp:Button class="btn btn-gradient-info btn-sm" ID="Button1" runat="server" 
+                                  Text="Filtrar" onclick="Button1_Click" />
+                            </td>
+                            <td>
+								 <a href="Habitacion.aspx" class="btn btn-gradient-dark btn-sm">Listar Todos</a></td>
+                         </tr>
 
-   
-                          <asp:Button class="btn btn-gradient-primary mr-2" ID="Button1" runat="server" 
-                          Text="Reporte Habitacion" onclick="Button1_Click" />
-                      <a href="Habitacion.aspx" class="btn btn-light">Todas</a>
-      <asp:Button class="btn btn-gradient-primary mr-2" ID="Button2" runat="server" 
-                          Text="Reporte Estado" onclick="Button2_Click" />
+						 <tr>
+						      <td>
+                                  <label for="ListaHabitacion">Tipo Habitación</label></td>
 
-        <asp:Label Visible ="false" ID="lblId" runat="server" Text=""></asp:Label>
+                            <td>
+
+                                    <asp:DropDownList ID="ListaHabitacion" class="form-control" runat="server">
+                                   </asp:DropDownList>
+                            </td>
+						      <td>
+								  
+								  <asp:Button class="btn btn-gradient-info btn-sm" ID="Button2" runat="server" 
+                          Text="Filtrar" onclick="Button2_Click" />
+                            </td>
+						 
+						 </tr>
+
+                        <tr>
+                            <td  colspan="4">
+                                  <asp:Label Visible ="false" ID="lblId" runat="server" Text=""></asp:Label>
              
-                    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="500px" Width="100%">
+                    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="550px" Width="600px">
                         <LocalReport ReportPath="Reportes\ReporteHabitacion.rdlc">
                              <DataSources>
                                 <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
@@ -48,35 +66,15 @@
 
 
                      <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Reporte" TypeName="CapaDatos.Clases.ReporteHabitacionTableAdapters.habitacionTableAdapter" DeleteMethod="Delete" InsertMethod="Insert" UpdateMethod="Update">
-                         <DeleteParameters>
-                             <asp:Parameter Name="Original_numeroHabitacion" Type="Int32" />
-                             <asp:Parameter Name="Original_tipoHabitacion_Idtipo" Type="Int32" />
-                             <asp:Parameter Name="Original_hotel_CodigoHotel" Type="String" />
-                             <asp:Parameter Name="Original_estadoHabitacion_idEstado" Type="Int32" />
-                         </DeleteParameters>
-                         <InsertParameters>
-                             <asp:Parameter Name="numeroHabitacion" Type="Int32" />
-                             <asp:Parameter Name="tipoHabitacion_Idtipo" Type="Int32" />
-                             <asp:Parameter Name="hotel_CodigoHotel" Type="String" />
-                             <asp:Parameter Name="estadoHabitacion_idEstado" Type="Int32" />
-                         </InsertParameters>
+                
                          <SelectParameters>
                              <asp:ControlParameter ControlID="ListaHabitacion" Name="Id" PropertyName="SelectedValue" Type="String" />
                          </SelectParameters>
-                      
-                         <UpdateParameters>
-                             <asp:Parameter Name="tipoHabitacion_Idtipo" Type="Int32" />
-                             <asp:Parameter Name="hotel_CodigoHotel" Type="String" />
-                             <asp:Parameter Name="estadoHabitacion_idEstado" Type="Int32" />
-                             <asp:Parameter Name="Original_numeroHabitacion" Type="Int32" />
-                             <asp:Parameter Name="Original_tipoHabitacion_Idtipo" Type="Int32" />
-                             <asp:Parameter Name="Original_hotel_CodigoHotel" Type="String" />
-                             <asp:Parameter Name="Original_estadoHabitacion_idEstado" Type="Int32" />
-                         </UpdateParameters>
-                      
-                     </asp:ObjectDataSource>
-                   
+                    </asp:ObjectDataSource>
+                            </td>
+                        </tr>
 
+                    </table>
 
               </form>
             </div>
