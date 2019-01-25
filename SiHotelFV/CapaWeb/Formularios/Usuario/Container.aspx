@@ -37,8 +37,8 @@
                     <div class="form-group">
                         <label for="DropDownList1">Estado</label>
                         <asp:DropDownList class="form-control" ID="DropDownList1" runat="server">
-                            <asp:ListItem Selected="True" Value="A">ACTIVO</asp:ListItem>
-                            <asp:ListItem Value="I">INACTIVO</asp:ListItem>
+                            <asp:ListItem Selected="True" Value="ACTIVO">ACTIVO</asp:ListItem>
+                            <asp:ListItem Value="INACTIVO">INACTIVO</asp:ListItem>
                         </asp:DropDownList>
                     </div>
 

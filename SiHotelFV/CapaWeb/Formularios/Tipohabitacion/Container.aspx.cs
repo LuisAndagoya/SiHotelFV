@@ -120,7 +120,7 @@ namespace CapaWeb.Formularios.Tipohabitacion
             {
 
                 case "INS": //ejecuta el codigo si el usuario ingresa el numero 1
-                    error = CapaProceso.Clases.TipoHabitacion.Insertar(nombreTipo.Text,Convert.ToInt16(ListaPrecio.SelectedValue.ToString()),txtfot.Text,  estadoTipo.SelectedValue.ToString(),Convert.ToInt16(maximoTipo.ToString()));
+                    error = CapaProceso.Clases.TipoHabitacion.Insertar(nombreTipo.Text,Convert.ToInt16(ListaPrecio.SelectedValue.ToString()),txtfot.Text,  estadoTipo.SelectedValue.ToString(),Convert.ToInt16(maximoTipo.Text));
 
                     if (string.IsNullOrEmpty(error))
                     {
@@ -135,7 +135,7 @@ namespace CapaWeb.Formularios.Tipohabitacion
                     break;//termina la ejecucion del programa despues de ejecutar el codigo
                 case "UDP": //ejecuta el codigo si el usuario ingresa el numero 2
 
-                    error = CapaProceso.Clases.TipoHabitacion.Actualizar( nombreTipo.Text,Convert.ToInt16(ListaPrecio.SelectedValue.ToString()), txtfot.Text, estadoTipo.SelectedValue.ToString(), short.Parse(lblId.Text), Convert.ToInt16(maximoTipo.ToString()));
+                    error = CapaProceso.Clases.TipoHabitacion.Actualizar( nombreTipo.Text,Convert.ToInt16(ListaPrecio.SelectedValue.ToString()), txtfot.Text, estadoTipo.SelectedValue.ToString(), Convert.ToInt16(maximoTipo.Text), short.Parse(lblId.Text));
                     if (string.IsNullOrEmpty(error))
                     {
                         CapaProceso.Clases.Auditoria.Insertar("TipoHabitación", "Actualizar", UsuarioId);

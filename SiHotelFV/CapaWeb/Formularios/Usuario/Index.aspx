@@ -92,13 +92,6 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                             
-                                              <asp:TemplateColumn HeaderText="Estado" Visible="false">
-                                                <ItemTemplate>
-                                                    <span style="float: left;">
-                                                        <asp:Label ID="estadoUsuario" runat="server" Text='<%#Eval("estadoUsuario") %>'></asp:Label>
-                                                    </span>
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
 
                                             <asp:TemplateColumn HeaderText="Empleado">
                                                 <ItemTemplate>
@@ -112,6 +105,14 @@
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="nombreCargo" runat="server" Text='<%#Eval("nombreCargo") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+                                            
+                                              <asp:TemplateColumn HeaderText="Estado" >
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="estadoUsuario" runat="server" Text='<%#Eval("estadoUsuario") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>

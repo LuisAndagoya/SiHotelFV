@@ -49,7 +49,7 @@ namespace CapaProceso.Clases
 
              if (Lista == "0")
              {
-            int resultado = CTipo.InsertQuery(nombreTipo.Trim().ToUpper(),idPrecio, imagenTipo.Trim(), estadoTipo.Trim().ToUpper(), maximoTipo);
+            int resultado = CTipo.InsertQuery(nombreTipo.Trim().ToUpper(),idPrecio, imagenTipo.Trim(), estadoTipo, maximoTipo);
             if (resultado == 0)
             {
                 return mensaje = "Error al insertar los registros";
@@ -62,7 +62,7 @@ namespace CapaProceso.Clases
              }
              else
              {
-                 return mensaje = "La CI ya existe";
+                 return mensaje = "El Tipo de Habitación ya existe";
              }
         }
 
@@ -73,7 +73,7 @@ namespace CapaProceso.Clases
         {
 
             string mensaje = "";
-            int resultado = CTipo.UpdateQuery(nombreTipo.Trim().ToUpper(),idPrecio,imagenTipo.Trim(), estadoTipo.Trim().ToUpper(),maximoTipo, idtipo );
+            int resultado = CTipo.UpdateQuery(nombreTipo.Trim().ToUpper(),idPrecio,imagenTipo.Trim(), estadoTipo,maximoTipo, idtipo );
             if (resultado == 0)
             {
                 return mensaje = "Error al actualizar los registros";

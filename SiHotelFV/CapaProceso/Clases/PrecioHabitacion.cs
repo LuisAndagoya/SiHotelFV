@@ -38,7 +38,7 @@ namespace CapaProceso.Clases
 
             if (Lista == "0")
             {
-                int resultado = CPrecio.InsertQuery(precioHabitacion, fechaPrecio.Trim(), estadoPrecio.Trim().ToUpper());
+                int resultado = CPrecio.InsertQuery(precioHabitacion, fechaPrecio, estadoPrecio.Trim().ToUpper());
                 if (resultado == 0)
                 {
                     return mensaje = "Error al insertar los registros";
@@ -63,7 +63,7 @@ namespace CapaProceso.Clases
         {
 
             string mensaje = "";
-            int resultado = CPrecio.UpdateQuery(precioHabitacion,fechaPrecio.Trim(), estadoPrecio.Trim().ToUpper(), idPrecio);
+            int resultado = CPrecio.UpdateQuery(precioHabitacion,fechaPrecio, estadoPrecio.Trim().ToUpper(), idPrecio);
             if (resultado == 0)
             {
                 return mensaje = "Error al actualizar los registros";
