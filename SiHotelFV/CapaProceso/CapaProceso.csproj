@@ -50,7 +50,6 @@
     <Compile Include="Clases\Empleado.cs" />
     <Compile Include="Clases\EstadoHabitacion.cs" />
     <Compile Include="Clases\EstadoReserva.cs" />
-    <Compile Include="Clases\Factura.cs" />
     <Compile Include="Clases\Habitacion.cs" />
     <Compile Include="Clases\Hotel.cs" />
     <Compile Include="Clases\Menu.cs" />
@@ -59,7 +58,9 @@
     <Compile Include="Clases\PrecioHabitacion.cs" />
     <Compile Include="Clases\ReporteCliente.cs" />
     <Compile Include="Clases\ReporteEmpleado.cs" />
+    <Compile Include="Clases\ReporteFactura.cs" />
     <Compile Include="Clases\ReporteHabitacion.cs" />
+    <Compile Include="Clases\ReporteReserva.cs" />
     <Compile Include="Clases\ReporteTipoHabitacion.cs" />
     <Compile Include="Clases\Reserva.cs" />
     <Compile Include="Clases\ReservaGuardar.cs" />

@@ -16,7 +16,20 @@ namespace CapaProceso.Clases
             return CReserva.GetListaDetalleReserva();
         }
 
+        public static CapaDatos.Clases.DetalleReserva.detalle_reservaDataTable Factura(short Id)
+        {
+            return CReserva.Factura(Id);
+        }
 
+        public static CapaDatos.Clases.DetalleReserva.detalle_reservaDataTable Cabecera()
+        {
+            return CReserva.Cabecera();
+        }
+
+        public static CapaDatos.Clases.DetalleReserva.detalle_reservaDataTable Detalle(short Id)
+        {
+            return CReserva.Detalle(Id);
+        }
         public static string Insertar( short Id, string fechaActual, ModeloReservacionDetalle detalleGuardar)
         {
             string mensaje = "";

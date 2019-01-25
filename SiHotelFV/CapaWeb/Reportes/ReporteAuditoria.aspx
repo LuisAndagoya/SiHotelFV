@@ -6,7 +6,7 @@
       <div class="col-md-8 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">EMPLEADOS</h4>
+                <h4 class="card-title">AUDITORÍA</h4>
       <form id="form1" class="forms-sample" runat="server">
 
         <asp:ScriptManager runat="server"></asp:ScriptManager>
@@ -36,14 +36,14 @@
                             </td>
                             <td>
 
-                                <a href="ReporteEmpleados.aspx" class="btn btn-gradient-dark btn-sm">Listar Todos</a></td>
+                                <a href="GeneralAuditoria.aspx" class="btn btn-gradient-dark btn-sm">Listar Todos</a></td>
                         </tr>                
 
                         <tr>
                             <td  colspan="4">
                                 <asp:Label Visible="false" ID="lblId" runat="server" Text=""></asp:Label>
                                 <asp:TextBox Visible="false" ID="TextBox1" runat="server"></asp:TextBox>
-                                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="550px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="700px">
+                                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="550px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="600px">
                                     <LocalReport ReportPath="Reportes\ReporteAuditoria.rdlc">
                                         <DataSources>
                                             <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />

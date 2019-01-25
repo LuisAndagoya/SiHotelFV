@@ -83,11 +83,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EstadoReserva.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Clases\Fac.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Fac.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Clases\Habitacion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -118,6 +113,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteEmpleado.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Clases\ReporteFactura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteFactura.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\ReporteHabitacion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,6 +127,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportePersona.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\ReporteReserva.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteReserva.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clases\ReporteTipoHabitacion.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -258,17 +263,6 @@
     <None Include="Clases\EstadoReserva.xss">
       <DependentUpon>EstadoReserva.xsd</DependentUpon>
     </None>
-    <None Include="Clases\Fac.xsc">
-      <DependentUpon>Fac.xsd</DependentUpon>
-    </None>
-    <None Include="Clases\Fac.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Fac.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Clases\Fac.xss">
-      <DependentUpon>Fac.xsd</DependentUpon>
-    </None>
     <None Include="Clases\Habitacion.xsc">
       <DependentUpon>Habitacion.xsd</DependentUpon>
     </None>
@@ -335,6 +329,17 @@
     <None Include="Clases\ReporteEmpleado.xss">
       <DependentUpon>ReporteEmpleado.xsd</DependentUpon>
     </None>
+    <None Include="Clases\ReporteFactura.xsc">
+      <DependentUpon>ReporteFactura.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\ReporteFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteFactura.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Clases\ReporteFactura.xss">
+      <DependentUpon>ReporteFactura.xsd</DependentUpon>
+    </None>
     <None Include="Clases\ReporteHabitacion.xsc">
       <DependentUpon>ReporteHabitacion.xsd</DependentUpon>
     </None>
@@ -356,6 +361,17 @@
     </None>
     <None Include="Clases\ReportePersona.xss">
       <DependentUpon>ReportePersona.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\ReporteReserva.xsc">
+      <DependentUpon>ReporteReserva.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\ReporteReserva.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteReserva.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Clases\ReporteReserva.xss">
+      <DependentUpon>ReporteReserva.xsd</DependentUpon>
     </None>
     <None Include="Clases\ReporteTipoHabitacion.xsc">
       <DependentUpon>ReporteTipoHabitacion.xsd</DependentUpon>

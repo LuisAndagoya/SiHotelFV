@@ -20,17 +20,17 @@ namespace CapaDatos.Clases {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DetalleReserva")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ReporteFactura")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DetalleReserva : global::System.Data.DataSet {
+    public partial class ReporteFactura : global::System.Data.DataSet {
         
-        private detalle_reservaDataTable tabledetalle_reserva;
+        private reservasDataTable tablereservas;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DetalleReserva() {
+        public ReporteFactura() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CapaDatos.Clases {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DetalleReserva(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ReporteFactura(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace CapaDatos.Clases {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["detalle_reserva"] != null)) {
-                    base.Tables.Add(new detalle_reservaDataTable(ds.Tables["detalle_reserva"]));
+                if ((ds.Tables["reservas"] != null)) {
+                    base.Tables.Add(new reservasDataTable(ds.Tables["reservas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace CapaDatos.Clases {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public detalle_reservaDataTable detalle_reserva {
+        public reservasDataTable reservas {
             get {
-                return this.tabledetalle_reserva;
+                return this.tablereservas;
             }
         }
         
@@ -127,7 +127,7 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DetalleReserva cln = ((DetalleReserva)(base.Clone()));
+            ReporteFactura cln = ((ReporteFactura)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace CapaDatos.Clases {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["detalle_reserva"] != null)) {
-                    base.Tables.Add(new detalle_reservaDataTable(ds.Tables["detalle_reserva"]));
+                if ((ds.Tables["reservas"] != null)) {
+                    base.Tables.Add(new reservasDataTable(ds.Tables["reservas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tabledetalle_reserva = ((detalle_reservaDataTable)(base.Tables["detalle_reserva"]));
+            this.tablereservas = ((reservasDataTable)(base.Tables["reservas"]));
             if ((initTable == true)) {
-                if ((this.tabledetalle_reserva != null)) {
-                    this.tabledetalle_reserva.InitVars();
+                if ((this.tablereservas != null)) {
+                    this.tablereservas.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DetalleReserva";
+            this.DataSetName = "ReporteFactura";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DetalleReserva.xsd";
+            this.Namespace = "http://tempuri.org/ReporteFactura.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tabledetalle_reserva = new detalle_reservaDataTable();
-            base.Tables.Add(this.tabledetalle_reserva);
+            this.tablereservas = new reservasDataTable();
+            base.Tables.Add(this.tablereservas);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializedetalle_reserva() {
+        private bool ShouldSerializereservas() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace CapaDatos.Clases {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DetalleReserva ds = new DetalleReserva();
+            ReporteFactura ds = new ReporteFactura();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,29 +270,39 @@ namespace CapaDatos.Clases {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void detalle_reservaRowChangeEventHandler(object sender, detalle_reservaRowChangeEvent e);
+        public delegate void reservasRowChangeEventHandler(object sender, reservasRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class detalle_reservaDataTable : global::System.Data.TypedTableBase<detalle_reservaRow> {
+        public partial class reservasDataTable : global::System.Data.TypedTableBase<reservasRow> {
             
-            private global::System.Data.DataColumn columnidDetalle;
+            private global::System.Data.DataColumn columnidReservacion;
             
-            private global::System.Data.DataColumn columnidReserva;
+            private global::System.Data.DataColumn columnidCliente;
             
-            private global::System.Data.DataColumn columnnumeroHabitacion;
+            private global::System.Data.DataColumn columnidUsuario;
             
-            private global::System.Data.DataColumn columnfechaActual;
+            private global::System.Data.DataColumn columnfechaReservacion;
             
-            private global::System.Data.DataColumn columnvalor;
+            private global::System.Data.DataColumn columnfechaEntrada;
+            
+            private global::System.Data.DataColumn columnfechaSalida;
+            
+            private global::System.Data.DataColumn columnidEstadoReserva;
+            
+            private global::System.Data.DataColumn columntotalReservacion;
+            
+            private global::System.Data.DataColumn columnSaldoReserva;
+            
+            private global::System.Data.DataColumn columnPagadoReserva;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public detalle_reservaDataTable() {
-                this.TableName = "detalle_reserva";
+            public reservasDataTable() {
+                this.TableName = "reservas";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -300,7 +310,7 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal detalle_reservaDataTable(global::System.Data.DataTable table) {
+            internal reservasDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -317,48 +327,88 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected detalle_reservaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected reservasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn idDetalleColumn {
+            public global::System.Data.DataColumn idReservacionColumn {
                 get {
-                    return this.columnidDetalle;
+                    return this.columnidReservacion;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn idReservaColumn {
+            public global::System.Data.DataColumn idClienteColumn {
                 get {
-                    return this.columnidReserva;
+                    return this.columnidCliente;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn numeroHabitacionColumn {
+            public global::System.Data.DataColumn idUsuarioColumn {
                 get {
-                    return this.columnnumeroHabitacion;
+                    return this.columnidUsuario;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn fechaActualColumn {
+            public global::System.Data.DataColumn fechaReservacionColumn {
                 get {
-                    return this.columnfechaActual;
+                    return this.columnfechaReservacion;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn valorColumn {
+            public global::System.Data.DataColumn fechaEntradaColumn {
                 get {
-                    return this.columnvalor;
+                    return this.columnfechaEntrada;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fechaSalidaColumn {
+                get {
+                    return this.columnfechaSalida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idEstadoReservaColumn {
+                get {
+                    return this.columnidEstadoReserva;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn totalReservacionColumn {
+                get {
+                    return this.columntotalReservacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SaldoReservaColumn {
+                get {
+                    return this.columnSaldoReserva;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PagadoReservaColumn {
+                get {
+                    return this.columnPagadoReserva;
                 }
             }
             
@@ -373,56 +423,61 @@ namespace CapaDatos.Clases {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public detalle_reservaRow this[int index] {
+            public reservasRow this[int index] {
                 get {
-                    return ((detalle_reservaRow)(this.Rows[index]));
+                    return ((reservasRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event detalle_reservaRowChangeEventHandler detalle_reservaRowChanging;
+            public event reservasRowChangeEventHandler reservasRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event detalle_reservaRowChangeEventHandler detalle_reservaRowChanged;
+            public event reservasRowChangeEventHandler reservasRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event detalle_reservaRowChangeEventHandler detalle_reservaRowDeleting;
+            public event reservasRowChangeEventHandler reservasRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event detalle_reservaRowChangeEventHandler detalle_reservaRowDeleted;
+            public event reservasRowChangeEventHandler reservasRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Adddetalle_reservaRow(detalle_reservaRow row) {
+            public void AddreservasRow(reservasRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public detalle_reservaRow Adddetalle_reservaRow(int idReserva, int numeroHabitacion, System.DateTime fechaActual, double valor) {
-                detalle_reservaRow rowdetalle_reservaRow = ((detalle_reservaRow)(this.NewRow()));
+            public reservasRow AddreservasRow(int idCliente, int idUsuario, System.DateTime fechaReservacion, System.DateTime fechaEntrada, System.DateTime fechaSalida, int idEstadoReserva, double totalReservacion, decimal SaldoReserva, decimal PagadoReserva) {
+                reservasRow rowreservasRow = ((reservasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        idReserva,
-                        numeroHabitacion,
-                        fechaActual,
-                        valor};
-                rowdetalle_reservaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowdetalle_reservaRow);
-                return rowdetalle_reservaRow;
+                        idCliente,
+                        idUsuario,
+                        fechaReservacion,
+                        fechaEntrada,
+                        fechaSalida,
+                        idEstadoReserva,
+                        totalReservacion,
+                        SaldoReserva,
+                        PagadoReserva};
+                rowreservasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowreservasRow);
+                return rowreservasRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public detalle_reservaRow FindByidDetalle(int idDetalle) {
-                return ((detalle_reservaRow)(this.Rows.Find(new object[] {
-                            idDetalle})));
+            public reservasRow FindByidReservacion(int idReservacion) {
+                return ((reservasRow)(this.Rows.Find(new object[] {
+                            idReservacion})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                detalle_reservaDataTable cln = ((detalle_reservaDataTable)(base.Clone()));
+                reservasDataTable cln = ((reservasDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -430,70 +485,87 @@ namespace CapaDatos.Clases {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new detalle_reservaDataTable();
+                return new reservasDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnidDetalle = base.Columns["idDetalle"];
-                this.columnidReserva = base.Columns["idReserva"];
-                this.columnnumeroHabitacion = base.Columns["numeroHabitacion"];
-                this.columnfechaActual = base.Columns["fechaActual"];
-                this.columnvalor = base.Columns["valor"];
+                this.columnidReservacion = base.Columns["idReservacion"];
+                this.columnidCliente = base.Columns["idCliente"];
+                this.columnidUsuario = base.Columns["idUsuario"];
+                this.columnfechaReservacion = base.Columns["fechaReservacion"];
+                this.columnfechaEntrada = base.Columns["fechaEntrada"];
+                this.columnfechaSalida = base.Columns["fechaSalida"];
+                this.columnidEstadoReserva = base.Columns["idEstadoReserva"];
+                this.columntotalReservacion = base.Columns["totalReservacion"];
+                this.columnSaldoReserva = base.Columns["SaldoReserva"];
+                this.columnPagadoReserva = base.Columns["PagadoReserva"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnidDetalle = new global::System.Data.DataColumn("idDetalle", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidDetalle);
-                this.columnidReserva = new global::System.Data.DataColumn("idReserva", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidReserva);
-                this.columnnumeroHabitacion = new global::System.Data.DataColumn("numeroHabitacion", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnumeroHabitacion);
-                this.columnfechaActual = new global::System.Data.DataColumn("fechaActual", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfechaActual);
-                this.columnvalor = new global::System.Data.DataColumn("valor", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnvalor);
+                this.columnidReservacion = new global::System.Data.DataColumn("idReservacion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidReservacion);
+                this.columnidCliente = new global::System.Data.DataColumn("idCliente", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidCliente);
+                this.columnidUsuario = new global::System.Data.DataColumn("idUsuario", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidUsuario);
+                this.columnfechaReservacion = new global::System.Data.DataColumn("fechaReservacion", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaReservacion);
+                this.columnfechaEntrada = new global::System.Data.DataColumn("fechaEntrada", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaEntrada);
+                this.columnfechaSalida = new global::System.Data.DataColumn("fechaSalida", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaSalida);
+                this.columnidEstadoReserva = new global::System.Data.DataColumn("idEstadoReserva", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidEstadoReserva);
+                this.columntotalReservacion = new global::System.Data.DataColumn("totalReservacion", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotalReservacion);
+                this.columnSaldoReserva = new global::System.Data.DataColumn("SaldoReserva", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSaldoReserva);
+                this.columnPagadoReserva = new global::System.Data.DataColumn("PagadoReserva", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPagadoReserva);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnidDetalle}, true));
-                this.columnidDetalle.AutoIncrement = true;
-                this.columnidDetalle.AutoIncrementSeed = -1;
-                this.columnidDetalle.AutoIncrementStep = -1;
-                this.columnidDetalle.AllowDBNull = false;
-                this.columnidDetalle.ReadOnly = true;
-                this.columnidDetalle.Unique = true;
-                this.columnidReserva.AllowDBNull = false;
-                this.columnnumeroHabitacion.AllowDBNull = false;
-                this.columnfechaActual.AllowDBNull = false;
-                this.columnvalor.AllowDBNull = false;
+                                this.columnidReservacion}, true));
+                this.columnidReservacion.AutoIncrement = true;
+                this.columnidReservacion.AutoIncrementSeed = -1;
+                this.columnidReservacion.AutoIncrementStep = -1;
+                this.columnidReservacion.AllowDBNull = false;
+                this.columnidReservacion.ReadOnly = true;
+                this.columnidReservacion.Unique = true;
+                this.columnidCliente.AllowDBNull = false;
+                this.columnidUsuario.AllowDBNull = false;
+                this.columnfechaReservacion.AllowDBNull = false;
+                this.columnfechaEntrada.AllowDBNull = false;
+                this.columnfechaSalida.AllowDBNull = false;
+                this.columnidEstadoReserva.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public detalle_reservaRow Newdetalle_reservaRow() {
-                return ((detalle_reservaRow)(this.NewRow()));
+            public reservasRow NewreservasRow() {
+                return ((reservasRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new detalle_reservaRow(builder);
+                return new reservasRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(detalle_reservaRow);
+                return typeof(reservasRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.detalle_reservaRowChanged != null)) {
-                    this.detalle_reservaRowChanged(this, new detalle_reservaRowChangeEvent(((detalle_reservaRow)(e.Row)), e.Action));
+                if ((this.reservasRowChanged != null)) {
+                    this.reservasRowChanged(this, new reservasRowChangeEvent(((reservasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -501,8 +573,8 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.detalle_reservaRowChanging != null)) {
-                    this.detalle_reservaRowChanging(this, new detalle_reservaRowChangeEvent(((detalle_reservaRow)(e.Row)), e.Action));
+                if ((this.reservasRowChanging != null)) {
+                    this.reservasRowChanging(this, new reservasRowChangeEvent(((reservasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -510,8 +582,8 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.detalle_reservaRowDeleted != null)) {
-                    this.detalle_reservaRowDeleted(this, new detalle_reservaRowChangeEvent(((detalle_reservaRow)(e.Row)), e.Action));
+                if ((this.reservasRowDeleted != null)) {
+                    this.reservasRowDeleted(this, new reservasRowChangeEvent(((reservasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -519,14 +591,14 @@ namespace CapaDatos.Clases {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.detalle_reservaRowDeleting != null)) {
-                    this.detalle_reservaRowDeleting(this, new detalle_reservaRowChangeEvent(((detalle_reservaRow)(e.Row)), e.Action));
+                if ((this.reservasRowDeleting != null)) {
+                    this.reservasRowDeleting(this, new reservasRowChangeEvent(((reservasRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removedetalle_reservaRow(detalle_reservaRow row) {
+            public void RemovereservasRow(reservasRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -535,7 +607,7 @@ namespace CapaDatos.Clases {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DetalleReserva ds = new DetalleReserva();
+                ReporteFactura ds = new ReporteFactura();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -553,7 +625,7 @@ namespace CapaDatos.Clases {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "detalle_reservaDataTable";
+                attribute2.FixedValue = "reservasDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -597,70 +669,176 @@ namespace CapaDatos.Clases {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class detalle_reservaRow : global::System.Data.DataRow {
+        public partial class reservasRow : global::System.Data.DataRow {
             
-            private detalle_reservaDataTable tabledetalle_reserva;
+            private reservasDataTable tablereservas;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal detalle_reservaRow(global::System.Data.DataRowBuilder rb) : 
+            internal reservasRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabledetalle_reserva = ((detalle_reservaDataTable)(this.Table));
+                this.tablereservas = ((reservasDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int idDetalle {
+            public int idReservacion {
                 get {
-                    return ((int)(this[this.tabledetalle_reserva.idDetalleColumn]));
+                    return ((int)(this[this.tablereservas.idReservacionColumn]));
                 }
                 set {
-                    this[this.tabledetalle_reserva.idDetalleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int idReserva {
-                get {
-                    return ((int)(this[this.tabledetalle_reserva.idReservaColumn]));
-                }
-                set {
-                    this[this.tabledetalle_reserva.idReservaColumn] = value;
+                    this[this.tablereservas.idReservacionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int numeroHabitacion {
+            public int idCliente {
                 get {
-                    return ((int)(this[this.tabledetalle_reserva.numeroHabitacionColumn]));
+                    return ((int)(this[this.tablereservas.idClienteColumn]));
                 }
                 set {
-                    this[this.tabledetalle_reserva.numeroHabitacionColumn] = value;
+                    this[this.tablereservas.idClienteColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime fechaActual {
+            public int idUsuario {
                 get {
-                    return ((global::System.DateTime)(this[this.tabledetalle_reserva.fechaActualColumn]));
+                    return ((int)(this[this.tablereservas.idUsuarioColumn]));
                 }
                 set {
-                    this[this.tabledetalle_reserva.fechaActualColumn] = value;
+                    this[this.tablereservas.idUsuarioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double valor {
+            public System.DateTime fechaReservacion {
                 get {
-                    return ((double)(this[this.tabledetalle_reserva.valorColumn]));
+                    return ((global::System.DateTime)(this[this.tablereservas.fechaReservacionColumn]));
                 }
                 set {
-                    this[this.tabledetalle_reserva.valorColumn] = value;
+                    this[this.tablereservas.fechaReservacionColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fechaEntrada {
+                get {
+                    return ((global::System.DateTime)(this[this.tablereservas.fechaEntradaColumn]));
+                }
+                set {
+                    this[this.tablereservas.fechaEntradaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fechaSalida {
+                get {
+                    return ((global::System.DateTime)(this[this.tablereservas.fechaSalidaColumn]));
+                }
+                set {
+                    this[this.tablereservas.fechaSalidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idEstadoReserva {
+                get {
+                    return ((int)(this[this.tablereservas.idEstadoReservaColumn]));
+                }
+                set {
+                    this[this.tablereservas.idEstadoReservaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double totalReservacion {
+                get {
+                    try {
+                        return ((double)(this[this.tablereservas.totalReservacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'totalReservacion\' de la tabla \'reservas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereservas.totalReservacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal SaldoReserva {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablereservas.SaldoReservaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SaldoReserva\' de la tabla \'reservas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereservas.SaldoReservaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PagadoReserva {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablereservas.PagadoReservaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PagadoReserva\' de la tabla \'reservas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablereservas.PagadoReservaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstotalReservacionNull() {
+                return this.IsNull(this.tablereservas.totalReservacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettotalReservacionNull() {
+                this[this.tablereservas.totalReservacionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSaldoReservaNull() {
+                return this.IsNull(this.tablereservas.SaldoReservaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSaldoReservaNull() {
+                this[this.tablereservas.SaldoReservaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPagadoReservaNull() {
+                return this.IsNull(this.tablereservas.PagadoReservaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPagadoReservaNull() {
+                this[this.tablereservas.PagadoReservaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -668,22 +846,22 @@ namespace CapaDatos.Clases {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class detalle_reservaRowChangeEvent : global::System.EventArgs {
+        public class reservasRowChangeEvent : global::System.EventArgs {
             
-            private detalle_reservaRow eventRow;
+            private reservasRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public detalle_reservaRowChangeEvent(detalle_reservaRow row, global::System.Data.DataRowAction action) {
+            public reservasRowChangeEvent(reservasRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public detalle_reservaRow Row {
+            public reservasRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -699,7 +877,7 @@ namespace CapaDatos.Clases {
         }
     }
 }
-namespace CapaDatos.Clases.DetalleReservaTableAdapters {
+namespace CapaDatos.Clases.ReporteFacturaTableAdapters {
     
     
     /// <summary>
@@ -711,7 +889,7 @@ namespace CapaDatos.Clases.DetalleReservaTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class detalle_reservaTableAdapter : global::System.ComponentModel.Component {
+    public partial class reservasTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -725,7 +903,7 @@ namespace CapaDatos.Clases.DetalleReservaTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public detalle_reservaTableAdapter() {
+        public reservasTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -822,49 +1000,77 @@ namespace CapaDatos.Clases.DetalleReservaTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "detalle_reserva";
-            tableMapping.ColumnMappings.Add("idDetalle", "idDetalle");
-            tableMapping.ColumnMappings.Add("idReserva", "idReserva");
-            tableMapping.ColumnMappings.Add("numeroHabitacion", "numeroHabitacion");
-            tableMapping.ColumnMappings.Add("fechaActual", "fechaActual");
-            tableMapping.ColumnMappings.Add("valor", "valor");
+            tableMapping.DataSetTable = "reservas";
+            tableMapping.ColumnMappings.Add("idReservacion", "idReservacion");
+            tableMapping.ColumnMappings.Add("idCliente", "idCliente");
+            tableMapping.ColumnMappings.Add("idUsuario", "idUsuario");
+            tableMapping.ColumnMappings.Add("fechaReservacion", "fechaReservacion");
+            tableMapping.ColumnMappings.Add("fechaEntrada", "fechaEntrada");
+            tableMapping.ColumnMappings.Add("fechaSalida", "fechaSalida");
+            tableMapping.ColumnMappings.Add("idEstadoReserva", "idEstadoReserva");
+            tableMapping.ColumnMappings.Add("totalReservacion", "totalReservacion");
+            tableMapping.ColumnMappings.Add("SaldoReserva", "SaldoReserva");
+            tableMapping.ColumnMappings.Add("PagadoReserva", "PagadoReserva");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[detalle_reserva] WHERE (([idDetalle] = @Original_idDetalle) AN" +
-                "D ([idReserva] = @Original_idReserva) AND ([numeroHabitacion] = @Original_numero" +
-                "Habitacion) AND ([fechaActual] = @Original_fechaActual) AND ([valor] = @Original" +
-                "_valor))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[reservas] WHERE (([idReservacion] = @Original_idReservacion) AND ([idCliente] = @Original_idCliente) AND ([idUsuario] = @Original_idUsuario) AND ([fechaReservacion] = @Original_fechaReservacion) AND ([fechaEntrada] = @Original_fechaEntrada) AND ([fechaSalida] = @Original_fechaSalida) AND ([idEstadoReserva] = @Original_idEstadoReserva) AND ((@IsNull_totalReservacion = 1 AND [totalReservacion] IS NULL) OR ([totalReservacion] = @Original_totalReservacion)) AND ((@IsNull_SaldoReserva = 1 AND [SaldoReserva] IS NULL) OR ([SaldoReserva] = @Original_SaldoReserva)) AND ((@IsNull_PagadoReserva = 1 AND [PagadoReserva] IS NULL) OR ([PagadoReserva] = @Original_PagadoReserva)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idDetalle", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idDetalle", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numeroHabitacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fechaActual", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaActual", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_valor", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idReservacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idReservacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCliente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fechaReservacion", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaReservacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fechaEntrada", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaEntrada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fechaSalida", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaSalida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idEstadoReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_totalReservacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "totalReservacion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_totalReservacion", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "totalReservacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SaldoReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SaldoReserva", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SaldoReserva", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "SaldoReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PagadoReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PagadoReserva", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PagadoReserva", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PagadoReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[detalle_reserva] ([idReserva], [numeroHabitacion], [fechaActual], [valor]) VALUES (@idReserva, @numeroHabitacion, @fechaActual, @valor);
-SELECT idDetalle, idReserva, numeroHabitacion, fechaActual, valor FROM detalle_reserva WHERE (idDetalle = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[reservas] ([idCliente], [idUsuario], [fechaReservacion], [fechaEntrada], [fechaSalida], [idEstadoReserva], [totalReservacion], [SaldoReserva], [PagadoReserva]) VALUES (@idCliente, @idUsuario, @fechaReservacion, @fechaEntrada, @fechaSalida, @idEstadoReserva, @totalReservacion, @SaldoReserva, @PagadoReserva);
+SELECT idReservacion, idCliente, idUsuario, fechaReservacion, fechaEntrada, fechaSalida, idEstadoReserva, totalReservacion, SaldoReserva, PagadoReserva FROM reservas WHERE (idReservacion = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroHabitacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaActual", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaActual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valor", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaReservacion", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaEntrada", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaSalida", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaSalida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@totalReservacion", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "totalReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SaldoReserva", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "SaldoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PagadoReserva", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PagadoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[detalle_reserva] SET [idReserva] = @idReserva, [numeroHabitacion] = @numeroHabitacion, [fechaActual] = @fechaActual, [valor] = @valor WHERE (([idDetalle] = @Original_idDetalle) AND ([idReserva] = @Original_idReserva) AND ([numeroHabitacion] = @Original_numeroHabitacion) AND ([fechaActual] = @Original_fechaActual) AND ([valor] = @Original_valor));
-SELECT idDetalle, idReserva, numeroHabitacion, fechaActual, valor FROM detalle_reserva WHERE (idDetalle = @idDetalle)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[reservas] SET [idCliente] = @idCliente, [idUsuario] = @idUsuario, [fechaReservacion] = @fechaReservacion, [fechaEntrada] = @fechaEntrada, [fechaSalida] = @fechaSalida, [idEstadoReserva] = @idEstadoReserva, [totalReservacion] = @totalReservacion, [SaldoReserva] = @SaldoReserva, [PagadoReserva] = @PagadoReserva WHERE (([idReservacion] = @Original_idReservacion) AND ([idCliente] = @Original_idCliente) AND ([idUsuario] = @Original_idUsuario) AND ([fechaReservacion] = @Original_fechaReservacion) AND ([fechaEntrada] = @Original_fechaEntrada) AND ([fechaSalida] = @Original_fechaSalida) AND ([idEstadoReserva] = @Original_idEstadoReserva) AND ((@IsNull_totalReservacion = 1 AND [totalReservacion] IS NULL) OR ([totalReservacion] = @Original_totalReservacion)) AND ((@IsNull_SaldoReserva = 1 AND [SaldoReserva] IS NULL) OR ([SaldoReserva] = @Original_SaldoReserva)) AND ((@IsNull_PagadoReserva = 1 AND [PagadoReserva] IS NULL) OR ([PagadoReserva] = @Original_PagadoReserva)));
+SELECT idReservacion, idCliente, idUsuario, fechaReservacion, fechaEntrada, fechaSalida, idEstadoReserva, totalReservacion, SaldoReserva, PagadoReserva FROM reservas WHERE (idReservacion = @idReservacion)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroHabitacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaActual", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaActual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valor", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idDetalle", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idDetalle", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numeroHabitacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fechaActual", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaActual", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_valor", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "valor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idDetalle", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idDetalle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaReservacion", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaEntrada", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaSalida", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaSalida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@totalReservacion", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "totalReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SaldoReserva", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "SaldoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PagadoReserva", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PagadoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idReservacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idReservacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCliente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idUsuario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fechaReservacion", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaReservacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fechaEntrada", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaEntrada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fechaSalida", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaSalida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idEstadoReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_totalReservacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "totalReservacion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_totalReservacion", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "totalReservacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SaldoReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SaldoReserva", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SaldoReserva", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "SaldoReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PagadoReserva", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PagadoReserva", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PagadoReserva", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "PagadoReserva", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idReservacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -877,82 +1083,32 @@ SELECT idDetalle, idReserva, numeroHabitacion, fechaActual, valor FROM detalle_r
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idDetalle, idReserva, numeroHabitacion, fechaActual, valor FROM dbo.detall" +
-                "e_reserva";
+            this._commandCollection[0].CommandText = "SELECT idReservacion, idCliente, idUsuario, fechaReservacion, fechaEntrada, fecha" +
+                "Salida, idEstadoReserva, totalReservacion, SaldoReserva, PagadoReserva FROM dbo." +
+                "reservas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        tipo_habitacion.idtipo, tipo_habitacion.nombreTipo, habitacion.nume" +
-                "roHabitacion, habitacion.tipoHabitacion_Idtipo, detalle_reserva.idDetalle, detal" +
-                "le_reserva.idReserva, \r\n                         detalle_reserva.numeroHabitacio" +
-                "n AS Expr1, detalle_reserva.fechaActual, detalle_reserva.valor, reservas.idReser" +
-                "vacion, reservas.idCliente, reservas.idUsuario, reservas.fechaReservacion, \r\n   " +
-                "                      reservas.fechaEntrada, reservas.fechaSalida, reservas.idEs" +
-                "tadoReserva, reservas.totalReservacion, reservas.SaldoReserva, reservas.PagadoRe" +
-                "serva, cliente.idCliente AS Expr2, cliente.dniCliente, \r\n                       " +
-                "  cliente.nombreCliente, cliente.apellidoCliente, cliente.direccionCliente, clie" +
-                "nte.telefonoCliente, cliente.correoCliente, usuario.usernameUsuario, usuario.idU" +
-                "suario AS Expr3, \r\n                         estado_reserva.idEstadoReserva AS Ex" +
-                "pr4, estado_reserva.nombreEstado\r\nFROM            tipo_habitacion INNER JOIN\r\n  " +
-                "                       habitacion ON habitacion.tipoHabitacion_Idtipo = tipo_hab" +
-                "itacion.idtipo AND habitacion.tipoHabitacion_Idtipo = tipo_habitacion.idtipo INN" +
-                "ER JOIN\r\n                         detalle_reserva ON detalle_reserva.numeroHabit" +
-                "acion = habitacion.numeroHabitacion INNER JOIN\r\n                         reserva" +
-                "s ON detalle_reserva.idReserva = reservas.idReservacion INNER JOIN\r\n            " +
-                "             cliente ON reservas.idCliente = cliente.idCliente INNER JOIN\r\n     " +
-                "                    usuario ON reservas.idUsuario = usuario.idUsuario INNER JOIN" +
-                "\r\n                         estado_reserva ON reservas.idEstadoReserva = estado_r" +
-                "eserva.idEstadoReserva\r\n\r\nWHERE\r\ndbo.reservas.idReservacion=@Id";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, reservas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.idEstadoReserva, reservas.totalReservacion, 
-                         reservas.SaldoReserva, reservas.PagadoReserva, cliente.idCliente AS Expr1, cliente.dniCliente, cliente.nombreCliente, cliente.apellidoCliente, cliente.direccionCliente, cliente.telefonoCliente, 
-                         cliente.correoCliente, estado_reserva.idEstadoReserva AS Expr2, estado_reserva.nombreEstado, usuario.idUsuario AS Expr3, usuario.usernameUsuario
+            this._commandCollection[1].CommandText = @"SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, reservas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.idEstadoReserva, reservas.totalReservacion, 
+                         reservas.SaldoReserva, reservas.PagadoReserva, detalle_reserva.idDetalle, detalle_reserva.idReserva, detalle_reserva.numeroHabitacion, detalle_reserva.fechaActual, detalle_reserva.valor, 
+                         cliente.idCliente AS Expr1, cliente.dniCliente, cliente.nombreCliente, cliente.apellidoCliente, cliente.direccionCliente, cliente.telefonoCliente, cliente.correoCliente, estado_reserva.idEstadoReserva AS Expr2, 
+                         estado_reserva.nombreEstado, usuario.idUsuario AS Expr3, usuario.usernameUsuario
 FROM            reservas INNER JOIN
+                         detalle_reserva ON detalle_reserva.idReserva = reservas.idReservacion INNER JOIN
                          cliente ON reservas.idCliente = cliente.idCliente INNER JOIN
                          estado_reserva ON reservas.idEstadoReserva = estado_reserva.idEstadoReserva INNER JOIN
                          usuario ON reservas.idUsuario = usuario.idUsuario";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        tipo_habitacion.idtipo, tipo_habitacion.nombreTipo, habitacion.tipoHabitacion_Idtipo, habitacion.numeroHabitacion, habitacion.hotel_CodigoHotel, habitacion.estadoHabitacion_idEstado, detalle_reserva.idDetalle,
-                          detalle_reserva.idReserva, detalle_reserva.numeroHabitacion AS Expr1, detalle_reserva.fechaActual, detalle_reserva.valor
-FROM            tipo_habitacion INNER JOIN
-                         habitacion ON habitacion.tipoHabitacion_Idtipo = tipo_habitacion.idtipo AND habitacion.tipoHabitacion_Idtipo = tipo_habitacion.idtipo INNER JOIN
-                         detalle_reserva ON detalle_reserva.numeroHabitacion = habitacion.numeroHabitacion
-WHERE        (detalle_reserva.idReserva = @Id)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT        detalle_reserva.idDetalle, detalle_reserva.idReserva, detalle_reserva.numeroHabitacion, detalle_reserva.fechaActual, detalle_reserva.valor, habitacion.numeroHabitacion AS Expr1, habitacion.tipoHabitacion_Idtipo, 
-                         habitacion.hotel_CodigoHotel, habitacion.estadoHabitacion_idEstado, estado_habitacion.idEstadoHabitacion, estado_habitacion.nombreEstadoHabitacion
-FROM            detalle_reserva INNER JOIN
-                         habitacion ON detalle_reserva.numeroHabitacion = habitacion.numeroHabitacion INNER JOIN
-                         estado_habitacion ON habitacion.estadoHabitacion_idEstado = estado_habitacion.idEstadoHabitacion";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "INSERT INTO detalle_reserva\r\n                         (idReserva, numeroHabitacio" +
-                "n, fechaActual, valor)\r\nVALUES        (@idReserva,@numeroHabitacion,@fechaActual" +
-                ",@valor); \r\n";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idReserva", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroHabitacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaActual", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fechaActual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@valor", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "valor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DetalleReserva.detalle_reservaDataTable dataTable) {
+        public virtual int Fill(ReporteFactura.reservasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -965,9 +1121,9 @@ FROM            detalle_reserva INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DetalleReserva.detalle_reservaDataTable GetData() {
+        public virtual ReporteFactura.reservasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DetalleReserva.detalle_reservaDataTable dataTable = new DetalleReserva.detalle_reservaDataTable();
+            ReporteFactura.reservasDataTable dataTable = new ReporteFactura.reservasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -976,9 +1132,8 @@ FROM            detalle_reserva INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(DetalleReserva.detalle_reservaDataTable dataTable, int Id) {
+        public virtual int FillBy(ReporteFactura.reservasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -990,10 +1145,9 @@ FROM            detalle_reserva INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DetalleReserva.detalle_reservaDataTable Factura(int Id) {
+        public virtual ReporteFactura.reservasDataTable Factura() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
-            DetalleReserva.detalle_reservaDataTable dataTable = new DetalleReserva.detalle_reservaDataTable();
+            ReporteFactura.reservasDataTable dataTable = new ReporteFactura.reservasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1001,76 +1155,15 @@ FROM            detalle_reserva INNER JOIN
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy1(DetalleReserva.detalle_reservaDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DetalleReserva.detalle_reservaDataTable Cabecera() {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            DetalleReserva.detalle_reservaDataTable dataTable = new DetalleReserva.detalle_reservaDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy2(DetalleReserva.detalle_reservaDataTable dataTable, int Id) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DetalleReserva.detalle_reservaDataTable Detalle(int Id) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
-            DetalleReserva.detalle_reservaDataTable dataTable = new DetalleReserva.detalle_reservaDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DetalleReserva.detalle_reservaDataTable GetListaDetalleReserva() {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
-            DetalleReserva.detalle_reservaDataTable dataTable = new DetalleReserva.detalle_reservaDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DetalleReserva.detalle_reservaDataTable dataTable) {
+        public virtual int Update(ReporteFactura.reservasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DetalleReserva dataSet) {
-            return this.Adapter.Update(dataSet, "detalle_reserva");
+        public virtual int Update(ReporteFactura dataSet) {
+            return this.Adapter.Update(dataSet, "reservas");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1092,12 +1185,38 @@ FROM            detalle_reserva INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idDetalle, int Original_idReserva, int Original_numeroHabitacion, System.DateTime Original_fechaActual, double Original_valor) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idDetalle));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_idReserva));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_numeroHabitacion));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_fechaActual));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((double)(Original_valor));
+        public virtual int Delete(int Original_idReservacion, int Original_idCliente, int Original_idUsuario, System.DateTime Original_fechaReservacion, System.DateTime Original_fechaEntrada, System.DateTime Original_fechaSalida, int Original_idEstadoReserva, global::System.Nullable<double> Original_totalReservacion, global::System.Nullable<decimal> Original_SaldoReserva, global::System.Nullable<decimal> Original_PagadoReserva) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idReservacion));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_idCliente));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_idUsuario));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_fechaReservacion));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_fechaEntrada));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_fechaSalida));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_idEstadoReserva));
+            if ((Original_totalReservacion.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((double)(Original_totalReservacion.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_SaldoReserva.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_SaldoReserva.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PagadoReserva.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((decimal)(Original_PagadoReserva.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1118,11 +1237,31 @@ FROM            detalle_reserva INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int idReserva, int numeroHabitacion, System.DateTime fechaActual, double valor) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idReserva));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(numeroHabitacion));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(fechaActual));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((double)(valor));
+        public virtual int Insert(int idCliente, int idUsuario, System.DateTime fechaReservacion, System.DateTime fechaEntrada, System.DateTime fechaSalida, int idEstadoReserva, global::System.Nullable<double> totalReservacion, global::System.Nullable<decimal> SaldoReserva, global::System.Nullable<decimal> PagadoReserva) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idCliente));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idUsuario));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(fechaReservacion));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(fechaEntrada));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(fechaSalida));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(idEstadoReserva));
+            if ((totalReservacion.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((double)(totalReservacion.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((SaldoReserva.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(SaldoReserva.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((PagadoReserva.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(PagadoReserva.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1143,17 +1282,83 @@ FROM            detalle_reserva INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idReserva, int numeroHabitacion, System.DateTime fechaActual, double valor, int Original_idDetalle, int Original_idReserva, int Original_numeroHabitacion, System.DateTime Original_fechaActual, double Original_valor, int idDetalle) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idReserva));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(numeroHabitacion));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(fechaActual));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((double)(valor));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_idDetalle));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_idReserva));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_numeroHabitacion));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_fechaActual));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(Original_valor));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(idDetalle));
+        public virtual int Update(
+                    int idCliente, 
+                    int idUsuario, 
+                    System.DateTime fechaReservacion, 
+                    System.DateTime fechaEntrada, 
+                    System.DateTime fechaSalida, 
+                    int idEstadoReserva, 
+                    global::System.Nullable<double> totalReservacion, 
+                    global::System.Nullable<decimal> SaldoReserva, 
+                    global::System.Nullable<decimal> PagadoReserva, 
+                    int Original_idReservacion, 
+                    int Original_idCliente, 
+                    int Original_idUsuario, 
+                    System.DateTime Original_fechaReservacion, 
+                    System.DateTime Original_fechaEntrada, 
+                    System.DateTime Original_fechaSalida, 
+                    int Original_idEstadoReserva, 
+                    global::System.Nullable<double> Original_totalReservacion, 
+                    global::System.Nullable<decimal> Original_SaldoReserva, 
+                    global::System.Nullable<decimal> Original_PagadoReserva, 
+                    int idReservacion) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idCliente));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idUsuario));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(fechaReservacion));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(fechaEntrada));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(fechaSalida));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(idEstadoReserva));
+            if ((totalReservacion.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(totalReservacion.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((SaldoReserva.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(SaldoReserva.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((PagadoReserva.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(PagadoReserva.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_idReservacion));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_idCliente));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_idUsuario));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_fechaReservacion));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_fechaEntrada));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_fechaSalida));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_idEstadoReserva));
+            if ((Original_totalReservacion.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((double)(Original_totalReservacion.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((Original_SaldoReserva.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_SaldoReserva.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PagadoReserva.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_PagadoReserva.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(idReservacion));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1174,40 +1379,27 @@ FROM            detalle_reserva INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idReserva, int numeroHabitacion, System.DateTime fechaActual, double valor, int Original_idDetalle, int Original_idReserva, int Original_numeroHabitacion, System.DateTime Original_fechaActual, double Original_valor) {
-            return this.Update(idReserva, numeroHabitacion, fechaActual, valor, Original_idDetalle, Original_idReserva, Original_numeroHabitacion, Original_fechaActual, Original_valor, Original_idDetalle);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertarDetalle(int idReserva, int numeroHabitacion, string fechaActual, double valor) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
-            command.Parameters[0].Value = ((int)(idReserva));
-            command.Parameters[1].Value = ((int)(numeroHabitacion));
-            if ((fechaActual == null)) {
-                throw new global::System.ArgumentNullException("fechaActual");
-            }
-            else {
-                command.Parameters[2].Value = ((string)(fechaActual));
-            }
-            command.Parameters[3].Value = ((double)(valor));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
+        public virtual int Update(
+                    int idCliente, 
+                    int idUsuario, 
+                    System.DateTime fechaReservacion, 
+                    System.DateTime fechaEntrada, 
+                    System.DateTime fechaSalida, 
+                    int idEstadoReserva, 
+                    global::System.Nullable<double> totalReservacion, 
+                    global::System.Nullable<decimal> SaldoReserva, 
+                    global::System.Nullable<decimal> PagadoReserva, 
+                    int Original_idReservacion, 
+                    int Original_idCliente, 
+                    int Original_idUsuario, 
+                    System.DateTime Original_fechaReservacion, 
+                    System.DateTime Original_fechaEntrada, 
+                    System.DateTime Original_fechaSalida, 
+                    int Original_idEstadoReserva, 
+                    global::System.Nullable<double> Original_totalReservacion, 
+                    global::System.Nullable<decimal> Original_SaldoReserva, 
+                    global::System.Nullable<decimal> Original_PagadoReserva) {
+            return this.Update(idCliente, idUsuario, fechaReservacion, fechaEntrada, fechaSalida, idEstadoReserva, totalReservacion, SaldoReserva, PagadoReserva, Original_idReservacion, Original_idCliente, Original_idUsuario, Original_fechaReservacion, Original_fechaEntrada, Original_fechaSalida, Original_idEstadoReserva, Original_totalReservacion, Original_SaldoReserva, Original_PagadoReserva, Original_idReservacion);
         }
     }
     
@@ -1223,7 +1415,7 @@ FROM            detalle_reserva INNER JOIN
         
         private UpdateOrderOption _updateOrder;
         
-        private detalle_reservaTableAdapter _detalle_reservaTableAdapter;
+        private reservasTableAdapter _reservasTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1245,12 +1437,12 @@ FROM            detalle_reserva INNER JOIN
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public detalle_reservaTableAdapter detalle_reservaTableAdapter {
+        public reservasTableAdapter reservasTableAdapter {
             get {
-                return this._detalle_reservaTableAdapter;
+                return this._reservasTableAdapter;
             }
             set {
-                this._detalle_reservaTableAdapter = value;
+                this._reservasTableAdapter = value;
             }
         }
         
@@ -1273,9 +1465,9 @@ FROM            detalle_reserva INNER JOIN
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._detalle_reservaTableAdapter != null) 
-                            && (this._detalle_reservaTableAdapter.Connection != null))) {
-                    return this._detalle_reservaTableAdapter.Connection;
+                if (((this._reservasTableAdapter != null) 
+                            && (this._reservasTableAdapter.Connection != null))) {
+                    return this._reservasTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1290,7 +1482,7 @@ FROM            detalle_reserva INNER JOIN
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._detalle_reservaTableAdapter != null)) {
+                if ((this._reservasTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1302,14 +1494,14 @@ FROM            detalle_reserva INNER JOIN
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DetalleReserva dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ReporteFactura dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._detalle_reservaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.detalle_reserva.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._reservasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.reservas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._detalle_reservaTableAdapter.Update(updatedRows));
+                    result = (result + this._reservasTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1321,13 +1513,13 @@ FROM            detalle_reserva INNER JOIN
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DetalleReserva dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ReporteFactura dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._detalle_reservaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.detalle_reserva.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._reservasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.reservas.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._detalle_reservaTableAdapter.Update(addedRows));
+                    result = (result + this._reservasTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1339,13 +1531,13 @@ FROM            detalle_reserva INNER JOIN
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DetalleReserva dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ReporteFactura dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._detalle_reservaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.detalle_reserva.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._reservasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.reservas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._detalle_reservaTableAdapter.Update(deletedRows));
+                    result = (result + this._reservasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1381,15 +1573,15 @@ FROM            detalle_reserva INNER JOIN
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DetalleReserva dataSet) {
+        public virtual int UpdateAll(ReporteFactura dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._detalle_reservaTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._detalle_reservaTableAdapter.Connection) == false))) {
+            if (((this._reservasTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._reservasTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -1425,13 +1617,13 @@ FROM            detalle_reserva INNER JOIN
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._detalle_reservaTableAdapter != null)) {
-                    revertConnections.Add(this._detalle_reservaTableAdapter, this._detalle_reservaTableAdapter.Connection);
-                    this._detalle_reservaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._detalle_reservaTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._detalle_reservaTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._detalle_reservaTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._detalle_reservaTableAdapter.Adapter);
+                if ((this._reservasTableAdapter != null)) {
+                    revertConnections.Add(this._reservasTableAdapter, this._reservasTableAdapter.Connection);
+                    this._reservasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._reservasTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._reservasTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._reservasTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._reservasTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1492,9 +1684,9 @@ FROM            detalle_reserva INNER JOIN
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._detalle_reservaTableAdapter != null)) {
-                    this._detalle_reservaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._detalle_reservaTableAdapter]));
-                    this._detalle_reservaTableAdapter.Transaction = null;
+                if ((this._reservasTableAdapter != null)) {
+                    this._reservasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._reservasTableAdapter]));
+                    this._reservasTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
