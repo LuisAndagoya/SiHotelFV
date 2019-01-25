@@ -89,7 +89,7 @@
                                             </asp:TemplateColumn>
 
                                             
-                                              <asp:TemplateColumn HeaderText="Precio">
+                                              <asp:TemplateColumn HeaderText="N° Personas">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="maximoTipo" runat="server" Text='<%#Eval("maximoTipo") %>'></asp:Label>

@@ -65,8 +65,9 @@ namespace CapaWeb.Formularios.Preciohabitacion
 
                 foreach (DataRow row in DataTable.Rows)
                 {
+                    DateTime fecha = DateTime.Parse(row["fechaPrecio"].ToString());
                     precioHabitacion.Text = row["precioHabitacion"].ToString();
-                    fechaPrecio.Text = row["fechaPrecio"].ToString();
+                    fechaPrecio.Text = fecha.ToString("yyyy-MM-dd");
                     estadoPrecio.Text = row["estadoPrecio"].ToString();
                     lblId.Text = row["IdPrecio"].ToString();
                 }

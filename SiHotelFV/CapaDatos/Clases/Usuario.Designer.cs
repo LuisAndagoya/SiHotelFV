@@ -2013,7 +2013,7 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[17];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[18];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, id" +
@@ -2033,75 +2033,71 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado, empleado.nombreEmpleado, cargo.idCargo, cargo.nombreCargo
+            this._commandCollection[3].CommandText = "SELECT        COUNT(idUsuario) AS Expr1\r\nFROM            usuario\r\nWHERE        (i" +
+                "dEmpleado=@idEmpleado)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmpleado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado, empleado.nombreEmpleado, cargo.idCargo, cargo.nombreCargo
 FROM            usuario INNER JOIN
                          empleado ON empleado.idEmpleado = usuario.idEmpleado INNER JOIN
                          cargo ON cargo.idCargo = usuario.idCargo
 WHERE        (empleado.nombreEmpleado LIKE @nombreEmpleado)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEmpleado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado, empleado.nombreEmpleado, empleado.imagenEmpleado, cargo.idCargo, 
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreEmpleado", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nombreEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado, empleado.nombreEmpleado, empleado.imagenEmpleado, cargo.idCargo, 
                          cargo.nombreCargo
 FROM            usuario INNER JOIN
                          empleado ON empleado.idEmpleado = usuario.idEmpleado INNER JOIN
                          cargo ON cargo.idCargo = usuario.idCargo
 WHERE        (usuario.idUsuario = @idUsuario)";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado, empleado.nombreEmpleado, cargo.idCargo, cargo.nombreCargo
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado, empleado.nombreEmpleado, cargo.idCargo, cargo.nombreCargo
 FROM            usuario INNER JOIN
                          empleado ON empleado.idEmpleado = usuario.idEmpleado INNER JOIN
                          cargo ON cargo.idCargo = usuario.idCargo";
-            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario,  usuario.idEmpleado,empleado.nombreEmpleado, cargo.idCargo, cargo.nombreCargo
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario,  usuario.idEmpleado,empleado.nombreEmpleado, cargo.idCargo, cargo.nombreCargo
 FROM            usuario INNER JOIN
                          empleado ON empleado.idEmpleado = usuario.idEmpleado INNER JOIN
                          cargo ON cargo.idCargo = usuario.idCargo
 WHERE        (usuario.idUsuario = @idUsuario)";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "SELECT        idCargo, nombreCargo\r\nFROM            cargo";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado, usuario.idCargo, empleado.idEmpleado AS Expr1, empleado.dniEmpleado, 
+            this._commandCollection[8].CommandText = "SELECT        idCargo, nombreCargo\r\nFROM            cargo";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado, usuario.idCargo, empleado.idEmpleado AS Expr1, empleado.dniEmpleado, 
                          empleado.nombreEmpleado, empleado.apellidoEmpleado, empleado.fnacimientoEmpleado, empleado.sexoEmpleado, empleado.estadocivilEmpleado, empleado.domicilioEmpleado, 
                          empleado.telefmovilEmpleado, empleado.fecharegistroEmpleado, empleado.emailEmpleado, empleado.imagenEmpleado, empleado.estadoEmpleado
 FROM            usuario INNER JOIN
                          empleado ON usuario.idEmpleado = empleado.idEmpleado
 WHERE        (usuario.idUsuario = @idUsuario)";
-            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = @"SELECT        idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, 
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = @"SELECT        idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpleado, sexoEmpleado, estadocivilEmpleado, domicilioEmpleado, telefmovilEmpleado, fecharegistroEmpleado, emailEmpleado, 
                          imagenEmpleado, estadoEmpleado
 FROM            empleado
 WHERE        (estadoEmpleado = 'ACTIVO')";
-            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[10].Connection = this.Connection;
-            this._commandCollection[10].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado, usuario.idCargo, empleado.idEmpleado AS Expr1, empleado.dniEmpleado, 
-                         empleado.nombreEmpleado, empleado.apellidoEmpleado, empleado.fnacimientoEmpleado, empleado.sexoEmpleado, empleado.estadocivilEmpleado, empleado.domicilioEmpleado, 
-                         empleado.telefmovilEmpleado, empleado.fecharegistroEmpleado, empleado.emailEmpleado, empleado.imagenEmpleado, empleado.estadoEmpleado
-FROM            usuario INNER JOIN
-                         empleado ON usuario.idEmpleado = empleado.idEmpleado
-WHERE        (usuario.usernameUsuario = @usernameUsuario)";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usernameUsuario", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "usernameUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[11].Connection = this.Connection;
-            this._commandCollection[11].CommandText = @"SELECT        usuario.idUsuario, empleado.idEmpleado, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado AS Expr1, usuario.idCargo, empleado.dniEmpleado, 
+            this._commandCollection[11].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado, usuario.idCargo, empleado.idEmpleado AS Expr1, empleado.dniEmpleado, 
                          empleado.nombreEmpleado, empleado.apellidoEmpleado, empleado.fnacimientoEmpleado, empleado.sexoEmpleado, empleado.estadocivilEmpleado, empleado.domicilioEmpleado, 
-                         empleado.telefmovilEmpleado, empleado.fecharegistroEmpleado, empleado.emailEmpleado
+                         empleado.telefmovilEmpleado, empleado.fecharegistroEmpleado, empleado.emailEmpleado, empleado.imagenEmpleado, empleado.estadoEmpleado
 FROM            usuario INNER JOIN
                          empleado ON usuario.idEmpleado = empleado.idEmpleado
 WHERE        (usuario.usernameUsuario = @usernameUsuario)";
@@ -2109,51 +2105,61 @@ WHERE        (usuario.usernameUsuario = @usernameUsuario)";
             this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usernameUsuario", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "usernameUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[12] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[12].Connection = this.Connection;
-            this._commandCollection[12].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado, empleado.nombreEmpleado, cargo.idCargo, cargo.nombreCargo
+            this._commandCollection[12].CommandText = @"SELECT        usuario.idUsuario, empleado.idEmpleado, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado AS Expr1, usuario.idCargo, empleado.dniEmpleado, 
+                         empleado.nombreEmpleado, empleado.apellidoEmpleado, empleado.fnacimientoEmpleado, empleado.sexoEmpleado, empleado.estadocivilEmpleado, empleado.domicilioEmpleado, 
+                         empleado.telefmovilEmpleado, empleado.fecharegistroEmpleado, empleado.emailEmpleado
 FROM            usuario INNER JOIN
-                         empleado ON empleado.idEmpleado = usuario.idEmpleado INNER JOIN
-                         cargo ON cargo.idCargo = usuario.idCargo
+                         empleado ON usuario.idEmpleado = empleado.idEmpleado
 WHERE        (usuario.usernameUsuario = @usernameUsuario)";
             this._commandCollection[12].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[12].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usernameUsuario", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "usernameUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[13] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[13].Connection = this.Connection;
-            this._commandCollection[13].CommandText = @"INSERT INTO usuario
+            this._commandCollection[13].CommandText = @"SELECT        usuario.idUsuario, usuario.usernameUsuario, usuario.passwordUsuario, usuario.estadoUsuario, usuario.idEmpleado, empleado.nombreEmpleado, cargo.idCargo, cargo.nombreCargo
+FROM            usuario INNER JOIN
+                         empleado ON empleado.idEmpleado = usuario.idEmpleado INNER JOIN
+                         cargo ON cargo.idCargo = usuario.idCargo
+WHERE        (usuario.usernameUsuario = @usernameUsuario)";
+            this._commandCollection[13].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[13].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usernameUsuario", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "usernameUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[14] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[14].Connection = this.Connection;
+            this._commandCollection[14].CommandText = @"INSERT INTO usuario
                          (usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, idCargo)
 VALUES        (@usernameUsuario,@passwordUsuario,@estadoUsuario,@idEmpleado,@idCargo); 
 SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, idCargo FROM usuario WHERE (idUsuario = SCOPE_IDENTITY())";
-            this._commandCollection[13].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[13].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usernameUsuario", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "usernameUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[13].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passwordUsuario", global::System.Data.SqlDbType.VarChar, 125, global::System.Data.ParameterDirection.Input, 0, 0, "passwordUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[13].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoUsuario", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "estadoUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[13].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmpleado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[13].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[14] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[14].Connection = this.Connection;
-            this._commandCollection[14].CommandText = "SELECT        COUNT(idUsuario) AS Expr1\r\nFROM            usuario\r\nWHERE        (u" +
-                "sernameUsuario = @usernameUsuario) AND (passwordUsuario = @passwordUsuario) AND " +
-                "(estadoUsuario = \'A\')";
             this._commandCollection[14].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usernameUsuario", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "usernameUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passwordUsuario", global::System.Data.SqlDbType.VarChar, 125, global::System.Data.ParameterDirection.Input, 0, 0, "passwordUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoUsuario", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "estadoUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmpleado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[15] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[15].Connection = this.Connection;
             this._commandCollection[15].CommandText = "SELECT        COUNT(idUsuario) AS Expr1\r\nFROM            usuario\r\nWHERE        (u" +
-                "sernameUsuario = @usernameUsuario) AND (idEmpleado=@idEmpleado)";
+                "sernameUsuario = @usernameUsuario) AND (passwordUsuario = @passwordUsuario) AND " +
+                "(estadoUsuario = \'ACTIVO\')";
             this._commandCollection[15].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[15].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usernameUsuario", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "usernameUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[15].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmpleado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[15].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passwordUsuario", global::System.Data.SqlDbType.VarChar, 125, global::System.Data.ParameterDirection.Input, 0, 0, "passwordUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[16] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[16].Connection = this.Connection;
-            this._commandCollection[16].CommandText = @"UPDATE [dbo].[usuario] SET [usernameUsuario] = @usernameUsuario, [passwordUsuario] = @passwordUsuario, [estadoUsuario] = @estadoUsuario, [idEmpleado] = @idEmpleado, [idCargo] = @idCargo WHERE (([idUsuario] = @idUsuario));
-SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, idCargo FROM usuario WHERE (idUsuario = @idUsuario)";
+            this._commandCollection[16].CommandText = "SELECT        COUNT(idUsuario) AS Expr1\r\nFROM            usuario\r\nWHERE        (u" +
+                "sernameUsuario = @usernameUsuario) AND (idEmpleado=@idEmpleado)";
             this._commandCollection[16].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usernameUsuario", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "usernameUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passwordUsuario", global::System.Data.SqlDbType.VarChar, 125, global::System.Data.ParameterDirection.Input, 0, 0, "passwordUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoUsuario", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "estadoUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmpleado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[17] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[17].Connection = this.Connection;
+            this._commandCollection[17].CommandText = @"UPDATE [dbo].[usuario] SET [usernameUsuario] = @usernameUsuario, [passwordUsuario] = @passwordUsuario, [estadoUsuario] = @estadoUsuario, [idEmpleado] = @idEmpleado, [idCargo] = @idCargo WHERE (([idUsuario] = @idUsuario));
+SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, idCargo FROM usuario WHERE (idUsuario = @idUsuario)";
+            this._commandCollection[17].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[17].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@usernameUsuario", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "usernameUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[17].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@passwordUsuario", global::System.Data.SqlDbType.VarChar, 125, global::System.Data.ParameterDirection.Input, 0, 0, "passwordUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[17].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@estadoUsuario", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "estadoUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[17].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmpleado", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[17].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[17].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2185,7 +2191,7 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Usuario.usuarioDataTable GetBuscar(string nombreEmpleado) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((nombreEmpleado == null)) {
                 throw new global::System.ArgumentNullException("nombreEmpleado");
             }
@@ -2202,7 +2208,7 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Usuario.usuarioDataTable GetEmpleado(int idUsuario) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idUsuario));
             Usuario.usuarioDataTable dataTable = new Usuario.usuarioDataTable();
             this.Adapter.Fill(dataTable);
@@ -2214,7 +2220,7 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Usuario.usuarioDataTable GetLista() {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             Usuario.usuarioDataTable dataTable = new Usuario.usuarioDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2225,7 +2231,7 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Usuario.usuarioDataTable GetListaActualizar(int idUsuario) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idUsuario));
             Usuario.usuarioDataTable dataTable = new Usuario.usuarioDataTable();
             this.Adapter.Fill(dataTable);
@@ -2237,7 +2243,7 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Usuario.usuarioDataTable GetListaCargo() {
-            this.Adapter.SelectCommand = this.CommandCollection[7];
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             Usuario.usuarioDataTable dataTable = new Usuario.usuarioDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2248,7 +2254,7 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Usuario.usuarioDataTable GetListaContrasenia(int idUsuario) {
-            this.Adapter.SelectCommand = this.CommandCollection[8];
+            this.Adapter.SelectCommand = this.CommandCollection[9];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idUsuario));
             Usuario.usuarioDataTable dataTable = new Usuario.usuarioDataTable();
             this.Adapter.Fill(dataTable);
@@ -2260,7 +2266,7 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Usuario.usuarioDataTable GetListaEmpleado() {
-            this.Adapter.SelectCommand = this.CommandCollection[9];
+            this.Adapter.SelectCommand = this.CommandCollection[10];
             Usuario.usuarioDataTable dataTable = new Usuario.usuarioDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2271,23 +2277,6 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Usuario.usuarioDataTable GetListaRecuperar(string usernameUsuario) {
-            this.Adapter.SelectCommand = this.CommandCollection[10];
-            if ((usernameUsuario == null)) {
-                throw new global::System.ArgumentNullException("usernameUsuario");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(usernameUsuario));
-            }
-            Usuario.usuarioDataTable dataTable = new Usuario.usuarioDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Usuario.usuarioDataTable GetListaUsuario(string usernameUsuario) {
             this.Adapter.SelectCommand = this.CommandCollection[11];
             if ((usernameUsuario == null)) {
                 throw new global::System.ArgumentNullException("usernameUsuario");
@@ -2304,8 +2293,25 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Usuario.usuarioDataTable GetUsuario(string usernameUsuario) {
+        public virtual Usuario.usuarioDataTable GetListaUsuario(string usernameUsuario) {
             this.Adapter.SelectCommand = this.CommandCollection[12];
+            if ((usernameUsuario == null)) {
+                throw new global::System.ArgumentNullException("usernameUsuario");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(usernameUsuario));
+            }
+            Usuario.usuarioDataTable dataTable = new Usuario.usuarioDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual Usuario.usuarioDataTable GetUsuario(string usernameUsuario) {
+            this.Adapter.SelectCommand = this.CommandCollection[13];
             if ((usernameUsuario == null)) {
                 throw new global::System.ArgumentNullException("usernameUsuario");
             }
@@ -2557,9 +2563,38 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> Empleado(int idEmpleado) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            command.Parameters[0].Value = ((int)(idEmpleado));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(string usernameUsuario, string passwordUsuario, string estadoUsuario, int idEmpleado, int idCargo) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[13];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[14];
             if ((usernameUsuario == null)) {
                 throw new global::System.ArgumentNullException("usernameUsuario");
             }
@@ -2601,7 +2636,7 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object Login(string usernameUsuario, string passwordUsuario) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[14];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[15];
             if ((usernameUsuario == null)) {
                 throw new global::System.ArgumentNullException("usernameUsuario");
             }
@@ -2641,7 +2676,7 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object unico(string usernameUsuario, int idEmpleado) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[15];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[16];
             if ((usernameUsuario == null)) {
                 throw new global::System.ArgumentNullException("usernameUsuario");
             }
@@ -2677,7 +2712,7 @@ SELECT idUsuario, usernameUsuario, passwordUsuario, estadoUsuario, idEmpleado, i
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(string usernameUsuario, string passwordUsuario, string estadoUsuario, int idEmpleado, int idCargo, int idUsuario) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[16];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[17];
             if ((usernameUsuario == null)) {
                 throw new global::System.ArgumentNullException("usernameUsuario");
             }

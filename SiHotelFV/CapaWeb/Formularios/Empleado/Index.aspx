@@ -96,7 +96,21 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
+                                            <asp:TemplateColumn HeaderText="Domicilio">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="domicilioEmpleado" runat="server" Text='<%#Eval("domicilioEmpleado") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
 
+                                             <asp:TemplateColumn HeaderText="Estado">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="estadoEmpleado" runat="server" Text='<%#Eval("estadoEmpleado") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
 
                                         </Columns>
 

@@ -109,29 +109,37 @@ namespace CapaProceso.Clases
         public static string Insertar( string usernameUsuario, string passwordUsuario, string estadoUsuario, short idEmpleado, short idCargo)
         {
             string Lista = CUsuario.unico(usernameUsuario.Trim(),idEmpleado).ToString();
-
+           string Empleado = CUsuario.Empleado(idEmpleado).ToString();
             string mensaje = "";
-
-            if (Lista == "0")
+            if (Empleado == "0")
             {
-                string contraseniaEncriptada = codificar.Base64Encode(passwordUsuario);
 
-                int resultado = CUsuario.InsertQuery( usernameUsuario.Trim(), contraseniaEncriptada, estadoUsuario.Trim(), idEmpleado, idCargo );
-                if (resultado == 0)
+                if (Lista == "0")
                 {
-                    return mensaje = "Error al insertar los registros";
+                    string contraseniaEncriptada = codificar.Base64Encode(passwordUsuario);
+
+                    int resultado = CUsuario.InsertQuery(usernameUsuario.Trim(), contraseniaEncriptada, estadoUsuario.Trim(), idEmpleado, idCargo);
+                    if (resultado == 0)
+                    {
+                        return mensaje = "Error al insertar los registros";
+                    }
+                    else
+                    {
+                        return mensaje = "";
+                    }
+
                 }
+
+
                 else
                 {
-                    return mensaje = "";
+                    return mensaje = "El usuario ya se encuentra registrado";
                 }
-
             }
             else
             {
-                return mensaje = "El usuario ya se encuentra registrado";
+                return mensaje = "Empleado ya posee usuario";
             }
-
 
         }
 
