@@ -70,15 +70,17 @@ namespace CapaWeb.Formularios.Empleado
 
                 foreach (DataRow row in DataTable.Rows)
                 {
+                    DateTime fechaNacimiento = DateTime.Parse(row["fnacimientoEmpleado"].ToString());
+                    DateTime fechaRegistro = DateTime.Parse(row["fecharegistroEmpleado"].ToString());
                     dniEmpleado.Text = row["dniEmpleado"].ToString();
                     nombreEmpleado.Text = row["nombreEmpleado"].ToString();
                     apellidoEmpleado.Text = row["apellidoEmpleado"].ToString();
-                    fnacimiento.Text = row["fnacimientoEmpleado"].ToString();
+                    fnacimiento.Text = fechaNacimiento.ToString("yyyy-MM-dd");
                     sexoEmpleado.Text = row["sexoEmpleado"].ToString();
                     estadocivilEmpleado.Text = row["estadocivilEmpleado"].ToString();
                     domicilioEmpleado.Text = row["domicilioEmpleado"].ToString();
                     telefmovilEmpleado.Text = row["telefmovilEmpleado"].ToString();
-                    fecharegistroEmpleado.Text = row["fecharegistroEmpleado"].ToString();
+                    fecharegistroEmpleado.Text = fechaRegistro.ToString("yyyy-MM-dd");
                     emailEmpleado.Text = row["emailEmpleado"].ToString();
                     txtfot.Text = row["imagenEmpleado"].ToString();
 
