@@ -22,10 +22,24 @@
                                             <label for="dniCliente">Cliente</label></td>
                                         <td>
                                             <asp:Label ID="idCliente" runat="server" Text="" Visible="False"></asp:Label>
-                                            <asp:TextBox required="required" ID="dniCliente" class="form-control" runat="server" OnTextChanged="dniCliente_TextChanged" AutoPostBack="true"></asp:TextBox>
-                                        <td>
+                                            <div class="input-group">
+                                                <asp:TextBox placeholder="Cedula" required="required" ID="dniCliente" class="form-control" runat="server" OnTextChanged="dniCliente_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                                <div class="input-group-append">
 
-                                            <label for="nombreCliente">Nombres</label></td>
+                                                    <asp:LinkButton ID="btnDelete"
+                                                        runat="server"
+                                                        CssClass="btn btn-gradient-info btn-sm"
+                                                        Visible="true"
+                                                        ToolTip="Delete Task"
+                                                        data-toggle="modal"
+                                                        data-target="#DeleteModal">
+                                                Nuevo
+                                                    </asp:LinkButton>
+                                                </div>
+                                            </div>
+                                            <td>
+
+                                                <label for="nombreCliente">Nombres</label></td>
                                         <td>
                                             <asp:TextBox required="required" ID="nombreCliente" class="form-control" runat="server" ReadOnly="true"></asp:TextBox>
 
@@ -67,7 +81,7 @@
                             </td>
                         </tr>
                         <tr>
-                           <td>
+                            <td>
                                 <table>
                                     <tr>
                                         <td>
@@ -190,16 +204,110 @@
                                             <asp:Button class="btn btn-gradient-primary mr-2" ID="Button1" runat="server"
                                                 Text="Guardar" OnClick="Button1_Click" /></td>
                                         <td>
-                                           <asp:Button class="btn btn-gradient-light btn-fw" ID="btnCancelar" runat="server" 
-                          Text="Cancelar" onclick="Cancelar_Click" />
-                                            
+                                            <asp:Button class="btn btn-gradient-light btn-fw" ID="btnCancelar" runat="server"
+                                                Text="Cancelar" OnClick="Cancelar_Click" /></td>
+
                                     </tr>
+
                                 </table>
                             </td>
 
 
                         </tr>
                     </table>
+
+                    <!-- Delete Modal Begin-->
+                    <div class="modal fade" id="DeleteModal" role="dialog">
+                        <div class="modal-dialog ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Crear Cliente</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-12 grid-margin">
+                                        <div class="card">
+                                            <div class="card-body">                                               
+                                                <div class="form-group">
+                                                    <label for="dniCliente">Cédula</label>
+                                                    <asp:TextBox ID="TextBox1" class="form-control form-control-sm" pattern="^[0-9]{10}$" required="required" runat="server"></asp:TextBox>
+
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label for="nombreCliente">Nombre</label>
+
+                                                    <asp:TextBox ID="TextBox2" class="form-control form-control-sm" pattern="^[\ s A-z ]*$" required="required" runat="server"></asp:TextBox>
+                                                </div>
+
+
+
+
+
+
+                                                <div class="form-group">
+                                                    <label for="apellidoCliente">Apellido</label>
+                                                    <asp:TextBox ID="TextBox3" class="form-control form-control-sm" pattern="^[\ s A-z ]*$" required="required" runat="server"></asp:TextBox>
+                                                </div>
+
+
+
+
+                                                <div class="form-group">
+                                                    <label for="sexoCliente">Sexo</label>
+                                                    <asp:DropDownList ID="sexoCliente" class="form-control form-control-sm" runat="server">
+                                                        <asp:ListItem Selected="True" Value="M">MASCULINO</asp:ListItem>
+                                                        <asp:ListItem Value="F">FEMENINO</asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </div>
+
+
+
+
+                                                <div class="form-group">
+                                                    <label for="direccionCliente">Dirección</label>
+                                                    <asp:TextBox ID="direccionCliente" class="form-control form-control-sm" required="required" runat="server"></asp:TextBox>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="telefonoCliente">Teléfono</label>
+                                                    <asp:TextBox ID="telefonoCliente" class="form-control form-control-sm" pattern="^[0-9]{10}$" placeholder="Ejm: 0992333333" required="required" runat="server"></asp:TextBox>
+                                                </div>
+
+
+
+                                                <div class="form-group">
+                                                    <label for="correoCliente">Email</label>
+                                                    <asp:TextBox ID="correoCliente" type="email" class="form-control form-control-sm" required="required" runat="server"></asp:TextBox>
+                                                </div>
+
+
+
+
+                                                <div class="form-group">
+                                                    <label for="estadoCliente">Estado</label>
+                                                    <asp:DropDownList ID="estadoCliente" class="form-control form-control-sm" runat="server">
+                                                        <asp:ListItem Selected="True" Value="ACTIVO">ACTIVO</asp:ListItem>
+                                                        <asp:ListItem Value="INACTIVO">INACTIVO</asp:ListItem>
+
+                                                    </asp:DropDownList>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <asp:Button ID="Button3" runat="server" Class="btn btn-gradient-primary btn-sm" Text="Guardar" />
+                                    <button type="button" class="btn btn-gradient-light btn-sm" data-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Delete Modal End -->
 
                 </form>
             </div>
