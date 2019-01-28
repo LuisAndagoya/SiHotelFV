@@ -1,5 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="CapaWeb.Formularios.Reserva.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript">
+
+        function CambiarReserva() {
+            var respuesta;
+            if (confirm('¿Desea cambiar de estado la reserva?')){
+                respuesta = true;
+            }else{
+            respuesta = false;
+        }
+
+                return respuesta;
+                       
+        }
+
+        function AnularReserva() {
+            var respuesta;
+            if (confirm('¿Desea anular la reserva?')) {
+                respuesta = true;
+            } else {
+                respuesta = false;
+            }
+
+            return respuesta;          
+
+        }
+        </script>
 
  <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
@@ -51,6 +77,13 @@
                                         <Columns>
                                             
 
+                                             <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="imgEstado" runat="server" CausesValidation="false" CommandName="Estado"
+                                                        ImageUrl="~/img/accept.png"  ToolTip="Cambiar estado reserva" Width="16" OnClientClick="if ( !CambiarReserva()) return false;"  />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
                                             <asp:TemplateColumn>
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="imgFac" runat="server" CausesValidation="false" CommandName="Factura"
@@ -62,6 +95,14 @@
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="lblId" runat="server" Text='<%#Eval("idReservacion") %>'></asp:Label>
+                                                    </span>
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
+                                              <asp:TemplateColumn HeaderText="idEstadoHabitacion" Visible="false">
+                                                <ItemTemplate>
+                                                    <span style="float: left;">
+                                                        <asp:Label ID="idEstadoReserva" runat="server" Text='<%#Eval("idEstadoReserva") %>'></asp:Label>
                                                     </span>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
@@ -92,10 +133,6 @@
                                             </asp:TemplateColumn>
 
                                          
-
-                                           
-                                            
-
                                                   <asp:TemplateColumn HeaderText="Fecha Reservación">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
@@ -120,7 +157,12 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                          
+                                          <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="imgEliminar" runat="server" CausesValidation="false" CommandName="Eliminar"
+                                                        ImageUrl="~/img/ActionDelete.png"  ToolTip="Anular reserva" Width="16" OnClientClick="if ( !AnularReserva()) return false;"  />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
 
      
 

@@ -1,7 +1,61 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Container.aspx.cs" Inherits="CapaWeb.Formularios.Reserva.Container" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript">
 
+        function FechaReserva() {
+
+            var fechareserva = document.getElementById("<%= fechaReservacion.ClientID %>").value;
+            document.getElementById("<%= fechaEntrada.ClientID %>").value = fechareserva;            
+        }
+
+    function validarFormulario() {
+    var respuesta = false;
+    var excedula = /^[0-9]{10}$/;
+    var exnombre = /^[\ s A-z ]*$/;
+    var exemail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    var dniClienteM = $("#<%=dniClienteM.ClientID%>").val();
+            if (dniClienteM == null || dniClienteM.length == 0 || /^\s*$/.test(dniClienteM) || !excedula.test(dniClienteM)) {
+                alert('Error: El formato de la cedula es incorrecto');
+                respuesta = true;
+            }
+
+            var nombreClienteM = $("#<%=nombreClienteM.ClientID%>").val();
+            if (nombreClienteM == null || nombreClienteM.length == 0 || /^\s*$/.test(nombreClienteM) || !exnombre.test(nombreClienteM)) {
+                alert('Error: El formato del nombre es incorrecto');
+                respuesta = true;
+            }
+
+            var apellidoClienteM = $("#<%=apellidoClienteM.ClientID%>").val();
+            if (apellidoClienteM == null || apellidoClienteM.length == 0 || /^\s*$/.test(apellidoClienteM) || !exnombre.test(apellidoClienteM)) {
+                alert('Error: El formato del apellido es incorrecto');
+                respuesta = true;
+            }
+
+            var direccionCliente = $("#<%=direccionCliente.ClientID%>").val();
+            if (direccionCliente == null || direccionCliente.length == 0 || /^\s*$/.test(direccionCliente)) {
+                alert('Error: Ingrese la dirección');
+                respuesta = true;
+            }
+
+            var telefonoCliente = $("#<%=telefonoCliente.ClientID%>").val();
+            if (telefonoCliente == null || telefonoCliente.length == 0 || /^\s*$/.test(telefonoCliente) || !excedula.test(telefonoCliente)) {
+                alert('Error: El formato del telefono es incorrecto');
+                respuesta = true;
+            }
+
+            var correoCliente = $("#<%=correoCliente.ClientID%>").val();
+            if (correoCliente == null || correoCliente.length == 0 || /^\s*$/.test(correoCliente) || !exemail.test(correoCliente)) {
+                alert('Error: El formato del email es incorrecto');
+                respuesta = true;
+            }
+
+            return respuesta;
+        }
+
+    </script>
     <div class="col-12 grid-margin">
         <div class="card">
             <div class="card-body">
@@ -21,16 +75,16 @@
                                         <td>
                                             <label for="dniCliente">Cliente</label></td>
                                         <td>
-                                            <asp:Label ID="idCliente" runat="server" Text="" Visible="False"></asp:Label>
+                                            <asp:Label ID="idCliente" required="required" runat="server" Text="" Visible="False"></asp:Label>
                                             <div class="input-group">
                                                 <asp:TextBox placeholder="Cedula" required="required" ID="dniCliente" class="form-control" runat="server" OnTextChanged="dniCliente_TextChanged" AutoPostBack="true"></asp:TextBox>
                                                 <div class="input-group-append">
 
                                                     <asp:LinkButton ID="btnDelete"
                                                         runat="server"
-                                                        CssClass="btn btn-gradient-info btn-sm"
+                                                        Class="btn btn-gradient-info btn-sm"
                                                         Visible="true"
-                                                        ToolTip="Delete Task"
+                                                        ToolTip="Cear cliente"
                                                         data-toggle="modal"
                                                         data-target="#DeleteModal">
                                                 Nuevo
@@ -62,13 +116,13 @@
                                         <td>
                                             <label for="fechaReservacion">Fecha Reserva</label></td>
                                         <td>
-                                            <asp:TextBox type="date" required="required" ID="fechaReservacion" class="form-control" runat="server"></asp:TextBox></td>
+                                            <asp:TextBox type="date" onkeyup="FechaReserva();" required="required" ID="fechaReservacion" class="form-control" runat="server" ></asp:TextBox></td>
 
                                         <td>
 
                                             <label for="fechaEntrada">Fecha Entrada</label></td>
                                         <td>
-                                            <asp:TextBox type="date" required="required" ID="fechaEntrada" class="form-control" runat="server"></asp:TextBox>
+                                            <asp:TextBox type="date" ReadOnly="true" required="required" ID="fechaEntrada" class="form-control" runat="server"></asp:TextBox>
                                         </td>
                                         <td>
                                             <label for="fechaSalida">Fecha Salida</label></td>
@@ -104,24 +158,7 @@
                             </td>
 
                         </tr>
-                        <tr>
-                            <td>
-                                <table style="border-top: hidden">
-                                    <tr>
-                                        <td>
 
-                                            <label for="totalReservacion">Total Reservación</label></td>
-                                        <td>
-                                            <asp:TextBox ID="totalReservacion" ReadOnly="true" required="required" class="form-control" runat="server"></asp:TextBox></td>
-
-                                        <td>
-                                            <label for="SaldoReserva">Saldo Reservación</label></td>
-                                        <td>
-                                            <asp:TextBox ID="SaldoReserva" ReadOnly="true" required="required" class="form-control" runat="server"></asp:TextBox></td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
                         <tr>
                             <td>
                                 <table style="border-top: hidden">
@@ -135,7 +172,7 @@
                                             <td>
                                                 <label for="valor">Precio</label></td>
                                             <td>
-                                                <asp:TextBox type="number" min="0.00" step="0.01" ID="valor" required="required" class="form-control" runat="server"></asp:TextBox></td>
+                                                <asp:TextBox type="number" min="0.00" step="0.01" ID="valor" class="form-control" runat="server"></asp:TextBox></td>
                                             <td>
                                                 <asp:Button class="btn btn-gradient-dark btn-icon-text" ID="Button2" runat="server"
                                                     Text="Agregar Habitación" OnClick="Button2_Click" /></td>
@@ -163,6 +200,14 @@
                                             <ItemTemplate>
                                                 <asp:ImageButton ID="imgEliminar" runat="server" CausesValidation="false" CommandName="Eliminar"
                                                     ImageUrl="~/img/ActionDelete.png" ToolTip="Eliminar" Width="16" />
+                                            </ItemTemplate>
+                                        </asp:TemplateColumn>
+
+                                        <asp:TemplateColumn HeaderText="Tipo">
+                                            <ItemTemplate>
+                                                <span style="float: left;">
+                                                    <asp:Label ID="Tipo" runat="server" Text='<%#Eval("Tipo") %>'></asp:Label>
+                                                </span>
                                             </ItemTemplate>
                                         </asp:TemplateColumn>
 
@@ -195,6 +240,27 @@
 
                             </td>
                         </tr>
+
+                        <tr align="right">
+                            <td>
+                                <table style="border-top: hidden">
+                                    <tr>
+                                        <td>
+
+                                            <label for="totalReservacion">Total Reservación</label></td>
+                                        <td>
+                                            <asp:TextBox ID="totalReservacion" ReadOnly="true" required="required" class="form-control" runat="server"></asp:TextBox></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="SaldoReserva">Saldo Reservación</label></td>
+                                        <td>
+                                            <asp:TextBox ID="SaldoReserva" ReadOnly="true" required="required" class="form-control" runat="server"></asp:TextBox></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
                         <tr>
                             <td>
 
@@ -205,7 +271,7 @@
                                                 Text="Guardar" OnClick="Button1_Click" /></td>
                                         <td>
                                             <asp:Button class="btn btn-gradient-light btn-fw" ID="btnCancelar" runat="server"
-                                                Text="Cancelar" OnClick="Cancelar_Click" /></td>
+                                                Text="Cancelar" OnClick="Cancelar_Click" UseSubmitBehavior="False" /></td>
 
                                     </tr>
 
@@ -228,10 +294,10 @@
                                 <div class="modal-body">
                                     <div class="col-12 grid-margin">
                                         <div class="card">
-                                            <div class="card-body">                                               
+                                            <div class="card-body">
                                                 <div class="form-group">
                                                     <label for="dniCliente">Cédula</label>
-                                                    <asp:TextBox ID="TextBox1" class="form-control form-control-sm" pattern="^[0-9]{10}$" required="required" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="dniClienteM" class="form-control form-control-sm" pattern="^[0-9]{10}$" runat="server"></asp:TextBox>
 
                                                 </div>
 
@@ -239,17 +305,12 @@
                                                 <div class="form-group">
                                                     <label for="nombreCliente">Nombre</label>
 
-                                                    <asp:TextBox ID="TextBox2" class="form-control form-control-sm" pattern="^[\ s A-z ]*$" required="required" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="nombreClienteM" class="form-control form-control-sm" pattern="^[\ s A-z ]*$" runat="server"></asp:TextBox>
                                                 </div>
-
-
-
-
-
 
                                                 <div class="form-group">
                                                     <label for="apellidoCliente">Apellido</label>
-                                                    <asp:TextBox ID="TextBox3" class="form-control form-control-sm" pattern="^[\ s A-z ]*$" required="required" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="apellidoClienteM" class="form-control form-control-sm" pattern="^[\ s A-z ]*$" runat="server"></asp:TextBox>
                                                 </div>
 
 
@@ -268,19 +329,19 @@
 
                                                 <div class="form-group">
                                                     <label for="direccionCliente">Dirección</label>
-                                                    <asp:TextBox ID="direccionCliente" class="form-control form-control-sm" required="required" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="direccionCliente" class="form-control form-control-sm" runat="server"></asp:TextBox>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="telefonoCliente">Teléfono</label>
-                                                    <asp:TextBox ID="telefonoCliente" class="form-control form-control-sm" pattern="^[0-9]{10}$" placeholder="Ejm: 0992333333" required="required" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="telefonoCliente" class="form-control form-control-sm" pattern="^[0-9]{10}$" placeholder="Ejm: 0992333333" runat="server"></asp:TextBox>
                                                 </div>
 
 
 
                                                 <div class="form-group">
                                                     <label for="correoCliente">Email</label>
-                                                    <asp:TextBox ID="correoCliente" type="email" class="form-control form-control-sm" required="required" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="correoCliente" type="email" class="form-control form-control-sm" runat="server"></asp:TextBox>
                                                 </div>
 
 
@@ -294,14 +355,14 @@
 
                                                     </asp:DropDownList>
                                                 </div>
-
+                                                <asp:Label ID="LblError" runat="server"></asp:Label>
 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <asp:Button ID="Button3" runat="server" Class="btn btn-gradient-primary btn-sm" Text="Guardar" />
+                                    <asp:Button ID="Button3" OnClick="GuardarCliente" runat="server" Class="btn btn-gradient-primary btn-sm" Text="Guardar" UseSubmitBehavior="False" OnClientClick="if (validarFormulario() == true) return(true)" />
                                     <button type="button" class="btn btn-gradient-light btn-sm" data-dismiss="modal">Cancelar</button>
                                 </div>
                             </div>

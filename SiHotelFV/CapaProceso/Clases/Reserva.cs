@@ -59,6 +59,23 @@ namespace CapaProceso.Clases
 
         }
 
+        public static string ActualizarEstado(short idReservacion, short idEstadoReserva)
+        {
+            string mensaje = "";
+
+
+            int resultado = CReserva.ActializarEstado(idEstadoReserva, idReservacion);
+            if (resultado == 0)
+            {
+                return mensaje = "Error al actualizar los registros";
+            }
+            else
+            {
+                return mensaje = "";
+            }
+
+        }
+
     }
 }
 

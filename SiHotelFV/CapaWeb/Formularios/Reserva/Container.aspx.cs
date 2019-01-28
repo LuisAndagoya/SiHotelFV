@@ -16,13 +16,7 @@ namespace CapaWeb.Formularios.Reserva
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            DateTime hoy = DateTime.Today;
-            DateTime maniana = hoy.AddDays(1);
             
-            fechaEntrada.Text = DateTime.Today.ToString("yyyy-MM-dd");
-            fechaReservacion.Text = DateTime.Today.ToString("yyyy-MM-dd");
-            fechaSalida.Text = maniana.ToString("yyyy-MM-dd");
-            totalReservacion.Text = "0";
             CargarCombo();
            
 
@@ -48,7 +42,17 @@ namespace CapaWeb.Formularios.Reserva
                 ListaHabitacion.DataValueField = "numeroHabitacion";                
                 ListaHabitacion.DataBind();
 
+                Session.Remove("total");
+                Session.Remove("datos");
                 Session["total"] = 0;
+
+                DateTime hoy = DateTime.Today;
+                DateTime maniana = hoy.AddDays(1);
+
+                fechaEntrada.Text = DateTime.Today.ToString("yyyy-MM-dd");
+                fechaReservacion.Text = DateTime.Today.ToString("yyyy-MM-dd");
+                fechaSalida.Text = maniana.ToString("yyyy-MM-dd");
+                totalReservacion.Text = "0";
             }
 
         }
@@ -81,25 +85,26 @@ namespace CapaWeb.Formularios.Reserva
         public void InsertarDetalle()
         {
             bool existe = false;
-            modeloReservacionDetalle = (Session["datos"] as List<ModeloReservacionDetalle>);
-            if (modeloReservacionDetalle != null)
-            {
-                foreach (var item in modeloReservacionDetalle)
-                {
-                    if (item.numeroHabitacion == int.Parse(ListaHabitacion.SelectedValue.ToString()))
-                    {
-                        existe = true;
-
-                    }
-                }
-
-            }
-
-
-            if (!existe)
-            {
+            string Tipo = "";
+                       
                 if (ListaHabitacion.SelectedValue.ToString() != "Seleccione habitación...")
                 {
+                CapaDatos.Clases.Habitacion.habitacionDataTable DataTable = CapaProceso.Clases.Habitacion.BuscarPrecio(short.Parse(ListaHabitacion.SelectedValue.ToString()));
+
+
+                foreach (DataRow row in DataTable.Rows)
+                {
+
+                    Tipo = row["nombreTipo"].ToString();
+                }
+
+                if (Session["datos"] == null)
+                {
+                    ModeloReservacionDetalle item = new ModeloReservacionDetalle(int.Parse(ListaHabitacion.SelectedValue.ToString()), float.Parse(valor.Text), Tipo);
+                    modeloReservacionDetalle = new List<ModeloReservacionDetalle>();
+                    modeloReservacionDetalle.Add(item);
+                    Session["datos"] = modeloReservacionDetalle;
+
                     float pago = float.Parse(PagadoReserva.Text);
                     float total = float.Parse(Session["total"].ToString());
                     float saldo = 0;
@@ -112,20 +117,52 @@ namespace CapaWeb.Formularios.Reserva
 
                     SaldoReserva.Text = saldo.ToString();
                     totalReservacion.Text = total.ToString();
+                }
+                else
+                {
+                    modeloReservacionDetalle = (Session["datos"] as List<ModeloReservacionDetalle>);
 
-                    ModeloReservacionDetalle item = new ModeloReservacionDetalle(int.Parse(ListaHabitacion.SelectedValue.ToString()), float.Parse(valor.Text));
-
-                    if (Session["datos"] == null)
+                    foreach (var item1 in modeloReservacionDetalle)
                     {
-                        modeloReservacionDetalle = new List<ModeloReservacionDetalle>();
+                        if (item1.numeroHabitacion == int.Parse(ListaHabitacion.SelectedValue.ToString()))
+                        {
+                            existe = true;
+
+                        }
+                    }
+
+                    if (!existe)
+                    {
+                        ModeloReservacionDetalle item = new ModeloReservacionDetalle(int.Parse(ListaHabitacion.SelectedValue.ToString()), float.Parse(valor.Text), Tipo);
+                        
                         modeloReservacionDetalle.Add(item);
-                        Session["datos"] = modeloReservacionDetalle;
+
+                        float pago = float.Parse(PagadoReserva.Text);
+                        float total = float.Parse(Session["total"].ToString());
+                        float saldo = 0;
+
+                        total = float.Parse(valor.Text) + total;
+
+                        Session["total"] = total;
+
+                        saldo = total - pago;
+
+                        SaldoReserva.Text = saldo.ToString();
+                        totalReservacion.Text = total.ToString();
+
                     }
                     else
-                    {
-                        modeloReservacionDetalle = (Session["datos"] as List<ModeloReservacionDetalle>);
-                        modeloReservacionDetalle.Add(item);
-                    }
+                            {
+                                ListaHabitacion.SelectedValue = "Seleccione habitación...";
+                                valor.Text = "0";
+                                float total = float.Parse(Session["total"].ToString());
+                                totalReservacion.Text = total.ToString();
+                            this.Page.Response.Write("<script language='JavaScript'>window.alert('La habitación ya fue agregada');</script>");
+                        }
+
+
+                    }   
+           
 
                     Grid.DataSource = modeloReservacionDetalle;
                     Grid.DataBind();
@@ -139,20 +176,13 @@ namespace CapaWeb.Formularios.Reserva
                 {
                     this.Page.Response.Write("<script language='JavaScript'>window.alert('Seleccione la habitación');</script>");
                 }
-            }
-            else
-            {
-                ListaHabitacion.SelectedValue = "Seleccione habitación...";
-                valor.Text = "0";
-                float total = float.Parse(Session["total"].ToString());
-                totalReservacion.Text = total.ToString();
-                this.Page.Response.Write("<script language='JavaScript'>window.alert('La habitación ya fue agregada');</script>");
-            }
+            
 
            
 
 
         } 
+
               
 
 
@@ -175,20 +205,73 @@ namespace CapaWeb.Formularios.Reserva
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-           
-            Guardar();
-            short IdReserva = CapaProceso.Clases.Reserva.IdReserva();
-
-            //modeloReservacionDetalle
-
-            modeloReservacionDetalle = (Session["datos"] as List<ModeloReservacionDetalle>);
-
-            foreach (var item in modeloReservacionDetalle)
+            try
+               
             {
-                CapaProceso.Clases.DetalleReserva.Insertar(IdReserva, fechaReservacion.Text, item);
-            }
+                DateTime fechaReserva = DateTime.Parse(fechaReservacion.Text);
+                DateTime fechaSalid = DateTime.Parse(fechaSalida.Text);
+                DateTime hoy = DateTime.Today;
+                
+                
+                if (DateTime.Compare(fechaReserva, hoy) < 0)
+                    {
+                    this.Page.Response.Write("<script language='JavaScript'>window.alert('La fecha no puede ser menor a la actua');</script>");
+                }
+                else
+                {                  
 
-            Response.Redirect("Index.aspx");
+                    if (DateTime.Compare(fechaSalid, fechaReserva) < 0)
+                    {
+                        this.Page.Response.Write("<script language='JavaScript'>window.alert('La fecha de reserva no puede ser mayor que la de salida');</script>");
+                    }
+                    else
+                    {                        
+                        if (float.Parse(Session["total"].ToString()) > float.Parse(PagadoReserva.Text))
+                        {
+
+                            modeloReservacionDetalle = (Session["datos"] as List<ModeloReservacionDetalle>);
+                            if (modeloReservacionDetalle.Count > 0)
+                            {
+                                Guardar();
+                                short IdReserva = CapaProceso.Clases.Reserva.IdReserva();
+
+                                foreach (var item in modeloReservacionDetalle)
+                                {
+                                    DetalleReserva.Insertar(IdReserva, fechaReservacion.Text, item);
+                                    if (int.Parse(idEstadoReserva.SelectedValue) == 2)
+                                    {
+                                        short tipoHabitacion = 2;
+                                        CapaProceso.Clases.Habitacion.ActualizarEstado(short.Parse(item.numeroHabitacion.ToString()), tipoHabitacion);
+                                    }
+                                }
+
+                                enviar();
+                                Session.Remove("total");
+                                Session.Remove("datos");
+
+                                Response.Redirect("Index.aspx");
+                            }
+                            else
+                            {
+                                this.Page.Response.Write("<script language='JavaScript'>window.alert('Ingrese el detalle de la raserva');</script>");
+                            }
+                        }
+                        else
+                        {
+                            this.Page.Response.Write("<script language='JavaScript'>window.alert('El pago no puede ser mayor que la reserva');</script>");
+                        }
+
+                    }
+                }
+
+
+            }
+            catch (Exception)
+            {
+
+                this.Page.Response.Write("<script language='JavaScript'>window.alert('Error al guardar');</script>");
+            }         
+           
 
 
         }
@@ -204,9 +287,12 @@ namespace CapaWeb.Formularios.Reserva
             if (dniCliente.Text!= "")
             {
                 CapaDatos.Clases.Cliente.clienteDataTable DataTable = CapaProceso.Clases.Cliente.BuscarCi(dniCliente.Text);
-
-                float total = float.Parse(Session["total"].ToString());
-                totalReservacion.Text = total.ToString();
+                if (Session["total"] != null)
+                {
+                    float total = float.Parse(Session["total"].ToString());
+                    totalReservacion.Text = total.ToString();
+                }
+               
 
                 foreach (DataRow row in DataTable.Rows)
                     {
@@ -271,10 +357,72 @@ namespace CapaWeb.Formularios.Reserva
 
         protected void Cancelar_Click(object sender, EventArgs e)
         {
-            Session["total"] = "";
-            Session["datos"] = "";
-            
+            Session.Remove("total");
+            Session.Remove("datos");
+
             Response.Redirect("Index.aspx");
         }
+
+        protected void GuardarCliente(object sender, EventArgs e)
+        {
+                string error = "";
+                short UsuarioId = short.Parse(Session["UsuarioId"].ToString());
+                error = CapaProceso.Clases.Cliente.Insertar(dniClienteM.Text, nombreClienteM.Text, apellidoClienteM.Text, sexoCliente.Text, direccionCliente.Text, telefonoCliente.Text, correoCliente.Text, estadoCliente.Text);
+
+                if (string.IsNullOrEmpty(error))
+                {
+
+                    CapaProceso.Clases.Auditoria.Insertar("Cliente", "Insertar", UsuarioId);
+                dniClienteM.Text = "";
+                nombreClienteM.Text = "";
+                apellidoClienteM.Text = "";
+                sexoCliente.Text = "";
+                direccionCliente.Text = "";
+                telefonoCliente.Text = "";
+                correoCliente.Text = "";
+                estadoCliente.Text = "";
+                }
+                else
+                {
+                    this.Page.Response.Write("<script language='JavaScript'>window.alert('" + error + "');</script>");
+                }
+           
+        }
+
+
+        public void enviar()
+        {
+            CapaDatos.Clases.Cliente.clienteDataTable DataTable = CapaProceso.Clases.Cliente.ClienteId(short.Parse(idCliente.Text));
+
+            int contar = 0;
+
+            foreach (DataRow row in DataTable.Rows)
+            {
+                contar++;
+            }
+
+            if (contar > 0)
+            {
+                Email email = new Email();
+                string nombre = "";
+                string apellido = "";
+                string correo = "";
+               
+                foreach (DataRow row in DataTable.Rows)
+                {
+                    nombre = row["apellidoCliente"].ToString();
+                    apellido = row["nombreCliente"].ToString();
+                    correo = row["correoCliente"].ToString();                   
+
+                }
+
+               
+                String mensaje = "<strong> Estimado(a): </strong>" + apellido.ToUpper() + " " + nombre.ToUpper() + "<br/>" + "Su reserva a sido confrimada para el dia " + fechaReservacion.Text;
+                email.enviarcorreo("Confirmación de reservación", mensaje, correo);
+               
+            }
+        }
+
+
     }
 }

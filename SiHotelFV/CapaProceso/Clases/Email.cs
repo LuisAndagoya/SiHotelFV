@@ -29,11 +29,11 @@ namespace CapaProceso.Clases
                               
                 
                 /* recuperar de base de tabla HostMail */
-                string Usuario = "cordillera@cepes.ec";
-                string Contrasenia = "Orlando26";
-                string smtpHost = "mail.cepes.ec";
+                string Usuario = "wrael90@gmail.com";
+                string Contrasenia = "77wr7777";
+                string smtpHost = "smtp.gmail.com";
                 int puerto = 587;
-                bool ssl = false;
+                bool ssl = true;
                 /* recuperar de base de tabla HostMail */
 
                 email.From = new MailAddress(Usuario);

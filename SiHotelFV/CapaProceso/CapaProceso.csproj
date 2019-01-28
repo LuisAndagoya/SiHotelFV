@@ -67,6 +67,7 @@
     <Compile Include="Clases\Submenu.cs" />
     <Compile Include="Clases\TipoHabitacion.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Clases\ValidarCedula.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
