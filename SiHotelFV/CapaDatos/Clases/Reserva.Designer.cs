@@ -3121,7 +3121,7 @@ SELECT idReservacion, idCliente, idUsuario, fechaReservacion, fechaEntrada, fech
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[10];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idReservacion, idCliente, idUsuario, fechaReservacion, fechaEntrada, fecha" +
@@ -3129,7 +3129,14 @@ SELECT idReservacion, idCliente, idUsuario, fechaReservacion, fechaEntrada, fech
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, reservas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.idEstadoReserva, reservas.totalReservacion, 
+            this._commandCollection[1].CommandText = "UPDATE       reservas\r\nSET                idEstadoReserva = @idEstadoReserva\r\nWHE" +
+                "RE        (idReservacion = @idReservacion); \r\n";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoReserva", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idReservacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idReservacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, reservas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.idEstadoReserva, reservas.totalReservacion, 
                          detalle_reserva.idDetalle, detalle_reserva.idReserva, detalle_reserva.numeroHabitacion, detalle_reserva.fechaActual, detalle_reserva.valor, cliente.idCliente AS Expr1, cliente.dniCliente, cliente.nombreCliente, 
                          cliente.apellidoCliente, cliente.direccionCliente, cliente.telefonoCliente, usuario.idUsuario AS Expr2, usuario.usernameUsuario, usuario.idEmpleado, empleado.dniEmpleado, empleado.nombreEmpleado, 
                          empleado.apellidoEmpleado, estado_reserva.idEstadoReserva AS Expr3, estado_reserva.nombreEstado
@@ -3144,28 +3151,19 @@ WHERE        (reservas.idReservacion = @Id)";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, res" +
-                "ervas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.id" +
-                "EstadoReserva, reservas.totalReservacion, \r\n                         reservas.Sa" +
-                "ldoReserva, reservas.PagadoReserva, cliente.idCliente AS Expr1, cliente.dniClien" +
-                "te, cliente.nombreCliente, cliente.apellidoCliente, cliente.sexoCliente, cliente" +
-                ".direccionCliente, cliente.telefonoCliente, \r\n                         cliente.c" +
-                "orreoCliente, cliente.estadoCliente, estado_reserva.idEstadoReserva AS Expr2, es" +
-                "tado_reserva.nombreEstado, usuario.idUsuario AS Expr3, usuario.usernameUsuario, " +
-                "usuario.passwordUsuario, \r\n                         usuario.estadoUsuario, usuar" +
-                "io.idEmpleado, usuario.idCargo, empleado.idEmpleado AS Expr4, empleado.dniEmplea" +
-                "do, empleado.nombreEmpleado, empleado.apellidoEmpleado, \r\n                      " +
-                "   empleado.fnacimientoEmpleado, empleado.sexoEmpleado, empleado.estadocivilEmpl" +
-                "eado, empleado.domicilioEmpleado, empleado.telefmovilEmpleado, empleado.fechareg" +
-                "istroEmpleado, \r\n                         empleado.emailEmpleado, empleado.image" +
-                "nEmpleado, empleado.estadoEmpleado\r\nFROM            reservas INNER JOIN\r\n       " +
-                "                  cliente ON reservas.idCliente = cliente.idCliente INNER JOIN\r\n" +
-                "                         estado_reserva ON reservas.idEstadoReserva = estado_res" +
-                "erva.idEstadoReserva INNER JOIN\r\n                         usuario ON reservas.id" +
-                "Usuario = usuario.idUsuario INNER JOIN\r\n                         empleado ON usu" +
-                "ario.idEmpleado = empleado.idEmpleado\r\nWHERE        (cliente.dniCliente LIKE @dn" +
-                "iCliente) OR\r\n                         (cliente.apellidoCliente LIKE @apellidoCl" +
-                "iente)";
+            this._commandCollection[2].CommandText = @"SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, reservas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.idEstadoReserva, reservas.totalReservacion, 
+                         usuario.idUsuario AS Expr1, usuario.usernameUsuario, usuario.idEmpleado, cliente.idCliente AS Expr2, cliente.dniCliente, cliente.nombreCliente, cliente.apellidoCliente, empleado.nombreEmpleado, 
+                         empleado.apellidoEmpleado, detalle_reserva.idDetalle, detalle_reserva.idReserva, detalle_reserva.numeroHabitacion, detalle_reserva.fechaActual, detalle_reserva.valor, 
+                         estado_reserva.idEstadoReserva AS Expr3, estado_reserva.nombreEstado
+FROM            reservas INNER JOIN
+                         cliente ON reservas.idCliente = cliente.idCliente INNER JOIN
+                         usuario ON reservas.idUsuario = usuario.idUsuario INNER JOIN
+                         empleado ON usuario.idEmpleado = empleado.idEmpleado INNER JOIN
+                         detalle_reserva ON detalle_reserva.idReserva = reservas.idReservacion INNER JOIN
+                         estado_reserva ON reservas.idEstadoReserva = estado_reserva.idEstadoReserva
+WHERE        (cliente.dniCliente LIKE @dniCliente) OR
+                         (cliente.apellidoCliente LIKE @apellidoCliente) 
+                        ";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dniCliente", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dniCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellidoCliente", global::System.Data.SqlDbType.VarChar, 45, global::System.Data.ParameterDirection.Input, 0, 0, "apellidoCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3175,9 +3173,17 @@ WHERE        (reservas.idReservacion = @Id)";
                 "aEntrada, fechaSalida, idEstadoReserva, totalReservacion, SaldoReserva, PagadoRe" +
                 "serva\r\nFROM            reservas\r\nORDER BY idReservacion DESC";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dniCliente", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dniCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellidoCliente", global::System.Data.SqlDbType.VarChar, 45, global::System.Data.ParameterDirection.Input, 0, 0, "apellidoCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT\r\ndbo.reservas.idReservacion,\r\ndbo.reservas.idCliente,\r\ndbo.reservas.idUsua" +
+            this._commandCollection[4].CommandText = "SELECT        TOP (1) idReservacion, idCliente, idUsuario, fechaReservacion, fech" +
+                "aEntrada, fechaSalida, idEstadoReserva, totalReservacion, SaldoReserva, PagadoRe" +
+                "serva\r\nFROM            reservas\r\nORDER BY idReservacion DESC";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT\r\ndbo.reservas.idReservacion,\r\ndbo.reservas.idCliente,\r\ndbo.reservas.idUsua" +
                 "rio,\r\ndbo.reservas.fechaReservacion,\r\ndbo.reservas.fechaEntrada,\r\ndbo.reservas.f" +
                 "echaSalida,\r\ndbo.reservas.idEstadoReserva,\r\ndbo.reservas.totalReservacion,\r\ndbo." +
                 "reservas.SaldoReserva,\r\ndbo.reservas.PagadoReserva,\r\ndbo.cliente.idCliente,\r\ndbo" +
@@ -3200,15 +3206,15 @@ WHERE        (reservas.idReservacion = @Id)";
                 "o.idUsuario\r\nINNER JOIN dbo.empleado ON dbo.usuario.idEmpleado = dbo.empleado.id" +
                 "Empleado\r\nINNER JOIN dbo.detalle_reserva ON dbo.detalle_reserva.idReserva = dbo." +
                 "reservas.idReservacion\r\nWHERE\r\ndbo.reservas.idReservacion = @idReservacion";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idReservacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT Max(dbo.reservas.idReservacion) FROM dbo.reservas";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idReservacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, res" +
+            this._commandCollection[6].CommandText = "SELECT Max(dbo.reservas.idReservacion) FROM dbo.reservas";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, res" +
                 "ervas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.id" +
                 "EstadoReserva, reservas.totalReservacion, reservas.SaldoReserva, \r\n             " +
                 "            reservas.PagadoReserva, cliente.idCliente AS Expr1, cliente.dniClien" +
@@ -3228,10 +3234,10 @@ WHERE        (reservas.idReservacion = @Id)";
                 "JOIN\r\n                         usuario ON reservas.idUsuario = usuario.idUsuario" +
                 " INNER JOIN\r\n                         empleado ON usuario.idEmpleado = empleado." +
                 "idEmpleado";
-            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = @"SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, reservas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.idEstadoReserva, reservas.totalReservacion, 
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = @"SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, reservas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.idEstadoReserva, reservas.totalReservacion, 
                          usuario.idUsuario AS Expr1, usuario.usernameUsuario, usuario.idEmpleado, cliente.idCliente AS Expr2, cliente.dniCliente, cliente.nombreCliente, cliente.apellidoCliente, empleado.nombreEmpleado, 
                          empleado.apellidoEmpleado, detalle_reserva.idDetalle, detalle_reserva.idReserva, detalle_reserva.numeroHabitacion, detalle_reserva.fechaActual, detalle_reserva.valor, 
                          estado_reserva.idEstadoReserva AS Expr3, estado_reserva.nombreEstado
@@ -3241,22 +3247,22 @@ FROM            reservas INNER JOIN
                          empleado ON usuario.idEmpleado = empleado.idEmpleado INNER JOIN
                          detalle_reserva ON detalle_reserva.idReserva = reservas.idReservacion INNER JOIN
                          estado_reserva ON reservas.idEstadoReserva = estado_reserva.idEstadoReserva";
-            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = @"INSERT INTO reservas
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = @"INSERT INTO reservas
                          (idCliente, idUsuario, fechaReservacion, fechaEntrada, fechaSalida, idEstadoReserva, totalReservacion, SaldoReserva, PagadoReserva)
 VALUES        (@idCliente,@idUsuario,@fechaReservacion,@fechaEntrada,@fechaSalida,@idEstadoReserva,@totalReservacion,@SaldoReserva,@PagadoReserva)";
-            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaReservacion", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fechaReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaEntrada", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fechaEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaSalida", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fechaSalida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoReserva", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@totalReservacion", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "totalReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SaldoReserva", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 8, 2, "SaldoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PagadoReserva", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 8, 2, "PagadoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUsuario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaReservacion", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fechaReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaEntrada", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fechaEntrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaSalida", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fechaSalida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEstadoReserva", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idEstadoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@totalReservacion", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "totalReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SaldoReserva", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 8, 2, "SaldoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PagadoReserva", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 8, 2, "PagadoReserva", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3288,7 +3294,7 @@ VALUES        (@idCliente,@idUsuario,@fechaReservacion,@fechaEntrada,@fechaSalid
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy(Reserva.reservasDataTable dataTable, int Id) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3302,7 +3308,7 @@ VALUES        (@idCliente,@idUsuario,@fechaReservacion,@fechaEntrada,@fechaSalid
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Reserva.reservasDataTable GetBuscar(string dniCliente, string apellidoCliente) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((dniCliente == null)) {
                 throw new global::System.ArgumentNullException("dniCliente");
             }
@@ -3325,7 +3331,7 @@ VALUES        (@idCliente,@idUsuario,@fechaReservacion,@fechaEntrada,@fechaSalid
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Reserva.reservasDataTable GetDetalle() {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             Reserva.reservasDataTable dataTable = new Reserva.reservasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -3336,7 +3342,7 @@ VALUES        (@idCliente,@idUsuario,@fechaReservacion,@fechaEntrada,@fechaSalid
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Reserva.reservasDataTable GetFactura(int idReservacion) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idReservacion));
             Reserva.reservasDataTable dataTable = new Reserva.reservasDataTable();
             this.Adapter.Fill(dataTable);
@@ -3348,7 +3354,7 @@ VALUES        (@idCliente,@idUsuario,@fechaReservacion,@fechaEntrada,@fechaSalid
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Reserva.reservasDataTable GetListaReserva() {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             Reserva.reservasDataTable dataTable = new Reserva.reservasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -3359,7 +3365,7 @@ VALUES        (@idCliente,@idUsuario,@fechaReservacion,@fechaEntrada,@fechaSalid
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Reserva.reservasDataTable GetListaReservaRe() {
-            this.Adapter.SelectCommand = this.CommandCollection[7];
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             Reserva.reservasDataTable dataTable = new Reserva.reservasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -3539,8 +3545,33 @@ VALUES        (@idCliente,@idUsuario,@fechaReservacion,@fechaEntrada,@fechaSalid
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int ActializarEstado(int idEstadoReserva, int idReservacion) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(idEstadoReserva));
+            command.Parameters[1].Value = ((int)(idReservacion));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> GetIdReserva() {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3569,7 +3600,7 @@ VALUES        (@idCliente,@idUsuario,@fechaReservacion,@fechaEntrada,@fechaSalid
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertarReserva(int idCliente, int idUsuario, string fechaReservacion, string fechaEntrada, string fechaSalida, int idEstadoReserva, global::System.Nullable<double> totalReservacion, global::System.Nullable<decimal> SaldoReserva, global::System.Nullable<decimal> PagadoReserva) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
             command.Parameters[0].Value = ((int)(idCliente));
             command.Parameters[1].Value = ((int)(idUsuario));
             if ((fechaReservacion == null)) {

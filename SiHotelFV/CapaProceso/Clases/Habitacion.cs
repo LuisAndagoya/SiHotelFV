@@ -84,6 +84,21 @@ namespace CapaProceso.Clases
             }
         }
 
+        public static string ActualizarEstado(short numeroHabitacion, short estadoHabitacion_idEstado)
+        {
+
+            string mensaje = "";
+            int resultado = CHabitacion.ActualizarHestado(estadoHabitacion_idEstado, numeroHabitacion);
+            if (resultado == 0)
+            {
+                return mensaje = "Error al actualizar los registros";
+            }
+            else
+            {
+                return mensaje = "";
+            }
+        }
+
         public static string Eliminar(short numeroHabitacion)
         {
             string mensaje = "";

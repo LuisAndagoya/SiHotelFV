@@ -17,10 +17,15 @@ namespace CapaProceso.Clases
             return CCliente.GetLista();
         }
 
-       /* public static CapaDatos.Clases.Cliente.clienteDataTable Reporte(string Id)
+        public static CapaDatos.Clases.Cliente.clienteDataTable ClienteId( short Id)
         {
-            //return CCliente.Reporte(Id);
-        }*/
+            return CCliente.GetClienteId(Id);
+        }
+
+        /* public static CapaDatos.Clases.Cliente.clienteDataTable Reporte(string Id)
+         {
+             //return CCliente.Reporte(Id);
+         }*/
 
         public static CapaDatos.Clases.Cliente.clienteDataTable ListaActualizar(short idCliente)
         {
@@ -42,46 +47,60 @@ namespace CapaProceso.Clases
 
         public static string Insertar(string dniCliente, string nombreCliente, string apellidoCliente, string sexoCliente, string direccionCliente, string telefonoCliente, string correoCliente, string estadoCliente)
         {
-
-            string Lista = CCliente.unico(dniCliente).ToString();
-
-
-            string mensaje = "";
-
-            if (Lista == "0")
+            ValidarCedula val = new ValidarCedula();
+            string validarcedula = val.Validar(dniCliente);
+            if (validarcedula.Equals(""))
             {
-                int resultado = CCliente.InsertQuery(dniCliente.Trim(), nombreCliente.Trim().ToUpper(), apellidoCliente.Trim().ToUpper(), sexoCliente.Trim(), direccionCliente.Trim(), telefonoCliente.Trim(), correoCliente.Trim(), estadoCliente.Trim());
+                string Lista = CCliente.unico(dniCliente).ToString();
+
+                string mensaje = "";
+
+                if (Lista == "0")
+                {
+                    int resultado = CCliente.InsertQuery(dniCliente.Trim(), nombreCliente.Trim().ToUpper(), apellidoCliente.Trim().ToUpper(), sexoCliente.Trim(), direccionCliente.Trim(), telefonoCliente.Trim(), correoCliente.Trim(), estadoCliente.Trim());
+                    if (resultado == 0)
+                    {
+                        return mensaje = "Error al insertar los registros";
+                    }
+                    else
+                    {
+                        return mensaje = "";
+                    }
+
+                }
+                else
+                {
+                    return mensaje = "La CI ya existe";
+                }
+            }
+            else
+            {
+                return validarcedula;
+            }
+            
+        }
+
+
+        public static string Actualizar(string dniCliente, string nombreCliente, string apellidoCliente, String sexoCliente, string direccionCliente, string telefonoCliente, string correoCliente, string estadoCliente, short idCliente)
+        {
+            ValidarCedula val = new ValidarCedula();
+            string validarcedula = val.Validar(dniCliente);
+            if (validarcedula.Equals(""))
+            {
+                string mensaje = "";
+                int resultado = CCliente.UpdateQuery(dniCliente.Trim(), nombreCliente.Trim().ToUpper(), apellidoCliente.Trim().ToUpper(), sexoCliente.Trim(), direccionCliente.Trim(), telefonoCliente.Trim(), correoCliente.Trim(), estadoCliente.Trim(), idCliente);
                 if (resultado == 0)
                 {
-                    return mensaje = "Error al insertar los registros";
+                    return mensaje = "Error al actualizar los registros";
                 }
                 else
                 {
                     return mensaje = "";
                 }
-
             }
             else
             {
-                return mensaje = "La CI ya existe";
-            }
-        }
-
-
-
-
-        public static string Actualizar(string dniCliente, string nombreCliente, string apellidoCliente, String sexoCliente, string direccionCliente, string telefonoCliente, string correoCliente, string estadoCliente, short idCliente)
-        {
-
-            string mensaje = "";
-            int resultado = CCliente.UpdateQuery(dniCliente.Trim(), nombreCliente.Trim().ToUpper(), apellidoCliente.Trim().ToUpper(), sexoCliente.Trim(), direccionCliente.Trim(), telefonoCliente.Trim(), correoCliente.Trim(), estadoCliente.Trim(), idCliente);
-            if (resultado == 0)
-            {
-                return mensaje = "Error al actualizar los registros";
-            }
-            else
-            {
-                return mensaje = "";
+                return validarcedula;
             }
         }
 

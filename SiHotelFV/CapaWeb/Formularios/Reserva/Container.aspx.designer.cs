@@ -121,24 +121,6 @@ namespace CapaWeb.Formularios.Reserva {
         protected global::System.Web.UI.WebControls.TextBox PagadoReserva;
         
         /// <summary>
-        /// Control totalReservacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox totalReservacion;
-        
-        /// <summary>
-        /// Control SaldoReserva.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SaldoReserva;
-        
-        /// <summary>
         /// Control ListaHabitacion.
         /// </summary>
         /// <remarks>
@@ -175,6 +157,24 @@ namespace CapaWeb.Formularios.Reserva {
         protected global::System.Web.UI.WebControls.DataGrid Grid;
         
         /// <summary>
+        /// Control totalReservacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox totalReservacion;
+        
+        /// <summary>
+        /// Control SaldoReserva.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SaldoReserva;
+        
+        /// <summary>
         /// Control Button1.
         /// </summary>
         /// <remarks>
@@ -193,31 +193,31 @@ namespace CapaWeb.Formularios.Reserva {
         protected global::System.Web.UI.WebControls.Button btnCancelar;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control dniClienteM.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox dniClienteM;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control nombreClienteM.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox nombreClienteM;
         
         /// <summary>
-        /// Control TextBox3.
+        /// Control apellidoClienteM.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox apellidoClienteM;
         
         /// <summary>
         /// Control sexoCliente.
@@ -263,6 +263,15 @@ namespace CapaWeb.Formularios.Reserva {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList estadoCliente;
+        
+        /// <summary>
+        /// Control LblError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblError;
         
         /// <summary>
         /// Control Button3.

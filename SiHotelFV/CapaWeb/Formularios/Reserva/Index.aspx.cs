@@ -34,43 +34,62 @@ namespace CapaWeb.Formularios.Reserva
         }
         protected void Grid_ItemCommand(object source, DataGridCommandEventArgs e)
         {
-            //1 primero creo un objeto Clave/Valor de QueryString 
-            QSencriptadoCSharp.QueryString qs = new QSencriptadoCSharp.QueryString();
+            
 
-            int Id;
+            short Id;
+            short idEstadoReserva;
 
             switch (e.CommandName) //ultilizo la variable para la opcion
-            {
-
-                case "Editar": //ejecuta el codigo si el usuario ingresa el numero 1
-                    Id = Convert.ToInt32(((Label)e.Item.Cells[1].FindControl("LblId")).Text);
-
-                    //2 voy a agregando los valores que deseo
-                    qs.Add("TRN", "UDP");
-                    qs.Add("Id", Id.ToString());
-
-                    Response.Redirect("Container.aspx" + QSencriptadoCSharp.Encryption.EncryptQueryString(qs).ToString());
-                    break;//termina la ejecucion del programa despues de ejecutar el codigo
-
+            {                
                 case "Eliminar": //ejecuta el codigo si el usuario ingresa el numero 2
-                    Id = Convert.ToInt32(((Label)e.Item.Cells[1].FindControl("LblId")).Text);
-
-                    //2 voy a agregando los valores que deseo
-                    qs.Add("TRN", "DLT");
-                    qs.Add("Id", Id.ToString());
-
-                    Response.Redirect("Container.aspx" + QSencriptadoCSharp.Encryption.EncryptQueryString(qs).ToString());
+                    Id = short.Parse(((Label)e.Item.Cells[1].FindControl("LblId")).Text);
+                    idEstadoReserva = short.Parse(((Label)e.Item.Cells[1].FindControl("idEstadoReserva")).Text);
+                    if (idEstadoReserva == 1)
+                   {
+                        CapaProceso.Clases.Reserva.ActualizarEstado(Id, 4);
+                        Grid.DataSource = CapaProceso.Clases.Reserva.GetListaReserva();
+                        Grid.DataBind();
+                        Grid.Height = 100;
+                    }
+                    else
+                    {
+                        this.Page.Response.Write("<script language='JavaScript'>window.alert('Solo se puede anular rervas en estado reservado');</script>");
+                    }
+                   
                     break;
 
-                case "Factura": //ejecuta el codigo si el usuario ingresa el numero 2
-                    Id = Convert.ToInt32(((Label)e.Item.Cells[1].FindControl("LblId")).Text);
+                case "Estado": //ejecuta el codigo si el usuario ingresa el numero 2
+                    Id = short.Parse(((Label)e.Item.Cells[1].FindControl("LblId")).Text);
+                    idEstadoReserva = short.Parse(((Label)e.Item.Cells[1].FindControl("idEstadoReserva")).Text);
 
-                    //2 voy a agregando los valores que deseo
-                    qs.Add("TRN", "FAC");
-                    qs.Add("Id", Id.ToString());
+                    switch (idEstadoReserva)
+                    {
+                        case 1:
+                            CapaProceso.Clases.Reserva.ActualizarEstado(Id, 2);
+                            Grid.DataSource = CapaProceso.Clases.Reserva.GetListaReserva();
+                            Grid.DataBind();
+                            Grid.Height = 100;
+                            break;
+                        case 2:
+                            CapaProceso.Clases.Reserva.ActualizarEstado(Id, 3);
+                            Grid.DataSource = CapaProceso.Clases.Reserva.GetListaReserva();
+                            Grid.DataBind();
+                            Grid.Height = 100;
+                            break;
+                        case 3:
+                            CapaProceso.Clases.Reserva.ActualizarEstado(Id, 4);
+                            Grid.DataSource = CapaProceso.Clases.Reserva.GetListaReserva();
+                            Grid.DataBind();
+                            Grid.Height = 100;
+                            break;
+                        case 4:
+                            this.Page.Response.Write("<script language='JavaScript'>window.alert('La reserva ya se encuentra cerrada');</script>");
+                            break;
+                    }
 
-                    Response.Redirect("../../Reportes/Factura.aspx" + QSencriptadoCSharp.Encryption.EncryptQueryString(qs).ToString());
                     break;
+
+
             }
         }
 
