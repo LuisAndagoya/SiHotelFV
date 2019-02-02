@@ -3144,19 +3144,28 @@ WHERE        (reservas.idReservacion = @Id)";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idReservacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, reservas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.idEstadoReserva, reservas.totalReservacion, 
-                         usuario.idUsuario AS Expr1, usuario.usernameUsuario, usuario.idEmpleado, cliente.idCliente AS Expr2, cliente.dniCliente, cliente.nombreCliente, cliente.apellidoCliente, empleado.nombreEmpleado, 
-                         empleado.apellidoEmpleado, detalle_reserva.idDetalle, detalle_reserva.idReserva, detalle_reserva.numeroHabitacion, detalle_reserva.fechaActual, detalle_reserva.valor, 
-                         estado_reserva.idEstadoReserva AS Expr3, estado_reserva.nombreEstado
-FROM            reservas INNER JOIN
-                         cliente ON reservas.idCliente = cliente.idCliente INNER JOIN
-                         usuario ON reservas.idUsuario = usuario.idUsuario INNER JOIN
-                         empleado ON usuario.idEmpleado = empleado.idEmpleado INNER JOIN
-                         detalle_reserva ON detalle_reserva.idReserva = reservas.idReservacion INNER JOIN
-                         estado_reserva ON reservas.idEstadoReserva = estado_reserva.idEstadoReserva
-WHERE        (cliente.dniCliente LIKE @dniCliente) OR
-                         (cliente.apellidoCliente LIKE @apellidoCliente) 
-                        ";
+            this._commandCollection[2].CommandText = "SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, res" +
+                "ervas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.id" +
+                "EstadoReserva, reservas.totalReservacion, \r\n                         reservas.Sa" +
+                "ldoReserva, reservas.PagadoReserva, cliente.idCliente AS Expr1, cliente.dniClien" +
+                "te, cliente.nombreCliente, cliente.apellidoCliente, cliente.sexoCliente, cliente" +
+                ".direccionCliente, cliente.telefonoCliente, \r\n                         cliente.c" +
+                "orreoCliente, cliente.estadoCliente, estado_reserva.idEstadoReserva AS Expr2, es" +
+                "tado_reserva.nombreEstado, usuario.idUsuario AS Expr3, usuario.usernameUsuario, " +
+                "usuario.passwordUsuario, \r\n                         usuario.estadoUsuario, usuar" +
+                "io.idEmpleado, usuario.idCargo, empleado.idEmpleado AS Expr4, empleado.dniEmplea" +
+                "do, empleado.nombreEmpleado, empleado.apellidoEmpleado, \r\n                      " +
+                "   empleado.fnacimientoEmpleado, empleado.sexoEmpleado, empleado.estadocivilEmpl" +
+                "eado, empleado.domicilioEmpleado, empleado.telefmovilEmpleado, empleado.fechareg" +
+                "istroEmpleado, \r\n                         empleado.emailEmpleado, empleado.image" +
+                "nEmpleado, empleado.estadoEmpleado\r\nFROM            reservas INNER JOIN\r\n       " +
+                "                  cliente ON reservas.idCliente = cliente.idCliente INNER JOIN\r\n" +
+                "                         estado_reserva ON reservas.idEstadoReserva = estado_res" +
+                "erva.idEstadoReserva INNER JOIN\r\n                         usuario ON reservas.id" +
+                "Usuario = usuario.idUsuario INNER JOIN\r\n                         empleado ON usu" +
+                "ario.idEmpleado = empleado.idEmpleado\r\nWHERE        (cliente.dniCliente LIKE @dn" +
+                "iCliente) OR\r\n                         (cliente.apellidoCliente LIKE @apellidoCl" +
+                "iente)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dniCliente", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dniCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellidoCliente", global::System.Data.SqlDbType.VarChar, 45, global::System.Data.ParameterDirection.Input, 0, 0, "apellidoCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

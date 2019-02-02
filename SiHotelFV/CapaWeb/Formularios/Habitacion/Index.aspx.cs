@@ -62,6 +62,15 @@ namespace CapaWeb.Formularios.Habitacion
 
                     Response.Redirect("Container.aspx" + QSencriptadoCSharp.Encryption.EncryptQueryString(qs).ToString());
                     break;
+                case "Ver": //ejecuta el codigo si el usuario ingresa el numero 2
+                    Id = Convert.ToInt32(((Label)e.Item.Cells[1].FindControl("LblId")).Text);
+
+                    //2 voy a agregando los valores que deseo
+                    qs.Add("TRN", "VER");
+                    qs.Add("Id", Id.ToString());
+
+                    Response.Redirect("Ver.aspx" + QSencriptadoCSharp.Encryption.EncryptQueryString(qs).ToString());
+                    break;
             }
         }
 

@@ -38,7 +38,7 @@ namespace CapaProceso.Clases
         public static CapaDatos.Clases.Reserva.reservasDataTable Buscar(string buscar)
         {
             String buscarAux = "%" + buscar.Trim() + "%";
-            return CReserva.GetBuscar( buscarAux, buscarAux);
+            return CReserva.GetBuscar(buscarAux, buscarAux);
         }
 
        

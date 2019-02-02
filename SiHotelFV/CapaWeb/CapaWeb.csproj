@@ -217,12 +217,14 @@
     <Content Include="Formularios\Descripcionhabitacion\Container.aspx" />
     <Content Include="Formularios\Descripcionhabitacion\Index.aspx" />
     <Content Include="Formularios\Empleado\ValidarCedula.js" />
+    <Content Include="Formularios\Empleado\Ver.aspx" />
     <Content Include="Formularios\Estadohabitacion\Container.aspx" />
     <Content Include="Formularios\Estadohabitacion\Index.aspx" />
     <Content Include="Formularios\Estadoreserva\Container.aspx" />
     <Content Include="Formularios\Estadoreserva\Index.aspx" />
     <Content Include="Formularios\Habitacion\Container.aspx" />
     <Content Include="Formularios\Habitacion\Index.aspx" />
+    <Content Include="Formularios\Habitacion\Ver.aspx" />
     <Content Include="Formularios\Hotel\Container.aspx" />
     <Content Include="Formularios\Hotel\Index.aspx" />
     <Content Include="Formularios\Menucargo\Container.aspx" />
@@ -463,6 +465,13 @@
     <Compile Include="Formularios\Descripcionhabitacion\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Empleado\Ver.aspx.cs">
+      <DependentUpon>Ver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Empleado\Ver.aspx.designer.cs">
+      <DependentUpon>Ver.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Estadoreserva\Container.aspx.cs">
       <DependentUpon>Container.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -490,6 +499,13 @@
     </Compile>
     <Compile Include="Formularios\Habitacion\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Habitacion\Ver.aspx.cs">
+      <DependentUpon>Ver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Habitacion\Ver.aspx.designer.cs">
+      <DependentUpon>Ver.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Reserva\Container.aspx.cs">
       <DependentUpon>Container.aspx</DependentUpon>
