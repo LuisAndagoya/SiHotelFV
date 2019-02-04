@@ -151,7 +151,7 @@
                                             <label for="PagadoReserva">Pago Reservación</label></td>
                                         <td>
 
-                                            <asp:TextBox type="number" min="0.00" step="0.01" ID="PagadoReserva" required="required" class="form-control" runat="server" OnTextChanged="PagadoReserva_TextChanged" AutoPostBack="true"></asp:TextBox></td>
+                                            <asp:TextBox type="number" min="0.00" step="0.01" ID="PagadoReserva" required="required" class="form-control" runat="server" OnTextChanged="PagadoReserva_TextChanged" AutoPostBack="true" TextMode="Number"></asp:TextBox></td>
                                     </tr>
                                 </table>
 

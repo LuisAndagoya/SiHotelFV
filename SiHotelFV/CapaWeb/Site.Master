@@ -85,14 +85,15 @@
                         foreach (System.Data.DataRow row in DataTable.Rows)
                         { %>
 
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#<%Response.Write(row["nombreMenu"].ToString());%>" aria-expanded="false" aria-controls="<%Response.Write(row["nombreMenu"].ToString());%>">
-                            <span class="menu-title"><%Response.Write(row["nombreMenu"].ToString());%></span>
-                            <i class="menu-arrow"></i>
-                            <i class="<%Response.Write(row["iconoMenu"].ToString());%> menu-icon"></i>
+                    <li class="nav-item ">
+                        
+                        <a class=" nav-link float-left " data-toggle="collapse" href="#<%Response.Write(row["nombreMenu"].ToString());%>" aria-expanded="false" aria-controls="<%Response.Write(row["nombreMenu"].ToString());%>">
+                           <i class="<%Response.Write(row["iconoMenu"].ToString());%> menu-icon text-dark"></i>
+                           <span class="menu-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%Response.Write(row["nombreMenu"].ToString());%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                           <i class="menu-arrow"></i>
                         </a>
 
-                        <div class="collapse" id="<%Response.Write(row["nombreMenu"].ToString());%>">
+                        <div class="collapse float-left" id="<%Response.Write(row["nombreMenu"].ToString());%>">
                             <ul class="nav flex-column sub-menu">
 
                                 <%  CapaDatos.Clases.Submenu.submenuDataTable submenuDataTable = CapaProceso.Clases.Submenu.SubmenuAsigando(short.Parse(Session["idCargo"].ToString()), short.Parse(row["idMenu"].ToString()));
@@ -100,7 +101,13 @@
                                     foreach (System.Data.DataRow rowitem in submenuDataTable.Rows)
                                     { %>
 
-                                <li class="nav-item"><a class="nav-link" href="../../<%Response.Write(rowitem["urlSubMenu"].ToString());%>"><%Response.Write(rowitem["nombreSubMenu"].ToString());%> <i class="<%Response.Write(rowitem["iconoSubMenu"].ToString());%> menu-icon"></i></a></li>
+                                
+                                <li class="nav-item ">
+                                   <i class="<%Response.Write(rowitem["iconoSubMenu"].ToString());%> menu-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>
+                                    <a class=" text-dark text-center" href="../../<%Response.Write(rowitem["urlSubMenu"].ToString());%>"><%Response.Write(rowitem["nombreSubMenu"].ToString());%>
+                                                                                
+                                     </a>
+                                </li>
 
                                 <% }%>
                             </ul>
