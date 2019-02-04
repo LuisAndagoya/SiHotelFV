@@ -64,6 +64,13 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
+                                             <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="imgVer" runat="server" CausesValidation="false" CommandName="Ver"
+                                                        ImageUrl="~/img/ir.png" ToolTip="Ver" Width="16" />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
                                             <asp:TemplateColumn HeaderText="id" Visible="False">
                                                 <ItemTemplate>
                                                     <span style="float: left;">

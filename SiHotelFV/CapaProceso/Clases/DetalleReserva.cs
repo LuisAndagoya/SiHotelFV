@@ -35,7 +35,7 @@ namespace CapaProceso.Clases
             string mensaje = "";
 
 
-            int resultado = CReserva.InsertarDetalle(Id, detalleGuardar.numeroHabitacion, fechaActual, detalleGuardar.valor);
+            int resultado = CReserva.InsertarDetalle(Id, detalleGuardar.numeroHabitacion, fechaActual,(double) detalleGuardar.valor);
 
 
             if (resultado == 0)

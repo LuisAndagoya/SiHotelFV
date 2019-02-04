@@ -76,21 +76,6 @@
 
                                         <Columns>
                                             
-
-                                             <asp:TemplateColumn>
-                                                <ItemTemplate>
-                                                    <asp:ImageButton ID="imgEstado" runat="server" CausesValidation="false" CommandName="Estado"
-                                                        ImageUrl="~/img/accept.png"  ToolTip="Cambiar estado reserva" Width="16" OnClientClick="if ( !CambiarReserva()) return false;"  />
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
-
-                                            <asp:TemplateColumn>
-                                                <ItemTemplate>
-                                                    <asp:ImageButton ID="imgFac" runat="server" CausesValidation="false" CommandName="Factura"
-                                                        ImageUrl="~/img/Pdf.png" ToolTip="Factura" Width="16" />
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
-
                                             <asp:TemplateColumn HeaderText="id" Visible="False">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
@@ -161,6 +146,20 @@
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="imgEliminar" runat="server" CausesValidation="false" CommandName="Eliminar"
                                                         ImageUrl="~/img/ActionDelete.png"  ToolTip="Anular reserva" Width="16" OnClientClick="if ( !AnularReserva()) return false;"  />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
+                                            <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="imgEstado" runat="server" CausesValidation="false" CommandName="Estado"
+                                                        ImageUrl="~/img/accept.png"  ToolTip="Cambiar estado reserva" Width="16" OnClientClick="if ( !CambiarReserva()) return false;"  />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
+                                            <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="imgFac" runat="server" CausesValidation="false" CommandName="Factura"
+                                                        ImageUrl="~/img/Pdf.png" ToolTip="Factura" Width="16" />
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 

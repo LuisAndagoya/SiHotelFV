@@ -36,7 +36,7 @@ namespace CapaWeb.Formularios.Reserva
                 ListaHabitacion.AppendDataBoundItems = true;
                 ListaHabitacion.Items.Add("Seleccione habitación...");
 
-                ListaHabitacion.DataSource = CapaProceso.Clases.Habitacion.Lista();
+                ListaHabitacion.DataSource = CapaProceso.Clases.Habitacion.ListaEstado(4);
 
                 ListaHabitacion.DataTextField = "numeroHabitacion";
                 ListaHabitacion.DataValueField = "numeroHabitacion";                
@@ -60,13 +60,13 @@ namespace CapaWeb.Formularios.Reserva
        
         protected void Grid_ItemCommand(object source, DataGridCommandEventArgs e)
         {
-            float pago = float.Parse(PagadoReserva.Text);
-            float total = float.Parse(Session["total"].ToString());
-            float saldo = 0;          
+            Decimal pago = Math.Round(Decimal.Parse(PagadoReserva.Text.Replace(".",",")),2);
+            Decimal total = Math.Round(Decimal.Parse(Session["total"].ToString()),2);
+            Decimal saldo = 0;          
+            
+            total = Math.Round(total - Decimal.Parse(((Label)e.Item.Cells[2].FindControl("valor")).Text), 2);
 
-            total = total - float.Parse(((Label)e.Item.Cells[2].FindControl("valor")).Text);
-
-            saldo = total - pago;
+            saldo = Math.Round(total - pago,2);
 
             SaldoReserva.Text = saldo.ToString();
             totalReservacion.Text = total.ToString();
@@ -100,20 +100,20 @@ namespace CapaWeb.Formularios.Reserva
 
                 if (Session["datos"] == null)
                 {
-                    ModeloReservacionDetalle item = new ModeloReservacionDetalle(int.Parse(ListaHabitacion.SelectedValue.ToString()), float.Parse(valor.Text), Tipo);
+                    ModeloReservacionDetalle item = new ModeloReservacionDetalle(int.Parse(ListaHabitacion.SelectedValue.ToString()), Decimal.Parse(valor.Text.Replace(".", ",")), Tipo);
                     modeloReservacionDetalle = new List<ModeloReservacionDetalle>();
                     modeloReservacionDetalle.Add(item);
                     Session["datos"] = modeloReservacionDetalle;
 
-                    float pago = float.Parse(PagadoReserva.Text);
-                    float total = float.Parse(Session["total"].ToString());
-                    float saldo = 0;
+                    Decimal pago = Math.Round(Decimal.Parse(PagadoReserva.Text.Replace(".", ",")), 2);
+                    Decimal total = Math.Round(Decimal.Parse(Session["total"].ToString()), 2);
+                    Decimal saldo = 0;
 
-                    total = float.Parse(valor.Text) + total;
+                    total = Math.Round(Decimal.Parse(valor.Text.Replace(".", ",")) + total, 2);
 
                     Session["total"] = total;
 
-                    saldo = total - pago;
+                    saldo = Math.Round(total - pago, 2);
 
                     SaldoReserva.Text = saldo.ToString();
                     totalReservacion.Text = total.ToString();
@@ -133,19 +133,19 @@ namespace CapaWeb.Formularios.Reserva
 
                     if (!existe)
                     {
-                        ModeloReservacionDetalle item = new ModeloReservacionDetalle(int.Parse(ListaHabitacion.SelectedValue.ToString()), float.Parse(valor.Text), Tipo);
+                        ModeloReservacionDetalle item = new ModeloReservacionDetalle(int.Parse(ListaHabitacion.SelectedValue.ToString()), Decimal.Parse(valor.Text.Replace(".", ",")), Tipo);
                         
                         modeloReservacionDetalle.Add(item);
 
-                        float pago = float.Parse(PagadoReserva.Text);
-                        float total = float.Parse(Session["total"].ToString());
-                        float saldo = 0;
+                        Decimal pago = Math.Round(Decimal.Parse(PagadoReserva.Text.Replace(".", ",")), 2);
+                        Decimal total = Math.Round(Decimal.Parse(Session["total"].ToString()), 2);
+                        Decimal saldo = 0;
 
-                        total = float.Parse(valor.Text) + total;
+                        total = Math.Round(Decimal.Parse(valor.Text.Replace(".", ",")) + total, 2);
 
                         Session["total"] = total;
 
-                        saldo = total - pago;
+                        saldo = Math.Round(total - pago,2);
 
                         SaldoReserva.Text = saldo.ToString();
                         totalReservacion.Text = total.ToString();
@@ -155,7 +155,7 @@ namespace CapaWeb.Formularios.Reserva
                             {
                                 ListaHabitacion.SelectedValue = "Seleccione habitación...";
                                 valor.Text = "0";
-                                float total = float.Parse(Session["total"].ToString());
+                                Decimal total = Math.Round(Decimal.Parse(Session["total"].ToString()), 2);
                                 totalReservacion.Text = total.ToString();
                             this.Page.Response.Write("<script language='JavaScript'>window.alert('La habitación ya fue agregada');</script>");
                         }
@@ -197,9 +197,9 @@ namespace CapaWeb.Formularios.Reserva
             reservaGuardar.fechaEntrada = fechaEntrada.Text;
             reservaGuardar.fechaSalida = fechaSalida.Text;
             reservaGuardar.idEstadoReserva = int.Parse(idEstadoReserva.SelectedValue);
-            reservaGuardar.totalReservacion = float.Parse(Session["total"].ToString());
-            reservaGuardar.SaldoReserva = decimal.Parse(SaldoReserva.Text);
-            reservaGuardar.PagadoReserva = decimal.Parse(PagadoReserva.Text);
+            reservaGuardar.totalReservacion = Decimal.Parse(Session["total"].ToString());
+            reservaGuardar.SaldoReserva = Decimal.Parse(SaldoReserva.Text.Replace(".", ","));
+            reservaGuardar.PagadoReserva = Decimal.Parse(PagadoReserva.Text.Replace(".", ","));
             CapaProceso.Clases.Reserva.Insertar(reservaGuardar);
         }
 
@@ -226,9 +226,14 @@ namespace CapaWeb.Formularios.Reserva
                     }
                     else
                     {                        
-                        if (float.Parse(Session["total"].ToString()) > float.Parse(PagadoReserva.Text))
+                        if ( Decimal.Parse(SaldoReserva.Text.Replace(".",",")) < 0)
                         {
+                            this.Page.Response.Write("<script language='JavaScript'>window.alert('El pago no puede ser mayor que la reserva');</script>");
 
+                        }
+                        else
+                        {
+                           
                             modeloReservacionDetalle = (Session["datos"] as List<ModeloReservacionDetalle>);
                             if (modeloReservacionDetalle.Count > 0)
                             {
@@ -239,9 +244,9 @@ namespace CapaWeb.Formularios.Reserva
                                 {
                                     DetalleReserva.Insertar(IdReserva, fechaReservacion.Text, item);
                                     if (int.Parse(idEstadoReserva.SelectedValue) == 2)
-                                    {
-                                        short tipoHabitacion = 2;
-                                        CapaProceso.Clases.Habitacion.ActualizarEstado(short.Parse(item.numeroHabitacion.ToString()), tipoHabitacion);
+                                    {                                        
+                                        CapaProceso.Clases.Habitacion.ActualizarEstado(short.Parse(item.numeroHabitacion.ToString()), 2);
+                                       
                                     }
                                 }
 
@@ -255,10 +260,6 @@ namespace CapaWeb.Formularios.Reserva
                             {
                                 this.Page.Response.Write("<script language='JavaScript'>window.alert('Ingrese el detalle de la raserva');</script>");
                             }
-                        }
-                        else
-                        {
-                            this.Page.Response.Write("<script language='JavaScript'>window.alert('El pago no puede ser mayor que la reserva');</script>");
                         }
 
                     }
@@ -275,6 +276,7 @@ namespace CapaWeb.Formularios.Reserva
 
 
         }
+
         protected void Button2_Click(object sender, EventArgs e)
         {            InsertarDetalle();
 
@@ -289,7 +291,7 @@ namespace CapaWeb.Formularios.Reserva
                 CapaDatos.Clases.Cliente.clienteDataTable DataTable = CapaProceso.Clases.Cliente.BuscarCi(dniCliente.Text);
                 if (Session["total"] != null)
                 {
-                    float total = float.Parse(Session["total"].ToString());
+                    Decimal total = Decimal.Parse(Session["total"].ToString());
                     totalReservacion.Text = total.ToString();
                 }
                
@@ -324,16 +326,16 @@ namespace CapaWeb.Formularios.Reserva
 
         protected void PagadoReserva_TextChanged(object sender, EventArgs e)
         {
-            float pago = float.Parse(PagadoReserva.Text);
-            float total = float.Parse(Session["total"].ToString());
-            float saldo = 0;
-            saldo = total - pago;
+            Decimal pago = Math.Round(Decimal.Parse(PagadoReserva.Text.Replace(".", ",")), 2);
+            Decimal total = Math.Round(Decimal.Parse(Session["total"].ToString()), 2);
+            Decimal saldo = 0;
+            saldo = Math.Round(total - pago, 2);
             SaldoReserva.Text = saldo.ToString();
         }
 
         protected void ListaHabitacion_TextChanged(object sender, EventArgs e)
         {
-            float total = float.Parse(Session["total"].ToString());            
+            Decimal total = Math.Round(Decimal.Parse(Session["total"].ToString()), 2);            
             totalReservacion.Text = total.ToString();
 
             if (ListaHabitacion.SelectedValue.ToString() != "Seleccione habitación...")

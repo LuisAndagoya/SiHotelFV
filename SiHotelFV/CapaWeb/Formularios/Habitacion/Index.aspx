@@ -63,6 +63,13 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
+                                              <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="imgVer" runat="server" CausesValidation="false" CommandName="Ver"
+                                                        ImageUrl="~/img/ir.png" ToolTip="Ver" Width="16" />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
                                             <asp:TemplateColumn HeaderText="N° Habitación" Visible="True">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
@@ -88,7 +95,7 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                                  <asp:TemplateColumn HeaderText="Estado" Visible="True">
+                                           <asp:TemplateColumn HeaderText="Estado" Visible="True">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="nombreEstadoHabitacion" runat="server" Text='<%#Eval("nombreEstadoHabitacion") %>'></asp:Label>
@@ -96,9 +103,7 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                            
-
-
-                                          
+                  
 
      
 
