@@ -11,10 +11,10 @@ namespace CapaProceso.Clases
         
         public int numeroHabitacion { get; set; }
         
-        public float valor { get; set; }
+        public Decimal valor { get; set; }
 
         public string Tipo { get; set; }
-        public  ModeloReservacionDetalle(int numeroHabitacion, float valor, string Tipo)
+        public  ModeloReservacionDetalle(int numeroHabitacion, Decimal valor, string Tipo)
         {            
             this.numeroHabitacion = numeroHabitacion;           
             this.valor = valor;

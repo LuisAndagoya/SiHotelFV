@@ -47,7 +47,7 @@ namespace CapaProceso.Clases
             string mensaje = "";
 
 
-            int resultado = CReserva.InsertarReserva(reservaGuardar.idCliente, reservaGuardar.idUsuario, reservaGuardar.fechaReservacion, reservaGuardar.fechaEntrada, reservaGuardar.fechaSalida, reservaGuardar.idEstadoReserva, reservaGuardar.totalReservacion, reservaGuardar.SaldoReserva, reservaGuardar.PagadoReserva);
+            int resultado = CReserva.InsertarReserva(reservaGuardar.idCliente, reservaGuardar.idUsuario, reservaGuardar.fechaReservacion, reservaGuardar.fechaEntrada, reservaGuardar.fechaSalida, reservaGuardar.idEstadoReserva, (double) reservaGuardar.totalReservacion, reservaGuardar.SaldoReserva, reservaGuardar.PagadoReserva);
             if (resultado == 0)
             {
                 return mensaje = "Error al insertar los registros";

@@ -34,13 +34,14 @@ namespace CapaWeb.Formularios.Reserva
         }
         protected void Grid_ItemCommand(object source, DataGridCommandEventArgs e)
         {
-            
 
+            QSencriptadoCSharp.QueryString qs = new QSencriptadoCSharp.QueryString();
             short Id;
             short idEstadoReserva;
 
             switch (e.CommandName) //ultilizo la variable para la opcion
-            {                
+            {
+                                         
                 case "Eliminar": //ejecuta el codigo si el usuario ingresa el numero 2
                     Id = short.Parse(((Label)e.Item.Cells[1].FindControl("LblId")).Text);
                     idEstadoReserva = short.Parse(((Label)e.Item.Cells[1].FindControl("idEstadoReserva")).Text);
@@ -61,6 +62,7 @@ namespace CapaWeb.Formularios.Reserva
                 case "Estado": //ejecuta el codigo si el usuario ingresa el numero 2
                     Id = short.Parse(((Label)e.Item.Cells[1].FindControl("LblId")).Text);
                     idEstadoReserva = short.Parse(((Label)e.Item.Cells[1].FindControl("idEstadoReserva")).Text);
+                    CapaDatos.Clases.DetalleReserva.detalle_reservaDataTable detalle = CapaProceso.Clases.DetalleReserva.Detalle(Id);
 
                     switch (idEstadoReserva)
                     {
@@ -69,24 +71,47 @@ namespace CapaWeb.Formularios.Reserva
                             Grid.DataSource = CapaProceso.Clases.Reserva.GetListaReserva();
                             Grid.DataBind();
                             Grid.Height = 100;
+                            
+                            foreach (var item in detalle)
+                            {
+                                CapaProceso.Clases.Habitacion.ActualizarEstado((short) item.numeroHabitacion, 2);
+                            }
+                           
                             break;
                         case 2:
                             CapaProceso.Clases.Reserva.ActualizarEstado(Id, 3);
                             Grid.DataSource = CapaProceso.Clases.Reserva.GetListaReserva();
                             Grid.DataBind();
                             Grid.Height = 100;
+                            foreach (var item in detalle)
+                            {
+                                CapaProceso.Clases.Habitacion.ActualizarEstado((short)item.numeroHabitacion, 3);
+                            }
                             break;
                         case 3:
                             CapaProceso.Clases.Reserva.ActualizarEstado(Id, 4);
                             Grid.DataSource = CapaProceso.Clases.Reserva.GetListaReserva();
                             Grid.DataBind();
                             Grid.Height = 100;
+                            foreach (var item in detalle)
+                            {
+                                CapaProceso.Clases.Habitacion.ActualizarEstado((short)item.numeroHabitacion, 4);
+                            }
                             break;
                         case 4:
                             this.Page.Response.Write("<script language='JavaScript'>window.alert('La reserva ya se encuentra cerrada');</script>");
                             break;
                     }
 
+                    break;
+                case "Factura": 
+                    Id = short.Parse(((Label)e.Item.Cells[1].FindControl("LblId")).Text);
+
+                    //2 voy a agregando los valores que deseo
+                    qs.Add("TRN", "FAC");
+                    qs.Add("Id", Id.ToString());
+
+                    Response.Redirect("../../Reportes/Factura.aspx" + QSencriptadoCSharp.Encryption.EncryptQueryString(qs).ToString());
                     break;
 
 

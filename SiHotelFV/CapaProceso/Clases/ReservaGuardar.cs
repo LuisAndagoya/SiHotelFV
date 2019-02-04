@@ -18,12 +18,12 @@ namespace CapaProceso.Clases
         public String fechaEntrada { get; set; }
         public String fechaSalida { get; set; }
         public int idEstadoReserva { get; set; }
-        public float totalReservacion { get; set; }
-        public decimal SaldoReserva { get; set; }
-        public decimal PagadoReserva { get; set; }
+        public Decimal totalReservacion { get; set; }
+        public Decimal SaldoReserva { get; set; }
+        public Decimal PagadoReserva { get; set; }
 
 
-        public ReservaGuardar(int idReservacion, int idCliente, int idUsuario, String fechaReservacion, String fechaEntrada, String fechaSalida, int idEstadoReserva, float totalReservacion, decimal SaldoReserva, decimal PagadoReserva)
+        public ReservaGuardar(int idReservacion, int idCliente, int idUsuario, String fechaReservacion, String fechaEntrada, String fechaSalida, int idEstadoReserva, Decimal totalReservacion, Decimal SaldoReserva, Decimal PagadoReserva)
         {
             this.idReservacion = idReservacion;
             this.idCliente = idCliente;
