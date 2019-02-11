@@ -24,7 +24,7 @@ namespace CapaProceso.Clases
 
         public static CapaDatos.Clases.PrecioHabitacion.precio_habitacionDataTable Buscar(string buscar)
         {
-            String buscarAux = "%" + buscar.Trim() + "%";
+            String buscarAux =  buscar.Trim() ;
             return CPrecio.GetBuscar(Convert.ToInt16(buscarAux));
         }
 

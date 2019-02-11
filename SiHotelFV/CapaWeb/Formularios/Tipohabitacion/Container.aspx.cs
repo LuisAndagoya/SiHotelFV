@@ -78,6 +78,11 @@ namespace CapaWeb.Formularios.Tipohabitacion
                     maximoTipo.Text = row["maximoTipo"].ToString();
 
                     lblId.Text = row["idtipo"].ToString();
+
+                    //ver imagen
+                    Image1.ImageUrl = row["imagenTipo"].ToString();
+
+                    var imagen = row["imagenTipo"] as Image;
                 }
             }
         }

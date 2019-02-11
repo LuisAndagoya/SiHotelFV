@@ -13,6 +13,7 @@
     <!-- endinject -->
     <!-- inject:css -->
     <link rel="stylesheet" href="../../Tema/css/style.css">
+    
     <!-- endinject -->
     <link rel="shortcut icon" href="../../Tema/images/favicon.png" />
     <script type="text/javascript">
@@ -21,6 +22,7 @@
                 location.replace(history.forward(1))
         }
     </script>
+      
 </head>
 <body>
     <div class="container-scroller">
@@ -30,40 +32,41 @@
                 <a class="navbar-brand brand-logo" href="../../inicio.aspx">
                     <img src="../../Tema/images/HFV.png" alt="logo" /></a>
             </div>
-            <div class="navbar-menu-wrapper d-flex align-items-stretch">
-                <ul class="navbar-nav navbar-nav-right">
+            <div class="navbar-menu-wrapper d-flex align-items-stretch ">
+                <ul class="navbar-nav navbar-nav-right ">
                     <li class="nav-item nav-profile dropdown"><a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                        
-<div class="nav-profile-img">
-  
-      <% CapaDatos.Clases.Usuario.usuarioDataTable Dato = CapaProceso.Clases.Usuario.Empleado(short.Parse(Session["UsuarioId"].ToString()));
 
-                        foreach (System.Data.DataRow row in Dato.Rows)
-                        { %>
+                        <div class="nav-profile-img">
 
-                        
-                        
-                 <img src="../../<%Response.Write(row["imagenEmpleado"].ToString());%> "/><span class="availability-status online"></span></div>
-                        
-                        
-                          <% } %>   
-                        
-                        
+                            <% CapaDatos.Clases.Usuario.usuarioDataTable Dato = CapaProceso.Clases.Usuario.Empleado(short.Parse(Session["UsuarioId"].ToString()));
+
+                                foreach (System.Data.DataRow row in Dato.Rows)
+                                { %>
+
+
+
+                            <img src="../../<%Response.Write(row["imagenEmpleado"].ToString());%> " /><span class="availability-status online"></span>
+                        </div>
+
+
+                        <% } %>
+
+
                         <div class="nav-profile-text">
                             <p class="mb-1 text-black">
                                 <asp:Label ID="LblNombre" runat="server" Text="Label"></asp:Label>
                             </p>
                         </div>
-                        
+
                     </a>
                         <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                            
-                      
-                           <a class="dropdown-item" href="../../Contrasenia.aspx"><i class="mdi mdi-logout mr-2 text-primary"></i>Cambiar Contraseña</a>
-                            <a class="dropdown-item" onclick="if(confirm('Esta seguro que desea salir?') == false){return false;}" href="../../Salir.aspx"><i class="mdi mdi-logout mr-2 text-primary"></i>Salir</a> 
+
+
+                            <a class="dropdown-item" href="../../Contrasenia.aspx"><i class="mdi mdi-logout mr-2 text-primary"></i>Cambiar Contraseña</a>
+                            <a class="dropdown-item" onclick="if(confirm('Esta seguro que desea salir?') == false){return false;}" href="../../Salir.aspx"><i class="mdi mdi-logout mr-2 text-primary"></i>Salir</a>
 
                         </div>
-                        
+
                     </li>
                     <li class="nav-item nav-settings d-none d-lg-block">
                         <a class="nav-link" href="#">
@@ -78,7 +81,7 @@
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
             <!-- partial:partials/_sidebar.html -->
-            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <nav class="sidebar nav nav-item " id="sidebar">
                 <ul class="nav">
                     <% CapaDatos.Clases.Menu.menuDataTable DataTable = CapaProceso.Clases.Menu.MneuAsignado(short.Parse(Session["idCargo"].ToString()));
 
@@ -86,11 +89,11 @@
                         { %>
 
                     <li class="nav-item ">
-                        
+
                         <a class=" nav-link float-left " data-toggle="collapse" href="#<%Response.Write(row["nombreMenu"].ToString());%>" aria-expanded="false" aria-controls="<%Response.Write(row["nombreMenu"].ToString());%>">
-                           <i class="<%Response.Write(row["iconoMenu"].ToString());%> menu-icon text-dark"></i>
-                           <span class="menu-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%Response.Write(row["nombreMenu"].ToString());%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                           <i class="menu-arrow"></i>
+                            <i class="<%Response.Write(row["iconoMenu"].ToString());%> menu-icon text-dark"></i>
+                            <span class="menu-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%Response.Write(row["nombreMenu"].ToString());%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <i class="menu-arrow"></i>
                         </a>
 
                         <div class="collapse float-left" id="<%Response.Write(row["nombreMenu"].ToString());%>">
@@ -101,19 +104,19 @@
                                     foreach (System.Data.DataRow rowitem in submenuDataTable.Rows)
                                     { %>
 
-                                
+
                                 <li class="nav-item ">
-                                   <i class="<%Response.Write(rowitem["iconoSubMenu"].ToString());%> menu-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>
+                                    <i class="<%Response.Write(rowitem["iconoSubMenu"].ToString());%> menu-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>
                                     <a class=" text-dark text-center" href="../../<%Response.Write(rowitem["urlSubMenu"].ToString());%>"><%Response.Write(rowitem["nombreSubMenu"].ToString());%>
                                                                                 
-                                     </a>
+                                    </a>
                                 </li>
 
                                 <% }%>
                             </ul>
                         </div>
                     </li>
-                    <% } %>                    
+                    <% } %>
                 </ul>
             </nav>
             <!-- partial -->
@@ -156,5 +159,7 @@
     <!-- Custom js for this page-->
     <script src="../../Tema/js/dashboard.js"></script>
     <!-- End custom js for this page-->
+
+ 
 </body>
 </html>

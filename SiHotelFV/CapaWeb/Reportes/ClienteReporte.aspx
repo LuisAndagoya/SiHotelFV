@@ -3,10 +3,10 @@
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-         <div class="col-md-8 grid-margin stretch-card">
+         <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">REPORTE CLIENTES</h4>
+                <h4 class="card-header">Reporte Clientes</h4>
 
      <form id="form1" class="forms-sample" runat="server">
 
@@ -19,7 +19,7 @@
                     </div>
 
 
-         <table style="border-top: hidden">
+         <table style="border-top: hidden" class="col-12">
              <tr>
                  <td>
 
@@ -38,12 +38,12 @@
                          Text="Filtrar" OnClick="Button1_Click" />
                  </td>
                  <td>
-                     <a href="ReporteClientes.aspx" class="btn btn-gradient-dark btn-sm">Listar Todos</a></td>
+                     <a href="ReporteClientes.aspx" class="btn btn-gradient-info btn-sm">Listar Todos</a></td>
              </tr>
 
              <tr>
                  <td colspan="4">
-                     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="500px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="700px">
+                     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" Height="500px" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="100%">
                          <LocalReport ReportPath="Reportes\Cliente.rdlc">
                              <DataSources>
                                  <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />

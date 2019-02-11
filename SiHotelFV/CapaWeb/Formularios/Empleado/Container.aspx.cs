@@ -85,6 +85,11 @@ namespace CapaWeb.Formularios.Empleado
                     txtfot.Text = row["imagenEmpleado"].ToString();
 
                     lblId.Text = row["IdEmpleado"].ToString();
+
+                    //ver imagen
+                    Image1.ImageUrl = "~/" + row["imagenEmpleado"].ToString();
+                    
+                    var imagen = row["imagenEmpleado"] as Image;
                 }
             }
         }

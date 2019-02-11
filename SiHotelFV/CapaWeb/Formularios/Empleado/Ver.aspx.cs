@@ -87,6 +87,7 @@ namespace CapaWeb.Formularios.Empleado
                     telefmovilEmpleado.Text = row["telefmovilEmpleado"].ToString();
                     fecharegistroEmpleado.Text = fechaRegistro.ToString("yyyy-MM-dd");
                     emailEmpleado.Text = row["emailEmpleado"].ToString();
+                    estadoEmpleado.Text = row["estadoEmpleado"].ToString();
 
                     imagenEmpleado.ImageUrl = "~/"+ row["imagenEmpleado"].ToString();
                     var imagen = row["imagenEmpleado"] as Image;
@@ -108,7 +109,7 @@ namespace CapaWeb.Formularios.Empleado
             telefmovilEmpleado.Enabled = false;
             fecharegistroEmpleado.Enabled = false;
             emailEmpleado.Enabled = false;
-            
+            estadoEmpleado.Enabled = false;
 
         }
 

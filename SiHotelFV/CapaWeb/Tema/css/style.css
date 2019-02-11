@@ -17429,8 +17429,8 @@ input:focus {
   background: #ffffff;
 }
 
-.sidebar .nav .nav-item.active > .nav-link .menu-title {
-  color: #b66dff;
+.sidebar .nav .nav-link .menu-title {
+  color: ##0c0c0c;
   font-family: "ubuntu-medium", sans-serif;
 }
 

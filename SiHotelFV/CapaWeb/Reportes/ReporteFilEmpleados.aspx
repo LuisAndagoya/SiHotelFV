@@ -3,10 +3,10 @@
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="col-md-8 grid-margin stretch-card">
+    <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">EMPLEADOS</h4>
+                <h4 class="card-header">Reporte Empleados</h4>
 
                 <form id="form1" class="forms-sample" runat="server">
 
@@ -32,14 +32,14 @@
                             </td>
                             <td>
 
-                                <a href="ReporteEmpleados.aspx" class="btn btn-gradient-dark btn-sm">Listar Todos</a></td>
+                                <a href="ReporteEmpleados.aspx" class="btn btn-gradient-info btn-sm">Listar Todos</a></td>
                         </tr>                
 
                         <tr>
                             <td  colspan="4">
                                 <asp:Label Visible="false" ID="lblId" runat="server" Text=""></asp:Label>
                                 <asp:TextBox Visible="false" ID="TextBox1" runat="server"></asp:TextBox>
-                                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="550px" Width="800px">
+                                <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Height="550px" Width="100%">
                                     <LocalReport ReportPath="Reportes\Empleado.rdlc">
                                         <DataSources>
                                             <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSetCargo" />

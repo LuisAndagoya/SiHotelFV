@@ -55,8 +55,9 @@
                 </div>
                 <div class="mt-3">
                   
-				   <asp:Button ID="Button1"  class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" runat="server" Text="Ingresar" 
+				   <asp:Button ID="Button1"  class="btn btn-block btn-gradient-info btn-lg font-weight-medium auth-form-btn" runat="server" Text="Ingresar" 
                                 onclick="Button1_Click" />
+                   
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   

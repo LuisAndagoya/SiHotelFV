@@ -29,7 +29,7 @@ namespace CapaProceso.Clases
                               
                 
                 /* recuperar de base de tabla HostMail */
-                string Usuario = "wrael90@gmail.com";
+                string Usuario = "wrafael90@gmail.com";
                 string Contrasenia = "77wr7777";
                 string smtpHost = "smtp.gmail.com";
                 int puerto = 587;

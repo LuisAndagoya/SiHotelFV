@@ -15,9 +15,7 @@ namespace CapaWeb.Reportes
         {
             if (!IsPostBack)
             {
-
-
-                
+                                
                 this.ReportViewer1.LocalReport.Refresh();
             }
 

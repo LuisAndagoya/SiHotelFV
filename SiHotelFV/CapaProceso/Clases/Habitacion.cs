@@ -26,6 +26,12 @@ namespace CapaProceso.Clases
         public static CapaDatos.Clases.Habitacion.habitacionDataTable ListaActualizar(short numeroHabitacion)
         {
             return CHabitacion.GetListaActualizar(numeroHabitacion);
+            
+        }
+
+        public static CapaDatos.Clases.Habitacion.habitacionDataTable ListaDetalle(short numeroHabitacion)
+        {
+            return CHabitacion.GetListaDetalle(numeroHabitacion);
         }
 
 

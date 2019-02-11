@@ -85,7 +85,7 @@ namespace CapaWeb.Formularios.Habitacion
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            short Id = short.Parse(TxtBuscar.ToString());
+            short Id = short.Parse(TxtBuscar.Text);
             Grid.DataSource = CapaProceso.Clases.Habitacion.Buscar(Id);
 
             Grid.DataBind();

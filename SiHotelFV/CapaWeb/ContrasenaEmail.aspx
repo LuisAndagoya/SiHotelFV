@@ -52,7 +52,7 @@
              
                 <div class="mt-3">
                   
-				   <asp:Button ID="Button1"  class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" runat="server" Text="Enviar Email" 
+				   <asp:Button ID="Button1"  class="btn btn-block btn-gradient-info btn-lg font-weight-medium auth-form-btn" runat="server" Text="Enviar Email" 
                                 onclick="Button1_Click" />
                 </div>
                   <div class="mt-3">

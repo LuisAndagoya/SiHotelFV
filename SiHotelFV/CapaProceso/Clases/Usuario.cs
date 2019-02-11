@@ -36,7 +36,7 @@ namespace CapaProceso.Clases
         public static CapaDatos.Clases.Usuario.usuarioDataTable Buscar(string buscar)
         {
             String buscarAux = "%" + buscar.Trim() + "%";
-            return CUsuario.GetBuscar(buscarAux);
+            return CUsuario.GetBuscar(buscarAux, buscarAux);
         }
 
 

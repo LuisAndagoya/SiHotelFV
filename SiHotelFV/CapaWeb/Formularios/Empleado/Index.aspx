@@ -6,32 +6,28 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Empleado</h4>
+                    <h4 class="card-header">Administrar Empleado</h4>
                     <form id="Form1" runat="server">
                         <table class="table">
                             <tr>
                                 <td>
                                     <!-- Cabezera-->
-                                    <div align="right">
-
-                                     
-                                                    <div class="form-group">
-                                                        <div class="input-group">
-                                                            <asp:TextBox class="form-control" ID="TxtBuscar" placeholder="Buscar..." runat="server" />
-                                                            <div class="input-group-append">
-                                                                <asp:Button ID="Button1" class="btn btn-sm btn-gradient-primary" required ="required" runat="server" Text="Buscar"
-                                                                    OnClick="Button1_Click" />
-                                                            </div>
-                                                                 <div class="input-group-append">
-                                                                   <asp:Button ID="Button2" class="btn btn-sm btn-gradient-primary" required ="required" runat="server" Text="Agregar"
-                                                                    OnClick="Button2_Click" />                                                                  
-                                                                  </div>
-                                                        </div>
-                                                    </div>
-                                               
-                      
-                                        </div>
-                                      <!-- Cabezera-->
+                                            <div class="input-group">
+                                                <asp:TextBox class="form-control " ID="TxtBuscar" placeholder="Buscar..." runat="server" />
+                                                <div class="input-group-append ">
+                                                    <%--<asp:Button ID="Button1" class="btn btn-sm btn-gradient-primary" required ="required" runat="server" Text="Buscar"
+                                                                    OnClick="Button1_Click" />--%>
+                                                    <asp:LinkButton ID="Button1" runat="server" required="required" CssClass="btn btn-sm btn-gradient-info btn-icon-text" Text="<span class='mdi mdi-account-search btn-icon-prepend mdi-24px'>&nbsp;Buscar</span>" OnClick="Button1_Click" />
+                                                </div>
+                                                <div class="input-group-append ">
+                                                    <%-- <asp:Button ID="Button2" class="btn btn-sm btn-gradient-primary" required ="required" runat="server" Text="Agregar"
+                                                                    OnClick="Button2_Click" />  --%>
+                                                    <asp:LinkButton ID="Button2" runat="server" required="required" CssClass="btn btn-sm btn-gradient-info btn-icon-text" Text="<span class='mdi mdi-account-plus btn-icon-prepend mdi-24px'>&nbsp;Agregar</span>" OnClick="Button2_Click" />
+                                                </div>
+                                            </div>
+                                        
+                                   
+                                    <!-- Cabezera-->
 
                                 </td>
                             </tr>
@@ -39,8 +35,6 @@
                             <tr>
                                 <td>
                                     <!--Detalle-->
-
-
 
                                     <asp:DataGrid ID="Grid" runat="server" onrowcreated="GriTipoUsuario_RowCreated"
                                         onrowcommand="GriTipoUsuario_RowCommand"
@@ -50,26 +44,6 @@
 
 
                                         <Columns>
-                                            <asp:TemplateColumn>
-                                                <ItemTemplate>
-                                                    <asp:ImageButton ID="imgEliminar" runat="server" CausesValidation="false" CommandName="Eliminar"
-                                                        ImageUrl="~/img/ActionDelete.png" ToolTip="Editar" Width="16" />
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
-
-                                            <asp:TemplateColumn>
-                                                <ItemTemplate>
-                                                    <asp:ImageButton ID="imgEditar" runat="server" CausesValidation="false" CommandName="Editar"
-                                                        ImageUrl="~/img/ActionUpdate.png" ToolTip="Editar" Width="16" />
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
-
-                                             <asp:TemplateColumn>
-                                                <ItemTemplate>
-                                                    <asp:ImageButton ID="imgVer" runat="server" CausesValidation="false" CommandName="Ver"
-                                                        ImageUrl="~/img/ir.png" ToolTip="Ver" Width="16" />
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
 
                                             <asp:TemplateColumn HeaderText="id" Visible="False">
                                                 <ItemTemplate>
@@ -79,7 +53,7 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                            <asp:TemplateColumn HeaderText="DNI">
+                                            <asp:TemplateColumn HeaderText="Cédula" >
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="dniEmpleado" runat="server" Text='<%#Eval("dniEmpleado") %>'></asp:Label>
@@ -111,7 +85,7 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
-                                             <asp:TemplateColumn HeaderText="Estado">
+                                            <asp:TemplateColumn HeaderText="Estado">
                                                 <ItemTemplate>
                                                     <span style="float: left;">
                                                         <asp:Label ID="estadoEmpleado" runat="server" Text='<%#Eval("estadoEmpleado") %>'></asp:Label>
@@ -119,14 +93,35 @@
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
 
+                                            <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="imgEliminar" runat="server" CausesValidation="false" CommandName="Eliminar"
+                                                        ImageUrl="~/img/delete_opt.png" ToolTip="Eliminar" Width="16" />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
+                                            <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="imgEditar" runat="server" CausesValidation="false" CommandName="Editar"
+                                                        ImageUrl="~/img/editar.png" ToolTip="Editar" Width="16" />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
+                                            <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="imgVer" runat="server" CausesValidation="false" CommandName="Ver"
+                                                        ImageUrl="~/img/icono_ver_opt.png" ToolTip="Ver" Width="16" />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+
                                         </Columns>
 
 
-                                        <FooterStyle BackColor="White" ForeColor="#000066" />
-                                        <HeaderStyle BackColor="Gray" Font-Bold="True" ForeColor="White" />
-                                        <ItemStyle ForeColor="#000066" />
+                                        <FooterStyle BackColor="White" ForeColor="#00000f" />
+                                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                                        <ItemStyle ForeColor="#00000f" />
                                         <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" Mode="NumericPages" />
-                                        <SelectedItemStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                                        <SelectedItemStyle BackColor="#6df2eb" Font-Bold="True" ForeColor="White" />
 
 
                                     </asp:DataGrid>
