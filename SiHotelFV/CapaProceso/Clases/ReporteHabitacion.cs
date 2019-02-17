@@ -21,6 +21,12 @@ namespace CapaProceso.Clases
             return CReporte.Lista();
         }
 
+        public static CapaDatos.Clases.ReporteHabitacion.habitacionDataTable Comprobar()
+        {
+            return CReporte.Comprobar();
+        }
+        
+        
         public static CapaDatos.Clases.ReporteHabitacion.habitacionDataTable Estado(short Id)
         {
             return CReporte.Estado(Id);

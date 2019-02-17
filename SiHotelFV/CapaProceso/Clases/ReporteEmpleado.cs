@@ -20,5 +20,9 @@ namespace CapaProceso.Clases
             return CReporte.Cargo(Id);
         }
 
+        public static CapaDatos.Clases.ReporteEmpleado.empleadoDataTable Fecha(string Id)
+        {
+            return CReporte.Fecha(Id);
+        }
     }
 }

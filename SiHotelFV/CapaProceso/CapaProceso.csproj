@@ -51,6 +51,7 @@
     <Compile Include="Clases\EstadoHabitacion.cs" />
     <Compile Include="Clases\EstadoReserva.cs" />
     <Compile Include="Clases\Habitacion.cs" />
+    <Compile Include="Clases\HabitacionReserva.cs" />
     <Compile Include="Clases\Hotel.cs" />
     <Compile Include="Clases\Menu.cs" />
     <Compile Include="Clases\Menucargo.cs" />

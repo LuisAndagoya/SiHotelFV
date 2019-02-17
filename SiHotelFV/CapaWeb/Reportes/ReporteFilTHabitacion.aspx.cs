@@ -39,9 +39,6 @@ namespace CapaWeb.Reportes
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-
-
-
            string Id = ListaHabitacion.SelectedValue.ToString();
             ReportParameter[] parametros = new ReportParameter[1];
             parametros[0] = new ReportParameter("idPrecio", Id);
@@ -49,7 +46,6 @@ namespace CapaWeb.Reportes
 
             this.ReportViewer1.LocalReport.Refresh();
             
-
         }
 
      

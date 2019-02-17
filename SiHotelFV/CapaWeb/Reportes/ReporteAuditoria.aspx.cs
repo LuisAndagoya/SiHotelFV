@@ -16,16 +16,14 @@ namespace CapaWeb.Reportes
             if (!IsPostBack)
             {
 
+                CargarCombo();
+               
 
-                
                 this.ReportViewer1.LocalReport.Refresh();
             }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-
-
 
             string Inicio = fechInicio.Text;
             string Fin = fechaFin.Text;
@@ -36,8 +34,29 @@ namespace CapaWeb.Reportes
             this.ReportViewer1.LocalReport.SetParameters(parametros);
 
             this.ReportViewer1.LocalReport.Refresh();
+        }
 
+        protected void CargarCombo()
+        {
 
+            //Llenar un combo box dinamicamente con tabla adapter
+            ListaUsuario.DataSource = CapaProceso.Clases.Usuario.Lista();
+            ListaUsuario.DataTextField = "usernameUsuario";
+            ListaUsuario.DataValueField = "idUsuario";
+            ListaUsuario.DataBind();
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            string Id = ListaUsuario.SelectedValue.ToString();
+
+            QSencriptadoCSharp.QueryString qs = new QSencriptadoCSharp.QueryString();
+
+            //2 voy a agregando los valores que deseo
+            qs.Add("TRN", "INS");
+            qs.Add("Id", Id.ToString());
+            Response.Redirect("AuditoriaUsu.aspx" + QSencriptadoCSharp.Encryption.EncryptQueryString(qs).ToString());
         }
     }
 }

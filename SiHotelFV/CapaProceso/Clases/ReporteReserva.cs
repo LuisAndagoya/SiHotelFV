@@ -36,5 +36,14 @@ namespace CapaProceso.Clases
         {
             return CReserva.Factura();
         }
+
+        public static CapaDatos.Clases.ReporteReserva.reservasDataTable Nuevos()
+        {
+            return CReserva.Nuevos();
+        }
+        public static CapaDatos.Clases.ReporteReserva.reservasDataTable Comprobar()
+        {
+            return CReserva.Comprobar();
+        }
     }
 }

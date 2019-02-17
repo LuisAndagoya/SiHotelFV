@@ -14,12 +14,32 @@
              
                     <table style="border-top: hidden">
                         <tr>
+                             <td>
+                                <label for="ListaUsuario">Usuario:</label></td>
+
+                             <td>
+
+                                   <asp:DropDownList ID="ListaUsuario" class="form-control" runat="server">
+                                  </asp:DropDownList>
+                            </td>
+                            <td>
+                              
+									  <asp:Button class="btn btn-gradient-info btn-sm" ID="Button2" runat="server" 
+                                  Text="Filtrar" onclick="Button2_Click" />
+                            </td>
+
+                            <td>
+
+                                <a href="GeneralAuditoria.aspx" class="btn btn-gradient-dark btn-sm">Listar Todos</a></td>
+                            </tr>
+                        <tr>
                             <td>
                                 <label for="ListaEmpleado">Fecha Inicio:</label></td>
-
+                            
+                        
                             <td>
 
-                                <asp:TextBox type="date" required="required" ID="fechInicio" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox type="date"  ID="fechInicio" class="form-control" runat="server"></asp:TextBox>
                             </td>
 
                              <td>
@@ -27,16 +47,16 @@
 
                             <td>
 
-                                <asp:TextBox type="date" required="required" ID="fechaFin" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox type="date"  ID="fechaFin" class="form-control" runat="server"></asp:TextBox>
                             </td>
 
                             <td>
                                 <asp:Button class="btn btn-gradient-info btn-sm" ID="Button1" runat="server"
                                     Text="Buscar" OnClick="Button1_Click" />
                             </td>
-                            <td>
+                            
 
-                                <a href="GeneralAuditoria.aspx" class="btn btn-gradient-dark btn-sm">Listar Todos</a></td>
+         
                         </tr>                
 
                         <tr>

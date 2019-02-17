@@ -395,6 +395,9 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>idtipo</rd:DefaultName>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                      </Visibility>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -439,6 +442,9 @@
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>4</ZIndex>
+        <Visibility>
+          <Hidden>true</Hidden>
+        </Visibility>
         <Style>
           <Border>
             <Style>None</Style>

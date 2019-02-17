@@ -21,6 +21,19 @@ namespace CapaProceso.Clases
             return CReserva.Factura(Id);
         }
 
+        public static CapaDatos.Clases.DetalleReserva.detalle_reservaDataTable Fecha(DateTime Inicio, DateTime Fin)
+        {
+            return CReserva.Fecha(Inicio.ToString(), Fin.ToString());
+        }
+
+        public static CapaDatos.Clases.DetalleReserva.detalle_reservaDataTable Habitacion(short Id)
+        {
+            return CReserva.Habitacion(Id);
+        }
+        public static CapaDatos.Clases.DetalleReserva.detalle_reservaDataTable Numero()
+        {
+            return CReserva.Numero();
+        }
         public static CapaDatos.Clases.DetalleReserva.detalle_reservaDataTable Cabecera()
         {
             return CReserva.Cabecera();

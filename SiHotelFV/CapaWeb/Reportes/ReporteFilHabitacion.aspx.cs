@@ -40,17 +40,6 @@ namespace CapaWeb.Reportes
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-            string Id =ListaHabitacion.SelectedValue.ToString();
-            ReportParameter[] parametros = new ReportParameter[1];
-            parametros[0] = new ReportParameter("idtipo", Id);
-            this.ReportViewer1.LocalReport.SetParameters(parametros);
-            this.ReportViewer1.LocalReport.Refresh();
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-
             string Id = ListaEstado.SelectedValue.ToString();
             //Response.Redirect("EstadoHabitacion.aspx" + Id);
 
@@ -61,6 +50,18 @@ namespace CapaWeb.Reportes
             qs.Add("TRN", "INS");
             qs.Add("Id", Id.ToString());
             Response.Redirect("EstadoHabitacion.aspx" + QSencriptadoCSharp.Encryption.EncryptQueryString(qs).ToString());
+
+           
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+            string Id = ListaHabitacion.SelectedValue.ToString();
+            ReportParameter[] parametros = new ReportParameter[1];
+            parametros[0] = new ReportParameter("idtipo", Id);
+            this.ReportViewer1.LocalReport.SetParameters(parametros);
+            this.ReportViewer1.LocalReport.Refresh();
 
         }
     }

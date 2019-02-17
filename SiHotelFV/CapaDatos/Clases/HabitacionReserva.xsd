@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HabitacionReserva" targetNamespace="http://tempuri.org/HabitacionReserva.xsd" xmlns:mstns="http://tempuri.org/HabitacionReserva.xsd" xmlns="http://tempuri.org/HabitacionReserva.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BDHotelFuenteVidaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BDHotelFuenteVidaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CapaDatos.Properties.Settings.GlobalReference.Default.BDHotelFuenteVidaConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="reservasTableAdapter" GeneratorDataComponentClassName="reservasTableAdapter" Name="reservas" UserDataComponentName="reservasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDHotelFuenteVidaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="Habitacion" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="Habitacion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="Habitacion" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, reservas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.idEstadoReserva, reservas.totalReservacion, 
+                         reservas.SaldoReserva, reservas.PagadoReserva, detalle_reserva.idDetalle, detalle_reserva.idReserva, detalle_reserva.numeroHabitacion, habitacion.numeroHabitacion AS Expr1, 
+                         habitacion.tipoHabitacion_Idtipo, tipo_habitacion.nombreTipo, tipo_habitacion.idtipo
+FROM            reservas INNER JOIN
+                         detalle_reserva ON detalle_reserva.idReserva = reservas.idReservacion INNER JOIN
+                         habitacion ON detalle_reserva.numeroHabitacion = habitacion.numeroHabitacion INNER JOIN
+                         tipo_habitacion ON habitacion.tipoHabitacion_Idtipo = tipo_habitacion.idtipo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idReservacion" DataSetColumn="idReservacion" />
+              <Mapping SourceColumn="idCliente" DataSetColumn="idCliente" />
+              <Mapping SourceColumn="idUsuario" DataSetColumn="idUsuario" />
+              <Mapping SourceColumn="fechaReservacion" DataSetColumn="fechaReservacion" />
+              <Mapping SourceColumn="fechaEntrada" DataSetColumn="fechaEntrada" />
+              <Mapping SourceColumn="fechaSalida" DataSetColumn="fechaSalida" />
+              <Mapping SourceColumn="idEstadoReserva" DataSetColumn="idEstadoReserva" />
+              <Mapping SourceColumn="totalReservacion" DataSetColumn="totalReservacion" />
+              <Mapping SourceColumn="SaldoReserva" DataSetColumn="SaldoReserva" />
+              <Mapping SourceColumn="PagadoReserva" DataSetColumn="PagadoReserva" />
+              <Mapping SourceColumn="idDetalle" DataSetColumn="idDetalle" />
+              <Mapping SourceColumn="idReserva" DataSetColumn="idReserva" />
+              <Mapping SourceColumn="numeroHabitacion" DataSetColumn="numeroHabitacion" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="tipoHabitacion_Idtipo" DataSetColumn="tipoHabitacion_Idtipo" />
+              <Mapping SourceColumn="nombreTipo" DataSetColumn="nombreTipo" />
+              <Mapping SourceColumn="idtipo" DataSetColumn="idtipo" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="BDHotelFuenteVidaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="Nuevo" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="Nuevo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="Nuevo" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, reservas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.idEstadoReserva, reservas.totalReservacion, 
+                         reservas.SaldoReserva, reservas.PagadoReserva, detalle_reserva.idDetalle, detalle_reserva.idReserva, detalle_reserva.numeroHabitacion, habitacion.numeroHabitacion AS Expr1, 
+                         habitacion.tipoHabitacion_Idtipo, tipo_habitacion.nombreTipo, tipo_habitacion.idtipo
+FROM            reservas INNER JOIN
+                         detalle_reserva ON detalle_reserva.idReserva = reservas.idReservacion INNER JOIN
+                         habitacion ON detalle_reserva.numeroHabitacion = habitacion.numeroHabitacion INNER JOIN
+                         tipo_habitacion ON habitacion.tipoHabitacion_Idtipo = tipo_habitacion.idtipo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="BDHotelFuenteVidaConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="Lista" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="Lista" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="Lista" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        reservas.idReservacion, reservas.idCliente, reservas.idUsuario, reservas.fechaReservacion, reservas.fechaEntrada, reservas.fechaSalida, reservas.idEstadoReserva, reservas.totalReservacion, 
+                         reservas.SaldoReserva, reservas.PagadoReserva, detalle_reserva.idDetalle, detalle_reserva.idReserva, detalle_reserva.numeroHabitacion
+FROM            reservas INNER JOIN
+                         detalle_reserva ON detalle_reserva.idReserva = reservas.idReservacion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="detalle_reservaTableAdapter" GeneratorDataComponentClassName="detalle_reservaTableAdapter" Name="detalle_reserva" UserDataComponentName="detalle_reservaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDHotelFuenteVidaConnectionString (Settings)" DbObjectName="BDHotelFuenteVida.dbo.detalle_reserva" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[detalle_reserva] WHERE (([idDetalle] = @Original_idDetalle) AND ([idReserva] = @Original_idReserva) AND ([numeroHabitacion] = @Original_numeroHabitacion) AND ([fechaActual] = @Original_fechaActual) AND ([valor] = @Original_valor))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idDetalle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idDetalle" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idReserva" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idReserva" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_numeroHabitacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numeroHabitacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_fechaActual" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaActual" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_valor" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="valor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[detalle_reserva] ([idReserva], [numeroHabitacion], [fechaActual], [valor]) VALUES (@idReserva, @numeroHabitacion, @fechaActual, @valor);
+SELECT idDetalle, idReserva, numeroHabitacion, fechaActual, valor FROM detalle_reserva WHERE (idDetalle = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idReserva" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idReserva" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@numeroHabitacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numeroHabitacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@fechaActual" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaActual" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@valor" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="valor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idDetalle, idReserva, numeroHabitacion, fechaActual, valor FROM dbo.detalle_reserva</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[detalle_reserva] SET [idReserva] = @idReserva, [numeroHabitacion] = @numeroHabitacion, [fechaActual] = @fechaActual, [valor] = @valor WHERE (([idDetalle] = @Original_idDetalle) AND ([idReserva] = @Original_idReserva) AND ([numeroHabitacion] = @Original_numeroHabitacion) AND ([fechaActual] = @Original_fechaActual) AND ([valor] = @Original_valor));
+SELECT idDetalle, idReserva, numeroHabitacion, fechaActual, valor FROM detalle_reserva WHERE (idDetalle = @idDetalle)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idReserva" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idReserva" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@numeroHabitacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numeroHabitacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@fechaActual" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaActual" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@valor" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="valor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idDetalle" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idDetalle" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idReserva" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idReserva" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_numeroHabitacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numeroHabitacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_fechaActual" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="fechaActual" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_valor" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="valor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idDetalle" ColumnName="idDetalle" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idDetalle" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idDetalle" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idDetalle" DataSetColumn="idDetalle" />
+              <Mapping SourceColumn="idReserva" DataSetColumn="idReserva" />
+              <Mapping SourceColumn="numeroHabitacion" DataSetColumn="numeroHabitacion" />
+              <Mapping SourceColumn="fechaActual" DataSetColumn="fechaActual" />
+              <Mapping SourceColumn="valor" DataSetColumn="valor" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="habitacionTableAdapter" GeneratorDataComponentClassName="habitacionTableAdapter" Name="habitacion" UserDataComponentName="habitacionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDHotelFuenteVidaConnectionString (Settings)" DbObjectName="BDHotelFuenteVida.dbo.habitacion" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[habitacion] WHERE (([numeroHabitacion] = @Original_numeroHabitacion) AND ([tipoHabitacion_Idtipo] = @Original_tipoHabitacion_Idtipo) AND ([hotel_CodigoHotel] = @Original_hotel_CodigoHotel) AND ([estadoHabitacion_idEstado] = @Original_estadoHabitacion_idEstado))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_numeroHabitacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numeroHabitacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_tipoHabitacion_Idtipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipoHabitacion_Idtipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_hotel_CodigoHotel" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hotel_CodigoHotel" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_estadoHabitacion_idEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estadoHabitacion_idEstado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[habitacion] ([numeroHabitacion], [tipoHabitacion_Idtipo], [hotel_CodigoHotel], [estadoHabitacion_idEstado]) VALUES (@numeroHabitacion, @tipoHabitacion_Idtipo, @hotel_CodigoHotel, @estadoHabitacion_idEstado);
+SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitacion_idEstado FROM habitacion WHERE (numeroHabitacion = @numeroHabitacion)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@numeroHabitacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numeroHabitacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@tipoHabitacion_Idtipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipoHabitacion_Idtipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@hotel_CodigoHotel" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hotel_CodigoHotel" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@estadoHabitacion_idEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estadoHabitacion_idEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitacion_idEstado FROM dbo.habitacion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[habitacion] SET [numeroHabitacion] = @numeroHabitacion, [tipoHabitacion_Idtipo] = @tipoHabitacion_Idtipo, [hotel_CodigoHotel] = @hotel_CodigoHotel, [estadoHabitacion_idEstado] = @estadoHabitacion_idEstado WHERE (([numeroHabitacion] = @Original_numeroHabitacion) AND ([tipoHabitacion_Idtipo] = @Original_tipoHabitacion_Idtipo) AND ([hotel_CodigoHotel] = @Original_hotel_CodigoHotel) AND ([estadoHabitacion_idEstado] = @Original_estadoHabitacion_idEstado));
+SELECT numeroHabitacion, tipoHabitacion_Idtipo, hotel_CodigoHotel, estadoHabitacion_idEstado FROM habitacion WHERE (numeroHabitacion = @numeroHabitacion)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@numeroHabitacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numeroHabitacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@tipoHabitacion_Idtipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipoHabitacion_Idtipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@hotel_CodigoHotel" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hotel_CodigoHotel" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@estadoHabitacion_idEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estadoHabitacion_idEstado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_numeroHabitacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="numeroHabitacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_tipoHabitacion_Idtipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tipoHabitacion_Idtipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_hotel_CodigoHotel" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="hotel_CodigoHotel" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_estadoHabitacion_idEstado" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="estadoHabitacion_idEstado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="numeroHabitacion" DataSetColumn="numeroHabitacion" />
+              <Mapping SourceColumn="tipoHabitacion_Idtipo" DataSetColumn="tipoHabitacion_Idtipo" />
+              <Mapping SourceColumn="hotel_CodigoHotel" DataSetColumn="hotel_CodigoHotel" />
+              <Mapping SourceColumn="estadoHabitacion_idEstado" DataSetColumn="estadoHabitacion_idEstado" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tipo_habitacionTableAdapter" GeneratorDataComponentClassName="tipo_habitacionTableAdapter" Name="tipo_habitacion" UserDataComponentName="tipo_habitacionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDHotelFuenteVidaConnectionString (Settings)" DbObjectName="BDHotelFuenteVida.dbo.tipo_habitacion" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[tipo_habitacion] WHERE (([idtipo] = @Original_idtipo) AND ([nombreTipo] = @Original_nombreTipo) AND ([idPrecio] = @Original_idPrecio) AND ((@IsNull_imagenTipo = 1 AND [imagenTipo] IS NULL) OR ([imagenTipo] = @Original_imagenTipo)) AND ([estadoTipo] = @Original_estadoTipo) AND ((@IsNull_maximoTipo = 1 AND [maximoTipo] IS NULL) OR ([maximoTipo] = @Original_maximoTipo)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idtipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idtipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_nombreTipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nombreTipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idPrecio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPrecio" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_imagenTipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="imagenTipo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_imagenTipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="imagenTipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_estadoTipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estadoTipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_maximoTipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoTipo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_maximoTipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoTipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[tipo_habitacion] ([nombreTipo], [idPrecio], [imagenTipo], [estadoTipo], [maximoTipo]) VALUES (@nombreTipo, @idPrecio, @imagenTipo, @estadoTipo, @maximoTipo);
+SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo, maximoTipo FROM tipo_habitacion WHERE (idtipo = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@nombreTipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nombreTipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idPrecio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPrecio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@imagenTipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="imagenTipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@estadoTipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estadoTipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@maximoTipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoTipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo, maximoTipo FROM dbo.tipo_habitacion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[tipo_habitacion] SET [nombreTipo] = @nombreTipo, [idPrecio] = @idPrecio, [imagenTipo] = @imagenTipo, [estadoTipo] = @estadoTipo, [maximoTipo] = @maximoTipo WHERE (([idtipo] = @Original_idtipo) AND ([nombreTipo] = @Original_nombreTipo) AND ([idPrecio] = @Original_idPrecio) AND ((@IsNull_imagenTipo = 1 AND [imagenTipo] IS NULL) OR ([imagenTipo] = @Original_imagenTipo)) AND ([estadoTipo] = @Original_estadoTipo) AND ((@IsNull_maximoTipo = 1 AND [maximoTipo] IS NULL) OR ([maximoTipo] = @Original_maximoTipo)));
+SELECT idtipo, nombreTipo, idPrecio, imagenTipo, estadoTipo, maximoTipo FROM tipo_habitacion WHERE (idtipo = @idtipo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@nombreTipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nombreTipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@idPrecio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPrecio" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@imagenTipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="imagenTipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@estadoTipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estadoTipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@maximoTipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoTipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idtipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idtipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_nombreTipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nombreTipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_idPrecio" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idPrecio" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_imagenTipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="imagenTipo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_imagenTipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="imagenTipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_estadoTipo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estadoTipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_maximoTipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoTipo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_maximoTipo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="maximoTipo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="idtipo" ColumnName="idtipo" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@idtipo" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="idtipo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idtipo" DataSetColumn="idtipo" />
+              <Mapping SourceColumn="nombreTipo" DataSetColumn="nombreTipo" />
+              <Mapping SourceColumn="idPrecio" DataSetColumn="idPrecio" />
+              <Mapping SourceColumn="imagenTipo" DataSetColumn="imagenTipo" />
+              <Mapping SourceColumn="estadoTipo" DataSetColumn="estadoTipo" />
+              <Mapping SourceColumn="maximoTipo" DataSetColumn="maximoTipo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HabitacionReserva" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="HabitacionReserva" msprop:Generator_UserDSName="HabitacionReserva">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="reservas" msprop:Generator_TableClassName="reservasDataTable" msprop:Generator_TableVarName="tablereservas" msprop:Generator_TablePropName="reservas" msprop:Generator_RowDeletingName="reservasRowDeleting" msprop:Generator_RowChangingName="reservasRowChanging" msprop:Generator_RowEvHandlerName="reservasRowChangeEventHandler" msprop:Generator_RowDeletedName="reservasRowDeleted" msprop:Generator_UserTableName="reservas" msprop:Generator_RowChangedName="reservasRowChanged" msprop:Generator_RowEvArgName="reservasRowChangeEvent" msprop:Generator_RowClassName="reservasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idReservacion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidReservacion" msprop:Generator_ColumnPropNameInRow="idReservacion" msprop:Generator_ColumnPropNameInTable="idReservacionColumn" msprop:Generator_UserColumnName="idReservacion" type="xs:int" />
+              <xs:element name="idCliente" msprop:Generator_ColumnVarNameInTable="columnidCliente" msprop:Generator_ColumnPropNameInRow="idCliente" msprop:Generator_ColumnPropNameInTable="idClienteColumn" msprop:Generator_UserColumnName="idCliente" type="xs:int" />
+              <xs:element name="idUsuario" msprop:Generator_ColumnVarNameInTable="columnidUsuario" msprop:Generator_ColumnPropNameInRow="idUsuario" msprop:Generator_ColumnPropNameInTable="idUsuarioColumn" msprop:Generator_UserColumnName="idUsuario" type="xs:int" />
+              <xs:element name="fechaReservacion" msprop:Generator_ColumnVarNameInTable="columnfechaReservacion" msprop:Generator_ColumnPropNameInRow="fechaReservacion" msprop:Generator_ColumnPropNameInTable="fechaReservacionColumn" msprop:Generator_UserColumnName="fechaReservacion" type="xs:dateTime" />
+              <xs:element name="fechaEntrada" msprop:Generator_ColumnVarNameInTable="columnfechaEntrada" msprop:Generator_ColumnPropNameInRow="fechaEntrada" msprop:Generator_ColumnPropNameInTable="fechaEntradaColumn" msprop:Generator_UserColumnName="fechaEntrada" type="xs:dateTime" />
+              <xs:element name="fechaSalida" msprop:Generator_ColumnVarNameInTable="columnfechaSalida" msprop:Generator_ColumnPropNameInRow="fechaSalida" msprop:Generator_ColumnPropNameInTable="fechaSalidaColumn" msprop:Generator_UserColumnName="fechaSalida" type="xs:dateTime" />
+              <xs:element name="idEstadoReserva" msprop:Generator_ColumnVarNameInTable="columnidEstadoReserva" msprop:Generator_ColumnPropNameInRow="idEstadoReserva" msprop:Generator_ColumnPropNameInTable="idEstadoReservaColumn" msprop:Generator_UserColumnName="idEstadoReserva" type="xs:int" />
+              <xs:element name="totalReservacion" msprop:Generator_ColumnVarNameInTable="columntotalReservacion" msprop:Generator_ColumnPropNameInRow="totalReservacion" msprop:Generator_ColumnPropNameInTable="totalReservacionColumn" msprop:Generator_UserColumnName="totalReservacion" type="xs:double" minOccurs="0" />
+              <xs:element name="SaldoReserva" msprop:Generator_ColumnVarNameInTable="columnSaldoReserva" msprop:Generator_ColumnPropNameInRow="SaldoReserva" msprop:Generator_ColumnPropNameInTable="SaldoReservaColumn" msprop:Generator_UserColumnName="SaldoReserva" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PagadoReserva" msprop:Generator_ColumnVarNameInTable="columnPagadoReserva" msprop:Generator_ColumnPropNameInRow="PagadoReserva" msprop:Generator_ColumnPropNameInTable="PagadoReservaColumn" msprop:Generator_UserColumnName="PagadoReserva" type="xs:decimal" minOccurs="0" />
+              <xs:element name="idDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidDetalle" msprop:Generator_ColumnPropNameInRow="idDetalle" msprop:Generator_ColumnPropNameInTable="idDetalleColumn" msprop:Generator_UserColumnName="idDetalle" type="xs:int" />
+              <xs:element name="idReserva" msprop:Generator_ColumnVarNameInTable="columnidReserva" msprop:Generator_ColumnPropNameInRow="idReserva" msprop:Generator_ColumnPropNameInTable="idReservaColumn" msprop:Generator_UserColumnName="idReserva" type="xs:int" />
+              <xs:element name="numeroHabitacion" msprop:Generator_ColumnVarNameInTable="columnnumeroHabitacion" msprop:Generator_ColumnPropNameInRow="numeroHabitacion" msprop:Generator_ColumnPropNameInTable="numeroHabitacionColumn" msprop:Generator_UserColumnName="numeroHabitacion" type="xs:int" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+              <xs:element name="tipoHabitacion_Idtipo" msprop:Generator_ColumnVarNameInTable="columntipoHabitacion_Idtipo" msprop:Generator_ColumnPropNameInRow="tipoHabitacion_Idtipo" msprop:Generator_ColumnPropNameInTable="tipoHabitacion_IdtipoColumn" msprop:Generator_UserColumnName="tipoHabitacion_Idtipo" type="xs:int" />
+              <xs:element name="nombreTipo" msprop:Generator_ColumnVarNameInTable="columnnombreTipo" msprop:Generator_ColumnPropNameInRow="nombreTipo" msprop:Generator_ColumnPropNameInTable="nombreTipoColumn" msprop:Generator_UserColumnName="nombreTipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idtipo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidtipo" msprop:Generator_ColumnPropNameInRow="idtipo" msprop:Generator_ColumnPropNameInTable="idtipoColumn" msprop:Generator_UserColumnName="idtipo" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="detalle_reserva" msprop:Generator_TableClassName="detalle_reservaDataTable" msprop:Generator_TableVarName="tabledetalle_reserva" msprop:Generator_TablePropName="detalle_reserva" msprop:Generator_RowDeletingName="detalle_reservaRowDeleting" msprop:Generator_RowChangingName="detalle_reservaRowChanging" msprop:Generator_RowEvHandlerName="detalle_reservaRowChangeEventHandler" msprop:Generator_RowDeletedName="detalle_reservaRowDeleted" msprop:Generator_UserTableName="detalle_reserva" msprop:Generator_RowChangedName="detalle_reservaRowChanged" msprop:Generator_RowEvArgName="detalle_reservaRowChangeEvent" msprop:Generator_RowClassName="detalle_reservaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidDetalle" msprop:Generator_ColumnPropNameInRow="idDetalle" msprop:Generator_ColumnPropNameInTable="idDetalleColumn" msprop:Generator_UserColumnName="idDetalle" type="xs:int" />
+              <xs:element name="idReserva" msprop:Generator_ColumnVarNameInTable="columnidReserva" msprop:Generator_ColumnPropNameInRow="idReserva" msprop:Generator_ColumnPropNameInTable="idReservaColumn" msprop:Generator_UserColumnName="idReserva" type="xs:int" />
+              <xs:element name="numeroHabitacion" msprop:Generator_ColumnVarNameInTable="columnnumeroHabitacion" msprop:Generator_ColumnPropNameInRow="numeroHabitacion" msprop:Generator_ColumnPropNameInTable="numeroHabitacionColumn" msprop:Generator_UserColumnName="numeroHabitacion" type="xs:int" />
+              <xs:element name="fechaActual" msprop:Generator_ColumnVarNameInTable="columnfechaActual" msprop:Generator_ColumnPropNameInRow="fechaActual" msprop:Generator_ColumnPropNameInTable="fechaActualColumn" msprop:Generator_UserColumnName="fechaActual" type="xs:dateTime" />
+              <xs:element name="valor" msprop:Generator_ColumnVarNameInTable="columnvalor" msprop:Generator_ColumnPropNameInRow="valor" msprop:Generator_ColumnPropNameInTable="valorColumn" msprop:Generator_UserColumnName="valor" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="habitacion" msprop:Generator_TableClassName="habitacionDataTable" msprop:Generator_TableVarName="tablehabitacion" msprop:Generator_TablePropName="habitacion" msprop:Generator_RowDeletingName="habitacionRowDeleting" msprop:Generator_RowChangingName="habitacionRowChanging" msprop:Generator_RowEvHandlerName="habitacionRowChangeEventHandler" msprop:Generator_RowDeletedName="habitacionRowDeleted" msprop:Generator_UserTableName="habitacion" msprop:Generator_RowChangedName="habitacionRowChanged" msprop:Generator_RowEvArgName="habitacionRowChangeEvent" msprop:Generator_RowClassName="habitacionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="numeroHabitacion" msprop:Generator_ColumnVarNameInTable="columnnumeroHabitacion" msprop:Generator_ColumnPropNameInRow="numeroHabitacion" msprop:Generator_ColumnPropNameInTable="numeroHabitacionColumn" msprop:Generator_UserColumnName="numeroHabitacion" type="xs:int" />
+              <xs:element name="tipoHabitacion_Idtipo" msprop:Generator_ColumnVarNameInTable="columntipoHabitacion_Idtipo" msprop:Generator_ColumnPropNameInRow="tipoHabitacion_Idtipo" msprop:Generator_ColumnPropNameInTable="tipoHabitacion_IdtipoColumn" msprop:Generator_UserColumnName="tipoHabitacion_Idtipo" type="xs:int" />
+              <xs:element name="hotel_CodigoHotel" msprop:Generator_ColumnVarNameInTable="columnhotel_CodigoHotel" msprop:Generator_ColumnPropNameInRow="hotel_CodigoHotel" msprop:Generator_ColumnPropNameInTable="hotel_CodigoHotelColumn" msprop:Generator_UserColumnName="hotel_CodigoHotel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="estadoHabitacion_idEstado" msprop:Generator_ColumnVarNameInTable="columnestadoHabitacion_idEstado" msprop:Generator_ColumnPropNameInRow="estadoHabitacion_idEstado" msprop:Generator_ColumnPropNameInTable="estadoHabitacion_idEstadoColumn" msprop:Generator_UserColumnName="estadoHabitacion_idEstado" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tipo_habitacion" msprop:Generator_TableClassName="tipo_habitacionDataTable" msprop:Generator_TableVarName="tabletipo_habitacion" msprop:Generator_TablePropName="tipo_habitacion" msprop:Generator_RowDeletingName="tipo_habitacionRowDeleting" msprop:Generator_RowChangingName="tipo_habitacionRowChanging" msprop:Generator_RowEvHandlerName="tipo_habitacionRowChangeEventHandler" msprop:Generator_RowDeletedName="tipo_habitacionRowDeleted" msprop:Generator_UserTableName="tipo_habitacion" msprop:Generator_RowChangedName="tipo_habitacionRowChanged" msprop:Generator_RowEvArgName="tipo_habitacionRowChangeEvent" msprop:Generator_RowClassName="tipo_habitacionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idtipo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidtipo" msprop:Generator_ColumnPropNameInRow="idtipo" msprop:Generator_ColumnPropNameInTable="idtipoColumn" msprop:Generator_UserColumnName="idtipo" type="xs:int" />
+              <xs:element name="nombreTipo" msprop:Generator_ColumnVarNameInTable="columnnombreTipo" msprop:Generator_ColumnPropNameInRow="nombreTipo" msprop:Generator_ColumnPropNameInTable="nombreTipoColumn" msprop:Generator_UserColumnName="nombreTipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idPrecio" msprop:Generator_ColumnVarNameInTable="columnidPrecio" msprop:Generator_ColumnPropNameInRow="idPrecio" msprop:Generator_ColumnPropNameInTable="idPrecioColumn" msprop:Generator_UserColumnName="idPrecio" type="xs:int" />
+              <xs:element name="imagenTipo" msprop:Generator_ColumnVarNameInTable="columnimagenTipo" msprop:Generator_ColumnPropNameInRow="imagenTipo" msprop:Generator_ColumnPropNameInTable="imagenTipoColumn" msprop:Generator_UserColumnName="imagenTipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="estadoTipo" msprop:Generator_ColumnVarNameInTable="columnestadoTipo" msprop:Generator_ColumnPropNameInRow="estadoTipo" msprop:Generator_ColumnPropNameInTable="estadoTipoColumn" msprop:Generator_UserColumnName="estadoTipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="maximoTipo" msprop:Generator_ColumnVarNameInTable="columnmaximoTipo" msprop:Generator_ColumnPropNameInRow="maximoTipo" msprop:Generator_ColumnPropNameInTable="maximoTipoColumn" msprop:Generator_UserColumnName="maximoTipo" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:reservas" />
+      <xs:field xpath="mstns:idReservacion" />
+    </xs:unique>
+    <xs:unique name="detalle_reserva_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:detalle_reserva" />
+      <xs:field xpath="mstns:idDetalle" />
+    </xs:unique>
+    <xs:unique name="habitacion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:habitacion" />
+      <xs:field xpath="mstns:numeroHabitacion" />
+    </xs:unique>
+    <xs:unique name="tipo_habitacion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tipo_habitacion" />
+      <xs:field xpath="mstns:idtipo" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="fk_reserva_detalle" msdata:parent="reservas" msdata:child="detalle_reserva" msdata:parentkey="idReservacion" msdata:childkey="idReserva" msprop:Generator_UserChildTable="detalle_reserva" msprop:Generator_ChildPropName="Getdetalle_reservaRows" msprop:Generator_UserRelationName="fk_reserva_detalle" msprop:Generator_ParentPropName="reservasRow" msprop:Generator_RelationVarName="relationfk_reserva_detalle" msprop:Generator_UserParentTable="reservas" />
+      <msdata:Relationship name="fk_numero_detalle" msdata:parent="habitacion" msdata:child="detalle_reserva" msdata:parentkey="numeroHabitacion" msdata:childkey="numeroHabitacion" msprop:Generator_UserChildTable="detalle_reserva" msprop:Generator_ChildPropName="Getdetalle_reservaRows" msprop:Generator_UserRelationName="fk_numero_detalle" msprop:Generator_RelationVarName="relationfk_numero_detalle" msprop:Generator_UserParentTable="habitacion" msprop:Generator_ParentPropName="habitacionRow" />
+      <msdata:Relationship name="FK__habitacio__tipoH__16CE6296" msdata:parent="tipo_habitacion" msdata:child="habitacion" msdata:parentkey="idtipo" msdata:childkey="tipoHabitacion_Idtipo" msprop:Generator_UserChildTable="habitacion" msprop:Generator_ChildPropName="GethabitacionRows" msprop:Generator_UserRelationName="FK__habitacio__tipoH__16CE6296" msprop:Generator_RelationVarName="relationFK__habitacio__tipoH__16CE6296" msprop:Generator_UserParentTable="tipo_habitacion" msprop:Generator_ParentPropName="tipo_habitacionRow" />
+      <msdata:Relationship name="fk_numero_detalle1" msdata:parent="habitacion" msdata:child="reservas" msdata:parentkey="numeroHabitacion" msdata:childkey="numeroHabitacion" msprop:Generator_UserChildTable="reservas" msprop:Generator_ChildPropName="GetreservasRows" msprop:Generator_UserRelationName="fk_numero_detalle1" msprop:Generator_RelationVarName="relationfk_numero_detalle1" msprop:Generator_UserParentTable="habitacion" msprop:Generator_ParentPropName="habitacionRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

@@ -88,6 +88,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Habitacion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Clases\HabitacionReserva.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HabitacionReserva.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Hotel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -273,6 +278,17 @@
     </None>
     <None Include="Clases\Habitacion.xss">
       <DependentUpon>Habitacion.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\HabitacionReserva.xsc">
+      <DependentUpon>HabitacionReserva.xsd</DependentUpon>
+    </None>
+    <None Include="Clases\HabitacionReserva.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HabitacionReserva.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Clases\HabitacionReserva.xss">
+      <DependentUpon>HabitacionReserva.xsd</DependentUpon>
     </None>
     <None Include="Clases\Hotel.xsc">
       <DependentUpon>Hotel.xsd</DependentUpon>

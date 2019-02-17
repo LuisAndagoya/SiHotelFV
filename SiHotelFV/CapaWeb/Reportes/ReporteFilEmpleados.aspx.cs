@@ -44,25 +44,26 @@ namespace CapaWeb.Reportes
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-           
-            
-            
-            
+
             string Id = ListaEmpleado.SelectedValue.ToString();
             ReportParameter[] parametros = new ReportParameter[1];
             parametros[0] = new ReportParameter("idCargo", Id);
             this.ReportViewer1.LocalReport.SetParameters(parametros);
 
             this.ReportViewer1.LocalReport.Refresh();
+        }
 
-
-        } 
-
-        public void reporte()
+        protected void Button2_Click(object sender, EventArgs e)
         {
-             
-          
-            CargarCombo();
+
+            string Id = fechInicio.Text;
+            QSencriptadoCSharp.QueryString qs = new QSencriptadoCSharp.QueryString();
+
+            //2 voy a agregando los valores que deseo
+            qs.Add("TRN", "INS");
+            qs.Add("Id", Id);
+            Response.Redirect("EmpleadoFecha.aspx" + QSencriptadoCSharp.Encryption.EncryptQueryString(qs).ToString());
+
         }
     }
 }

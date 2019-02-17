@@ -17,6 +17,14 @@ namespace CapaProceso.Clases
             return CReporte.Lista();
         }
 
+        public static CapaDatos.Clases.ReporteTipoHabitacion.tipo_habitacionDataTable numeros()
+        {
+            return CReporte.numeros();
+        }
+        public static CapaDatos.Clases.ReporteTipoHabitacion.tipo_habitacionDataTable Prueba()
+        {
+            return CReporte.Prueba();
+        }
 
         public static CapaDatos.Clases.ReporteTipoHabitacion.tipo_habitacionDataTable Reporte1(short Id)
         {

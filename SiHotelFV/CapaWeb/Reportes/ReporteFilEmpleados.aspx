@@ -33,7 +33,24 @@
                             <td>
 
                                 <a href="ReporteEmpleados.aspx" class="btn btn-gradient-info btn-sm">Listar Todos</a></td>
-                        </tr>                
+                        </tr>    
+                        <tr>
+
+                            
+                            <td>
+                                <label for="ListaEmpleado">Fecha Ingreso:</label></td>
+                            
+                        
+                            <td>
+
+                                <asp:TextBox type="date"  ID="fechInicio" class="form-control" runat="server"></asp:TextBox>
+                            </td>
+                             <td>
+                                <asp:Button class="btn btn-gradient-info btn-sm" ID="Button2" runat="server"
+                                    Text="Buscar" OnClick="Button2_Click" />
+                            </td>
+
+                        </tr>            
 
                         <tr>
                             <td  colspan="4">

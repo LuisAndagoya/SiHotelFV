@@ -22,6 +22,10 @@ namespace CapaProceso.Clases
         {
             return CAuditoria.General();
         }
+        public static CapaDatos.Clases.Auditoria.auditoriaDataTable Usuario(short Id)
+        {
+            return CAuditoria.Usuario(Id);
+        }
         public static CapaDatos.Clases.Auditoria.auditoriaDataTable Reporte(DateTime Inicio, DateTime Fin)
         {
             return CAuditoria.Reporte(Inicio, Fin);

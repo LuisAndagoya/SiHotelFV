@@ -36,7 +36,7 @@ namespace CapaWeb.Formularios.Reserva
                 ListaHabitacion.AppendDataBoundItems = true;
                 ListaHabitacion.Items.Add("Seleccione habitación...");
 
-                ListaHabitacion.DataSource = CapaProceso.Clases.Habitacion.ListaEstado(4);
+                ListaHabitacion.DataSource = CapaProceso.Clases.Habitacion.Lista();
 
                 ListaHabitacion.DataTextField = "numeroHabitacion";
                 ListaHabitacion.DataValueField = "numeroHabitacion";                

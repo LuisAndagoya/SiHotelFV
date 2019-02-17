@@ -249,7 +249,9 @@
     <Content Include="Formularios\Empleado\Container.aspx" />
     <Content Include="Formularios\Empleado\Index.aspx" />
     <Content Include="inicio.aspx" />
+    <Content Include="Reportes\AuditoriaUsu.aspx" />
     <Content Include="Reportes\ClienteReporte.aspx" />
+    <Content Include="Reportes\EmpleadoFecha.aspx" />
     <Content Include="Reportes\EstadoHabitacion.aspx" />
     <Content Include="Reportes\Factura.aspx" />
     <Content Include="Reportes\GeneralAuditoria.aspx" />
@@ -263,8 +265,11 @@
     <Content Include="Reportes\ReporteReservaciones.aspx" />
     <Content Include="Reportes\ReporteReservaFil.aspx" />
     <Content Include="Reportes\ReporteTipoHab.aspx" />
+    <Content Include="Reportes\ReservacionFechaH.aspx" />
     <Content Include="Reportes\ReservaCliente.aspx" />
     <Content Include="Reportes\ReservaEstado.aspx" />
+    <Content Include="Reportes\ReservaHabiNumero.aspx" />
+    <Content Include="Reportes\ReservaListar.aspx" />
     <Content Include="Reportes\ReservaUsuario.aspx" />
     <Content Include="Salir.aspx" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
@@ -685,12 +690,26 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\AuditoriaUsu.aspx.cs">
+      <DependentUpon>AuditoriaUsu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\AuditoriaUsu.aspx.designer.cs">
+      <DependentUpon>AuditoriaUsu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ClienteReporte.aspx.cs">
       <DependentUpon>ClienteReporte.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Reportes\ClienteReporte.aspx.designer.cs">
       <DependentUpon>ClienteReporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\EmpleadoFecha.aspx.cs">
+      <DependentUpon>EmpleadoFecha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\EmpleadoFecha.aspx.designer.cs">
+      <DependentUpon>EmpleadoFecha.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reportes\EstadoHabitacion.aspx.cs">
       <DependentUpon>EstadoHabitacion.aspx</DependentUpon>
@@ -783,6 +802,13 @@
     <Compile Include="Reportes\ReporteTipoHab.aspx.designer.cs">
       <DependentUpon>ReporteTipoHab.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReservacionFechaH.aspx.cs">
+      <DependentUpon>ReservacionFechaH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReservacionFechaH.aspx.designer.cs">
+      <DependentUpon>ReservacionFechaH.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReservaCliente.aspx.cs">
       <DependentUpon>ReservaCliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -796,6 +822,20 @@
     </Compile>
     <Compile Include="Reportes\ReservaEstado.aspx.designer.cs">
       <DependentUpon>ReservaEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReservaHabiNumero.aspx.cs">
+      <DependentUpon>ReservaHabiNumero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReservaHabiNumero.aspx.designer.cs">
+      <DependentUpon>ReservaHabiNumero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReservaListar.aspx.cs">
+      <DependentUpon>ReservaListar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReservaListar.aspx.designer.cs">
+      <DependentUpon>ReservaListar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReservaUsuario.aspx.cs">
       <DependentUpon>ReservaUsuario.aspx</DependentUpon>
@@ -848,8 +888,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\AuditoriaUsu.rdlc" />
     <EmbeddedResource Include="Reportes\Cabecera.rdlc" />
+    <EmbeddedResource Include="Reportes\EmpleadoFecha.rdlc" />
     <EmbeddedResource Include="Reportes\Factura.rdlc" />
+    <EmbeddedResource Include="Reportes\NuevoReporte.rdlc" />
+    <EmbeddedResource Include="Reportes\ReservacionFEc.rdlc" />
     <EmbeddedResource Include="Reportes\ReservaCliente.rdlc" />
     <EmbeddedResource Include="Reportes\ReservaEstado.rdlc" />
     <EmbeddedResource Include="Reportes\Cliente.rdlc" />
@@ -867,6 +911,7 @@
     <EmbeddedResource Include="Reportes\ReporteEstado.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteHabitacion.rdlc" />
     <EmbeddedResource Include="Reportes\ReservaFecha.rdlc" />
+    <EmbeddedResource Include="Reportes\ReservaFechaHa.rdlc" />
     <EmbeddedResource Include="Reportes\ReservaUsuario.rdlc" />
     <EmbeddedResource Include="Reportes\TipoHabitacionR.rdlc" />
   </ItemGroup>

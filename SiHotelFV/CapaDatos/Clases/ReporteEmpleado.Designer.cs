@@ -1243,7 +1243,7 @@ SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmp
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idEmpleado, dniEmpleado, nombreEmpleado, apellidoEmpleado, fnacimientoEmpl" +
@@ -1273,6 +1273,17 @@ FROM            cargo INNER JOIN
 WHERE        (cargo.idCargo = @Id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT        cargo.idCargo, cargo.nombreCargo, usuario.idUsuario, usuario.usernameUsuario, usuario.estadoUsuario, usuario.idEmpleado, usuario.idCargo AS Expr1, empleado.idEmpleado AS Expr2, 
+                         empleado.dniEmpleado, empleado.nombreEmpleado, empleado.apellidoEmpleado, empleado.fnacimientoEmpleado, empleado.sexoEmpleado, empleado.estadocivilEmpleado, empleado.domicilioEmpleado, 
+                         empleado.telefmovilEmpleado, empleado.fecharegistroEmpleado, empleado.emailEmpleado, empleado.imagenEmpleado, empleado.estadoEmpleado
+FROM            cargo INNER JOIN
+                         usuario ON usuario.idCargo = cargo.idCargo INNER JOIN
+                         empleado ON usuario.idEmpleado = empleado.idEmpleado
+WHERE        (empleado.fecharegistroEmpleado = @Id)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "fecharegistroEmpleado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1346,6 +1357,42 @@ WHERE        (cargo.idCargo = @Id)";
         public virtual ReporteEmpleado.empleadoDataTable Cargo(int Id) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Id));
+            ReporteEmpleado.empleadoDataTable dataTable = new ReporteEmpleado.empleadoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy2(ReporteEmpleado.empleadoDataTable dataTable, string Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((Id == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Id));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ReporteEmpleado.empleadoDataTable Fecha(string Id) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((Id == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Id));
+            }
             ReporteEmpleado.empleadoDataTable dataTable = new ReporteEmpleado.empleadoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
