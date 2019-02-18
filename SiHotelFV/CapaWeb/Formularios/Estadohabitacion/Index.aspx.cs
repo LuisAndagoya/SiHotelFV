@@ -16,6 +16,11 @@ namespace CapaWeb.Formularios.Estadohabitacion
         {
             if (!IsPostBack)
             {
+                if (!CapaProceso.Clases.Menucargo.ExisteMenu("Estado H.", int.Parse(Session["idCargo"].ToString())))
+                {
+                    Response.Redirect("../../Index.aspx");
+                }
+
 
                 CargarGrilla();
             }

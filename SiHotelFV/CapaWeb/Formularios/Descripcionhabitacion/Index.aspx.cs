@@ -15,6 +15,10 @@ namespace CapaWeb.Formularios.Descripcionhabitacion
         {
             if (!IsPostBack)
             {
+                if (!CapaProceso.Clases.Menucargo.ExisteMenu("Descripción H.", int.Parse(Session["idCargo"].ToString())))
+                {
+                    Response.Redirect("../../Index.aspx");
+                }
 
                 CargarGrilla();
             }

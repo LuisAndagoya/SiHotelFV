@@ -73,7 +73,7 @@
                             <div class="row col-12 form-group ">
                                 <div class="row col-12 input-group ">
                                     <label for="fechaReservacion" class="col-12 col-md-5">Fecha Reserva:</label>
-                                    <asp:TextBox type="date" onkeyup="FechaReserva();" ReadOnly="true" required="required" ID="fechaReservacion" class="col-12 col-md-7 " runat="server"></asp:TextBox>
+                                    <asp:TextBox type="date" onkeyup="FechaReserva();" ReadOnly="true" required="required" ID="fechaReservacion" class="col-12 col-md-7 " runat="server" ></asp:TextBox>
                                 </div>
                                 <div class=" col-12 col-md-6">
                                     <label for="fechaEntrada">Fecha Entrada</label>

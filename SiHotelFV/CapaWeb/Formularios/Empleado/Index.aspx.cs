@@ -13,6 +13,10 @@ namespace CapaWeb.Formularios.Empleado
            
             if (!IsPostBack)
             {
+                if (!CapaProceso.Clases.Menucargo.ExisteMenu("Empleados", int.Parse(Session["idCargo"].ToString())))
+                {
+                    Response.Redirect("../../Index.aspx");
+                }
 
                 CargarGrilla();
             }

@@ -36,7 +36,17 @@ namespace CapaProceso.Clases
             return CMenucargo.GetListaSubmenu();
         }
 
-
+        public static Boolean ExisteMenu(string nombreSubMenu, int idCargo)
+        {
+            Boolean Existe = false;
+            int contar = 0;
+            contar = (int) CMenucargo.ExisteMenu(nombreSubMenu, idCargo);
+            if (contar > 0)
+            {
+                Existe = true;
+            }
+            return Existe;
+        }
 
 
         public static string Insertar(short idCargo, short idSubMenu)

@@ -16,7 +16,10 @@ namespace CapaWeb.Formularios.Estadoreserva
         {
             if (!IsPostBack)
             {
-
+                if (!CapaProceso.Clases.Menucargo.ExisteMenu("Estado R.", int.Parse(Session["idCargo"].ToString())))
+                {
+                    Response.Redirect("../../Index.aspx");
+                }
                 CargarGrilla();
             }
 

@@ -13,6 +13,10 @@ namespace CapaWeb.Formularios.Auditoria
         {
             if (!IsPostBack)
             {
+                if (!CapaProceso.Clases.Menucargo.ExisteMenu("Auditoria", int.Parse(Session["idCargo"].ToString())))
+                {
+                    Response.Redirect("../../Index.aspx");
+                }
 
                 CargarGrilla();
             }

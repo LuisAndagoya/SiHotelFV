@@ -25,7 +25,7 @@ namespace CapaWeb
 
             if (Session["UsuarioId"] == null)
             {
-                Response.Redirect("Index.aspx");
+                Response.Redirect("../../Index.aspx");
             } else
             {
                 string UsuarioNomApe = Session["UsuarioNomApe"].ToString();

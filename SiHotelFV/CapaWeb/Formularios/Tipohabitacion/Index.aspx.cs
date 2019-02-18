@@ -15,6 +15,10 @@ namespace CapaWeb.Formularios.Tipohabitacion
         {
             if (!IsPostBack)
             {
+                if (!CapaProceso.Clases.Menucargo.ExisteMenu("Tipo H.", int.Parse(Session["idCargo"].ToString())))
+                {
+                    Response.Redirect("../../Index.aspx");
+                }
 
                 CargarGrilla();
             }

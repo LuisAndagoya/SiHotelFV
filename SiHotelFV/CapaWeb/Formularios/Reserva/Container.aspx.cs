@@ -33,14 +33,7 @@ namespace CapaWeb.Formularios.Reserva
                 idEstadoReserva.DataValueField = "idEstadoReserva";
                 idEstadoReserva.DataBind();
 
-                ListaHabitacion.AppendDataBoundItems = true;
-                ListaHabitacion.Items.Add("Seleccione habitación...");
-
-                ListaHabitacion.DataSource = CapaProceso.Clases.Habitacion.Lista();
-
-                ListaHabitacion.DataTextField = "numeroHabitacion";
-                ListaHabitacion.DataValueField = "numeroHabitacion";                
-                ListaHabitacion.DataBind();
+                
 
                 Session.Remove("total");
                 Session.Remove("datos");
@@ -311,7 +304,12 @@ namespace CapaWeb.Formularios.Reserva
                     dniCliente.Text = "";
                     this.Page.Response.Write("<script language='JavaScript'>window.alert('No existe el cliente');</script>");
                 }
-              
+                else
+                {
+                    numeroHabitacion();
+                }
+
+
             }
             else
             {
@@ -425,6 +423,20 @@ namespace CapaWeb.Formularios.Reserva
             }
         }
 
+        public void numeroHabitacion()
+        {
+            
 
+            
+
+            ListaHabitacion.AppendDataBoundItems = true;
+            ListaHabitacion.Items.Add("Seleccione habitación...");
+
+            ListaHabitacion.DataSource = CapaProceso.Clases.Habitacion.ListaHabitacionesDisponibles(fechaReservacion.Text);
+
+            ListaHabitacion.DataTextField = "numeroHabitacion";
+            ListaHabitacion.DataValueField = "numeroHabitacion";
+            ListaHabitacion.DataBind();
+        }
     }
 }

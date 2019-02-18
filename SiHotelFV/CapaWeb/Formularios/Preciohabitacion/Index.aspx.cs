@@ -15,6 +15,10 @@ namespace CapaWeb.Formularios.Preciohabitacion
         {
             if (!IsPostBack)
             {
+                if (!CapaProceso.Clases.Menucargo.ExisteMenu("Precio H.", int.Parse(Session["idCargo"].ToString())))
+                {
+                    Response.Redirect("../../Index.aspx");
+                }
 
                 CargarGrilla();
             }

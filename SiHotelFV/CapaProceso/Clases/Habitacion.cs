@@ -17,6 +17,40 @@ namespace CapaProceso.Clases
             return CHabitacion.GetLista();
         }
 
+        public static List<ModeloReservacionDetalle> ListaHabitacionesDisponibles(string fechaReservacion)
+        {
+           
+           
+           
+            CapaDatos.Clases.Habitacion.habitacionDataTable lista;
+            CapaDatos.Clases.Habitacion.habitacionDataTable lista2;
+            List<ModeloReservacionDetalle> modeloReservacionDetalle;
+            modeloReservacionDetalle = new List<ModeloReservacionDetalle>();
+
+            lista = CHabitacion.GetHabitacion(fechaReservacion);
+            lista2 = CHabitacion.NumeroHabitacion(4);
+            foreach (var item2 in lista2)
+            {
+                int contador = 0;
+                foreach (var item in lista)
+                {
+                    if (item2.numeroHabitacion == item.numeroHabitacion)
+                    {
+                        contador++;
+                    }                    
+
+                }
+                if (contador < 1)
+                {
+                    ModeloReservacionDetalle itemH = new ModeloReservacionDetalle(item2.numeroHabitacion, 0, "");
+                    modeloReservacionDetalle.Add(itemH);
+
+                }
+            }
+            return modeloReservacionDetalle;
+
+        }
+
         public static CapaDatos.Clases.Habitacion.habitacionDataTable ListaEstado( short estadoHabitacion_idEstado)
         {
             return CHabitacion.ListaEstado(estadoHabitacion_idEstado);

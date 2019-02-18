@@ -15,6 +15,11 @@ namespace CapaWeb.Formularios.Menu
         {
             if (!IsPostBack)
             {
+                if (!CapaProceso.Clases.Menucargo.ExisteMenu("Menú", int.Parse(Session["idCargo"].ToString())))
+                {
+                    Response.Redirect("../../Index.aspx");
+                }
+
 
                 CargarGrilla();
             }

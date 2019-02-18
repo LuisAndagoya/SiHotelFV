@@ -1726,7 +1726,7 @@ SELECT idMenu_Cargo, idCargo, idSubMenu FROM menu_cargo WHERE (idMenu_Cargo = @i
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[10];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[11];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT idMenu_Cargo, idCargo, idSubMenu FROM dbo.menu_cargo";
@@ -1738,61 +1738,70 @@ SELECT idMenu_Cargo, idCargo, idSubMenu FROM menu_cargo WHERE (idMenu_Cargo = @i
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu_Cargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu_Cargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        menu_cargo.idMenu_Cargo, menu_cargo.idCargo, cargo.nombreCargo, menu_cargo.idSubMenu, submenu.nombreSubMenu
+            this._commandCollection[2].CommandText = @"SELECT        COUNT(menu_cargo.idMenu_Cargo) AS Expr1
 FROM            menu_cargo INNER JOIN
-                         cargo ON cargo.idCargo = menu_cargo.idCargo INNER JOIN
-                         submenu ON submenu.idSubMenu = menu_cargo.idSubMenu
-WHERE        (cargo.nombreCargo  LIKE @nombreCargo)";
+                         submenu ON menu_cargo.idSubMenu = submenu.idSubMenu
+WHERE        (submenu.nombreSubMenu = @nombreSubMenu) AND (menu_cargo.idCargo = @idCargo)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreCargo", global::System.Data.SqlDbType.VarChar, 45, global::System.Data.ParameterDirection.Input, 0, 0, "nombreCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreSubMenu", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "nombreSubMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = @"SELECT        menu_cargo.idMenu_Cargo, menu_cargo.idCargo, cargo.nombreCargo, menu_cargo.idSubMenu, submenu.nombreSubMenu
 FROM            menu_cargo INNER JOIN
                          cargo ON cargo.idCargo = menu_cargo.idCargo INNER JOIN
-                         submenu ON submenu.idSubMenu = menu_cargo.idSubMenu";
+                         submenu ON submenu.idSubMenu = menu_cargo.idSubMenu
+WHERE        (cargo.nombreCargo  LIKE @nombreCargo)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombreCargo", global::System.Data.SqlDbType.VarChar, 45, global::System.Data.ParameterDirection.Input, 0, 0, "nombreCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = @"SELECT        menu_cargo.idMenu_Cargo, menu_cargo.idCargo, cargo.nombreCargo, menu_cargo.idSubMenu, submenu.nombreSubMenu
 FROM            menu_cargo INNER JOIN
                          cargo ON cargo.idCargo = menu_cargo.idCargo INNER JOIN
-                         submenu ON submenu.idSubMenu = menu_cargo.idSubMenu
-WHERE        (menu_cargo.idMenu_Cargo = @idMenu_Cargo)";
+                         submenu ON submenu.idSubMenu = menu_cargo.idSubMenu";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu_Cargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu_Cargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        *\r\nFROM            cargo";
+            this._commandCollection[5].CommandText = @"SELECT        menu_cargo.idMenu_Cargo, menu_cargo.idCargo, cargo.nombreCargo, menu_cargo.idSubMenu, submenu.nombreSubMenu
+FROM            menu_cargo INNER JOIN
+                         cargo ON cargo.idCargo = menu_cargo.idCargo INNER JOIN
+                         submenu ON submenu.idSubMenu = menu_cargo.idSubMenu
+WHERE        (menu_cargo.idMenu_Cargo = @idMenu_Cargo)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu_Cargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu_Cargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        idSubMenu, nombreSubMenu\r\nFROM            submenu";
+            this._commandCollection[6].CommandText = "SELECT        *\r\nFROM            cargo";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "INSERT INTO [dbo].[menu_cargo] ([idCargo], [idSubMenu]) VALUES (@idCargo, @idSubM" +
-                "enu);\r\nSELECT idMenu_Cargo, idCargo, idSubMenu FROM menu_cargo WHERE (idMenu_Car" +
-                "go = SCOPE_IDENTITY())";
+            this._commandCollection[7].CommandText = "SELECT        idSubMenu, nombreSubMenu\r\nFROM            submenu";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSubMenu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSubMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "SELECT        COUNT(idMenu_Cargo) AS Expr1\r\nFROM            menu_cargo\r\nWHERE    " +
-                "    (idCargo = @idCargo) AND (idSubMenu = @idSubMenu)";
+            this._commandCollection[8].CommandText = "INSERT INTO [dbo].[menu_cargo] ([idCargo], [idSubMenu]) VALUES (@idCargo, @idSubM" +
+                "enu);\r\nSELECT idMenu_Cargo, idCargo, idSubMenu FROM menu_cargo WHERE (idMenu_Car" +
+                "go = SCOPE_IDENTITY())";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSubMenu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSubMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = "UPDATE [dbo].[menu_cargo] SET [idCargo] = @idCargo, [idSubMenu] = @idSubMenu WHER" +
-                "E (([idMenu_Cargo] = @idMenu_Cargo));\r\nSELECT idMenu_Cargo, idCargo, idSubMenu F" +
-                "ROM menu_cargo WHERE (idMenu_Cargo = @idMenu_Cargo)";
+            this._commandCollection[9].CommandText = "SELECT        COUNT(idMenu_Cargo) AS Expr1\r\nFROM            menu_cargo\r\nWHERE    " +
+                "    (idCargo = @idCargo) AND (idSubMenu = @idSubMenu)";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSubMenu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSubMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu_Cargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu_Cargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[10].Connection = this.Connection;
+            this._commandCollection[10].CommandText = "UPDATE [dbo].[menu_cargo] SET [idCargo] = @idCargo, [idSubMenu] = @idSubMenu WHER" +
+                "E (([idMenu_Cargo] = @idMenu_Cargo));\r\nSELECT idMenu_Cargo, idCargo, idSubMenu F" +
+                "ROM menu_cargo WHERE (idMenu_Cargo = @idMenu_Cargo)";
+            this._commandCollection[10].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCargo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idSubMenu", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idSubMenu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idMenu_Cargo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idMenu_Cargo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1824,7 +1833,7 @@ WHERE        (menu_cargo.idMenu_Cargo = @idMenu_Cargo)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Menucargo.menu_cargoDataTable GetBuscar(string nombreCargo) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((nombreCargo == null)) {
                 throw new global::System.ArgumentNullException("nombreCargo");
             }
@@ -1841,7 +1850,7 @@ WHERE        (menu_cargo.idMenu_Cargo = @idMenu_Cargo)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Menucargo.menu_cargoDataTable GetLista() {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             Menucargo.menu_cargoDataTable dataTable = new Menucargo.menu_cargoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1852,7 +1861,7 @@ WHERE        (menu_cargo.idMenu_Cargo = @idMenu_Cargo)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Menucargo.menu_cargoDataTable GetListaActualizar(int idMenu_Cargo) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(idMenu_Cargo));
             Menucargo.menu_cargoDataTable dataTable = new Menucargo.menu_cargoDataTable();
             this.Adapter.Fill(dataTable);
@@ -1864,7 +1873,7 @@ WHERE        (menu_cargo.idMenu_Cargo = @idMenu_Cargo)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Menucargo.menu_cargoDataTable GetListaCargo() {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             Menucargo.menu_cargoDataTable dataTable = new Menucargo.menu_cargoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1875,7 +1884,7 @@ WHERE        (menu_cargo.idMenu_Cargo = @idMenu_Cargo)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Menucargo.menu_cargoDataTable GetListaSubmenu() {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             Menucargo.menu_cargoDataTable dataTable = new Menucargo.menu_cargoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2019,9 +2028,44 @@ WHERE        (menu_cargo.idMenu_Cargo = @idMenu_Cargo)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> ExisteMenu(string nombreSubMenu, int idCargo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((nombreSubMenu == null)) {
+                throw new global::System.ArgumentNullException("nombreSubMenu");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(nombreSubMenu));
+            }
+            command.Parameters[1].Value = ((int)(idCargo));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(int idCargo, int idSubMenu) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             command.Parameters[0].Value = ((int)(idCargo));
             command.Parameters[1].Value = ((int)(idSubMenu));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -2045,7 +2089,7 @@ WHERE        (menu_cargo.idMenu_Cargo = @idMenu_Cargo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> unico(int idCargo, int idSubMenu) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
             command.Parameters[0].Value = ((int)(idCargo));
             command.Parameters[1].Value = ((int)(idSubMenu));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -2076,7 +2120,7 @@ WHERE        (menu_cargo.idMenu_Cargo = @idMenu_Cargo)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(int idCargo, int idSubMenu, int idMenu_Cargo) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[10];
             command.Parameters[0].Value = ((int)(idCargo));
             command.Parameters[1].Value = ((int)(idSubMenu));
             command.Parameters[2].Value = ((int)(idMenu_Cargo));

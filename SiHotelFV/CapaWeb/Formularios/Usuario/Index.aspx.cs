@@ -11,11 +11,16 @@ namespace CapaWeb.Formularios.Usuario
     public partial class Index : System.Web.UI.Page
     {
         private static Codificar codificar = new Codificar(); // Clase para emcriptar
-
+      
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+
+                if (!CapaProceso.Clases.Menucargo.ExisteMenu("Usuario", int.Parse(Session["idCargo"].ToString())))
+                {
+                    Response.Redirect("../../Index.aspx");
+                }                
 
                 CargarGrilla();
             }
