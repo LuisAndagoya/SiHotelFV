@@ -77,7 +77,7 @@
                                 </div>
                                 <div class=" col-12 col-md-6">
                                     <label for="fechaEntrada">Fecha Entrada</label>
-                                    <asp:TextBox type="date" required="required" ReadOnly="true" ID="fechaEntrada" class=" form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox type="date" required="required"  ID="fechaEntrada" class=" form-control" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="fechaSalida">Fecha Salida</label>

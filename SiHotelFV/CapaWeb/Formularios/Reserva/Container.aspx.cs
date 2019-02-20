@@ -425,9 +425,8 @@ namespace CapaWeb.Formularios.Reserva
 
         public void numeroHabitacion()
         {
-            
 
-            
+            ListaHabitacion.Items.Clear();
 
             ListaHabitacion.AppendDataBoundItems = true;
             ListaHabitacion.Items.Add("Seleccione habitación...");
