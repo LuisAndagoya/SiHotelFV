@@ -15,7 +15,11 @@ namespace CapaWeb.Reportes
         {
             if (!IsPostBack)
             {
-                                
+                if (!CapaProceso.Clases.Menucargo.ExisteMenu("Reporte Cliente", int.Parse(Session["idCargo"].ToString())))
+                {
+                    Response.Redirect("../../Index.aspx");
+                }
+
                 this.ReportViewer1.LocalReport.Refresh();
             }
 

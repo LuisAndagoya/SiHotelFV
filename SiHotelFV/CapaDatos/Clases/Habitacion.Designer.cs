@@ -3597,8 +3597,12 @@ WHERE        (habitacion.numeroHabitacion LIKE @numeroHabitacion)";
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroHabitacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "numeroHabitacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"
-SELECT DISTINCT detalle_reserva.numeroHabitacion
+            this._commandCollection[4].CommandText = @"SELECT
+dbo.detalle_reserva.numeroHabitacion,
+dbo.detalle_reserva.idDetalle,
+dbo.detalle_reserva.idReserva,
+dbo.detalle_reserva.fechaActual,
+dbo.detalle_reserva.valor
 FROM            reservas INNER JOIN
                          detalle_reserva ON detalle_reserva.idReserva = reservas.idReservacion
 WHERE        (reservas.idEstadoReserva <> 4) AND (reservas.fechaReservacion =@fechaReservacion)";

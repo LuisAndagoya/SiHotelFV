@@ -16,7 +16,10 @@ namespace CapaWeb.Reportes
         {
             if (!IsPostBack)
             {
-
+                if (!CapaProceso.Clases.Menucargo.ExisteMenu("Reservación Habitación", int.Parse(Session["idCargo"].ToString())))
+                {
+                    Response.Redirect("../../Index.aspx");
+                }
 
                 CargarCombo();
                 this.ReportViewer1.LocalReport.Refresh();

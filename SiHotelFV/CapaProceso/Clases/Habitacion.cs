@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos.Clases.HabitacionTableAdapters;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace CapaProceso.Clases
 {
@@ -19,20 +21,33 @@ namespace CapaProceso.Clases
 
         public static List<ModeloReservacionDetalle> ListaHabitacionesDisponibles(string fechaReservacion)
         {
-           
-           
-           
-            CapaDatos.Clases.Habitacion.habitacionDataTable lista;
+            List<ModeloReservacionDetalle> modeloReservacionDetalle;
+            modeloReservacionDetalle = new List<ModeloReservacionDetalle>();
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["BDHotelFuenteVidaConnectionString"].ConnectionString);
+            cn.Open();
+            string consulta = "SELECT numeroHabitacion FROM habitacion WHERE (dbo.habitacion.estadoHabitacion_idEstado = 4) AND dbo.habitacion.numeroHabitacion NOT IN(( SELECT DISTINCT detalle_reserva.numeroHabitacion FROM reservas INNER JOIN detalle_reserva ON detalle_reserva.idReserva = reservas.idReservacion WHERE(reservas.idEstadoReserva <> 4) AND(reservas.fechaReservacion = '"+ fechaReservacion + "')))";
+            SqlCommand conmand = new SqlCommand(consulta, cn);
+            SqlDataReader dr = conmand.ExecuteReader();
+
+            while (dr.Read())
+            {
+                ModeloReservacionDetalle itemH = new ModeloReservacionDetalle( Convert.ToInt32(dr["numeroHabitacion"]), 0, "");
+                modeloReservacionDetalle.Add(itemH);
+
+            }
+
+
+           /* CapaDatos.Clases.Habitacion.habitacionDataTable lista;
             CapaDatos.Clases.Habitacion.habitacionDataTable lista2;
             List<ModeloReservacionDetalle> modeloReservacionDetalle;
             modeloReservacionDetalle = new List<ModeloReservacionDetalle>();
 
-            lista = CHabitacion.GetHabitacion(fechaReservacion);
+           // lista = CHabitacion.GetHabitacion(fechaReservacion);
             lista2 = CHabitacion.NumeroHabitacion(4);
             foreach (var item2 in lista2)
             {
                 int contador = 0;
-                foreach (var item in lista)
+                foreach (var item in lista2)
                 {
                     if (item2.numeroHabitacion == item.numeroHabitacion)
                     {
@@ -46,7 +61,7 @@ namespace CapaProceso.Clases
                     modeloReservacionDetalle.Add(itemH);
 
                 }
-            }
+            }*/
             return modeloReservacionDetalle;
 
         }
